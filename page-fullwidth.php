@@ -117,7 +117,7 @@ if ( is_page() && $post->post_parent ) {
 			$recent->the_post();
 			?>
 			<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
-				<figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>"  title="<?php the_title(); ?>"  rel="nofollow">
+				<figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>"  title="<?php echo esc_attr( get_the_title() ); ?>"  rel="nofollow">
 							<?php
 							if ( has_post_thumbnail() ) {
 								$attachment_id = get_post_thumbnail_id( get_the_ID() );
@@ -137,7 +137,7 @@ if ( is_page() && $post->post_parent ) {
 							}
 							?>
 							</a>
-					<figcaption id="post-<?php the_ID(); ?>" class="p-4"><h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4><p><?php the_excerpt(); ?></p><hr>
+					<figcaption id="post-<?php the_ID(); ?>" class="p-4"><h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4><p><?php the_excerpt(); ?></p><hr>
 					<p><?php if ( ( get_the_modified_date( 'j F, Y' ) ) === ( get_the_date( 'j F, Y' ) ) ) { ?>
 						<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
 					<?php } else { ?>
