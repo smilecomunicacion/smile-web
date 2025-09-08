@@ -22,7 +22,7 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 		<h1><?php echo esc_html( $page_title ); ?></h1>
 		<p class="text-center mt-4">
 			<a href="#contact" class="btn-cta" rel="nofollow noreferrer">
-				<?php esc_html_e( 'Contáctanos', 'smile-web' ); ?>
+                               <?php esc_html_e( 'Contact us', 'smile-web' ); ?>
 			</a>
 		</p>
 	</div>

@@ -174,7 +174,7 @@
 				</div>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author URL. */
-                                printf( esc_html__( 'Theme: %1$s by %2$s.', 'smile-web' ), 'SMiLE web', '<a href="' . esc_url( 'https://smilecomunicacion.com/web/wordpress/smile-web/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'SMiLE Comunicación', 'smile-web' ) . '</a>' );
+                               printf( esc_html__( 'Theme: %1$s by %2$s.', 'smile-web' ), 'SMiLE web', '<a href="' . esc_url( 'https://smilecomunicacion.com/web/wordpress/smile-web/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'SMiLE Communication', 'smile-web' ) . '</a>' );
                                 ?>
                         </div>
                 </div>
@@ -191,11 +191,11 @@
 		</div>
 		<div class="modal-body bg-light">
 			<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="row">
-				<input type="text" class="searching_TopHeader-Lupa-Buscador py-2 col-10 col-md-11 form-control" name="s" id="myInput" onkeyup="fetch()" placeholder="<?php esc_attr_e( 'Escribe aquí', 'smile-web' ); ?>">
-				<button type="submit" class="col-2">
-					<span class="dashicons dashicons-search" aria-hidden="true"></span>
-					<span class="screen-reader-text"><?php esc_html_e( 'Buscar', 'smile-web' ); ?></span>
-				</button>
+                               <input type="text" class="searching_TopHeader-Lupa-Buscador py-2 col-10 col-md-11 form-control" name="s" id="myInput" onkeyup="fetch()" placeholder="<?php esc_attr_e( 'Write here', 'smile-web' ); ?>">
+                               <button type="submit" class="col-2">
+                                       <span class="dashicons dashicons-search" aria-hidden="true"></span>
+                                       <span class="screen-reader-text"><?php esc_html_e( 'Search', 'smile-web' ); ?></span>
+                               </button>
 				<div id="resultado" class="col-12">
 					<!-- Aquí se mostrarán los resultados -->
 				</div>
