@@ -20,7 +20,7 @@ get_header();
 				<nav aria-label="breadcrumb">
 					<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="bg-light breadcrumb">
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php bloginfo( 'title' ); ?>">
+                                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
 								<span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span>
 							</a>
 							<meta itemprop="position" content="1" />

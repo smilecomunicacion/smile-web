@@ -7,7 +7,6 @@
  * @package smile-web
  */
 
-session_start();
 get_header();
 ?>
 <section id="intro">
@@ -23,7 +22,7 @@ get_header();
 		<div id="breadcrumbs" class="pb-4">
 			<nav aria-label="breadcrumb">
 				<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb bg-light">
-					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php bloginfo( 'title' ); ?>"><span itemprop="name">
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name">
 					<?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1" />
 					</li>
@@ -37,7 +36,7 @@ get_header();
 		<hr>
 		<div class="row">
 			<p><?php esc_html_e( 'Do you want to search again?', 'smile-web' ); ?></p>
-			<a id="myBtn2" href="#" class="btn-cta m-2 buscar jquery" aria-label="Abrir buscador" itemprop="url" data-bs-toggle="modal" data-bs-target="#searchModal" rel="nofollow noopener noreferrer"><span title="busca en la web" aria-hidden="true"></span> <?php esc_html_e( 'Search again', 'smile-web' ); ?></a>
+                        <a id="myBtn2" href="#" class="btn-cta m-2 buscar jquery" aria-label="<?php echo esc_attr__( 'Open search', 'smile-web' ); ?>" itemprop="url" data-bs-toggle="modal" data-bs-target="#searchModal" rel="nofollow noopener noreferrer"><span title="busca en la web" aria-hidden="true"></span> <?php esc_html_e( 'Search again', 'smile-web' ); ?></a>
 		</div>
 		<hr>
 		<?php if ( have_posts() ) : ?>
