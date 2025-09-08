@@ -286,6 +286,10 @@ a:hover {
     height: 25px;
 }
 
+#topBar .svg-icon svg {
+    fill: var(--topbar-social-icon);
+}
+
 .header-scrolled {
     background-color: var(--color-1-light);
     transition: background-color 0.3s ease;
@@ -1411,6 +1415,14 @@ footer h3 {
 #footer .footer-top .social-links a:hover {
     background: var(--footer-social-icon);
     color: var(--footer-social-bg);
+}
+
+#footer .svg-icon svg {
+    fill: var(--footer-social-icon);
+}
+
+#footer .svg-icon svg:hover {
+    fill: var(--footer-social-icon-hover);
 }
 
 #footer .footer-top .footer-links {

@@ -170,6 +170,10 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         'default' => '#f8f9fa',
                         'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
                 ),
+               'topbar_social_icon_color' => array(
+                       'default' => '#001833',
+                       'label'   => esc_html__( 'Top Bar Social Icon Color', 'smile-web' ),
+               ),
         );
 
         // Footer color controls.
