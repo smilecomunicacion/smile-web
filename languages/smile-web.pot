@@ -1,4 +1,4 @@
-# Copyright (C) 2025 SMiLE Comunicación
+# Copyright (C) 2025 SMiLE Communication
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -30,8 +30,8 @@ msgid "Free theme, SEO optimized. Gain visibility and reach the top positions in
 msgstr ""
 
 #. Author of the theme
-#: style.css
-msgid "SMiLE Comunicación"
+#: style.css footer.php:177
+msgid "SMiLE Communication"
 msgstr ""
 
 #. Author URI of the theme
@@ -63,6 +63,10 @@ msgstr ""
 #: single.php:84
 #: single.php:86
 msgid "Home"
+msgstr ""
+
+#: index.php:25
+msgid "Contact us"
 msgstr ""
 
 #: archive.php:55
@@ -143,9 +147,6 @@ msgstr ""
 msgid "Write here"
 msgstr ""
 
-#: footer.php:208
-msgid "Write in the field and click on search"
-msgstr ""
 
 #: front-page.php:16
 msgid "Recent Posts"
@@ -542,7 +543,7 @@ msgid "Last articles: %s"
 msgstr ""
 
 #: search.php:15
-msgid "Búsqueda:"
+msgid "Search:"
 msgstr ""
 
 #: search.php:30
@@ -587,7 +588,7 @@ msgid "Related articles"
 msgstr ""
 
 #: template-parts/content-none.php:12
-msgid "No hay resultados"
+msgid "No results found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.

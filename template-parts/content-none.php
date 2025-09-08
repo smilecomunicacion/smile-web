@@ -9,7 +9,7 @@
 
 ?>
 <section class="no-results not-found">
-<h2 class="display-4"><?php esc_html_e( 'No hay resultados', 'smile-web' ); ?></h2>
+<h2 class="display-4"><?php esc_html_e( 'No results found', 'smile-web' ); ?></h2>
 
 	<div class="page-content">
 		<?php
