@@ -30,14 +30,14 @@
 						$footer_phone = get_theme_mod( 'footer_telephone', '' );
 						if ( ! empty( $footer_phone ) ) :
 							?>
-							<h4 class="p-0 m-0"><?php esc_html_e( 'Phone', 'smile-web' ); ?></h4>
+                                                        <h4 class="p-0 m-0"><?php esc_html_e( 'Phone', 'smile-web' ); ?></h4>
                                                        <p>
-                                                               <a href="<?php echo esc_url( sprintf( 'tel:%s', $footer_phone ) ); ?>" class="h2 iterator_Footer-Telefono" target="_blank" rel="noreferrer nofollow">
+                                                               <a href="<?php echo esc_url( sprintf( 'tel:%s', $footer_phone ) ); ?>" class="h2 iterator_Footer-Telefono" target="_blank" rel="noreferrer nofollow noopener noreferrer">
                                                                        <?php echo esc_html( $footer_phone ); ?>
                                                                </a>
                                                        </p>
-						<?php endif; ?>
-					</div>
+                                                <?php endif; ?>
+                                        </div>
 
 					<!-- Customized address -->
 					<?php
@@ -60,13 +60,13 @@
 									<span itemprop="addressLocality"><?php echo esc_html( $address_locality ); ?></span>
 								<?php endif; ?>
 								<p class="iterator_Footer-Direccion">
-									<a class="btn-cta" title="<?php esc_attr_e( 'Open in map', 'smile-web' ); ?>" href="<?php echo esc_url( $map_link ); ?>" target="_blank" rel="noreferrer">
-										<?php esc_html_e( 'Open in map', 'smile-web' ); ?>
-									</a>
-								</p>
-							</address>
-						</div>
-					<?php endif; ?>
+                                                                        <a class="btn-cta" title="<?php esc_attr_e( 'Open in map', 'smile-web' ); ?>" href="<?php echo esc_url( $map_link ); ?>" target="_blank" rel="noreferrer noopener noreferrer">
+                                                                                <?php esc_html_e( 'Open in map', 'smile-web' ); ?>
+                                                                        </a>
+                                                                </p>
+                                                        </address>
+                                                </div>
+                                        <?php endif; ?>
 
 					<!-- Customized email -->
 					<?php
@@ -113,10 +113,10 @@
 							$logo_footer = get_theme_mod( 'footer_logo', '' );
 							if ( ! empty( $logo_footer ) ) {
 								?>
-								<a href="<?php echo esc_url( home_url( '' ) ); ?>">
-									<img class="img-fluid" src="<?php echo esc_html( $logo_footer ); ?>" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>" width="300px" style="max-height:200px;">
-								</a>
-							<?php } ?>
+                                                                <a href="<?php echo esc_url( home_url( '' ) ); ?>">
+                                                                        <img class="img-fluid" src="<?php echo esc_url( $logo_footer ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="300px" style="max-height:200px;">
+                                                                </a>
+                                                       <?php } ?>
 						</figure>
 						<?php dynamic_sidebar( 'footer-1' ); ?>
 						<div class="pt-3 social-links">
@@ -174,11 +174,11 @@
 				</div>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author URL. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'smile-web' ), 'SMiLE web', '<a href="' . esc_url( 'https://smilecomunicacion.com/web/wordpress/smile-web/' ) . '" target="_blank">' . esc_html__( 'SMiLE Comunicación', 'smile-web' ) . '</a>' );
-				?>
-			</div>
-		</div>
-	</div>
+                                printf( esc_html__( 'Theme: %1$s by %2$s.', 'smile-web' ), 'SMiLE web', '<a href="' . esc_url( 'https://smilecomunicacion.com/web/wordpress/smile-web/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'SMiLE Comunicación', 'smile-web' ) . '</a>' );
+                                ?>
+                        </div>
+                </div>
+        </div>
 </footer><!-- #footer -->
 </div><!-- #page -->
 
@@ -218,7 +218,7 @@ if ( ! empty( $whatsapp_number ) ) {
                 ),
                 'https://api.whatsapp.com/send'
         );
-        echo '<a href="' . esc_url( $whatsapp_url ) . '" target="_blank" id="whatsapp" class="iterator_Whatsapp whatsapp-button" rel="nofollow noreferrer" title="' . esc_attr__( 'open Whatsapp', 'smile-web' ) . '">';
+        echo '<a href="' . esc_url( $whatsapp_url ) . '" target="_blank" id="whatsapp" class="iterator_Whatsapp whatsapp-button" rel="nofollow noreferrer noopener noreferrer" title="' . esc_attr__( 'open Whatsapp', 'smile-web' ) . '">';
 ?>
     <div class="whatsapp-button">
 	    <div class="whatsapp-background">
