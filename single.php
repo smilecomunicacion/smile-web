@@ -104,11 +104,12 @@ get_header();
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<?php
 						$categories = get_the_category();
-						foreach ( $categories as $category ) {
-							echo '<a itemid=' . esc_attr( $category->cat_name ) . ' href="' . esc_url( get_category_link( $category->term_id ) ) . '"><span>' . esc_html( $category->cat_name ) . '</span></a>';}
-						?>
-						<meta itemprop="position" content="2" />
-					</li>
+                                                foreach ( $categories as $category ) {
+                                                        echo '<a itemid="' . esc_attr( $category->cat_name ) . '" href="' . esc_url( get_category_link( $category->term_id ) ) . '"><span>' . esc_html( $category->cat_name ) . '</span></a>';
+                                                }
+                                                ?>
+                                                <meta itemprop="position" content="2" />
+                                        </li>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 					</li>
 				</ol>
