@@ -89,6 +89,14 @@
   color: var(--color-link);
 }
 
+.svg-icon svg {
+  fill: var(--footer-social-icon);
+}
+
+.svg-icon svg:hover {
+  fill: var(--footer-social-icon-hover);
+}
+
 .footer-svg {
   transform: rotatex(180deg);
   padding: 20px 0px 0px 0px;
