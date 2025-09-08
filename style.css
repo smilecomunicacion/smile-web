@@ -1505,12 +1505,12 @@ footer h3 {
 
 #menu-legal-menu li:not(:first-child)::before {
     content: " | ";
-    color: white;
+    color: var(--footer-text);
 }
 
 #menu-legal-menu a {
     text-decoration: none;
-    color: white;
+    color: var(--footer-link);
 }
 
 #menu-legal-menu a:hover {
