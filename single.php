@@ -98,7 +98,7 @@ get_header();
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/solid/home.svg" alt="home" title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>
 						" width="20px" height="20px">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php get_bloginfo( 'name' ); ?>"><span><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
+                                               <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><span><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1" />
 					</li>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
