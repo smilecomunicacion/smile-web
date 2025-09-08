@@ -9,21 +9,17 @@
 
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
-<head rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemid="" itemscope itemtype="http://schema.org/SpeakableSpecification">
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="https://smilecomunicacion.com | Comunicación y Programación">
-	<meta itemprop="cssSelector" content=".title" />
-	<?php wp_head(); ?>
+<head>
+        <link rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="https://smilecomunicacion.com | Comunicación y Programación">
+        <meta itemprop="cssSelector" content=".title" />
+        <?php wp_head(); ?>
 </head>
 
-<body id="color-var"
-<?php
-if ( ! is_archive() ) {
-	body_class(); }
-?>
->
-	<?php wp_body_open(); ?>
+<body <?php body_class(); ?>>
+        <?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#page" aria-label="<?php esc_attr_e( 'Skip to main content', 'smile-web' ); ?>">
 		<?php esc_html_e( 'Skip to content', 'smile-web' ); ?>
 	</a>
