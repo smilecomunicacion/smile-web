@@ -98,43 +98,51 @@ if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
 					while ( $recent_posts->have_posts() ) :
 						$recent_posts->the_post();
 						?>
-						<article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
-							<div class="category">
-								<?php the_category(); ?>
-							</div>
+                                                <article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
+                                                        <div class="category">
+                                                                <?php
+                                                                $categories = get_the_category();
+                                                                if ( $categories ) {
+                                                                        foreach ( $categories as $category ) {
+                                                                                printf(
+                                                                                        '<a href="%1$s">%2$s</a>',
+                                                                                        esc_url( get_category_link( $category->term_id ) ),
+                                                                                        esc_html( $category->name )
+                                                                                );
+                                                                        }
+                                                                }
+                                                                ?>
+                                                        </div>
 
-							<figure class="shadow">
-								<a
-									href="<?php the_permalink(); ?>"
-									title="<?php echo esc_attr( get_the_title() ); ?>"
-									rel="nofollow"
-								>
-									<?php
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail(
-											'medium',
-											array(
-												'class' => 'img-fluid',
-												'alt'   => esc_attr( get_the_title() ),
-											)
-										);
-									} elseif ( ! empty( $blog_post_default_img ) ) {
-										// Default image set in the Customizer.
-										printf(
-											'<img src="%1$s" class="img-fluid" alt="%2$s" width="1000" height="667" />',
-											esc_url( $blog_post_default_img ),
-											esc_attr( get_bloginfo( 'name' ) )
-										);
-									} else {
-										// Fallback to theme asset.
-										printf(
-											'<img src="%1$s/assets/img/thumbnail-header.jpg" class="img-fluid" alt="%2$s" width="1000" height="667" />',
-											esc_url( get_template_directory_uri() ),
-											esc_attr( get_bloginfo( 'name' ) )
-										);
-									}
-									?>
-								</a>
+                                                        <figure class="shadow">
+                                                                <a
+                                                                        href="<?php the_permalink(); ?>"
+                                                                        title="<?php echo esc_attr( get_the_title() ); ?>"
+                                                                        rel="nofollow"
+                                                                >
+                                                                        <?php
+                                                                        if ( has_post_thumbnail() ) {
+                                                                                $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
+                                                                                $thumb_id  = get_post_thumbnail_id();
+                                                                                $thumb_alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+                                                                                if ( empty( $thumb_alt ) ) {
+                                                                                        $thumb_alt = get_the_title();
+                                                                                }
+                                                                        } elseif ( ! empty( $blog_post_default_img ) ) {
+                                                                                $thumb_url = $blog_post_default_img;
+                                                                                $thumb_alt = get_bloginfo( 'name' );
+                                                                        } else {
+                                                                                $thumb_url = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
+                                                                                $thumb_alt = get_bloginfo( 'name' );
+                                                                        }
+
+                                                                        printf(
+                                                                                '<img src="%1$s" class="img-fluid" alt="%2$s" width="1000" height="667" />',
+                                                                                esc_url( $thumb_url ),
+                                                                                esc_attr( $thumb_alt )
+                                                                        );
+                                                                        ?>
+                                                                </a>
 
 								<figcaption class="bg-white px-4">
 									<p class="lead">
