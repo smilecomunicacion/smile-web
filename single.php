@@ -127,25 +127,25 @@ get_header();
 				<hr>
 				<!--Share Social Media -->
 				<div class="share-social-media">
-					<p><span>Compartir:</span>
-						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"
-							target="_blank" rel="noopener">
+                                       <p><span><?php esc_html_e( 'Compartir:', 'smile-web' ); ?></span>
+                                               <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"
+                                                       target="_blank" rel="noopener noreferrer">
 
-							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/facebook.svg" alt="facebook" title="<?php esc_attr_e( 'Share on Facebook', 'smile-web' ); ?>" width="20px" height="20px">
+                                                       <img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/facebook.svg" alt="<?php esc_attr_e( 'Facebook', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Facebook', 'smile-web' ); ?>" width="20px" height="20px">
 
-						</a> <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url( get_the_permalink() ); ?>"
-							target="_blank" rel="noopener">
-							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/twitter.svg" alt="twitter" title="<?php esc_attr_e( 'Share on Twitter', 'smile-web' ); ?>" width="20px" height="20px">
-						</a>
-						<a href="https://www.linkedin.com/cws/share?url=<?php echo esc_url( get_the_permalink() ); ?>"
-							target="_blank" rel="noopener">
-							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/linkedin.svg" alt="linkedin" title="<?php esc_attr_e( 'Share on LinkedIn', 'smile-web' ); ?>" width="20px" height="20px">
-						</a>
-						<a href="///pinterest.com/pin/create%2Fbutton/?url=<?php echo esc_url( get_the_permalink() ); ?>"
-							target="_blank" rel="noopener">
-							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/pinterest.svg" alt="pinterest" title="<?php esc_attr_e( 'Share on Pinterest', 'smile-web' ); ?>" width="20px" height="20px">
-						</a>
-					</p>
+                                               </a> <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url( get_the_permalink() ); ?>"
+                                                       target="_blank" rel="noopener noreferrer">
+                                                       <img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/twitter.svg" alt="<?php esc_attr_e( 'Twitter', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Twitter', 'smile-web' ); ?>" width="20px" height="20px">
+                                               </a>
+                                               <a href="https://www.linkedin.com/cws/share?url=<?php echo esc_url( get_the_permalink() ); ?>"
+                                                       target="_blank" rel="noopener noreferrer">
+                                                       <img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/linkedin.svg" alt="<?php esc_attr_e( 'LinkedIn', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on LinkedIn', 'smile-web' ); ?>" width="20px" height="20px">
+                                               </a>
+                                               <a href="https://pinterest.com/pin/create/button/?url=<?php echo esc_url( get_the_permalink() ); ?>"
+                                                       target="_blank" rel="noopener noreferrer">
+                                                       <img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/pinterest.svg" alt="<?php esc_attr_e( 'Pinterest', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Pinterest', 'smile-web' ); ?>" width="20px" height="20px">
+                                               </a>
+                                       </p>
 				</div>
 				<!--FIN Share Social Media -->
 					<?php
