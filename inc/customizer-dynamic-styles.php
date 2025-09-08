@@ -19,9 +19,11 @@ function smile_web_add_dynamic_styles() {
 	$color_2_dark     = get_theme_mod( 'color_2_dark', '#001833' );
 	$bg_light         = get_theme_mod( 'bg_light', '#f6fbf7' );
 	$bg_light2        = get_theme_mod( 'bg_light2', '#f8f9fa' );
-	$footer_bg        = get_theme_mod( 'footer_bg', '#274c77' );
-	$footer_text      = get_theme_mod( 'footer_text', '#FFFEFA' );
-	$color_white      = '#FFFFFF';
+        $footer_bg        = get_theme_mod( 'footer_bg', '#274c77' );
+        $footer_text      = get_theme_mod( 'footer_text', '#FFFEFA' );
+        $footer_link       = get_theme_mod( 'footer_link', '#307C03' );
+        $footer_link_hover = get_theme_mod( 'footer_link_hover', '#306a93' );
+        $color_white      = '#FFFFFF';
 
 	$dynamic_css = "
 		:root {
@@ -36,10 +38,12 @@ function smile_web_add_dynamic_styles() {
 			--color-white: {$color_white};
 			--bg-light: {$bg_light};
 			--bg-light2: {$bg_light2};
-			--footer-bg: {$footer_bg};
-			--footer-text: {$footer_text};
-		}
-	";
+                        --footer-bg: {$footer_bg};
+                        --footer-text: {$footer_text};
+                        --footer-link: {$footer_link};
+                        --footer-link-hover: {$footer_link_hover};
+                }
+        ";
 
 	// Se agrega el CSS en línea al handle 'smile-web-main'.
 	wp_add_inline_style( 'smile-web-main', $dynamic_css );

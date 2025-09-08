@@ -1056,7 +1056,16 @@ main ol li::marker {
 }
 
 .bg-footer {
-    background: var(--color-2-dark);
+    background: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+.bg-footer a {
+    color: var(--footer-link, var(--color-link));
+}
+
+.bg-footer a:hover {
+    color: var(--footer-link-hover, var(--color-link-hover));
 }
 
 .bg-dark {

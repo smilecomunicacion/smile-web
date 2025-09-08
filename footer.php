@@ -103,7 +103,7 @@
 		<?php
 	}
 	?>
-	<div class="footer-top bg-footer text-white">
+        <div class="footer-top bg-footer">
 		<div class="container border-bottom py-5">
 			<div class="row">
 				<div class="col-md-6 col-lg-3 p-3">
@@ -143,9 +143,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="copyright" class="py-3">
-			<div class="container">
-				<div class="text-white">
+                <div id="copyright" class="py-3">
+                        <div class="container">
+                                <div>
 					<span>
 						<?php echo esc_html( gmdate( 'Y' ) ); ?> • &copy; <?php bloginfo( 'name' ); ?>&nbsp;|&nbsp;
 					</span>
@@ -164,7 +164,7 @@
 						$privacy_policy_url = get_privacy_policy_url();
 						if ( ! empty( $privacy_policy_url ) ) :
 							?>
-							<a href="<?php echo esc_url( $privacy_policy_url ); ?>" class="text-white">
+                                                        <a href="<?php echo esc_url( $privacy_policy_url ); ?>">
 								<?php esc_html_e( 'Privacy Policy', 'smile-web' ); ?>
 							</a>
 							<?php
