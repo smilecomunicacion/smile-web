@@ -47,7 +47,7 @@ get_header();
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
 				<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="bg-light breadcrumb">
-					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php bloginfo( 'title' ); ?>"><span itemprop="name">Inicio</span></a>
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name">Inicio</span></a>
 						<meta itemprop="position" content="1">
 					</li>
 					<?php if ( is_page() && 0 < $post->post_parent ) : ?>
