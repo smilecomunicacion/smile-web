@@ -44,7 +44,15 @@ get_header();
                                                                 <article class="col-md-6 mb-4">
                                                                         <figure class="shadow">
                                                                                 <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
-                                                                                        <img class="img-fluid" src="<?php echo has_post_thumbnail() ? esc_url( get_the_post_thumbnail_url() ) : esc_url( get_template_directory_uri() . '/assets/img/thumbnail-header.jpg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" width="600" height="400">
+                                                                                        <?php
+                                                                                        $thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
+                                                                                        $thumb_id  = get_post_thumbnail_id();
+                                                                                        $thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
+                                                                                        if ( empty( $thumb_alt ) ) {
+                                                                                                $thumb_alt = get_the_title();
+                                                                                        }
+                                                                                        ?>
+                                                                                        <img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" width="600" height="400">
                                                                                 </a>
                                                                                 <figcaption class="bg-white px-4">
                                                                                         <p class="lead">

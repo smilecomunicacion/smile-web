@@ -108,36 +108,54 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 								while ( $recent_posts->have_posts() ) :
 									$recent_posts->the_post();
 									?>
-									<article class="blog-col col-md-6 mb-4 mx-0">
-										<div class="category">
-											<?php the_category(); // Mostrar categorías. ?>
-										</div>
-										<figure class="shadow">
-											<a href="<?php the_permalink(); ?>"
-												title="<?php echo esc_attr( get_the_title() ); ?>"
-												rel="nofollow">
-												<?php
-													// Obtener la imagen configurada en el Customizer.
-													$blog_default_image = get_theme_mod( 'blog_default_image' );
+                                                                        <article class="blog-col col-md-6 mb-4 mx-0">
+                                                                                <div class="category">
+                                                                                        <?php
+                                                                                        $categories = get_the_category();
+                                                                                        if ( $categories ) {
+                                                                                                foreach ( $categories as $category ) {
+                                                                                                        printf(
+                                                                                                                '<a href="%1$s">%2$s</a>',
+                                                                                                                esc_url( get_category_link( $category->term_id ) ),
+                                                                                                                esc_html( $category->name )
+                                                                                                        );
+                                                                                                }
+                                                                                        }
+                                                                                        ?>
+                                                                                </div>
+                                                                                <figure class="shadow">
+                                                                                        <a href="<?php the_permalink(); ?>"
+                                                                                                title="<?php echo esc_attr( get_the_title() ); ?>"
+                                                                                                rel="nofollow">
+                                                                                                <?php
+                                                                                                // Obtener la imagen configurada en el Customizer.
+                                                                                                $blog_default_image = get_theme_mod( 'blog_default_image' );
 
-													// Si la opción está vacía, se asigna la ruta por defecto.
-												if ( empty( $blog_default_image ) ) {
-													$blog_default_image = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
-												}
-												?>
+                                                                                                // Si la opción está vacía, se asigna la ruta por defecto.
+                                                                                                if ( empty( $blog_default_image ) ) {
+                                                                                                        $blog_default_image = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
+                                                                                                }
 
-												<img class="img-fluid"
-													src="<?php echo ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url() ) : esc_url( $blog_default_image ); ?>"
-													alt="<?php echo esc_attr( get_the_title() ); ?>"
-													title="<?php echo esc_attr( get_the_title() ); ?>"
-													width="600"
-													height="400">
-											</a>
-											<figcaption class="bg-white px-4">
-												<p class="lead">
-													<a href="<?php the_permalink(); ?>"
-														rel="bookmark"
-														title="<?php echo esc_attr( get_the_title() ); ?>">
+                                                                                                $thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : $blog_default_image;
+                                                                                                $thumb_id  = get_post_thumbnail_id();
+                                                                                                $thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
+                                                                                                if ( empty( $thumb_alt ) ) {
+                                                                                                        $thumb_alt = get_the_title();
+                                                                                                }
+                                                                                                ?>
+
+                                                                                                <img class="img-fluid"
+                                                                                                        src="<?php echo esc_url( $thumb_url ); ?>"
+                                                                                                        alt="<?php echo esc_attr( $thumb_alt ); ?>"
+                                                                                                        title="<?php echo esc_attr( get_the_title() ); ?>"
+                                                                                                        width="600"
+                                                                                                        height="400">
+                                                                                        </a>
+                                                                                        <figcaption class="bg-white px-4">
+                                                                                                <p class="lead">
+                                                                                                        <a href="<?php the_permalink(); ?>"
+                                                                                                                rel="bookmark"
+                                                                                                                title="<?php echo esc_attr( get_the_title() ); ?>">
 														<?php echo esc_html( get_the_title() ); ?>
 													</a>
 												</p>

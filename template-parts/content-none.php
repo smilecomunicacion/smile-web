@@ -63,10 +63,33 @@
 			while ( $recent->have_posts() ) :
 				$recent->the_post();
 				?>
-				<article class="blog-col col-md-6 mb-4 mx-0">
-					<div class="category shadow rounded"><a href='<?php the_category(); ?>'><?php the_category(); ?></a></div>
-					<figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow"><img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="<?php $thumb_alt; ?>"></a>
-						<figcaption id="post-<?php the_ID(); ?>" class="p-4">
+                                <article class="blog-col col-md-6 mb-4 mx-0">
+                                        <div class="category shadow rounded">
+                                                <?php
+                                                $categories = get_the_category();
+                                                if ( $categories ) {
+                                                        foreach ( $categories as $category ) {
+                                                                printf(
+                                                                        '<a href="%1$s">%2$s</a>',
+                                                                        esc_url( get_category_link( $category->term_id ) ),
+                                                                        esc_html( $category->name )
+                                                                );
+                                                        }
+                                                }
+                                                ?>
+                                        </div>
+                                        <figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+                                                <?php
+                                                $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+                                                $thumb_id  = get_post_thumbnail_id();
+                                                $thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
+                                                if ( empty( $thumb_alt ) ) {
+                                                        $thumb_alt = get_the_title();
+                                                }
+                                                ?>
+                                                <img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>">
+                                        </a>
+                                                <figcaption id="post-<?php the_ID(); ?>" class="p-4">
 							<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
 							<p><?php the_excerpt(); ?></p>
 							<hr>
