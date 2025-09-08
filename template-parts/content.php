@@ -15,17 +15,21 @@
 	if ( is_single() ) :
 		?>
         <?php
-	elseif ( is_home() ) :
-		smile_v5_post_thumbnail();
+       elseif ( is_home() ) :
+               smile_v6_post_thumbnail();
 
-			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		else :
-			?>
-        <article class="blog-col col-lg-6 mb-4 mx-0">
-            <figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"
-                    rel="nofollow"><img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
-                        alt="<?php $thumb_alt; ?>"></a>
-                <figcaption id="post-<?php the_ID(); ?>" class="p-4">
+                       the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+               else :
+                       ?>
+       <?php
+       $thumb_url = get_the_post_thumbnail_url();
+       $thumb_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+       ?>
+       <article class="blog-col col-lg-6 mb-4 mx-0">
+           <figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"
+                   rel="nofollow"><img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>"
+                       alt="<?php echo esc_attr( $thumb_alt ); ?>"></a>
+               <figcaption id="post-<?php the_ID(); ?>" class="p-4">
                     <h4><a href="<?php the_permalink(); ?>" rel="bookmark"
                             title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
                     <p><?php the_excerpt(); ?></p>
