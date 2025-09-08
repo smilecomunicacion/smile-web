@@ -75,9 +75,9 @@ function smile_v6_setup_default_menus() {
 		return;
 	}
 
-	$menu1_id = wp_create_nav_menu( 'Main Menu' );
-	$menu2_id = wp_create_nav_menu( 'Social Menu' );
-	$menu3_id = wp_create_nav_menu( 'Legal Menu' );
+	$menu1_id = wp_create_nav_menu( esc_html__( 'Main Menu', 'smile-web' ) );
+	$menu2_id = wp_create_nav_menu( esc_html__( 'Social Menu', 'smile-web' ) );
+	$menu3_id = wp_create_nav_menu( esc_html__( 'Legal Menu', 'smile-web' ) );
 
 	// Add all published pages to menu-1.
 	$pages = get_pages();
