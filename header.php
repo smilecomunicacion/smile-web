@@ -32,9 +32,9 @@
 				echo '<div class="me-3">';
 				if ( function_exists( 'smile_v6_mostrar_correo_ofuscado' ) ) {
 					smile_v6_mostrar_correo_ofuscado( $topbar_email );
-				} else {
-					echo '<a href="mailto:' . esc_attr( $topbar_email ) . '">' . esc_html( $topbar_email ) . '</a>';
-				}
+                               } else {
+                                       printf( '<a href="%s">%s</a>', esc_url( sprintf( 'mailto:%s', $topbar_email ) ), esc_html( $topbar_email ) );
+                               }
 				echo '</div>';
 			}
 
@@ -42,9 +42,9 @@
 			$topbar_phone  = get_theme_mod( 'top_bar_telephone', '' );
 			$topbar_phone2 = preg_replace( '/\s+/', '', $topbar_phone );
 			if ( ! empty( $topbar_phone ) ) {
-				echo '<div>';
-				echo '<i class="fa fa-phone"></i> <a href="tel:' . esc_attr( $topbar_phone2 ) . '" class="iterator_TopHeader-Telefono" rel="nofollow noopener noreferrer">' . esc_html( $topbar_phone ) . '</a>';
-				echo '</div>';
+                               echo '<div>';
+                               printf( '<i class="fa fa-phone"></i> <a href="%s" class="iterator_TopHeader-Telefono" rel="nofollow noopener noreferrer">%s</a>', esc_url( sprintf( 'tel:%s', $topbar_phone2 ) ), esc_html( $topbar_phone ) );
+                               echo '</div>';
 			}
 			?>
 			<div class="social-links" aria-label="<?php esc_attr_e( 'Social media navigation', 'smile-web' ); ?>">

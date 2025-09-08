@@ -31,11 +31,11 @@
 						if ( ! empty( $footer_phone ) ) :
 							?>
 							<h4 class="p-0 m-0"><?php esc_html_e( 'Phone', 'smile-web' ); ?></h4>
-							<p>
-								<a href="tel:<?php echo esc_attr( $footer_phone ); ?>" class="h2 iterator_Footer-Telefono" target="_blank" rel="noreferrer nofollow">
-									<?php echo esc_html( $footer_phone ); ?>
-								</a>
-							</p>
+                                                       <p>
+                                                               <a href="<?php echo esc_url( sprintf( 'tel:%s', $footer_phone ) ); ?>" class="h2 iterator_Footer-Telefono" target="_blank" rel="noreferrer nofollow">
+                                                                       <?php echo esc_html( $footer_phone ); ?>
+                                                               </a>
+                                                       </p>
 						<?php endif; ?>
 					</div>
 
@@ -78,9 +78,9 @@
 							<?php
 							if ( function_exists( 'smile_v6_mostrar_correo_ofuscado' ) ) {
 								smile_v6_mostrar_correo_ofuscado( $footer_email );
-							} else {
-								echo '<a href="mailto:' . esc_attr( $footer_email ) . '">' . esc_html( $footer_email ) . '</a>';
-							}
+                                                       } else {
+                                                               printf( '<a href="%s">%s</a>', esc_url( sprintf( 'mailto:%s', $footer_email ) ), esc_html( $footer_email ) );
+                                                       }
 							?>
 						</div>
 						<?php
@@ -208,10 +208,18 @@
 <?php
 $whatsapp_number = get_theme_mod( 'whatsapp_telephone', '' );
 if ( ! empty( $whatsapp_number ) ) {
-	$whatsapp_number = str_replace( '+', '', $whatsapp_number );
-	$whatsapp_number = str_replace( ' ', '', $whatsapp_number );
-	$whatsapp_text   = get_theme_mod( 'whatsapp_message', '' );
-	echo '<a href="https://api.whatsapp.com/send?phone=' . esc_attr( $whatsapp_number ) . '&amp;text=' . esc_attr( $whatsapp_text ) . '" target="_blank" id="whatsapp" class="iterator_Whatsapp whatsapp-button" rel="nofollow noreferrer" title="' . esc_attr__( 'open Whatsapp', 'smile-web' ) . '">
+        $whatsapp_number = str_replace( '+', '', $whatsapp_number );
+        $whatsapp_number = str_replace( ' ', '', $whatsapp_number );
+        $whatsapp_text   = get_theme_mod( 'whatsapp_message', '' );
+        $whatsapp_url    = add_query_arg(
+                array(
+                        'phone' => $whatsapp_number,
+                        'text'  => $whatsapp_text,
+                ),
+                'https://api.whatsapp.com/send'
+        );
+        echo '<a href="' . esc_url( $whatsapp_url ) . '" target="_blank" id="whatsapp" class="iterator_Whatsapp whatsapp-button" rel="nofollow noreferrer" title="' . esc_attr__( 'open Whatsapp', 'smile-web' ) . '">';
+?>
     <div class="whatsapp-button">
 	    <div class="whatsapp-background">
 		    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fff">
@@ -219,7 +227,8 @@ if ( ! empty( $whatsapp_number ) ) {
 		    </svg>
 	    </div>
     </div>
-	</a>';
+</a>
+<?php
 }
 ?>
 <?php wp_footer(); ?>
