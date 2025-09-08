@@ -156,15 +156,19 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         'default' => '#FFFEFA',
                         'label'   => esc_html__( 'Footer Text Color', 'smile-web' ),
                 ),
-                'footer_link'      => array(
-                        'default' => '#307C03',
-                        'label'   => esc_html__( 'Footer Link Color', 'smile-web' ),
-                ),
-                'footer_link_hover' => array(
-                        'default' => '#306a93',
-                        'label'   => esc_html__( 'Footer Link Hover Color', 'smile-web' ),
-                ),
-        );
+               'footer_link_color' => array(
+                       'default' => '#307C03',
+                       'label'   => esc_html__( 'Footer Link Color', 'smile-web' ),
+               ),
+               'footer_link_hover_color' => array(
+                       'default' => '#306a93',
+                       'label'   => esc_html__( 'Footer Link Hover Color', 'smile-web' ),
+               ),
+               'footer_border_color' => array(
+                       'default' => '#f6fbf7',
+                       'label'   => esc_html__( 'Footer Border Color', 'smile-web' ),
+               ),
+       );
 
 	// Create settings and controls for color options.
 	foreach ( $colors as $id => $args ) {

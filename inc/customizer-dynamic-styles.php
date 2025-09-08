@@ -21,8 +21,9 @@ function smile_web_add_dynamic_styles() {
 	$bg_light2        = get_theme_mod( 'bg_light2', '#f8f9fa' );
         $footer_bg        = get_theme_mod( 'footer_bg', '#274c77' );
         $footer_text      = get_theme_mod( 'footer_text', '#FFFEFA' );
-        $footer_link       = get_theme_mod( 'footer_link', '#307C03' );
-        $footer_link_hover = get_theme_mod( 'footer_link_hover', '#306a93' );
+       $footer_link       = get_theme_mod( 'footer_link_color', '#307C03' );
+       $footer_link_hover = get_theme_mod( 'footer_link_hover_color', '#306a93' );
+       $footer_border     = get_theme_mod( 'footer_border_color', '#f6fbf7' );
         $color_white      = '#FFFFFF';
 
 	$dynamic_css = "
@@ -40,10 +41,11 @@ function smile_web_add_dynamic_styles() {
 			--bg-light2: {$bg_light2};
                         --footer-bg: {$footer_bg};
                         --footer-text: {$footer_text};
-                        --footer-link: {$footer_link};
-                        --footer-link-hover: {$footer_link_hover};
-                }
-        ";
+                       --footer-link: {$footer_link};
+                       --footer-link-hover: {$footer_link_hover};
+                       --footer-border: {$footer_border};
+               }
+       ";
 
 	// Se agrega el CSS en línea al handle 'smile-web-main'.
 	wp_add_inline_style( 'smile-web-main', $dynamic_css );
