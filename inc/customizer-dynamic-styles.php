@@ -27,6 +27,8 @@ function smile_web_add_dynamic_styles() {
        $footer_social_bg   = get_theme_mod( 'footer_social_bg', '#4a994f' );
        $footer_social_icon = get_theme_mod( 'footer_social_icon', '#FFFFFF' );
        $color_white      = '#FFFFFF';
+       $border_color     = '#dee2e6';
+       $modal_border     = '#888888';
 
 	$dynamic_css = "
 		:root {
@@ -48,6 +50,8 @@ function smile_web_add_dynamic_styles() {
                       --footer-border: {$footer_border};
                       --footer-social-bg: {$footer_social_bg};
                       --footer-social-icon: {$footer_social_icon};
+                      --border-color: {$border_color};
+                      --modal-border: {$modal_border};
               }
        ";
 
