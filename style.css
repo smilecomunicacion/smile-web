@@ -57,7 +57,7 @@ Use it to make something cool, have fun, and share what you've learned.
 }
 
 .bwg-title1 {
-    background: #fff;
+    background: var(--color-white);
 }
 
 .fit-figure {
@@ -118,9 +118,7 @@ body {
     line-height: 1.7em;
 }
 
-#color-var {
-    --bg-white: #fff;
-}
+
 
 /*--------------------------------------------------------------
 # 1.1 - HEADERS H1, H2, H3, P
@@ -1048,7 +1046,7 @@ main ol li::marker {
 }
 
 .bg-white {
-    background-color: var(--bg-white);
+    background-color: var(--color-white);
 }
 
 .bg-cta {
@@ -1135,7 +1133,7 @@ main ol li::marker {
     background-color: var(--bg-light);
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 1px solid var(--modal-border);
     width: 90%;
     max-width: 1000px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1883,47 +1881,47 @@ footer h3 {
 
 /* BORDER */
 .border-top {
-    border-top: 1px solid #dee2e6 !important;
+    border-top: 1px solid var(--border-color) !important;
 }
 
 .border-bottom {
-    border-bottom: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid var(--border-color) !important;
 }
 
 .border-3 {
-    border: 3px solid #dee2e6 !important;
+    border: 3px solid var(--border-color) !important;
 }
 
 .border-5 {
-    border: 5px solid #dee2e6 !important;
+    border: 5px solid var(--border-color) !important;
 }
 
 .border-10 {
-    border: 10px solid #dee2e6 !important;
+    border: 10px solid var(--border-color) !important;
 }
 
 .border-15 {
-    border: 15px solid #dee2e6 !important;
+    border: 15px solid var(--border-color) !important;
 }
 
 .border-20 {
-    border: 20px solid #dee2e6 !important;
+    border: 20px solid var(--border-color) !important;
 }
 
 .border-25 {
-    border: 25px solid #dee2e6 !important;
+    border: 25px solid var(--border-color) !important;
 }
 
 .border-30 {
-    border: 30px solid #dee2e6 !important;
+    border: 30px solid var(--border-color) !important;
 }
 
 .border-35 {
-    border: 35px solid #dee2e6 !important;
+    border: 35px solid var(--border-color) !important;
 }
 
 .border-40 {
-    border: 40px solid #dee2e6 !important;
+    border: 40px solid var(--border-color) !important;
 }
 
 /* ROUNDED */
