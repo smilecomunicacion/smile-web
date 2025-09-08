@@ -15,7 +15,7 @@ get_header();
 	<h1 class="page-title"> <?php echo esc_html( get_search_query() ); ?> </h1>
 </div><!-- .page-header -->
 
-</div>
+</section>
 <!-- #intro -->
 <main id="main" class="search-page pt-4 pb-4 bg-light">
 	<div class="container">
