@@ -50,9 +50,9 @@ add_action( 'wp_enqueue_scripts', 'smile_web_add_dynamic_styles' );
  * Outputs custom CSS stored via the Customizer.
  */
 function smile_v6_custom_css_output() {
-	$custom_css = wp_get_custom_css();
-	if ( ! empty( $custom_css ) ) {
-		echo '<style type="text/css">' . esc_html( $custom_css ) . '</style>';
-	}
+        $custom_css = wp_get_custom_css();
+        if ( ! empty( $custom_css ) ) {
+                echo '<style type="text/css">' . wp_strip_all_tags( $custom_css ) . '</style>';
+        }
 }
 add_action( 'wp_head', 'smile_v6_custom_css_output' );
