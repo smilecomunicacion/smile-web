@@ -103,7 +103,6 @@
 }
 
 #topBar .social-links a {
-  background-color: var(--topbar-social-bg);
   color: var(--topbar-social-icon);
 }
 

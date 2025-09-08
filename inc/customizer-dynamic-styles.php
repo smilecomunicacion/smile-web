@@ -24,7 +24,6 @@ function smile_web_add_dynamic_styles() {
        $topbar_link       = sanitize_hex_color( get_theme_mod( 'topbar_link', '#307C03' ) );
        $topbar_link_hover = sanitize_hex_color( get_theme_mod( 'topbar_link_hover', '#306a93' ) );
        $topbar_social_icon = sanitize_hex_color( get_theme_mod( 'topbar_social_icon', '#001833' ) );
-       $topbar_social_bg   = sanitize_hex_color( get_theme_mod( 'topbar_social_bg', '#f8f9fa' ) );
        $masthead_bg        = sanitize_hex_color( get_theme_mod( 'masthead_bg', '#001833' ) );
        $masthead_text      = sanitize_hex_color( get_theme_mod( 'masthead_text', '#d2e1ef' ) );
        $masthead_link      = sanitize_hex_color( get_theme_mod( 'masthead_link', '#d2e1ef' ) );
@@ -59,7 +58,6 @@ function smile_web_add_dynamic_styles() {
                        --topbar-link: ' . esc_attr( $topbar_link ) . ';
                        --topbar-link-hover: ' . esc_attr( $topbar_link_hover ) . ';
                        --topbar-social-icon: ' . esc_attr( $topbar_social_icon ) . ';
-                       --topbar-social-bg: ' . esc_attr( $topbar_social_bg ) . ';
                        --masthead-bg: ' . esc_attr( $masthead_bg ) . ';
                        --masthead-text: ' . esc_attr( $masthead_text ) . ';
                        --masthead-link: ' . esc_attr( $masthead_link ) . ';

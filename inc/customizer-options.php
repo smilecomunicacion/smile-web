@@ -212,15 +212,11 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#306a93',
 				'label'   => esc_html__( 'Top Bar Link Hover Color', 'smile-web' ),
 			),
-			'topbar_social_icon' => array(
-				'default' => '#001833',
-				'label'   => esc_html__( 'Top Bar Social Icon Color', 'smile-web' ),
-			),
-			'topbar_social_bg'   => array(
-				'default' => '#f8f9fa',
-				'label'   => esc_html__( 'Top Bar Social Background Color', 'smile-web' ),
-			),
-		);
+                        'topbar_social_icon' => array(
+                                'default' => '#001833',
+                                'label'   => esc_html__( 'Top Bar Social Icon Color', 'smile-web' ),
+                        ),
+                );
 
 		// Masthead color controls.
 		$masthead_colors = array(
