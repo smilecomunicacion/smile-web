@@ -87,7 +87,7 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 					);
 
 					// Definir la clave de caché para la consulta.
-					$cache_key = 'smile_web_recent_posts_' . $paged;
+					$cache_key = 'smile_web_recent_posts_' . $current_page;
 
 					// Intentar obtener los posts desde el caché.
 					$recent_posts = wp_cache_get( $cache_key );
