@@ -90,10 +90,18 @@
 }
 
 .svg-icon svg {
+  fill: var(--color-2-dark);
+}
+
+#topBar .svg-icon svg {
+  fill: var(--topbar-social-icon);
+}
+
+#footer .svg-icon svg {
   fill: var(--footer-social-icon);
 }
 
-.svg-icon svg:hover {
+#footer .svg-icon svg:hover {
   fill: var(--footer-social-icon-hover);
 }
 
