@@ -54,12 +54,12 @@
 }
 
 #footer .footer-top a {
-  color: var(--color-link-light) !important;
+  color: var(--footer-link);
   text-decoration: none;
 }
 
 #footer .footer-top a:hover {
-  color: #fff !important;
+  color: var(--footer-link-hover);
 }
 
 .menu-social-container ul {
@@ -72,7 +72,7 @@
   list-style: none;
   padding: 10px 0;
   line-height: 1.2;
-  border-bottom: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--footer-border);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
