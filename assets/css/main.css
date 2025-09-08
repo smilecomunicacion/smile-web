@@ -89,6 +89,24 @@
   color: var(--color-link);
 }
 
+#topBar {
+  background-color: var(--topbar-bg);
+  color: var(--topbar-text);
+}
+
+#topBar a {
+  color: var(--topbar-link);
+}
+
+#topBar a:hover {
+  color: var(--topbar-link-hover);
+}
+
+#topBar .social-links a {
+  background-color: var(--topbar-social-bg);
+  color: var(--topbar-social-icon);
+}
+
 .svg-icon svg {
   fill: var(--color-2-dark);
 }

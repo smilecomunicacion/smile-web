@@ -35,18 +35,29 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                 )
         );
 
-        // Add Footer Colors subsection.
-        $wp_customize->add_section(
-                'custom_theme_footer_colors',
-                array(
-                        'title'      => esc_html__( 'Footer Colors', 'smile-web' ),
-                        'priority'   => 20,
-                        'capability' => 'edit_theme_options',
-                        'panel'      => 'custom_theme_colors_panel',
-                )
-        );
+       // Add Top Bar Colors subsection.
+       $wp_customize->add_section(
+               'custom_theme_topbar_colors',
+               array(
+                       'title'      => esc_html__( 'Top Bar Colors', 'smile-web' ),
+                       'priority'   => 15,
+                       'capability' => 'edit_theme_options',
+                       'panel'      => 'custom_theme_colors_panel',
+               )
+       );
 
-	// Add theme settings section.
+       // Add Footer Colors subsection.
+       $wp_customize->add_section(
+               'custom_theme_footer_colors',
+               array(
+                       'title'      => esc_html__( 'Footer Colors', 'smile-web' ),
+                       'priority'   => 20,
+                       'capability' => 'edit_theme_options',
+                       'panel'      => 'custom_theme_colors_panel',
+               )
+       );
+
+       // Add theme settings section.
 	$wp_customize->add_section(
 		'smile_v6_settings',
 		array(
@@ -128,12 +139,12 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		);
 	}
 
-        // Global color controls.
-        $global_colors = array(
-                'color_text'       => array(
-                        'default' => '#00112b',
-                        'label'   => esc_html__( 'Text Color', 'smile-web' ),
-                ),
+       // Global color controls.
+       $global_colors = array(
+               'color_text'       => array(
+                       'default' => '#00112b',
+                       'label'   => esc_html__( 'Text Color', 'smile-web' ),
+               ),
                 'color_link'       => array(
                         'default' => '#307C03',
                         'label'   => esc_html__( 'Link Color', 'smile-web' ),
@@ -166,18 +177,42 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         'default' => '#edf7ef',
                         'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
                 ),
-                'bg_light2'        => array(
-                        'default' => '#f8f9fa',
-                        'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
-                ),
-               'topbar_social_icon_color' => array(
+               'bg_light2'        => array(
+                       'default' => '#f8f9fa',
+                       'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
+               ),
+       );
+
+       // Top bar color controls.
+       $topbar_colors = array(
+               'topbar_bg'          => array(
+                       'default' => '#f8f9fa',
+                       'label'   => esc_html__( 'Top Bar Background Color', 'smile-web' ),
+               ),
+               'topbar_text'        => array(
+                       'default' => '#00112b',
+                       'label'   => esc_html__( 'Top Bar Text Color', 'smile-web' ),
+               ),
+               'topbar_link'        => array(
+                       'default' => '#307C03',
+                       'label'   => esc_html__( 'Top Bar Link Color', 'smile-web' ),
+               ),
+               'topbar_link_hover'  => array(
+                       'default' => '#306a93',
+                       'label'   => esc_html__( 'Top Bar Link Hover Color', 'smile-web' ),
+               ),
+               'topbar_social_icon' => array(
                        'default' => '#001833',
                        'label'   => esc_html__( 'Top Bar Social Icon Color', 'smile-web' ),
                ),
-        );
+               'topbar_social_bg'   => array(
+                       'default' => '#f8f9fa',
+                       'label'   => esc_html__( 'Top Bar Social Background Color', 'smile-web' ),
+               ),
+       );
 
-        // Footer color controls.
-        $footer_colors = array(
+       // Footer color controls.
+       $footer_colors = array(
                 'footer_bg'               => array(
                         'default' => '#274c77',
                         'label'   => esc_html__( 'Footer Background Color', 'smile-web' ),
@@ -208,49 +243,71 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                 ),
         );
 
-        // Create settings and controls for global colors.
-        foreach ( $global_colors as $id => $args ) {
-                $wp_customize->add_setting(
-                        $id,
-                        array(
-                                'default'           => $args['default'],
-                                'sanitize_callback' => 'sanitize_hex_color',
-                        )
-                );
-                $wp_customize->add_control(
-                        new WP_Customize_Color_Control(
-                                $wp_customize,
-                                $id,
-                                array(
-                                        'label'    => $args['label'],
-                                        'section'  => 'custom_theme_global_colors',
-                                        'settings' => $id,
-                                )
-                        )
-                );
-        }
+       // Create settings and controls for global colors.
+       foreach ( $global_colors as $id => $args ) {
+               $wp_customize->add_setting(
+                       $id,
+                       array(
+                               'default'           => $args['default'],
+                               'sanitize_callback' => 'sanitize_hex_color',
+                       )
+               );
+               $wp_customize->add_control(
+                       new WP_Customize_Color_Control(
+                               $wp_customize,
+                               $id,
+                               array(
+                                       'label'    => $args['label'],
+                                       'section'  => 'custom_theme_global_colors',
+                                       'settings' => $id,
+                               )
+                       )
+               );
+       }
 
-        // Create settings and controls for footer colors.
-        foreach ( $footer_colors as $id => $args ) {
-                $wp_customize->add_setting(
-                        $id,
-                        array(
-                                'default'           => $args['default'],
-                                'sanitize_callback' => 'sanitize_hex_color',
-                        )
-                );
-                $wp_customize->add_control(
-                        new WP_Customize_Color_Control(
-                                $wp_customize,
-                                $id,
-                                array(
-                                        'label'    => $args['label'],
-                                        'section'  => 'custom_theme_footer_colors',
-                                        'settings' => $id,
-                                )
-                        )
-                );
-        }
+       // Create settings and controls for top bar colors.
+       foreach ( $topbar_colors as $id => $args ) {
+               $wp_customize->add_setting(
+                       $id,
+                       array(
+                               'default'           => $args['default'],
+                               'sanitize_callback' => 'sanitize_hex_color',
+                       )
+               );
+               $wp_customize->add_control(
+                       new WP_Customize_Color_Control(
+                               $wp_customize,
+                               $id,
+                               array(
+                                       'label'    => $args['label'],
+                                       'section'  => 'custom_theme_topbar_colors',
+                                       'settings' => $id,
+                               )
+                       )
+               );
+       }
+
+       // Create settings and controls for footer colors.
+       foreach ( $footer_colors as $id => $args ) {
+               $wp_customize->add_setting(
+                       $id,
+                       array(
+                               'default'           => $args['default'],
+                               'sanitize_callback' => 'sanitize_hex_color',
+                       )
+               );
+               $wp_customize->add_control(
+                       new WP_Customize_Color_Control(
+                               $wp_customize,
+                               $id,
+                               array(
+                                       'label'    => $args['label'],
+                                       'section'  => 'custom_theme_footer_colors',
+                                       'settings' => $id,
+                               )
+                       )
+               );
+       }
 }
 add_action( 'customize_register', 'smile_v6_customize_theme_sections' );
 
