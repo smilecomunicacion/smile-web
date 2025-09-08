@@ -1,0 +1,249 @@
+@charset "UTF-8";
+/*!
+ * main.css - https://smilecomumincacion.com/
+ * Version - 6.0.7
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2024 SMiLE comunicacion
+ */
+
+/*--------------------------------------------------------------
+# INDICE
+# 4.5 - SIDEBAR + WIDGETS
+        # 5.0 - FAQ
+# 6.0 - FOOTER
+        # 7.0 - TESTIMONIAL
+# 8.0 - BLOG
+# 9.0 - BOTON WHATSAPP
+        # 10.0 - MODAL
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# 4.5 - SIDEBAR + WIDGETS
+--------------------------------------------------------------*/
+
+.sidebar-menu {
+  background-color: #fff;
+  border: 2px solid #e5e5e5;
+  padding: 5px;
+}
+
+.sidebar-text {
+  color: var(--color-text-2)
+}
+
+.sidebar-border-bot {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.sidebar-border {
+  border: 2px solid var(--color-border);
+}
+
+/*--------------------------------------------------------------
+# 6.0 - FOOTER
+--------------------------------------------------------------*/
+
+#footer .fa {
+  color: var(--color-white);
+  padding: 15px;
+}
+
+#footer .fa:hover {
+  color: var(--color-link)
+}
+
+#footer .footer-top a {
+  color: var(--color-link-light) !important;
+  text-decoration: none;
+}
+
+#footer .footer-top a:hover {
+  color: #fff !important;
+}
+
+.menu-social-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-link ul li {
+  list-style: none;
+  padding: 10px 0;
+  line-height: 1.2;
+  border-bottom: 1px solid var(--color-link);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#footer #menu-redes-sociales-1 li a {
+  padding: 7px;
+  font-size: 20px;
+  color: #fff;
+}
+
+#footer #menu-redes-sociales-1 li a:hover {
+  color: var(--color-link);
+}
+
+.footer-svg {
+  transform: rotatex(180deg);
+  padding: 20px 0px 0px 0px;
+}
+
+#footer-bottom {
+  padding: 30px 0;
+  background-color: var(--color-link-hover);
+  color: #fff;
+}
+
+/* CONTACT */
+.php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  color: green;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+/*--------------------------------------------------------------
+# 8.0 - BLOG
+--------------------------------------------------------------*/
+.comment-form-comment {
+  display: grid;
+}
+
+.post-categories {
+  list-style: none;
+  padding: 5px 15px;
+  margin: 0px;
+  display: flex;
+}
+
+.post-categories li {
+  background-color: var(--color-link-hover);
+  margin-right: 5px;
+}
+
+.post-categories li:hover {
+  background-color: var(--color-link);
+}
+
+.post-categories li a {
+  text-decoration: none;
+  color: var(--color-white);
+  padding: 0 10px;
+}
+
+.blog-col {
+  position: relative;
+}
+
+.blog-col figure {
+  background-color: var(--color-white);
+  /* margin: 10px; */
+}
+
+.blog-col img:hover {
+  opacity: .7;
+  -moz-transition: .4s;
+  -webkit-transition: .4s;
+  transition: all .4s;
+}
+
+.blog-col figure figcaption {
+  padding: 0 20px 10px;
+}
+
+.blog-col figcaption a {
+  text-decoration: none;
+}
+
+.category {
+  position: absolute;
+  z-index: 1;
+}
+
+/*  #Blog Artículos destacados FIN */
+/*--------------------------------------------------------------
+  # 9.0 - BOTON WHATSAPP
+  --------------------------------------------------------------*/
+.whatsapp-button {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 101;
+}
+
+.whatsapp-background {
+  background: #00bb2d;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  transition: background 0.5s;
+}
+
+.whatsapp-background svg {
+  color: #fff;
+  font-size: 16px;
+  width: 45px;
+  height: 45px;
+  padding: 6px;
+  line-height: 1;
+  transition: color 0.5s;
+}
+
+/* Efecto hover */
+.whatsapp-background:hover {
+  background: #00801e;
+}
+
+.whatsapp-background:hover svg {
+  color: #e0e0e0;
+}

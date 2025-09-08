@@ -1,0 +1,613 @@
+# Copyright (C) 2025 SMiLE Comunicación
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SMiLE Web 6.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/smile-web\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-28T08:47:57+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: smile-web\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "SMiLE Web"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://smilecomunicacion.com/web/wordpress/smile-web/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Free theme, SEO optimized. Gain visibility and reach the top positions in search engines quickly. Fully configured and very easy to self-manage with the integration of WordPress Guttemberg blocks editor."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "SMiLE Comunicación"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.linkedin.com/in/cesarbla/"
+msgstr ""
+
+#: 404.php:19
+msgid "Oops! That page can’t be found."
+msgstr ""
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or go back to the homepage."
+msgstr ""
+
+#: 404.php:21
+msgid "Go to Homepage"
+msgstr ""
+
+#: 404.php:38
+msgid "Latest Articles"
+msgstr ""
+
+#: archive.php:24
+#: index.php:31
+#: index.php:33
+#: page-fullwidth.php:25
+#: search.php:27
+#: single.php:84
+#: single.php:86
+msgid "Home"
+msgstr ""
+
+#: archive.php:55
+msgid "&larr; Previous"
+msgstr ""
+
+#: archive.php:56
+msgid "Next &rarr;"
+msgstr ""
+
+#: archive.php:62
+msgid "No posts found."
+msgstr ""
+
+#. translators: %1$s: post title.
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title.
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:24
+#: functions.php:712
+msgid "Contact"
+msgstr ""
+
+#: footer.php:25
+#: functions.php:718
+msgid "Use this form to reach out to us with any questions or comments. We will respond as soon as possible."
+msgstr ""
+
+#: footer.php:35
+msgid "Phone"
+msgstr ""
+
+#: footer.php:55
+msgid "Address"
+msgstr ""
+
+#: footer.php:67
+msgid "Open in map"
+msgstr ""
+
+#: footer.php:80
+msgid "Email"
+msgstr ""
+
+#: footer.php:102
+msgid "No contact form available."
+msgstr ""
+
+#: footer.php:174
+msgid "Privacy Policy"
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme author url.
+#: footer.php:183
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:196
+#: footer.php:201
+#: footer.php:204
+msgid "Search"
+msgstr ""
+
+#: footer.php:203
+msgid "Write here"
+msgstr ""
+
+#: footer.php:208
+msgid "Write in the field and click on search"
+msgstr ""
+
+#: front-page.php:16
+msgid "Recent Posts"
+msgstr ""
+
+#: front-page.php:17
+msgid "Discover the latest articles on our blog."
+msgstr ""
+
+#: front-page.php:45
+#: page-fullwidth.php:52
+#: page-sidebar.php:48
+#: page.php:85
+#: template-parts/content-page.php:22
+#: template-parts/content.php:62
+msgid "Pages:"
+msgstr ""
+
+#: front-page.php:100
+msgid "Published:"
+msgstr ""
+
+#: front-page.php:102
+msgid "Updated:"
+msgstr ""
+
+#: functions.php:134
+msgid "Primary"
+msgstr ""
+
+#: functions.php:135
+msgid "Social"
+msgstr ""
+
+#: functions.php:136
+msgid "Legal"
+msgstr ""
+
+#: functions.php:300
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:302
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:309
+msgid "Footer-Zone 1"
+msgstr ""
+
+#: functions.php:311
+msgid "Add widgets here-Footer-Zone 1."
+msgstr ""
+
+#: functions.php:316
+msgid "Footer-Zone 2"
+msgstr ""
+
+#: functions.php:318
+msgid "Add widgets here-Footer-Zone 2."
+msgstr ""
+
+#: functions.php:323
+msgid "Footer-Zone 3"
+msgstr ""
+
+#: functions.php:325
+msgid "Add widgets here-Footer-Zone 3."
+msgstr ""
+
+#: functions.php:330
+msgid "Footer-Zone 4"
+msgstr ""
+
+#: functions.php:332
+msgid "Add widgets here-Footer-Zone 4."
+msgstr ""
+
+#: functions.php:369
+msgid "Theme Colors"
+msgstr ""
+
+#: functions.php:379
+msgid "SMiLE Web Settings"
+msgstr ""
+
+#: functions.php:387
+msgid "Top Bar Email"
+msgstr ""
+
+#: functions.php:391
+msgid "Top Bar Telephone"
+msgstr ""
+
+#: functions.php:395
+msgid "Whatsapp Telephone"
+msgstr ""
+
+#: functions.php:399
+msgid "Whatsapp Message"
+msgstr ""
+
+#: functions.php:403
+msgid "Blog Title"
+msgstr ""
+
+#: functions.php:407
+msgid "Blog Description"
+msgstr ""
+
+#: functions.php:411
+msgid "Blog Default Image"
+msgstr ""
+
+#: functions.php:415
+msgid "Blog Post Quantity"
+msgstr ""
+
+#: functions.php:419
+msgid "Footer Logo"
+msgstr ""
+
+#: functions.php:462
+msgid "Text color"
+msgstr ""
+
+#: functions.php:482
+msgid "Link color"
+msgstr ""
+
+#: functions.php:501
+msgid "Link color hover"
+msgstr ""
+
+#: functions.php:520
+msgid "Link color light"
+msgstr ""
+
+#: functions.php:539
+msgid "Color 1 light"
+msgstr ""
+
+#: functions.php:558
+msgid "Color 1"
+msgstr ""
+
+#: functions.php:577
+msgid "Color 2"
+msgstr ""
+
+#: functions.php:596
+msgid "Color 2 dark"
+msgstr ""
+
+#: functions.php:615
+msgid "Background color, Primary"
+msgstr ""
+
+#: functions.php:634
+msgid "Background color, Secondary"
+msgstr ""
+
+#: functions.php:653
+msgid "Footer background color"
+msgstr ""
+
+#: functions.php:672
+msgid "Footer text color"
+msgstr ""
+
+#: functions.php:691
+msgid "Contact Section"
+msgstr ""
+
+#: functions.php:700
+msgid "Display Contact Section?"
+msgstr ""
+
+#: functions.php:703
+#: functions.php:819
+msgid "Yes"
+msgstr ""
+
+#: functions.php:704
+#: functions.php:820
+msgid "No"
+msgstr ""
+
+#: functions.php:710
+msgid "Footer Contact Title"
+msgstr ""
+
+#: functions.php:716
+msgid "Footer Contact Description"
+msgstr ""
+
+#: functions.php:722
+msgid "Footer Contact Telephone"
+msgstr ""
+
+#: functions.php:728
+msgid "Footer Contact Address"
+msgstr ""
+
+#: functions.php:734
+msgid "Footer Contact Postal Code"
+msgstr ""
+
+#: functions.php:740
+msgid "Footer Contact Place"
+msgstr ""
+
+#: functions.php:746
+msgid "Footer Contact City"
+msgstr ""
+
+#: functions.php:752
+msgid "Footer Contact Link to Google Maps (Solo el SRC de \"insertar un mapa\")"
+msgstr ""
+
+#: functions.php:758
+msgid "Footer Contact Email"
+msgstr ""
+
+#: functions.php:764
+msgid "Footer Contact Shortcode Form"
+msgstr ""
+
+#: functions.php:814
+msgid "Display Header Image"
+msgstr ""
+
+#: functions.php:908
+msgid "Social link"
+msgstr ""
+
+#: header.php:352
+msgid "Skip to main content"
+msgstr ""
+
+#: header.php:353
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:381
+msgid "Social media navigation"
+msgstr ""
+
+#: header.php:418
+msgid "Open search box"
+msgstr ""
+
+#: header.php:419
+msgid "Search in web"
+msgstr ""
+
+#: header.php:434
+msgid "Main navigation"
+msgstr ""
+
+#: header.php:452
+msgid "Toggle navigation menu"
+msgstr ""
+
+#. translators: %s: post date.
+#: inc/template-tags.php:30
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: inc/template-tags.php:45
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:61
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:64
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:68
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:71
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: inc/template-tags.php:81
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:98
+#: page-fullwidth.php:65
+#: page-sidebar.php:69
+#: page.php:98
+#: template-parts/content-page.php:36
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: index.php:13
+msgid "Blog"
+msgstr ""
+
+#: index.php:56
+msgid "Listings of the latest articles of interest:"
+msgstr ""
+
+#: index.php:109
+msgid "There are no articles to show at this time."
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page fullwith"
+msgstr ""
+
+#: page-fullwidth.php:13
+#: page.php:20
+msgid "Go to main content"
+msgstr ""
+
+#: page-fullwidth.php:14
+#: page.php:21
+msgid "See main content"
+msgstr ""
+
+#: page-fullwidth.php:87
+#: page-fullwidth.php:90
+#: page-fullwidth.php:93
+#: page.php:119
+#: page.php:122
+#: page.php:125
+msgid "Related Articles with: "
+msgstr ""
+
+#: page-fullwidth.php:97
+#: page.php:129
+msgid "Latest Articles: "
+msgstr ""
+
+#: page-fullwidth.php:142
+#: page-sidebar.php:142
+#: page.php:178
+#: single.php:23
+#: single.php:213
+#: template-parts/content-none.php:76
+#: template-parts/content.php:31
+msgid "Published"
+msgstr ""
+
+#: page-fullwidth.php:144
+#: page-sidebar.php:144
+#: page.php:180
+#: single.php:25
+#: single.php:217
+#: template-parts/content-none.php:81
+#: template-parts/content.php:33
+msgid "Updated"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Page sidebar"
+msgstr ""
+
+#. translators: %s: Parent title.
+#: page-sidebar.php:93
+msgid "Articles related with parent: %s"
+msgstr ""
+
+#. translators: %s: Post name.
+#: page-sidebar.php:98
+msgid "Articles related with post name: %s"
+msgstr ""
+
+#. translators: %s: Title of the current post.
+#: page-sidebar.php:102
+msgid "Articles related with title: %s"
+msgstr ""
+
+#. translators: %s: Last articles.
+#: page-sidebar.php:113
+msgid "Last articles: %s"
+msgstr ""
+
+#: search.php:15
+msgid "Búsqueda:"
+msgstr ""
+
+#: search.php:30
+msgid "Search Results"
+msgstr ""
+
+#: search.php:39
+msgid "Do you want to search again?"
+msgstr ""
+
+#: search.php:40
+msgid "Search again"
+msgstr ""
+
+#: single.php:50
+#: single.php:54
+msgid "Uncategorized"
+msgstr ""
+
+#: single.php:67
+msgid "Comments"
+msgstr ""
+
+#: single.php:119
+msgid "Share on Facebook"
+msgstr ""
+
+#: single.php:123
+msgid "Share on Twitter"
+msgstr ""
+
+#: single.php:127
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: single.php:131
+msgid "Share on Pinterest"
+msgstr ""
+
+#: single.php:174
+msgid "Related articles"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "No hay resultados"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:33
+msgid "Sorry, but no results match your search terms."
+msgstr ""
+
+#: template-parts/content-none.php:58
+msgid "Recommended Blog Articles"
+msgstr ""
+
+#: template-parts/content-none.php:97
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:49
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
