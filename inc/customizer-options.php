@@ -168,6 +168,14 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                        'default' => '#f6fbf7',
                        'label'   => esc_html__( 'Footer Border Color', 'smile-web' ),
                ),
+               'footer_social_bg' => array(
+                       'default' => '#4a994f',
+                       'label'   => esc_html__( 'Footer Social Background Color', 'smile-web' ),
+               ),
+               'footer_social_icon' => array(
+                       'default' => '#ffffff',
+                       'label'   => esc_html__( 'Footer Social Icon Color', 'smile-web' ),
+               ),
        );
 
 	// Create settings and controls for color options.

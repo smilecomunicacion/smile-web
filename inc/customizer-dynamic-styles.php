@@ -19,12 +19,14 @@ function smile_web_add_dynamic_styles() {
 	$color_2_dark     = get_theme_mod( 'color_2_dark', '#001833' );
 	$bg_light         = get_theme_mod( 'bg_light', '#f6fbf7' );
 	$bg_light2        = get_theme_mod( 'bg_light2', '#f8f9fa' );
-        $footer_bg        = get_theme_mod( 'footer_bg', '#274c77' );
-        $footer_text      = get_theme_mod( 'footer_text', '#FFFEFA' );
-       $footer_link       = get_theme_mod( 'footer_link_color', '#307C03' );
-       $footer_link_hover = get_theme_mod( 'footer_link_hover_color', '#306a93' );
-       $footer_border     = get_theme_mod( 'footer_border_color', '#f6fbf7' );
-        $color_white      = '#FFFFFF';
+       $footer_bg        = get_theme_mod( 'footer_bg', '#274c77' );
+       $footer_text      = get_theme_mod( 'footer_text', '#FFFEFA' );
+      $footer_link       = get_theme_mod( 'footer_link_color', '#307C03' );
+      $footer_link_hover = get_theme_mod( 'footer_link_hover_color', '#306a93' );
+      $footer_border     = get_theme_mod( 'footer_border_color', '#f6fbf7' );
+       $footer_social_bg   = get_theme_mod( 'footer_social_bg', '#4a994f' );
+       $footer_social_icon = get_theme_mod( 'footer_social_icon', '#FFFFFF' );
+       $color_white      = '#FFFFFF';
 
 	$dynamic_css = "
 		:root {
@@ -39,12 +41,14 @@ function smile_web_add_dynamic_styles() {
 			--color-white: {$color_white};
 			--bg-light: {$bg_light};
 			--bg-light2: {$bg_light2};
-                        --footer-bg: {$footer_bg};
-                        --footer-text: {$footer_text};
-                       --footer-link: {$footer_link};
-                       --footer-link-hover: {$footer_link_hover};
-                       --footer-border: {$footer_border};
-               }
+                       --footer-bg: {$footer_bg};
+                       --footer-text: {$footer_text};
+                      --footer-link: {$footer_link};
+                      --footer-link-hover: {$footer_link_hover};
+                      --footer-border: {$footer_border};
+                      --footer-social-bg: {$footer_social_bg};
+                      --footer-social-icon: {$footer_social_icon};
+              }
        ";
 
 	// Se agrega el CSS en línea al handle 'smile-web-main'.
