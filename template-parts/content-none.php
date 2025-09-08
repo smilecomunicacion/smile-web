@@ -65,9 +65,9 @@
 				?>
 				<article class="blog-col col-md-6 mb-4 mx-0">
 					<div class="category shadow rounded"><a href='<?php the_category(); ?>'><?php the_category(); ?></a></div>
-					<figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="nofollow"><img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="<?php $thumb_alt; ?>"></a>
+					<figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow"><img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="<?php $thumb_alt; ?>"></a>
 						<figcaption id="post-<?php the_ID(); ?>" class="p-4">
-							<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+							<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
 							<p><?php the_excerpt(); ?></p>
 							<hr>
 							<p><?php if ( ( get_the_modified_date( 'j F, Y' ) ) === ( get_the_date( 'j F, Y' ) ) ) { ?>

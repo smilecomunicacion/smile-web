@@ -41,19 +41,19 @@ get_header();
 							while ( $recent_posts->have_posts() ) :
 								$recent_posts->the_post();
 								?>
-								<article class="col-md-6 mb-4">
-									<figure class="shadow">
-										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-											<img class="img-fluid" src="<?php echo has_post_thumbnail() ? esc_url( get_the_post_thumbnail_url() ) : 'ruta/de/imagen/por/defecto.jpg'; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" width="600" height="400">
-										</a>
-										<figcaption class="bg-white px-4">
-											<p class="lead">
-												<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-											</p>
-											<p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20, '...' ) ); ?></p>
-										</figcaption>
-									</figure>
-								</article>
+                                                                <article class="col-md-6 mb-4">
+                                                                        <figure class="shadow">
+                                                                                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
+                                                                                        <img class="img-fluid" src="<?php echo has_post_thumbnail() ? esc_url( get_the_post_thumbnail_url() ) : esc_url( get_template_directory_uri() . '/assets/img/thumbnail-header.jpg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" width="600" height="400">
+                                                                                </a>
+                                                                                <figcaption class="bg-white px-4">
+                                                                                        <p class="lead">
+                                                                                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
+                                                                                        </p>
+                                                                                        <p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20, '...' ) ); ?></p>
+                                                                                </figcaption>
+                                                                        </figure>
+                                                                </article>
 								<?php
 							endwhile;
 							?>
