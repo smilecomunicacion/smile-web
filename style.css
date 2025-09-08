@@ -1425,6 +1425,10 @@ footer h3 {
     margin: 0
 }
 
+#footer .footer-top .footer-links a {
+    color: var(--footer-link);
+}
+
 #footer .footer-top .footer-contact,
 #footer .footer-top .footer-newsletter {
     margin-bottom: 30px
@@ -1436,7 +1440,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-links ul li {
-    border-bottom: 1px solid var(--bg-light);
+    border-bottom: 1px solid var(--footer-border);
     padding: 10px 0
 }
 
@@ -1444,8 +1448,8 @@ footer h3 {
     padding-top: 0
 }
 
-#footer .footer-top .footer-links ul a:hover {
-    color: var(--color-link)
+#footer .footer-top .footer-links a:hover {
+    color: var(--footer-link-hover)
 }
 
 #footer .footer-top .footer-contact p {
