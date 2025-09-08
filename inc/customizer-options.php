@@ -46,6 +46,17 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                )
        );
 
+       // Add Masthead Colors subsection.
+       $wp_customize->add_section(
+               'custom_theme_masthead_colors',
+               array(
+                       'title'      => esc_html__( 'Masthead Colors', 'smile-web' ),
+                       'priority'   => 16,
+                       'capability' => 'edit_theme_options',
+                       'panel'      => 'custom_theme_colors_panel',
+               )
+       );
+
        // Add Footer Colors subsection.
        $wp_customize->add_section(
                'custom_theme_footer_colors',
@@ -211,6 +222,30 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                ),
        );
 
+       // Masthead color controls.
+       $masthead_colors = array(
+               'masthead_bg'         => array(
+                       'default' => '#001833',
+                       'label'   => esc_html__( 'Masthead Background Color', 'smile-web' ),
+               ),
+               'masthead_text'       => array(
+                       'default' => '#d2e1ef',
+                       'label'   => esc_html__( 'Masthead Text Color', 'smile-web' ),
+               ),
+               'masthead_link'       => array(
+                       'default' => '#d2e1ef',
+                       'label'   => esc_html__( 'Masthead Link Color', 'smile-web' ),
+               ),
+               'masthead_link_hover' => array(
+                       'default' => '#306a93',
+                       'label'   => esc_html__( 'Masthead Link Hover Color', 'smile-web' ),
+               ),
+               'masthead_scrolled_bg' => array(
+                       'default' => '#d2e1ef',
+                       'label'   => esc_html__( 'Masthead Scrolled Background Color', 'smile-web' ),
+               ),
+       );
+
        // Footer color controls.
        $footer_colors = array(
                 'footer_bg'               => array(
@@ -281,6 +316,28 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                array(
                                        'label'    => $args['label'],
                                        'section'  => 'custom_theme_topbar_colors',
+                                       'settings' => $id,
+                               )
+                       )
+               );
+       }
+
+       // Create settings and controls for masthead colors.
+       foreach ( $masthead_colors as $id => $args ) {
+               $wp_customize->add_setting(
+                       $id,
+                       array(
+                               'default'           => $args['default'],
+                               'sanitize_callback' => 'sanitize_hex_color',
+                       )
+               );
+               $wp_customize->add_control(
+                       new WP_Customize_Color_Control(
+                               $wp_customize,
+                               $id,
+                               array(
+                                       'label'    => $args['label'],
+                                       'section'  => 'custom_theme_masthead_colors',
                                        'settings' => $id,
                                )
                        )

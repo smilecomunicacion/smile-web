@@ -306,7 +306,7 @@ a:hover {
 }
 
 .header-scrolled {
-    background-color: var(--color-1-light);
+    background-color: var(--masthead-scrolled-bg);
     transition: background-color 0.3s ease;
 }
 
@@ -316,6 +316,16 @@ a:hover {
 
 #masthead {
     transition: all 0.5s;
+    background-color: var(--masthead-bg);
+    color: var(--masthead-text);
+}
+
+#masthead a {
+    color: var(--masthead-link);
+}
+
+#masthead a:hover {
+    color: var(--masthead-link-hover);
 }
 
 .header-scrolled {
@@ -327,6 +337,8 @@ a:hover {
 nav {
     transition: all 0.5s;
     padding: 15px 0;
+    background-color: var(--masthead-bg);
+    color: var(--masthead-text);
 }
 
 .header-scrolled .header-scrolled-visible p,
@@ -401,16 +413,16 @@ header nav {
 #nav-toggle:focus,
 #nav-menu a:focus,
 .child-arrow-down:focus {
-    outline: 2px solid var(--color-link-hover);
+    outline: 2px solid var(--masthead-link-hover);
     outline-offset: 2px;
 }
 
 /* Focus visible for arrow */
 .menu-item-has-children i:focus::after {
-    outline: 2px solid var(--color-link-hover);
+    outline: 2px solid var(--masthead-link-hover);
     outline-offset: 2px;
     border-radius: 4px;
-    box-shadow: 0 0 5px var(--color-link-hover);
+    box-shadow: 0 0 5px var(--masthead-link-hover);
 }
 
 #nav-menu {
@@ -424,7 +436,7 @@ header nav {
     padding: 0;
     list-style: none;
     right: 100%;
-    background-color: var(--color-2-dark);
+    background-color: var(--masthead-bg);
 }
 
 .nav-menu-active {
@@ -441,18 +453,18 @@ header nav {
     display: block;
     padding: 20px;
     text-decoration: none;
-    color: var(--color-1-light);
+    color: var(--masthead-link);
     margin-bottom: 10px;
     width: 85%;
 }
 
 .current_page_item>a {
-    color: var(--color-link-light) !important;
+    color: var(--masthead-link-hover) !important;
 }
 
 @media (min-width:768px) {
     .current_page_item>a {
-        color: var(--color-link-hover) !important;
+        color: var(--masthead-link-hover) !important;
     }
 }
 
@@ -467,8 +479,8 @@ ul .sub-menu {
     margin: 0;
     list-style: none;
     position: relative;
-    background-color: var(--color-1);
-    border-top: 1px solid var(--color-link-hover);
+    background-color: var(--masthead-bg);
+    border-top: 1px solid var(--masthead-link-hover);
 }
 
 @media (min-width: 768px) {
@@ -478,7 +490,7 @@ ul .sub-menu {
 }
 
 #nav-menu .sub-menu li>a {
-    color: var(--color-2-dark);
+    color: var(--masthead-text);
 }
 
 .menu-item-has-children {
@@ -495,7 +507,7 @@ ul .sub-menu {
     right: 20px !important;
     z-index: 9999;
     right: 30px;
-    color: var(--color-white);
+    color: var(--masthead-text);
     font-weight: 200;
     font-size: 20px;
 }
@@ -534,7 +546,7 @@ ul .sub-menu {
     }
 
     #nav-menu a {
-        color: var(--color-light);
+        color: var(--masthead-link);
         text-align: left;
         padding: 5px;
         line-height: 1.2em;
@@ -543,7 +555,7 @@ ul .sub-menu {
     }
 
     #nav-menu a:hover {
-        color: var(--color-link-hover);
+        color: var(--masthead-link-hover);
         background-color: var(--color-warning);
     }
 
@@ -561,7 +573,7 @@ ul .sub-menu {
     .menu-item-has-children i::after {
         top: 5px;
         right: 5px !important;
-        color: var(--color-link);
+        color: var(--masthead-link);
         font-weight: 100;
         font-size: 15px;
     }
@@ -598,7 +610,7 @@ ul .sub-menu {
     }
 
     #nav-menu .sub-menu li>a:hover {
-        color: var(--color-link-hover);
+        color: var(--masthead-link-hover);
     }
 
     .menu-item-has-children .child-arrow-up::after {
@@ -657,7 +669,7 @@ ul .sub-menu {
     }
 
     .menu-item-has-children>a:focus {
-        outline: 2px solid var(--color-link-hover);
+        outline: 2px solid var(--masthead-link-hover);
         outline-offset: 2px;
     }
 
