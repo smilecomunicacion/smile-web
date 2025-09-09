@@ -14,7 +14,9 @@ function smile_web_add_dynamic_styles() {
 		$color_link_hover         = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
 		$color_link_light         = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
 		$color_muted              = sanitize_hex_color( get_theme_mod( 'color_muted', '#6c757d' ) );
-		$color_warning            = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
+               $color_warning            = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
+               $cta_bg                   = sanitize_hex_color( get_theme_mod( 'cta_bg', '#ffc107' ) );
+               $breadcrumb_separator     = sanitize_text_field( get_theme_mod( 'breadcrumb_separator', '/' ) );
 		$accent_primary_light     = sanitize_hex_color( get_theme_mod( 'accent-primary-light', '#d2e1ef' ) );
 		$accent_primary           = sanitize_hex_color( get_theme_mod( 'accent-primary', '#d2e1ef' ) );
 		$accent_secondary         = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
@@ -52,7 +54,9 @@ function smile_web_add_dynamic_styles() {
                         --color-link-hover: ' . esc_attr( $color_link_hover ) . ';
                         --color-link-light: ' . esc_attr( $color_link_light ) . '; 
                        --color-muted: ' . esc_attr( $color_muted ) . '; 
-                       --color-warning: ' . esc_attr( $color_warning ) . '; 
+                       --color-warning: ' . esc_attr( $color_warning ) . ';
+                       --cta-bg: ' . esc_attr( $cta_bg ) . ';
+                       --breadcrumb-separator: "' . esc_attr( $breadcrumb_separator ) . '";
                        --accent-primary-light: ' . esc_attr( $accent_primary_light ) . ';
                        --accent-primary: ' . esc_attr( $accent_primary ) . ';
                        --accent-secondary: ' . esc_attr( $accent_secondary ) . ';

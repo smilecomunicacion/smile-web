@@ -144,7 +144,7 @@ get_header();
                                                         ?>
                                                         <img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>">
                                                 </a>
-                                                <figcaption id="post-<?php the_ID(); ?>" class="p-4 text-white">
+                                                <figcaption id="post-<?php the_ID(); ?>" class="p-4" style="color: var(--color-white);">
                                                         <h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
                                                         <p><?php the_excerpt(); ?></p>
                                                         <hr>

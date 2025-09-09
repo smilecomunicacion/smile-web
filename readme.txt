@@ -54,6 +54,10 @@ Full Font Awesome Free license: https://fontawesome.com/license/free.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Accessibility ==
+
+Color selections should provide at least a 4.5:1 contrast ratio between text and background to meet WCAG 2.1 AA requirements.
+
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

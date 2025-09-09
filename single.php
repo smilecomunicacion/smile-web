@@ -59,14 +59,14 @@ get_header();
 						<span> |
 							<?php
 							// SVG icon for comments.
-							$comment_svg = '
-							<svg style="fill: #fff; width: 20px; height: 20px; position: relative; top: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        $comment_svg = '
+                                                        <svg style="fill: var(--color-white); width: 20px; height: 20px; position: relative; top: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 								<path d="M256 32C114.6 32 0 125.1 0 240c0 49.5 21.4 94.9 57.1 131.5-12.2 50.7-54.3 95.3-55 95.9C0 470.8-.5 471.3.3 472.6c.9 1.3 2.1 1.4 3.2 1.4 66.3 0 117.1-31.4 139.8-46.7 33.1 9.4 69 14.7 112.7 14.7 141.4 0 256-93.1 256-208S397.4 32 256 32z"/>
 							</svg>';
 							echo '<span class="svg-icon">' . wp_kses_post( $comment_svg ) . '</span>';
 							esc_html_e( 'Comments', 'smile-web' );
 							?>
-							<a href="#comments" class='text-white'><?php echo esc_html( get_comments_number() ); ?></a>
+                                                        <a href="#comments" style="color: var(--color-white);"><?php echo esc_html( get_comments_number() ); ?></a>
 						</span>
 					<?php endif; ?>
 				<?php endif; ?>
