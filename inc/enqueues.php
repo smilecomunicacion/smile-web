@@ -162,7 +162,7 @@ function smile_v6_enqueue_scripts() {
 		$dynamic_css .= '
 #intro {
     background-color: var(--color-2-dark);
-    color: #fff;
+    color: var(--color-white);
     position: relative;
     z-index: 0;
     display: flex;
@@ -247,7 +247,7 @@ function smile_v6_enqueue_scripts() {
 		$dynamic_css .= '
 #intro {
     background-color: var(--color-2-dark);
-    color: #fff;
+    color: var(--color-white);
     position: relative;
     z-index: 0;
     margin-bottom: -10px;
@@ -271,7 +271,7 @@ function smile_v6_enqueue_scripts() {
     content: "/";
     float: left;
     padding-right: 0.5rem;
-    color: #6c757d;
+    color: var(--color-muted);
 }
 .breadcrumb {
     display: flex;
@@ -321,7 +321,7 @@ function smile_v6_enqueue_scripts() {
 		$dynamic_css .= '
 #intro {
     background-color: var(--color-2-dark);
-    color: #fff;
+    color: var(--color-white);
     position: relative;
     z-index: 0;
     margin-bottom: -10px;
@@ -344,7 +344,7 @@ function smile_v6_enqueue_scripts() {
     content: "/";
     float: left;
     padding-right: 0.5rem;
-    color: #6c757d;
+    color: var(--color-muted);
 }
 .breadcrumb {
     display: flex;
