@@ -27,6 +27,7 @@ function smile_web_add_dynamic_styles() {
        $masthead_bg          = sanitize_hex_color( get_theme_mod( 'masthead_bg', '#001833' ) );
        $masthead_submenu_bg   = sanitize_hex_color( get_theme_mod( 'masthead_submenu_bg', '#001833' ) );
        $masthead_submenu_text = sanitize_hex_color( get_theme_mod( 'masthead_submenu_text', '#d2e1ef' ) );
+       $masthead_text         = sanitize_hex_color( get_theme_mod( 'masthead_text', '#d2e1ef' ) );
        $masthead_link         = sanitize_hex_color( get_theme_mod( 'masthead_link', '#d2e1ef' ) );
        $masthead_link_hover   = sanitize_hex_color( get_theme_mod( 'masthead_link_hover', '#306a93' ) );
        $masthead_scrolled_bg  = sanitize_hex_color( get_theme_mod( 'masthead_scrolled_bg', '#d2e1ef' ) );
@@ -62,6 +63,7 @@ function smile_web_add_dynamic_styles() {
                        --masthead-bg: ' . esc_attr( $masthead_bg ) . ';
                        --masthead-submenu-bg: ' . esc_attr( $masthead_submenu_bg ) . ';
                        --masthead-submenu-text: ' . esc_attr( $masthead_submenu_text ) . ';
+                       --masthead-text: ' . esc_attr( $masthead_text ) . ';
                        --masthead-link: ' . esc_attr( $masthead_link ) . ';
                        --masthead-link-hover: ' . esc_attr( $masthead_link_hover ) . ';
                        --masthead-scrolled-bg: ' . esc_attr( $masthead_scrolled_bg ) . ';

@@ -284,3 +284,28 @@
 .whatsapp-background:hover svg {
   color: #e0e0e0;
 }
+
+/* Navigation submenu */
+#nav-menu .sub-menu {
+  background-color: var(--masthead-submenu-bg);
+  color: var(--masthead-submenu-text);
+}
+
+#nav-menu .sub-menu li>a {
+  color: var(--masthead-submenu-text);
+}
+
+#nav-menu .sub-menu li>a:hover {
+  color: var(--masthead-link-hover);
+}
+
+.menu-item-has-children i::after {
+  color: var(--masthead-submenu-text);
+}
+
+@media (min-width: 768px) {
+  #nav-menu .sub-menu {
+    background-color: var(--masthead-submenu-bg);
+    color: var(--masthead-submenu-text);
+  }
+}
