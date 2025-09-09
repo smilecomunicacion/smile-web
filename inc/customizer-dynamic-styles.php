@@ -11,8 +11,9 @@
 function smile_web_add_dynamic_styles() {
 	$color_text         = sanitize_hex_color( get_theme_mod( 'color_text', '#00112b' ) );
 	$color_link         = sanitize_hex_color( get_theme_mod( 'color_link', '#307C03' ) );
-	$color_link_hover   = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
-	$color_link_light   = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
+        $color_link_hover   = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
+        $color_link_light   = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
+       $color_warning      = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
        $accent_primary_light = sanitize_hex_color( get_theme_mod( 'accent-primary-light', '#d2e1ef' ) );
        $accent_primary       = sanitize_hex_color( get_theme_mod( 'accent-primary', '#d2e1ef' ) );
        $accent_secondary     = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
@@ -36,8 +37,9 @@ function smile_web_add_dynamic_styles() {
        $footer_link        = sanitize_hex_color( get_theme_mod( 'footer_link_color', '#307C03' ) );
 	$footer_link_hover  = sanitize_hex_color( get_theme_mod( 'footer_link_hover_color', '#306a93' ) );
 	$footer_border      = sanitize_hex_color( get_theme_mod( 'footer_border_color', '#f6fbf7' ) );
-	$footer_social_bg   = sanitize_hex_color( get_theme_mod( 'footer_social_bg', '#4a994f' ) );
-	$footer_social_icon = sanitize_hex_color( get_theme_mod( 'footer_social_icon', '#FFFFFF' ) );
+        $footer_social_bg   = sanitize_hex_color( get_theme_mod( 'footer_social_bg', '#4a994f' ) );
+        $footer_social_icon = sanitize_hex_color( get_theme_mod( 'footer_social_icon', '#FFFFFF' ) );
+       $footer_social_icon_hover = sanitize_hex_color( get_theme_mod( 'footer_social_icon_hover', '#4a994f' ) );
 	$color_white        = sanitize_hex_color( '#FFFFFF' );
 	$border_color       = sanitize_hex_color( '#dee2e6' );
 	$modal_border       = sanitize_hex_color( '#888888' );
@@ -46,8 +48,9 @@ function smile_web_add_dynamic_styles() {
 		:root {
 			--color-text: ' . esc_attr( $color_text ) . ';
 			--color-link: ' . esc_attr( $color_link ) . ';
-			--color-link-hover: ' . esc_attr( $color_link_hover ) . ';
-			--color-link-light: ' . esc_attr( $color_link_light ) . ';
+                        --color-link-hover: ' . esc_attr( $color_link_hover ) . ';
+                        --color-link-light: ' . esc_attr( $color_link_light ) . ';
+                       --color-warning: ' . esc_attr( $color_warning ) . ';
                        --accent-primary-light: ' . esc_attr( $accent_primary_light ) . ';
                        --accent-primary: ' . esc_attr( $accent_primary ) . ';
                        --accent-secondary: ' . esc_attr( $accent_secondary ) . ';
@@ -72,10 +75,11 @@ function smile_web_add_dynamic_styles() {
                        --footer-link: ' . esc_attr( $footer_link ) . ';
                        --footer-link-hover: ' . esc_attr( $footer_link_hover ) . ';
 			--footer-border: ' . esc_attr( $footer_border ) . ';
-			--footer-social-bg: ' . esc_attr( $footer_social_bg ) . ';
-			--footer-social-icon: ' . esc_attr( $footer_social_icon ) . ';
-			--border-color: ' . esc_attr( $border_color ) . ';
-			--modal-border: ' . esc_attr( $modal_border ) . ';
+                        --footer-social-bg: ' . esc_attr( $footer_social_bg ) . ';
+                        --footer-social-icon: ' . esc_attr( $footer_social_icon ) . ';
+                       --footer-social-icon-hover: ' . esc_attr( $footer_social_icon_hover ) . ';
+                        --border-color: ' . esc_attr( $border_color ) . ';
+                        --modal-border: ' . esc_attr( $modal_border ) . ';
 		}
 	';
 
