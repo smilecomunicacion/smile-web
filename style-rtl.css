@@ -57,7 +57,7 @@ Use it to make something cool, have fun, and share what you've learned.
 }
 
 .bwg-title1 {
-    background: #fff;
+    background: var(--color-white);
 }
 
 .fit-figure {
@@ -118,9 +118,7 @@ body {
     line-height: 1.7em;
 }
 
-#color-var {
-    --bg-white: #fff;
-}
+
 
 /*--------------------------------------------------------------
 # 1.1 - HEADERS H1, H2, H3, P
@@ -270,6 +268,19 @@ a:hover {
     width: auto;
 }
 
+#topBar {
+    background-color: var(--topbar-bg);
+    color: var(--topbar-text);
+}
+
+#topBar a {
+    color: var(--topbar-link);
+}
+
+#topBar a:hover {
+    color: var(--topbar-link-hover);
+}
+
 #topBar p {
     margin: 0;
     padding: 20px 0;
@@ -280,6 +291,7 @@ a:hover {
     margin: 0 8px;
     text-align: center;
     transition: .3s;
+    color: var(--topbar-social-icon);
 }
 
 .svg-icon svg {
@@ -288,9 +300,12 @@ a:hover {
     height: 25px;
 }
 
-.header-scrolled nav {
-    background-color: var(--masthead-scrolled-bg);
-    transition: background-color 0.3s ease;
+#topBar .svg-icon svg {
+    fill: var(--topbar-social-icon);
+}
+
+#topBar .buscar svg {
+    fill: var(--topbar-social-icon);
 }
 
 .header-scrolled #logo img {
@@ -299,6 +314,16 @@ a:hover {
 
 #masthead {
     transition: all 0.5s;
+    background-color: var(--masthead-bg);
+    color: var(--masthead-text);
+}
+
+#masthead a {
+    color: var(--masthead-link);
+}
+
+#masthead a:hover {
+    color: var(--masthead-link-hover);
 }
 
 .header-scrolled {
@@ -310,6 +335,13 @@ a:hover {
 nav {
     transition: all 0.5s;
     padding: 15px 0;
+    background-color: var(--masthead-bg);
+    color: var(--masthead-text);
+}
+
+#masthead.header-scrolled {
+    background-color: var(--masthead-scrolled-bg);
+    transition: background-color 0.3s ease;
 }
 
 .header-scrolled .header-scrolled-visible p,
@@ -384,16 +416,16 @@ header nav {
 #nav-toggle:focus,
 #nav-menu a:focus,
 .child-arrow-down:focus {
-    outline: 2px solid var(--color-link-hover);
+    outline: 2px solid var(--masthead-link-hover);
     outline-offset: 2px;
 }
 
 /* Focus visible for arrow */
 .menu-item-has-children i:focus::after {
-    outline: 2px solid var(--color-link-hover);
+    outline: 2px solid var(--masthead-link-hover);
     outline-offset: 2px;
     border-radius: 4px;
-    box-shadow: 0 0 5px var(--color-link-hover);
+    box-shadow: 0 0 5px var(--masthead-link-hover);
 }
 
 #nav-menu {
@@ -407,7 +439,7 @@ header nav {
     padding: 0;
     list-style: none;
     left: 100%;
-    background-color: var(--color-2-dark);
+    background-color: var(--masthead-bg);
 }
 
 .nav-menu-active {
@@ -424,18 +456,18 @@ header nav {
     display: block;
     padding: 20px;
     text-decoration: none;
-    color: var(--color-1-light);
+    color: var(--masthead-link);
     margin-bottom: 10px;
     width: 85%;
 }
 
 .current_page_item>a {
-    color: var(--color-link-light) !important;
+    color: var(--masthead-link-hover) !important;
 }
 
 @media (min-width:768px) {
     .current_page_item>a {
-        color: var(--color-link-hover) !important;
+        color: var(--masthead-link-hover) !important;
     }
 }
 
@@ -520,7 +552,7 @@ ul .sub-menu {
     }
 
     #nav-menu a {
-        color: var(--color-light);
+        color: var(--masthead-link);
         text-align: right;
         padding: 5px;
         line-height: 1.2em;
@@ -529,7 +561,7 @@ ul .sub-menu {
     }
 
     #nav-menu a:hover {
-        color: var(--color-link-hover);
+        color: var(--masthead-link-hover);
         background-color: var(--color-warning);
     }
 
@@ -547,7 +579,7 @@ ul .sub-menu {
     .menu-item-has-children i::after {
         top: 5px;
         left: 5px !important;
-        color: var(--masthead-submenu-text);
+        color: var(--masthead-link);
         font-weight: 100;
         font-size: 15px;
     }
@@ -644,7 +676,7 @@ ul .sub-menu {
     }
 
     .menu-item-has-children>a:focus {
-        outline: 2px solid var(--color-link-hover);
+        outline: 2px solid var(--masthead-link-hover);
         outline-offset: 2px;
     }
 
@@ -1052,7 +1084,7 @@ main ol li::marker {
 }
 
 .bg-white {
-    background-color: var(--bg-white);
+    background-color: var(--color-white);
 }
 
 .bg-cta {
@@ -1139,7 +1171,7 @@ main ol li::marker {
     background-color: var(--bg-light);
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 1px solid var(--modal-border);
     width: 90%;
     max-width: 1000px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1419,6 +1451,14 @@ footer h3 {
     color: var(--footer-social-bg);
 }
 
+#footer .svg-icon svg {
+    fill: var(--footer-social-icon);
+}
+
+#footer .svg-icon svg:hover {
+    fill: var(--footer-social-icon-hover);
+}
+
 #footer .footer-top .footer-links {
     margin-bottom: 30px
 }
@@ -1427,6 +1467,10 @@ footer h3 {
     list-style: none;
     padding: 0;
     margin: 0
+}
+
+#footer .footer-top .footer-links a {
+    color: var(--footer-link);
 }
 
 #footer .footer-top .footer-contact,
@@ -1440,7 +1484,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-links ul li {
-    border-bottom: 1px solid var(--bg-light);
+    border-bottom: 1px solid var(--footer-border);
     padding: 10px 0
 }
 
@@ -1448,8 +1492,8 @@ footer h3 {
     padding-top: 0
 }
 
-#footer .footer-top .footer-links ul a:hover {
-    color: var(--color-link)
+#footer .footer-top .footer-links a:hover {
+    color: var(--footer-link-hover)
 }
 
 #footer .footer-top .footer-contact p {
@@ -1883,47 +1927,47 @@ footer h3 {
 
 /* BORDER */
 .border-top {
-    border-top: 1px solid #dee2e6 !important;
+    border-top: 1px solid var(--border-color) !important;
 }
 
 .border-bottom {
-    border-bottom: 1px solid #dee2e6 !important;
+    border-bottom: 1px solid var(--border-color) !important;
 }
 
 .border-3 {
-    border: 3px solid #dee2e6 !important;
+    border: 3px solid var(--border-color) !important;
 }
 
 .border-5 {
-    border: 5px solid #dee2e6 !important;
+    border: 5px solid var(--border-color) !important;
 }
 
 .border-10 {
-    border: 10px solid #dee2e6 !important;
+    border: 10px solid var(--border-color) !important;
 }
 
 .border-15 {
-    border: 15px solid #dee2e6 !important;
+    border: 15px solid var(--border-color) !important;
 }
 
 .border-20 {
-    border: 20px solid #dee2e6 !important;
+    border: 20px solid var(--border-color) !important;
 }
 
 .border-25 {
-    border: 25px solid #dee2e6 !important;
+    border: 25px solid var(--border-color) !important;
 }
 
 .border-30 {
-    border: 30px solid #dee2e6 !important;
+    border: 30px solid var(--border-color) !important;
 }
 
 .border-35 {
-    border: 35px solid #dee2e6 !important;
+    border: 35px solid var(--border-color) !important;
 }
 
 .border-40 {
-    border: 40px solid #dee2e6 !important;
+    border: 40px solid var(--border-color) !important;
 }
 
 /* ROUNDED */

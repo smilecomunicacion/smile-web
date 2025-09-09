@@ -308,11 +308,6 @@ a:hover {
     fill: var(--topbar-social-icon);
 }
 
-.header-scrolled nav {
-    background-color: var(--masthead-scrolled-bg);
-    transition: background-color 0.3s ease;
-}
-
 .header-scrolled #logo img {
     transition: all 0.9s;
 }
@@ -342,6 +337,11 @@ nav {
     padding: 15px 0;
     background-color: var(--masthead-bg);
     color: var(--masthead-text);
+}
+
+#masthead.header-scrolled {
+    background-color: var(--masthead-scrolled-bg);
+    transition: background-color 0.3s ease;
 }
 
 .header-scrolled .header-scrolled-visible p,
