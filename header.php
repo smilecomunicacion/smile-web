@@ -62,7 +62,7 @@
 			</div>
 			<div>
 				<a id="myBtn" href="#" class="p-2 buscar" aria-label="<?php esc_attr_e( 'Open search box', 'smile-web' ); ?>" itemprop="url" data-bs-toggle="modal" data-bs-target="#searchModal" rel="nofollow noopener noreferrer">
-					<span title="<?php esc_attr_e( 'Search in web', 'smile-web' ); ?>" class="buscar p-0" aria-hidden="true">
+<span title="<?php esc_attr_e( 'Search in web', 'smile-web' ); ?>" class="buscar svg-icon p-0" aria-hidden="true">
 						<svg width="20" height="20" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
 							<g transform="matrix(1,0,0,1,-1111.24,-105.745)">
 								<g transform="matrix(0.0136842,0,0,0.0136842,1111.24,105.745)">
