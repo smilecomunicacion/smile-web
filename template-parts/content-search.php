@@ -12,7 +12,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="row bg-white shadow mx-0 mb-4">
+<article id="post-<?php the_ID(); ?>" class="row shadow mx-0 mb-4" style="background-color: var(--color-white);">
 	<figure class="fit-figure p-0 m-0 col-md-4">
 		<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
 			<?php
@@ -24,7 +24,8 @@
 					$height = ! empty( $metadata['height'] ) ? $metadata['height'] : '';
 					$width  = ! empty( $metadata['width'] ) ? $metadata['width'] : '';
 				else :
-					$height = $width = '';
+										$height = '';
+										$width  = '';
 				endif;
 				$alt         = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
 				$image_title = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_title', true ) ) );

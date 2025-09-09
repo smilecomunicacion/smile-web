@@ -12,7 +12,7 @@
 
 get_header();
 ?>
-<div id="intro" class="pt-5 bg-cta">
+<div id="intro" class="pt-5" style="background-color: var(--cta-bg);">
 	<div class="container py-5 text-center">
 		<h1 class="title mt-2"><?php the_title(); ?></h1>
 		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
@@ -42,12 +42,12 @@ get_header();
 		</figure>
 	<?php endif; // END if minimum width is 768px. ?>
 </div>
-<main id="main" class="bg-light">
+<main id="main" style="background-color: var(--bg-light);">
 	<div class="container py-2">
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
-				<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="bg-light breadcrumb">
-                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name">Inicio</span></a>
+								<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--bg-light);">
+										<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1">
 					</li>
 					<?php if ( is_page() && 0 < $post->post_parent ) : ?>
@@ -139,7 +139,7 @@ get_header();
 	// If a category exists and posts exist in that category.
 	if ( 0 !== $category_id && get_posts( $args ) ) :
 		?>
-		<section id="posts-relacionados" class="bg-light">
+				<section id="posts-relacionados" style="background-color: var(--bg-light);">
 			<div class="container py-5">
 				<h4><?php echo wp_kses_post( $text_related ); ?></h4>
 				<hr>
