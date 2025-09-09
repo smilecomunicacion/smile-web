@@ -164,11 +164,15 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#306a93',
 				'label'   => esc_html__( 'Link Color Hover', 'smile-web' ),
 			),
-			'color_link_light' => array(
-				'default' => '#4a994f',
-				'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
-			),
-                        'accent-primary-light' => array(
+                        'color_link_light' => array(
+                                'default' => '#4a994f',
+                                'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
+                        ),
+                       'color_warning' => array(
+                               'default' => '#ffc107',
+                               'label'   => esc_html__( 'Warning Color', 'smile-web' ),
+                       ),
+                       'accent-primary-light' => array(
                                 'default' => '#d2e1ef',
                                 'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
                         ),
@@ -272,11 +276,15 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#4a994f',
 				'label'   => esc_html__( 'Footer Social Background Color', 'smile-web' ),
 			),
-			'footer_social_icon'      => array(
-				'default' => '#ffffff',
-				'label'   => esc_html__( 'Footer Social Icon Color', 'smile-web' ),
-			),
-		);
+                        'footer_social_icon'      => array(
+                                'default' => '#ffffff',
+                                'label'   => esc_html__( 'Footer Social Icon Color', 'smile-web' ),
+                        ),
+                       'footer_social_icon_hover' => array(
+                               'default' => '#4a994f',
+                               'label'   => esc_html__( 'Footer Social Icon Hover Color', 'smile-web' ),
+                       ),
+                );
 
 		// Create settings and controls for global colors.
 		foreach ( $global_colors as $id => $args ) {

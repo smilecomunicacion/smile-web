@@ -1041,7 +1041,7 @@ main ol li::marker {
 
 .lead {
     font-weight: 200;
-    color: var(--color-link2);
+    color: var(--color-link-hover);
     font-size: 22px;
     line-height: 1.2em;
     margin-bottom: 30px;
