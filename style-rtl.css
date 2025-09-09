@@ -1002,6 +1002,7 @@ main li {
 
 main section ul li::before,
 main article ul li::before {
+    /* Bullet color controlled by Link Color Light */
     content: "• ";
     color: var(--color-link-light);
     font-size: 3em;
@@ -1097,12 +1098,13 @@ main ol li::marker {
     color: var(--footer-text);
 }
 
+/* Default to light link color on footer background */
 .bg-footer a {
-    color: var(--footer-link, var(--color-link));
+    color: var(--footer-link, var(--color-link-light));
 }
 
 .bg-footer a:hover {
-    color: var(--footer-link-hover, var(--color-link-hover));
+    color: var(--footer-link-hover, var(--color-link-light));
 }
 
 .bg-dark {
@@ -1120,6 +1122,7 @@ main ol li::marker {
     color: var(--color-white);
 }
 
+/* Use light link color on dark backgrounds */
 .bg-dark a {
     color: var(--color-link-light);
 }
