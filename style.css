@@ -153,6 +153,11 @@ section p:not(.lead):not(.h2) {
     color: var(--color-text);
 }
 
+small,
+.text-muted {
+    color: var(--color-muted);
+}
+
 .blog-page h3 {
     color: var(--accent-secondary);
 }
