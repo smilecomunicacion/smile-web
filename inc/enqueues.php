@@ -122,9 +122,14 @@ function smile_v6_enqueue_scripts() {
 .bar3 {
     width: 35px;
     height: 5px;
-    background-color: var(--color-link-hover);
+    background-color: var(--masthead-link);
     margin: 6px 0;
     transition: 0.4s;
+}
+#nav-toggle:hover .bar1,
+#nav-toggle:hover .bar2,
+#nav-toggle:hover .bar3 {
+    background-color: var(--masthead-link-hover);
 }
 .menu-bar-change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
