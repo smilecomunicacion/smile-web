@@ -152,47 +152,51 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 
 		// Global color controls.
 		$global_colors = array(
-			'color_text'       => array(
+			'color_text'            => array(
 				'default' => '#00112b',
 				'label'   => esc_html__( 'Text Color', 'smile-web' ),
 			),
-			'color_link'       => array(
+			'color_link'            => array(
 				'default' => '#307C03',
 				'label'   => esc_html__( 'Link Color', 'smile-web' ),
 			),
-			'color_link_hover' => array(
+			'color_link_hover'      => array(
 				'default' => '#306a93',
 				'label'   => esc_html__( 'Link Color Hover', 'smile-web' ),
 			),
-                        'color_link_light' => array(
-                                'default' => '#4a994f',
-                                'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
-                        ),
-                       'color_warning' => array(
-                               'default' => '#ffc107',
-                               'label'   => esc_html__( 'Warning Color', 'smile-web' ),
-                       ),
-                       'accent-primary-light' => array(
-                                'default' => '#d2e1ef',
-                                'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
-                        ),
-                        'accent-primary'      => array(
-                                'default' => '#d2e1ef',
-                                'label'   => esc_html__( 'Primary Accent Color', 'smile-web' ),
-                        ),
-                        'accent-secondary'    => array(
-                                'default' => '#225274',
-                                'label'   => esc_html__( 'Secondary Accent Color', 'smile-web' ),
-                        ),
-                        'accent-secondary-dark'     => array(
-                                'default' => '#001833',
-                                'label'   => esc_html__( 'Secondary Accent Color Dark', 'smile-web' ),
-                        ),
-			'bg_light'         => array(
+			'color_link_light'      => array(
+				'default' => '#4a994f',
+				'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
+			),
+			'color_muted'           => array(
+				'default' => '#6c757d',
+				'label'   => esc_html__( 'Muted Color', 'smile-web' ),
+			),
+			'color_warning'         => array(
+				'default' => '#ffc107',
+				'label'   => esc_html__( 'Warning Color', 'smile-web' ),
+			),
+			'accent-primary-light'  => array(
+				'default' => '#d2e1ef',
+				'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
+			),
+			'accent-primary'        => array(
+				'default' => '#d2e1ef',
+				'label'   => esc_html__( 'Primary Accent Color', 'smile-web' ),
+			),
+			'accent-secondary'      => array(
+				'default' => '#225274',
+				'label'   => esc_html__( 'Secondary Accent Color', 'smile-web' ),
+			),
+			'accent-secondary-dark' => array(
+				'default' => '#001833',
+				'label'   => esc_html__( 'Secondary Accent Color Dark', 'smile-web' ),
+			),
+			'bg_light'              => array(
 				'default' => '#edf7ef',
 				'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
 			),
-			'bg_light2'        => array(
+			'bg_light2'             => array(
 				'default' => '#f8f9fa',
 				'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
 			),
@@ -216,163 +220,163 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#306a93',
 				'label'   => esc_html__( 'Top Bar Link Hover Color', 'smile-web' ),
 			),
-                        'topbar_social_icon' => array(
-                                'default' => '#001833',
-                                'label'   => esc_html__( 'Top Bar Social Icon Color', 'smile-web' ),
-                        ),
-                );
-
-               // Masthead color controls.
-               $masthead_colors = array(
-                       'masthead_bg'           => array(
-                               'default' => '#001833',
-                               'label'   => esc_html__( 'Masthead Background Color', 'smile-web' ),
-                       ),
-                       'masthead_submenu_bg'   => array(
-                               'default' => '#001833',
-                               'label'   => esc_html__( 'Masthead Submenu Background Color', 'smile-web' ),
-                       ),
-                       'masthead_submenu_text' => array(
-                               'default' => '#d2e1ef',
-                               'label'   => esc_html__( 'Masthead Submenu Text Color', 'smile-web' ),
-                       ),
-                       'masthead_link'         => array(
-                               'default' => '#d2e1ef',
-                               'label'   => esc_html__( 'Masthead Link Color', 'smile-web' ),
-                       ),
-                       'masthead_link_hover'   => array(
-                               'default' => '#306a93',
-                               'label'   => esc_html__( 'Masthead Link Hover Color', 'smile-web' ),
-                       ),
-                       'masthead_scrolled_bg'  => array(
-                               'default' => '#d2e1ef',
-                               'label'   => esc_html__( 'Masthead Scrolled Background Color', 'smile-web' ),
-                       ),
-               );
-
-		// Footer color controls.
-		$footer_colors = array(
-			'footer_bg'               => array(
-				'default' => '#274c77',
-				'label'   => esc_html__( 'Footer Background Color', 'smile-web' ),
+			'topbar_social_icon' => array(
+				'default' => '#001833',
+				'label'   => esc_html__( 'Top Bar Social Icon Color', 'smile-web' ),
 			),
-			'footer_text'             => array(
-				'default' => '#FFFEFA',
-				'label'   => esc_html__( 'Footer Text Color', 'smile-web' ),
-			),
-			'footer_link_color'       => array(
-				'default' => '#307C03',
-				'label'   => esc_html__( 'Footer Link Color', 'smile-web' ),
-			),
-			'footer_link_hover_color' => array(
-				'default' => '#306a93',
-				'label'   => esc_html__( 'Footer Link Hover Color', 'smile-web' ),
-			),
-			'footer_border_color'     => array(
-				'default' => '#f6fbf7',
-				'label'   => esc_html__( 'Footer Border Color', 'smile-web' ),
-			),
-			'footer_social_bg'        => array(
-				'default' => '#4a994f',
-				'label'   => esc_html__( 'Footer Social Background Color', 'smile-web' ),
-			),
-                        'footer_social_icon'      => array(
-                                'default' => '#ffffff',
-                                'label'   => esc_html__( 'Footer Social Icon Color', 'smile-web' ),
-                        ),
-                       'footer_social_icon_hover' => array(
-                               'default' => '#4a994f',
-                               'label'   => esc_html__( 'Footer Social Icon Hover Color', 'smile-web' ),
-                       ),
-                );
+		);
 
-		// Create settings and controls for global colors.
-		foreach ( $global_colors as $id => $args ) {
-				$wp_customize->add_setting(
-					$id,
-					array(
-						'default'           => $args['default'],
-						'sanitize_callback' => 'sanitize_hex_color',
-					)
+				// Masthead color controls.
+				$masthead_colors = array(
+					'masthead_bg'           => array(
+						'default' => '#001833',
+						'label'   => esc_html__( 'Masthead Background Color', 'smile-web' ),
+					),
+					'masthead_submenu_bg'   => array(
+						'default' => '#001833',
+						'label'   => esc_html__( 'Masthead Submenu Background Color', 'smile-web' ),
+					),
+					'masthead_submenu_text' => array(
+						'default' => '#d2e1ef',
+						'label'   => esc_html__( 'Masthead Submenu Text Color', 'smile-web' ),
+					),
+					'masthead_link'         => array(
+						'default' => '#d2e1ef',
+						'label'   => esc_html__( 'Masthead Link Color', 'smile-web' ),
+					),
+					'masthead_link_hover'   => array(
+						'default' => '#306a93',
+						'label'   => esc_html__( 'Masthead Link Hover Color', 'smile-web' ),
+					),
+					'masthead_scrolled_bg'  => array(
+						'default' => '#d2e1ef',
+						'label'   => esc_html__( 'Masthead Scrolled Background Color', 'smile-web' ),
+					),
 				);
-				$wp_customize->add_control(
-					new WP_Customize_Color_Control(
-						$wp_customize,
-						$id,
-						array(
-							'label'    => $args['label'],
-							'section'  => 'custom_theme_global_colors',
-							'settings' => $id,
-						)
-					)
-				);
-		}
 
-		// Create settings and controls for top bar colors.
-		foreach ( $topbar_colors as $id => $args ) {
-				$wp_customize->add_setting(
-					$id,
-					array(
-						'default'           => $args['default'],
-						'sanitize_callback' => 'sanitize_hex_color',
-					)
+				// Footer color controls.
+				$footer_colors = array(
+					'footer_bg'                => array(
+						'default' => '#274c77',
+						'label'   => esc_html__( 'Footer Background Color', 'smile-web' ),
+					),
+					'footer_text'              => array(
+						'default' => '#FFFEFA',
+						'label'   => esc_html__( 'Footer Text Color', 'smile-web' ),
+					),
+					'footer_link_color'        => array(
+						'default' => '#307C03',
+						'label'   => esc_html__( 'Footer Link Color', 'smile-web' ),
+					),
+					'footer_link_hover_color'  => array(
+						'default' => '#306a93',
+						'label'   => esc_html__( 'Footer Link Hover Color', 'smile-web' ),
+					),
+					'footer_border_color'      => array(
+						'default' => '#f6fbf7',
+						'label'   => esc_html__( 'Footer Border Color', 'smile-web' ),
+					),
+					'footer_social_bg'         => array(
+						'default' => '#4a994f',
+						'label'   => esc_html__( 'Footer Social Background Color', 'smile-web' ),
+					),
+					'footer_social_icon'       => array(
+						'default' => '#ffffff',
+						'label'   => esc_html__( 'Footer Social Icon Color', 'smile-web' ),
+					),
+					'footer_social_icon_hover' => array(
+						'default' => '#4a994f',
+						'label'   => esc_html__( 'Footer Social Icon Hover Color', 'smile-web' ),
+					),
 				);
-				$wp_customize->add_control(
-					new WP_Customize_Color_Control(
-						$wp_customize,
-						$id,
-						array(
-							'label'    => $args['label'],
-							'section'  => 'custom_theme_topbar_colors',
-							'settings' => $id,
-						)
-					)
-				);
-		}
 
-		// Create settings and controls for masthead colors.
-		foreach ( $masthead_colors as $id => $args ) {
-				$wp_customize->add_setting(
-					$id,
-					array(
-						'default'           => $args['default'],
-						'sanitize_callback' => 'sanitize_hex_color',
-					)
-				);
-				$wp_customize->add_control(
-					new WP_Customize_Color_Control(
-						$wp_customize,
-						$id,
-						array(
-							'label'    => $args['label'],
-							'section'  => 'custom_theme_masthead_colors',
-							'settings' => $id,
-						)
-					)
-				);
-		}
+				// Create settings and controls for global colors.
+				foreach ( $global_colors as $id => $args ) {
+						$wp_customize->add_setting(
+							$id,
+							array(
+								'default'           => $args['default'],
+								'sanitize_callback' => 'sanitize_hex_color',
+							)
+						);
+						$wp_customize->add_control(
+							new WP_Customize_Color_Control(
+								$wp_customize,
+								$id,
+								array(
+									'label'    => $args['label'],
+									'section'  => 'custom_theme_global_colors',
+									'settings' => $id,
+								)
+							)
+						);
+				}
 
-		// Create settings and controls for footer colors.
-		foreach ( $footer_colors as $id => $args ) {
-				$wp_customize->add_setting(
-					$id,
-					array(
-						'default'           => $args['default'],
-						'sanitize_callback' => 'sanitize_hex_color',
-					)
-				);
-				$wp_customize->add_control(
-					new WP_Customize_Color_Control(
-						$wp_customize,
-						$id,
-						array(
-							'label'    => $args['label'],
-							'section'  => 'custom_theme_footer_colors',
-							'settings' => $id,
-						)
-					)
-				);
-		}
+				// Create settings and controls for top bar colors.
+				foreach ( $topbar_colors as $id => $args ) {
+						$wp_customize->add_setting(
+							$id,
+							array(
+								'default'           => $args['default'],
+								'sanitize_callback' => 'sanitize_hex_color',
+							)
+						);
+						$wp_customize->add_control(
+							new WP_Customize_Color_Control(
+								$wp_customize,
+								$id,
+								array(
+									'label'    => $args['label'],
+									'section'  => 'custom_theme_topbar_colors',
+									'settings' => $id,
+								)
+							)
+						);
+				}
+
+				// Create settings and controls for masthead colors.
+				foreach ( $masthead_colors as $id => $args ) {
+						$wp_customize->add_setting(
+							$id,
+							array(
+								'default'           => $args['default'],
+								'sanitize_callback' => 'sanitize_hex_color',
+							)
+						);
+						$wp_customize->add_control(
+							new WP_Customize_Color_Control(
+								$wp_customize,
+								$id,
+								array(
+									'label'    => $args['label'],
+									'section'  => 'custom_theme_masthead_colors',
+									'settings' => $id,
+								)
+							)
+						);
+				}
+
+				// Create settings and controls for footer colors.
+				foreach ( $footer_colors as $id => $args ) {
+						$wp_customize->add_setting(
+							$id,
+							array(
+								'default'           => $args['default'],
+								'sanitize_callback' => 'sanitize_hex_color',
+							)
+						);
+						$wp_customize->add_control(
+							new WP_Customize_Color_Control(
+								$wp_customize,
+								$id,
+								array(
+									'label'    => $args['label'],
+									'section'  => 'custom_theme_footer_colors',
+									'settings' => $id,
+								)
+							)
+						);
+				}
 }
 add_action( 'customize_register', 'smile_v6_customize_theme_sections' );
 
