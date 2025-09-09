@@ -24,11 +24,12 @@ function smile_web_add_dynamic_styles() {
        $topbar_link       = sanitize_hex_color( get_theme_mod( 'topbar_link', '#307C03' ) );
        $topbar_link_hover = sanitize_hex_color( get_theme_mod( 'topbar_link_hover', '#306a93' ) );
        $topbar_social_icon = sanitize_hex_color( get_theme_mod( 'topbar_social_icon', '#001833' ) );
-       $masthead_bg        = sanitize_hex_color( get_theme_mod( 'masthead_bg', '#001833' ) );
-       $masthead_text      = sanitize_hex_color( get_theme_mod( 'masthead_text', '#d2e1ef' ) );
-       $masthead_link      = sanitize_hex_color( get_theme_mod( 'masthead_link', '#d2e1ef' ) );
-       $masthead_link_hover = sanitize_hex_color( get_theme_mod( 'masthead_link_hover', '#306a93' ) );
-       $masthead_scrolled_bg = sanitize_hex_color( get_theme_mod( 'masthead_scrolled_bg', '#d2e1ef' ) );
+       $masthead_bg          = sanitize_hex_color( get_theme_mod( 'masthead_bg', '#001833' ) );
+       $masthead_submenu_bg   = sanitize_hex_color( get_theme_mod( 'masthead_submenu_bg', '#001833' ) );
+       $masthead_submenu_text = sanitize_hex_color( get_theme_mod( 'masthead_submenu_text', '#d2e1ef' ) );
+       $masthead_link         = sanitize_hex_color( get_theme_mod( 'masthead_link', '#d2e1ef' ) );
+       $masthead_link_hover   = sanitize_hex_color( get_theme_mod( 'masthead_link_hover', '#306a93' ) );
+       $masthead_scrolled_bg  = sanitize_hex_color( get_theme_mod( 'masthead_scrolled_bg', '#d2e1ef' ) );
        $footer_bg          = sanitize_hex_color( get_theme_mod( 'footer_bg', '#274c77' ) );
        $footer_text        = sanitize_hex_color( get_theme_mod( 'footer_text', '#FFFEFA' ) );
        $footer_link        = sanitize_hex_color( get_theme_mod( 'footer_link_color', '#307C03' ) );
@@ -59,7 +60,8 @@ function smile_web_add_dynamic_styles() {
                        --topbar-link-hover: ' . esc_attr( $topbar_link_hover ) . ';
                        --topbar-social-icon: ' . esc_attr( $topbar_social_icon ) . ';
                        --masthead-bg: ' . esc_attr( $masthead_bg ) . ';
-                       --masthead-text: ' . esc_attr( $masthead_text ) . ';
+                       --masthead-submenu-bg: ' . esc_attr( $masthead_submenu_bg ) . ';
+                       --masthead-submenu-text: ' . esc_attr( $masthead_submenu_text ) . ';
                        --masthead-link: ' . esc_attr( $masthead_link ) . ';
                        --masthead-link-hover: ' . esc_attr( $masthead_link_hover ) . ';
                        --masthead-scrolled-bg: ' . esc_attr( $masthead_scrolled_bg ) . ';

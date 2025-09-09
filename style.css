@@ -320,7 +320,7 @@ a:hover {
 #masthead {
     transition: all 0.5s;
     background-color: var(--masthead-bg);
-    color: var(--masthead-text);
+    color: var(--masthead-submenu-text);
 }
 
 #masthead a {
@@ -341,7 +341,7 @@ nav {
     transition: all 0.5s;
     padding: 15px 0;
     background-color: var(--masthead-bg);
-    color: var(--masthead-text);
+    color: var(--masthead-submenu-text);
 }
 
 .header-scrolled .header-scrolled-visible p,
@@ -482,7 +482,7 @@ ul .sub-menu {
     margin: 0;
     list-style: none;
     position: relative;
-    background-color: var(--masthead-bg);
+    background-color: var(--masthead-submenu-bg);
     border-top: 1px solid var(--masthead-link-hover);
 }
 
@@ -493,7 +493,7 @@ ul .sub-menu {
 }
 
 #nav-menu .sub-menu li>a {
-    color: var(--masthead-text);
+    color: var(--masthead-submenu-text);
 }
 
 .menu-item-has-children {
@@ -510,7 +510,7 @@ ul .sub-menu {
     right: 20px !important;
     z-index: 9999;
     right: 30px;
-    color: var(--masthead-text);
+    color: var(--masthead-submenu-text);
     font-weight: 200;
     font-size: 20px;
 }
@@ -591,7 +591,7 @@ ul .sub-menu {
         margin-top: 10px;
         min-width: 150px;
         max-width: 250px;
-        background-color: var(--color-white);
+        background-color: var(--masthead-submenu-bg);
         display: block !important;
         max-height: none !important;
     }
@@ -627,7 +627,7 @@ ul .sub-menu {
     .menu-item-has-children:focus-within>ul,
     .menu-item-has-children>ul {
         position: absolute;
-        background-color: var(--color-white);
+        background-color: var(--masthead-submenu-bg);
         box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
         left: 0;
         width: 100%;
