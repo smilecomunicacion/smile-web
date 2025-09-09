@@ -78,12 +78,12 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 	);
 
 	// Array with general settings.
-	$settings = array(
-		'top_bar_email'      => array(
-			'label'   => esc_html__( 'Top Bar Email', 'smile-web' ),
-			'type'    => 'email',
-			'default' => '',
-		),
+        $settings = array(
+                'top_bar_email'      => array(
+                        'label'   => esc_html__( 'Top Bar Email', 'smile-web' ),
+                        'type'    => 'email',
+                        'default' => '',
+                ),
 		'top_bar_telephone'  => array(
 			'label'   => esc_html__( 'Top Bar Telephone', 'smile-web' ),
 			'type'    => 'text',
@@ -119,12 +119,17 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 			'type'    => 'number',
 			'default' => 0,
 		),
-		'footer_logo'        => array(
-			'label'   => esc_html__( 'Footer Logo', 'smile-web' ),
-			'type'    => 'image',
-			'default' => '',
-		),
-	);
+                'footer_logo'        => array(
+                        'label'   => esc_html__( 'Footer Logo', 'smile-web' ),
+                        'type'    => 'image',
+                        'default' => '',
+                ),
+               'breadcrumb_separator' => array(
+                       'label'   => esc_html__( 'Breadcrumb Separator', 'smile-web' ),
+                       'type'    => 'text',
+                       'default' => '/',
+               ),
+        );
 
 	// Create settings and controls for general settings.
 	foreach ( $settings as $id => $args ) {
@@ -150,12 +155,13 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		);
 	}
 
-		// Global color controls.
-		$global_colors = array(
-			'color_text'            => array(
-				'default' => '#00112b',
-				'label'   => esc_html__( 'Text Color', 'smile-web' ),
-			),
+               // Global color controls.
+               // Ensure chosen colors maintain a 4.5:1 contrast ratio for accessibility.
+               $global_colors = array(
+                        'color_text'            => array(
+                                'default' => '#00112b',
+                                'label'   => esc_html__( 'Text Color', 'smile-web' ),
+                        ),
 			'color_link'            => array(
 				'default' => '#307C03',
 				'label'   => esc_html__( 'Link Color', 'smile-web' ),
@@ -172,14 +178,18 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#6c757d',
 				'label'   => esc_html__( 'Muted Color', 'smile-web' ),
 			),
-			'color_warning'         => array(
-				'default' => '#ffc107',
-				'label'   => esc_html__( 'Warning Color', 'smile-web' ),
-			),
-			'accent-primary-light'  => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
-			),
+                        'color_warning'         => array(
+                                'default' => '#ffc107',
+                                'label'   => esc_html__( 'Warning Color', 'smile-web' ),
+                        ),
+                       'cta_bg'                => array(
+                               'default' => '#ffc107',
+                               'label'   => esc_html__( 'CTA Background Color', 'smile-web' ),
+                       ),
+                        'accent-primary-light'  => array(
+                                'default' => '#d2e1ef',
+                                'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
+                        ),
 			'accent-primary'        => array(
 				'default' => '#d2e1ef',
 				'label'   => esc_html__( 'Primary Accent Color', 'smile-web' ),

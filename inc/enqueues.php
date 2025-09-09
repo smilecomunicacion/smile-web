@@ -268,7 +268,7 @@ function smile_v6_enqueue_scripts() {
     line-height: 2em;
 }
 #breadcrumbs li:not(:first-child)::before {
-    content: "/";
+    content: var(--breadcrumb-separator);
     float: left;
     padding-right: 0.5rem;
     color: var(--color-muted);
@@ -341,7 +341,7 @@ function smile_v6_enqueue_scripts() {
     line-height: 2em;
 }
 #breadcrumbs li:not(:first-child)::before {
-    content: "/";
+    content: var(--breadcrumb-separator);
     float: left;
     padding-right: 0.5rem;
     color: var(--color-muted);

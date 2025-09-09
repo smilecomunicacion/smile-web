@@ -562,7 +562,7 @@ ul .sub-menu {
 
     #nav-menu a:hover {
         color: var(--masthead-link-hover);
-        background-color: var(--color-warning);
+        background-color: var(--cta-bg);
     }
 
     .menu-item-has-children {
@@ -1088,7 +1088,8 @@ main ol li::marker {
 }
 
 .bg-cta {
-    background: var(--color-warning);
+    /* Ensure CTA background maintains adequate contrast */
+    background: var(--cta-bg);
 }
 
 .bg-footer {
