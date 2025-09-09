@@ -304,6 +304,10 @@ a:hover {
     fill: var(--topbar-social-icon);
 }
 
+#topBar .buscar svg {
+    fill: var(--topbar-social-icon);
+}
+
 .header-scrolled {
     background-color: var(--masthead-scrolled-bg);
     transition: background-color 0.3s ease;

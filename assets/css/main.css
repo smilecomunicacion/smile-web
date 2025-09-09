@@ -114,6 +114,10 @@
   fill: var(--topbar-social-icon);
 }
 
+#topBar .buscar svg {
+  fill: var(--topbar-social-icon);
+}
+
 #footer .svg-icon svg {
   fill: var(--footer-social-icon);
 }
