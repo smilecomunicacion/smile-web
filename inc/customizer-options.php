@@ -170,10 +170,10 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#306a93',
 				'label'   => esc_html__( 'Link Color Hover', 'smile-web' ),
 			),
-                        'color_link_light'      => array(
-                                'default'     => '#4a994f',
-                                'label'       => esc_html__( 'Link Color Light', 'smile-web' ),
-                                'description' => esc_html__( 'Also sets unordered list bullet color.', 'smile-web' ),
+                       'color_link_light'      => array(
+                                'default' => '#4a994f',
+                                'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
+                                'description' => esc_html__( 'Also colors unordered list bullets', 'smile-web' ),
                         ),
 			'color_muted'           => array(
 				'default' => '#6c757d',
@@ -310,17 +310,21 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 								'sanitize_callback' => 'sanitize_hex_color',
 							)
 						);
-						$wp_customize->add_control(
-							new WP_Customize_Color_Control(
-								$wp_customize,
-								$id,
-								array(
-									'label'    => $args['label'],
-									'section'  => 'custom_theme_global_colors',
-									'settings' => $id,
-								)
-							)
-						);
+                                                $control_args = array(
+                                                        'label'    => $args['label'],
+                                                        'section'  => 'custom_theme_global_colors',
+                                                        'settings' => $id,
+                                                );
+                                                if ( isset( $args['description'] ) ) {
+                                                        $control_args['description'] = $args['description'];
+                                                }
+                                                $wp_customize->add_control(
+                                                        new WP_Customize_Color_Control(
+                                                                $wp_customize,
+                                                                $id,
+                                                                $control_args
+                                                        )
+                                                );
 				}
 
 				// Create settings and controls for top bar colors.

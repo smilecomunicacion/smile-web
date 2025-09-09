@@ -982,7 +982,8 @@ hr {
     background-color: var(--accent-primary-light);
 }
 
-/* c# 4.3 - LIST BULLETS */
+/* c# 4.3 - LIST BULLETS
+   Bullets pull from --color-link-light for contrast on dark backgrounds */
 main article li,
 main section li {
     padding-left: 1em;
@@ -1002,8 +1003,8 @@ main li {
 
 main section ul li::before,
 main article ul li::before {
-    /* list bullets draw from the light link color */
     content: "• ";
+    /* use light link color to match links */
     color: var(--color-link-light);
     font-size: 3em;
     position: relative;
@@ -1099,11 +1100,12 @@ main ol li::marker {
 }
 
 .bg-footer a {
+    /* default to light link color for dark footer */
     color: var(--footer-link, var(--color-link-light));
 }
 
 .bg-footer a:hover {
-    color: var(--footer-link-hover, var(--color-link-light));
+    color: var(--footer-link-hover, var(--color-link-hover));
 }
 
 .bg-dark {
@@ -1122,7 +1124,6 @@ main ol li::marker {
 }
 
 .bg-dark a {
-    /* use light link color on dark backgrounds */
     color: var(--color-link-light);
 }
 
@@ -1473,7 +1474,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-links a {
-    color: var(--footer-link, var(--color-link-light));
+    color: var(--footer-link);
 }
 
 #footer .footer-top .footer-contact,
@@ -1496,7 +1497,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-links a:hover {
-    color: var(--footer-link-hover, var(--color-link-light))
+    color: var(--footer-link-hover)
 }
 
 #footer .footer-top .footer-contact p {
@@ -1559,12 +1560,11 @@ footer h3 {
 
 #menu-legal-menu a {
     text-decoration: none;
-    color: var(--footer-link, var(--color-link-light));
+    color: var(--footer-link);
 }
 
 #menu-legal-menu a:hover {
     text-decoration: underline;
-    color: var(--footer-link-hover, var(--color-link-light));
 }
 
 /* ------------------------------------
