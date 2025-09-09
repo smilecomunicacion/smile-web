@@ -8,13 +8,13 @@ get_header();
 ?>
 <div id="intro" class="carousel slide height-archive">
 </div><!-- #intro -->
-<main id="main" class="blog-page area-padding bg-light2">
+<main id="main" class="blog-page area-padding" style="background-color: var(--bg-light2);">
 	<div class="container">
 		<div class="row">
 			<div id="breadcrumbs">
 				<nav aria-label="breadcrumb">
-					<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="bg-light2 breadcrumb">
-                                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name">Inicio</span></a>
+										<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--bg-light2);">
+												<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 							<meta itemprop="position" content="1" />
 						</li>
 						<?php if ( $post->post_parent ) { ?>
@@ -133,21 +133,21 @@ get_header();
 					$recent->the_post();
 					?>
 					<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
-                                                <figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
-                                                        <?php
-                                                        $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-                                                        $thumb_id  = get_post_thumbnail_id();
-                                                        $thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
-                                                        if ( empty( $thumb_alt ) ) {
-                                                                $thumb_alt = get_the_title();
-                                                        }
-                                                        ?>
-                                                        <img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>">
-                                                </a>
-                                                <figcaption id="post-<?php the_ID(); ?>" class="p-4" style="color: var(--color-white);">
-                                                        <h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
-                                                        <p><?php the_excerpt(); ?></p>
-                                                        <hr>
+												<figure class="mb-0 shadow"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+														<?php
+														$thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+														$thumb_id  = get_post_thumbnail_id();
+														$thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
+														if ( empty( $thumb_alt ) ) {
+																$thumb_alt = get_the_title();
+														}
+														?>
+														<img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>">
+												</a>
+												<figcaption id="post-<?php the_ID(); ?>" class="p-4" style="color: var(--color-white);">
+														<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
+														<p><?php the_excerpt(); ?></p>
+														<hr>
 								<p><?php if ( ( get_the_modified_date( 'j F, Y' ) ) === ( get_the_date( 'j F, Y' ) ) ) { ?>
 										<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
 									<?php } else { ?>

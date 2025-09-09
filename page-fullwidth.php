@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div id="intro" class="pt-5 bg-cta">
+<div id="intro" class="pt-5" style="background-color: var(--cta-bg);">
 	<div class="container py-5 text-center">
 		<h1 class="title mt-2"><?php the_title(); ?></h1>
 		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
@@ -22,7 +22,7 @@ get_header();
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
 				<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
-                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a><meta itemprop="position" content="1" />
+										<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a><meta itemprop="position" content="1" />
 					</li>
 					<?php if ( $post->post_parent ) { ?>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
@@ -106,7 +106,7 @@ if ( is_page() && $post->post_parent ) {
 
 	if ( 0 !== $cat && get_posts( $args ) ) {
 		?>
-<section id="posts-relacionados" class="bg-light">
+<section id="posts-relacionados" style="background-color: var(--bg-light);">
 	<div class="container py-5">
 	<h4><?php echo wp_kses_post( $text_related ); ?></h4>
 	<hr>
