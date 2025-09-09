@@ -218,29 +218,33 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         ),
                 );
 
-		// Masthead color controls.
-		$masthead_colors = array(
-			'masthead_bg'          => array(
-				'default' => '#001833',
-				'label'   => esc_html__( 'Masthead Background Color', 'smile-web' ),
-			),
-			'masthead_text'        => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Masthead Text Color', 'smile-web' ),
-			),
-			'masthead_link'        => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Masthead Link Color', 'smile-web' ),
-			),
-			'masthead_link_hover'  => array(
-				'default' => '#306a93',
-				'label'   => esc_html__( 'Masthead Link Hover Color', 'smile-web' ),
-			),
-			'masthead_scrolled_bg' => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Masthead Scrolled Background Color', 'smile-web' ),
-			),
-		);
+               // Masthead color controls.
+               $masthead_colors = array(
+                       'masthead_bg'           => array(
+                               'default' => '#001833',
+                               'label'   => esc_html__( 'Masthead Background Color', 'smile-web' ),
+                       ),
+                       'masthead_submenu_bg'   => array(
+                               'default' => '#001833',
+                               'label'   => esc_html__( 'Masthead Submenu Background Color', 'smile-web' ),
+                       ),
+                       'masthead_submenu_text' => array(
+                               'default' => '#d2e1ef',
+                               'label'   => esc_html__( 'Masthead Submenu Text Color', 'smile-web' ),
+                       ),
+                       'masthead_link'         => array(
+                               'default' => '#d2e1ef',
+                               'label'   => esc_html__( 'Masthead Link Color', 'smile-web' ),
+                       ),
+                       'masthead_link_hover'   => array(
+                               'default' => '#306a93',
+                               'label'   => esc_html__( 'Masthead Link Hover Color', 'smile-web' ),
+                       ),
+                       'masthead_scrolled_bg'  => array(
+                               'default' => '#d2e1ef',
+                               'label'   => esc_html__( 'Masthead Scrolled Background Color', 'smile-web' ),
+                       ),
+               );
 
 		// Footer color controls.
 		$footer_colors = array(
