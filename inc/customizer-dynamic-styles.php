@@ -52,8 +52,9 @@ function smile_web_add_dynamic_styles() {
 			--color-text: ' . esc_attr( $color_text ) . ';
 			--color-link: ' . esc_attr( $color_link ) . ';
                         --color-link-hover: ' . esc_attr( $color_link_hover ) . ';
-                        --color-link-light: ' . esc_attr( $color_link_light ) . '; /* Also controls unordered list bullets */
-                       --color-muted: ' . esc_attr( $color_muted ) . '; 
+                        /* Link Color Light also sets unordered list bullet color */
+                        --color-link-light: ' . esc_attr( $color_link_light ) . ';
+                       --color-muted: ' . esc_attr( $color_muted ) . ';
                        --color-warning: ' . esc_attr( $color_warning ) . ';
                        --cta-bg: ' . esc_attr( $cta_bg ) . ';
                        --breadcrumb-separator: "' . esc_attr( $breadcrumb_separator ) . '";

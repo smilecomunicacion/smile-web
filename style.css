@@ -1002,7 +1002,7 @@ main li {
 
 main section ul li::before,
 main article ul li::before {
-    /* Bullet color controlled by Link Color Light */
+    /* list bullets draw from the light link color */
     content: "• ";
     color: var(--color-link-light);
     font-size: 3em;
@@ -1098,7 +1098,6 @@ main ol li::marker {
     color: var(--footer-text);
 }
 
-/* Default to light link color on footer background */
 .bg-footer a {
     color: var(--footer-link, var(--color-link-light));
 }
@@ -1122,8 +1121,8 @@ main ol li::marker {
     color: var(--color-white);
 }
 
-/* Use light link color on dark backgrounds */
 .bg-dark a {
+    /* use light link color on dark backgrounds */
     color: var(--color-link-light);
 }
 
@@ -1474,7 +1473,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-links a {
-    color: var(--footer-link);
+    color: var(--footer-link, var(--color-link-light));
 }
 
 #footer .footer-top .footer-contact,
@@ -1497,7 +1496,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-links a:hover {
-    color: var(--footer-link-hover)
+    color: var(--footer-link-hover, var(--color-link-light))
 }
 
 #footer .footer-top .footer-contact p {
@@ -1560,11 +1559,12 @@ footer h3 {
 
 #menu-legal-menu a {
     text-decoration: none;
-    color: var(--footer-link);
+    color: var(--footer-link, var(--color-link-light));
 }
 
 #menu-legal-menu a:hover {
     text-decoration: underline;
+    color: var(--footer-link-hover, var(--color-link-light));
 }
 
 /* ------------------------------------

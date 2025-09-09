@@ -173,7 +173,7 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         'color_link_light'      => array(
                                 'default'     => '#4a994f',
                                 'label'       => esc_html__( 'Link Color Light', 'smile-web' ),
-                                'description' => esc_html__( 'Also controls the color of unordered list bullets.', 'smile-web' ),
+                                'description' => esc_html__( 'Also sets unordered list bullet color.', 'smile-web' ),
                         ),
 			'color_muted'           => array(
 				'default' => '#6c757d',
