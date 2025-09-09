@@ -451,12 +451,15 @@ ul .sub-menu {
     list-style: none;
     position: relative;
     background-color: var(--masthead-submenu-bg);
+    color: var(--masthead-submenu-text);
     border-top: 1px solid var(--masthead-link-hover);
 }
 
 @media (min-width: 768px) {
     #nav-menu .sub-menu {
         border-top: none;
+        background-color: var(--masthead-submenu-bg);
+        color: var(--masthead-submenu-text);
     }
 }
 
@@ -560,6 +563,7 @@ ul .sub-menu {
         min-width: 150px;
         max-width: 250px;
         background-color: var(--masthead-submenu-bg);
+        color: var(--masthead-submenu-text);
         display: block !important;
         max-height: none !important;
     }
