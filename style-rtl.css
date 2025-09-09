@@ -288,8 +288,8 @@ a:hover {
     height: 25px;
 }
 
-.header-scrolled {
-    background-color: var(--color-1-light);
+.header-scrolled nav {
+    background-color: var(--masthead-scrolled-bg);
     transition: background-color 0.3s ease;
 }
 
