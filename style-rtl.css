@@ -53,7 +53,7 @@ Use it to make something cool, have fun, and share what you've learned.
 }
 
 .bwg-item {
-    border: 1px solid var(--color-2-dark);
+    border: 1px solid var(--accent-secondary-dark);
 }
 
 .bwg-title1 {
@@ -141,7 +141,7 @@ h2,
 }
 
 h3 {
-    color: var(--color-2);
+    color: var(--accent-secondary);
     line-height: 1.2em;
 }
 
@@ -154,7 +154,7 @@ section p:not(.lead):not(.h2) {
 }
 
 .blog-page h3 {
-    color: var(--color-2);
+    color: var(--accent-secondary);
 }
 
 /*--------------------------------------------------------------
@@ -220,14 +220,14 @@ a:hover {
     margin: 10px;
     border-radius: 50px;
     color: var(--color-white);
-    background-color: var(--color-2-dark);
+    background-color: var(--accent-secondary-dark);
     text-decoration: none;
     letter-spacing: 1px;
 }
 
 .btn-cta2:hover {
     background-color: var(--color-white);
-    color: var(--color-2-dark);
+    color: var(--accent-secondary-dark);
 }
 
 /*--------------------------------------------------------------
@@ -237,7 +237,7 @@ a:hover {
     border-radius: 6px;
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid var(--color-1-light);
+    border: 1px solid var(--accent-primary-light);
     margin: 0 0 30px !important;
     transition: 0.4s;
 }
@@ -246,11 +246,11 @@ a:hover {
     margin-top: -15px !important;
     margin-bottom: 45px !important;
     transition: 0.4s;
-    box-shadow: 0 10px 15px 5px var(--color-1-light);
+    box-shadow: 0 10px 15px 5px var(--accent-primary-light);
 }
 
 .card h3 {
-    color: var(--color-2);
+    color: var(--accent-secondary);
 }
 
 /*--------------------------------------------------------------
@@ -295,7 +295,7 @@ a:hover {
 }
 
 .svg-icon svg {
-    fill: var(--color-2-dark);
+    fill: var(--accent-secondary-dark);
     width: 25px;
     height: 25px;
 }
@@ -931,7 +931,7 @@ section h2 {
     display: block;
     width: 150px;
     height: 2px;
-    background-color: var(--color-1-light);
+    background-color: var(--accent-primary-light);
     bottom: -15px;
     right: calc(50% - 75px);
 }
@@ -979,7 +979,7 @@ hr {
     height: 1px;
     width: 100%;
     margin: 30px 0;
-    background-color: var(--color-1-light);
+    background-color: var(--accent-primary-light);
 }
 
 /* c# 4.3 - LIST BULLETS */
@@ -1016,7 +1016,7 @@ main article ul li::before {
 /* Listas Ordenadas */
 main ol li::marker {
     padding-right: 1em;
-    color: var(--color-1-light);
+    color: var(--accent-primary-light);
     font-size: 1.6em;
 }
 
@@ -1105,13 +1105,13 @@ main ol li::marker {
 }
 
 .bg-dark {
-    background: var(--color-2-dark);
+    background: var(--accent-secondary-dark);
     border: none;
 }
 
 .bg-dark h2,
 .bg-dark h3 {
-    color: var(--color-1-light);
+    color: var(--accent-primary-light);
 }
 
 .bg-dark p,
@@ -1227,7 +1227,7 @@ main ol li::marker {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: var(--color-2-dark);
+    background-color: var(--accent-secondary-dark);
     color: var(--color-white);
 }
 
@@ -1265,7 +1265,7 @@ main ol li::marker {
     right: 15%;
     width: 85%;
     height: 95%;
-    background-color: var(--color-1-light);
+    background-color: var(--accent-primary-light);
     z-index: 0;
 }
 
@@ -1280,7 +1280,7 @@ main ol li::marker {
 --------------------------------------------------------------*/
 
 body.single .svg-icon svg {
-    fill: var(--color-2-dark);
+    fill: var(--accent-secondary-dark);
     position: relative;
 }
 
@@ -1306,7 +1306,7 @@ body.single .svg-icon svg {
 /* # 4.9 - SIDEBAR */
 .sidebar-menu {
     background-color: var(--color-white);
-    border: 2px solid var(--color-1-light);
+    border: 2px solid var(--accent-primary-light);
     padding: 10px;
 }
 
@@ -1315,20 +1315,20 @@ body.single .svg-icon svg {
 }
 
 .sidebar-border-bot {
-    border-bottom: 2px solid var(--color-1-light);
+    border-bottom: 2px solid var(--accent-primary-light);
 }
 
 .sidebar-border {
-    border: 2px solid var(--color-1-light);
+    border: 2px solid var(--accent-primary-light);
 }
 
 /* BARRA LATERAL SIMULANDO HR  */
 .sidebar-border-bot {
-    border-bottom: 2px solid var(--color-1-light);
+    border-bottom: 2px solid var(--accent-primary-light);
 }
 
 .sidebar-border {
-    border: 2px solid var(--color-1-light);
+    border: 2px solid var(--accent-primary-light);
 }
 
 
@@ -1336,7 +1336,7 @@ body.single .svg-icon svg {
 # 5.0 - FORM
 --------------------------------------------------------------*/
 #details {
-    background-color: var(--color-2-dark);
+    background-color: var(--accent-secondary-dark);
     text-align: center;
     line-height: 1.2;
 }
@@ -1388,12 +1388,12 @@ body.single .svg-icon svg {
 
 #footer-bottom {
     padding: 30px 0;
-    background-color: var(--color-2-dark);
+    background-color: var(--accent-secondary-dark);
     color: var(--color-white);
 }
 
 footer h3 {
-    color: var(--color-1-light);
+    color: var(--accent-primary-light);
 }
 
 .footer-list {
@@ -1597,7 +1597,7 @@ footer h3 {
 }
 
 .wp-block-separator {
-    color: var(--color-1-light);
+    color: var(--accent-primary-light);
     margin: 30px 0;
 }
 
