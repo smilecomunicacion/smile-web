@@ -107,7 +107,7 @@
 }
 
 .svg-icon svg {
-  fill: var(--color-2-dark);
+  fill: var(--accent-secondary-dark);
 }
 
 #topBar .svg-icon svg {

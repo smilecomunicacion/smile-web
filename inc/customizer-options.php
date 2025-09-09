@@ -168,22 +168,22 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#4a994f',
 				'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
 			),
-			'color_1_light'    => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Color 1 Light', 'smile-web' ),
-			),
-			'color_1'          => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Color 1', 'smile-web' ),
-			),
-			'color_2'          => array(
-				'default' => '#225274',
-				'label'   => esc_html__( 'Color 2', 'smile-web' ),
-			),
-			'color_2_dark'     => array(
-				'default' => '#001833',
-				'label'   => esc_html__( 'Color 2 Dark', 'smile-web' ),
-			),
+                        'accent-primary-light' => array(
+                                'default' => '#d2e1ef',
+                                'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
+                        ),
+                        'accent-primary'      => array(
+                                'default' => '#d2e1ef',
+                                'label'   => esc_html__( 'Primary Accent Color', 'smile-web' ),
+                        ),
+                        'accent-secondary'    => array(
+                                'default' => '#225274',
+                                'label'   => esc_html__( 'Secondary Accent Color', 'smile-web' ),
+                        ),
+                        'accent-secondary-dark'     => array(
+                                'default' => '#001833',
+                                'label'   => esc_html__( 'Secondary Accent Color Dark', 'smile-web' ),
+                        ),
 			'bg_light'         => array(
 				'default' => '#edf7ef',
 				'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
