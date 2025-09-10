@@ -38,10 +38,10 @@ get_header();
 			<!-- Main Content -->
 			<div class="col-md-8">
 				<?php if ( have_posts() ) : ?>
-					<header class="archive-header mb-4">
-						<h1 class="archive-title"><?php the_archive_title(); ?></h1>
-						<p class="archive-description"><?php the_archive_description(); ?></p>
-					</header>
+                                        <header class="archive-header mb-4">
+                                                <h1 class="archive-title text-heading"><?php the_archive_title(); ?></h1>
+                                                <p class="archive-description text-subheading"><?php the_archive_description(); ?></p>
+                                        </header>
 					<div class="archive-posts">
 						<?php
 						while ( have_posts() ) :
@@ -59,7 +59,7 @@ get_header();
 						?>
 					</div>
 				<?php else : ?>
-					<h2 class="no-posts"><?php esc_html_e( 'No posts found.', 'smile-web' ); ?></h2>
+                                        <h2 class="no-posts text-heading"><?php esc_html_e( 'No posts found.', 'smile-web' ); ?></h2>
 				<?php endif; ?>
 			</div>
 

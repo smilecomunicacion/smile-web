@@ -11,8 +11,8 @@ get_header();
 ?>
 <section id="intro">
 <div class="container">
-       <p class="lead mt-4"> <?php esc_html_e( 'Search:', 'smile-web' ); ?> </p>
-	<h1 class="page-title"> <?php echo esc_html( get_search_query() ); ?> </h1>
+       <p class="text-emphasis mt-4"> <?php esc_html_e( 'Search:', 'smile-web' ); ?> </p>
+        <h1 class="page-title text-heading"> <?php echo esc_html( get_search_query() ); ?> </h1>
 </div><!-- .page-header -->
 
 </section>

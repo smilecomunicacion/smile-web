@@ -9,18 +9,21 @@
  * Outputs inline dynamic CSS based on customizer settings.
  */
 function smile_web_add_dynamic_styles() {
-	$color_text                   = sanitize_hex_color( get_theme_mod( 'color_text', '#00112b' ) );
-	$color_link                   = sanitize_hex_color( get_theme_mod( 'color_link', '#307C03' ) );
-		$color_link_hover         = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
-$color_link_light         = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
-$comment_color            = sanitize_hex_color( get_theme_mod( 'comment_color', '#307C03' ) );
-$card_text_color          = sanitize_hex_color( get_theme_mod( 'card_text_color', '#00112b' ) );
-$color_muted              = sanitize_hex_color( get_theme_mod( 'color_muted', '#6c757d' ) );
-$color_warning            = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
-$cta_bg                   = sanitize_hex_color( get_theme_mod( 'cta_bg', '#ffc107' ) );
-$heading_color            = sanitize_hex_color( get_theme_mod( 'heading_color', '#306a93' ) );
-$lead_color               = sanitize_hex_color( get_theme_mod( 'lead_color', '#306a93' ) );
-$breadcrumb_separator     = sanitize_text_field( get_theme_mod( 'breadcrumb_separator', '/' ) );
+        $color_link                   = sanitize_hex_color( get_theme_mod( 'color_link', '#307C03' ) );
+        $color_link_hover             = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
+        $color_link_light             = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
+        $comment_color                = sanitize_hex_color( get_theme_mod( 'comment_color', '#307C03' ) );
+        $card_text_color              = sanitize_hex_color( get_theme_mod( 'card_text_color', '#00112b' ) );
+        $color_warning                = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
+        $cta_bg                       = sanitize_hex_color( get_theme_mod( 'cta_bg', '#ffc107' ) );
+        $breadcrumb_separator         = sanitize_text_field( get_theme_mod( 'breadcrumb_separator', '/' ) );
+        $text_base                    = sanitize_hex_color( get_theme_mod( 'text_base', '#00112b' ) );
+        $text_muted                   = sanitize_hex_color( get_theme_mod( 'text_muted', '#6c757d' ) );
+        $text_heading                 = sanitize_hex_color( get_theme_mod( 'text_heading', '#306a93' ) );
+        $text_subheading              = sanitize_hex_color( get_theme_mod( 'text_subheading', '#225274' ) );
+        $text_emphasis                = sanitize_hex_color( get_theme_mod( 'text_emphasis', '#307C03' ) );
+        $text_quote                   = sanitize_hex_color( get_theme_mod( 'text_quote', '#225274' ) );
+        $text_list                    = sanitize_hex_color( get_theme_mod( 'text_list', '#00112b' ) );
 		$accent_primary_light     = sanitize_hex_color( get_theme_mod( 'accent-primary-light', '#d2e1ef' ) );
 		$accent_primary           = sanitize_hex_color( get_theme_mod( 'accent-primary', '#d2e1ef' ) );
 		$accent_secondary         = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
@@ -53,18 +56,21 @@ $modal_border                 = sanitize_hex_color( '#888888' );
 
 	$dynamic_css = '
 		:root {
-			--color-text: ' . esc_attr( $color_text ) . ';
-			--color-link: ' . esc_attr( $color_link ) . ';
---color-link-hover: ' . esc_attr( $color_link_hover ) . ';
---color-link-light: ' . esc_attr( $color_link_light ) . ';
-                       --comment-color: ' . esc_attr( $comment_color ) . ';
-                       --card-text-color: ' . esc_attr( $card_text_color ) . ';
-                       --color-muted: ' . esc_attr( $color_muted ) . ';
-   --color-warning: ' . esc_attr( $color_warning ) . ';
-   --cta-bg: ' . esc_attr( $cta_bg ) . ';
-   --heading-color: ' . esc_attr( $heading_color ) . ';
-   --lead-color: ' . esc_attr( $lead_color ) . ';
-   --breadcrumb-separator: "' . esc_attr( $breadcrumb_separator ) . '";
+                        --color-link: ' . esc_attr( $color_link ) . ';
+                        --color-link-hover: ' . esc_attr( $color_link_hover ) . ';
+                        --color-link-light: ' . esc_attr( $color_link_light ) . ';
+                        --comment-color: ' . esc_attr( $comment_color ) . ';
+                        --card-text-color: ' . esc_attr( $card_text_color ) . ';
+                        --color-warning: ' . esc_attr( $color_warning ) . ';
+                        --cta-bg: ' . esc_attr( $cta_bg ) . ';
+                        --breadcrumb-separator: "' . esc_attr( $breadcrumb_separator ) . '";
+                        --text-base: ' . esc_attr( $text_base ) . ';
+                        --text-muted: ' . esc_attr( $text_muted ) . ';
+                        --text-heading: ' . esc_attr( $text_heading ) . ';
+                        --text-subheading: ' . esc_attr( $text_subheading ) . ';
+                        --text-emphasis: ' . esc_attr( $text_emphasis ) . ';
+                        --text-quote: ' . esc_attr( $text_quote ) . ';
+                        --text-list: ' . esc_attr( $text_list ) . ';
                        --accent-primary-light: ' . esc_attr( $accent_primary_light ) . ';
                        --accent-primary: ' . esc_attr( $accent_primary ) . ';
                        --accent-secondary: ' . esc_attr( $accent_secondary ) . ';

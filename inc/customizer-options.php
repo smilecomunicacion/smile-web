@@ -182,10 +182,38 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                'default' => '#00112b',
                                'label'   => esc_html__( 'Card Text Color', 'smile-web' ),
                        ),
-                        'color_muted'           => array(
-                                'default' => '#6c757d',
-                                'label'   => esc_html__( 'Muted Color', 'smile-web' ),
-                        ),
+                       'text_base'           => array(
+                               'default' => '#00112b',
+                               'label'   => esc_html__( 'Base Text Color', 'smile-web' ),
+                       ),
+                       'text_muted'          => array(
+                               'default' => '#6c757d',
+                               'label'   => esc_html__( 'Muted Text Color', 'smile-web' ),
+                       ),
+                       'text_heading'        => array(
+                               'default' => '#306a93',
+                               'label'   => esc_html__( 'Heading Text Color', 'smile-web' ),
+                       ),
+                       'text_subheading'     => array(
+                               'default' => '#225274',
+                               'label'   => esc_html__( 'Subheading Text Color', 'smile-web' ),
+                       ),
+                       'text_emphasis'       => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Emphasis Text Color', 'smile-web' ),
+                       ),
+                       'text_quote'          => array(
+                               'default' => '#225274',
+                               'label'   => esc_html__( 'Quote Text Color', 'smile-web' ),
+                       ),
+                       'text_list'           => array(
+                               'default' => '#00112b',
+                               'label'   => esc_html__( 'List Text Color', 'smile-web' ),
+                       ),
+                       'color_muted'           => array(
+                               'default' => '#6c757d',
+                               'label'   => esc_html__( 'Muted Color', 'smile-web' ),
+                       ),
                         'color_warning'         => array(
                                 'default' => '#ffc107',
                                 'label'   => esc_html__( 'Warning Color', 'smile-web' ),

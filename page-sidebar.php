@@ -39,7 +39,7 @@ get_header();
 		<div class="row">
 			<!-- Start single post -->
 			<article id="post-<?php the_ID(); ?>" class="entry-content col-md-8">
-				<h1 class="title"><?php the_title(); ?></h1>
+                                <h1 class="text-heading"><?php the_title(); ?></h1>
 				<?php
 				the_content();
 

@@ -12,7 +12,7 @@ get_header();
 <div id="intro" class="pt-5">
 	<div class="container py-3">
 		<div class="row text-center py-2">
-			<h1 class="title my-2"><?php the_title(); ?></h1>
+                        <h1 class="text-heading my-2"><?php the_title(); ?></h1>
 			<div class="entry-header d-flex justify-content-center">
 				<?php if ( is_single() ) : ?>
 					<span>
@@ -187,7 +187,7 @@ get_header();
 			?>
                <section id="posts-relacionados" class="bg-light2">
 		<div class="container py-5">
-			<p class="lead col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
+                        <p class="text-emphasis col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
 			<?php
 			$categories = get_the_category();
 			foreach ( $categories as $category ) {
