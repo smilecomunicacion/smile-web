@@ -1420,7 +1420,27 @@ body.single .comment-count {
 input,
 select,
 textarea {
-    background-color: var(--bg-input);
+    color: var(--form-text);
+    background-color: var(--form-bg);
+    border: 1px solid var(--form-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--form-placeholder);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--form-border-focus);
+}
+
+.invalid-feedback {
+    color: var(--form-error);
+}
+
+.valid-feedback {
+    color: var(--form-success);
 }
 
 #details {
@@ -1592,7 +1612,7 @@ footer h3 {
     border: 0;
     padding: 6px 8px;
     width: 65%;
-    background: var(--bg-input);
+    background: var(--form-bg);
 }
 
 #footer .footer-top .footer-newsletter input[type=submit] {
