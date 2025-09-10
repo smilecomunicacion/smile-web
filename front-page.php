@@ -47,9 +47,9 @@ if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
 		<div class="row">
 			<div class="col-md-6">
 				<?php if ( 'custom' === $intro_content_type && ! empty( $intro_custom_title ) ) : ?>
-				<h1 class="title"><?php echo esc_html( $intro_custom_title ); ?></h1>
+                                <h1 class="text-heading"><?php echo esc_html( $intro_custom_title ); ?></h1>
 				<?php else : ?>
-				<h1 class="title"><?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
+                                <h1 class="text-heading"><?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
 				<?php endif; ?>
 
 				<?php if ( 'custom' === $intro_content_type && ! empty( $intro_custom_description ) ) : ?>
@@ -100,10 +100,10 @@ if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
 		?>
 	<section id="posts-relacionados" class="bg-light2">
 		<div class="container py-5 text-center">
-			<p class="lead pb-2 border-bottom">
+                    <p class="text-emphasis pb-2 border-bottom">
 				<?php echo esc_html( $custom_blog_title ); ?>
 			</p>
-			<p class="lead">
+                    <p class="text-emphasis">
 				<?php echo esc_html( $blog_description ); ?>
 			</p>
 		</div>
@@ -157,7 +157,7 @@ if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
 						</a>
 
 						<figcaption class="bg-white px-4">
-							<p class="lead">
+                                                    <p class="text-emphasis">
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
 									<?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								</a>

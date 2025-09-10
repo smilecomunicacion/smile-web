@@ -271,7 +271,7 @@ function smile_v6_enqueue_scripts() {
     content: var(--breadcrumb-separator);
     float: left;
     padding-right: 0.5rem;
-    color: var(--color-muted);
+    color: var(--text-muted);
 }
 .breadcrumb {
     display: flex;
@@ -344,7 +344,7 @@ function smile_v6_enqueue_scripts() {
     content: var(--breadcrumb-separator);
     float: left;
     padding-right: 0.5rem;
-    color: var(--color-muted);
+    color: var(--text-muted);
 }
 .breadcrumb {
     display: flex;

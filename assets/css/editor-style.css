@@ -1,7 +1,7 @@
 /* editor-style.css */
 body .editor-styles-wrapper {
     font-family: 'Roboto', sans-serif;
-    color: #05232c;
+    color: var(--text-base);
     background-color: #ffffff;
 }
 @font-face {
@@ -24,8 +24,12 @@ body .editor-styles-wrapper {
     font-style: normal;
   }
 /* Estilos para el editor */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-text);
+h1 {
+    color: var(--text-heading);
+}
+
+h2, h3, h4, h5, h6 {
+    color: var(--text-subheading);
 }
 
 a {

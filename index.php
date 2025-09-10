@@ -19,7 +19,7 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 ?>
 <div id="intro">
 	<div class="text-center py-5">
-		<h1><?php echo esc_html( $page_title ); ?></h1>
+                <h1 class="text-heading"><?php echo esc_html( $page_title ); ?></h1>
 		<p class="text-center mt-4">
 			<a href="#contact" class="btn-cta" rel="nofollow noreferrer">
                                <?php esc_html_e( 'Contact us', 'smile-web' ); ?>
@@ -152,7 +152,7 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
                                                                                                         height="400">
                                                                                         </a>
                                                                                         <figcaption class="bg-white px-4">
-                                                                                                <p class="lead">
+                                                                                                <p class="text-emphasis">
                                                                                                         <a href="<?php the_permalink(); ?>"
                                                                                                                 rel="bookmark"
                                                                                                                 title="<?php echo esc_attr( get_the_title() ); ?>">

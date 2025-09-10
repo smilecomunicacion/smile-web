@@ -116,6 +116,7 @@ body {
     margin: 0;
     font-family: var(--font-family);
     line-height: 1.7em;
+    color: var(--text-base);
 }
 
 
@@ -123,11 +124,9 @@ body {
 /*--------------------------------------------------------------
 # 1.1 - HEADERS H1, H2, H3, P
 --------------------------------------------------------------*/
-h1,
-h2,
-.h2 {
+h1 {
     line-height: 1.1em;
-    color: var(--heading-color);
+    color: var(--text-heading);
     font-family: var(--font-family-bold);
     padding-top: 0;
     margin: 0;
@@ -137,11 +136,18 @@ h2,
 
 h2,
 .h2 {
+    line-height: 1.1em;
+    color: var(--text-subheading);
+    font-family: var(--font-family-bold);
+    padding-top: 0;
+    margin: 0;
+    padding-bottom: 10px;
+    width: 100%;
     font-size: 36px;
 }
 
 h3 {
-    color: var(--accent-secondary);
+    color: var(--text-subheading);
     line-height: 1.2em;
 }
 
@@ -149,17 +155,45 @@ p {
     width: 100%;
 }
 
-section p:not(.lead):not(.h2) {
-    color: var(--color-text);
+section p:not(.text-emphasis):not(.h2) {
+    color: var(--text-base);
 }
 
 small,
 .text-muted {
-    color: var(--color-muted);
+    color: var(--text-muted);
+}
+
+.text-base {
+    color: var(--text-base);
+}
+
+.text-heading {
+    color: var(--text-heading);
+}
+
+.text-subheading {
+    color: var(--text-subheading);
+}
+
+blockquote,
+.text-quote {
+    color: var(--text-quote);
+}
+
+ul li,
+.text-list {
+    color: var(--text-list);
+}
+
+em,
+strong,
+b {
+    color: var(--text-emphasis);
 }
 
 .blog-page h3 {
-    color: var(--accent-secondary);
+    color: var(--text-subheading);
 }
 
 /*--------------------------------------------------------------
@@ -1044,9 +1078,9 @@ main ol li::marker {
     border: 1px solid var(--border-color) !important;
 }
 
-.lead {
+.text-emphasis {
     font-weight: 200;
-    color: var(--lead-color);
+    color: var(--text-emphasis);
     font-size: 22px;
     line-height: 1.2em;
     margin-bottom: 30px;
@@ -1226,7 +1260,7 @@ main ol li::marker {
 .close:focus,
 .close2:hover,
 .close2:focus {
-    color: var(--color-text);
+    color: var(--text-base);
     text-decoration: none;
     cursor: pointer;
 }
@@ -1245,7 +1279,7 @@ main ol li::marker {
 .modal-footer {
     padding: 2px 16px;
     background-color: var(--color-white);
-    color: var(--color-text);
+    color: var(--text-base);
     min-height: 50px;
 }
 
@@ -1341,7 +1375,7 @@ body.single .comment-count {
 }
 
 .sidebar-text {
-    color: var(--color-text)
+    color: var(--text-base)
 }
 
 .sidebar-border-bot {

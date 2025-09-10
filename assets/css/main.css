@@ -18,6 +18,60 @@
         # 10.0 - MODAL
 --------------------------------------------------------------*/
 
+body {
+  color: var(--text-base);
+}
+
+small {
+  color: var(--text-muted);
+}
+
+h1 {
+  color: var(--text-heading);
+}
+
+h2, h3, h4, h5, h6 {
+  color: var(--text-subheading);
+}
+
+blockquote {
+  color: var(--text-quote);
+}
+
+ul li {
+  color: var(--text-list);
+}
+
+strong,
+b,
+em {
+  color: var(--text-emphasis);
+}
+
+.text-base {
+  color: var(--text-base);
+}
+
+.text-heading {
+  color: var(--text-heading);
+}
+
+.text-subheading {
+  color: var(--text-subheading);
+}
+
+.text-emphasis {
+  color: var(--text-emphasis);
+}
+
+.text-quote {
+  color: var(--text-quote);
+}
+
+.text-list {
+  color: var(--text-list);
+}
+
 /*--------------------------------------------------------------
 # 4.5 - SIDEBAR + WIDGETS
 --------------------------------------------------------------*/
@@ -29,7 +83,7 @@
 }
 
 .sidebar-text {
-  color: var(--color-text-2)
+  color: var(--text-base)
 }
 
 .sidebar-border-bot {

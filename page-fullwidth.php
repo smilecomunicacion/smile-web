@@ -9,7 +9,7 @@ get_header();
 ?>
 <div id="intro" class="pt-5 bg-cta">
 	<div class="container py-5 text-center">
-		<h1 class="title mt-2"><?php the_title(); ?></h1>
+                <h1 class="text-heading mt-2"><?php the_title(); ?></h1>
 		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
 			<?php esc_html_e( 'See main content', 'smile-web' ); ?>
 		</a>
