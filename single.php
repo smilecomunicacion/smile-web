@@ -90,7 +90,7 @@ get_header();
 		</div>
 	</div>
 </div><!-- #intro -->
-<main id="main" class="blog-page" style="background-color: var(--bg-light);">
+<main id="main" class="blog-page bg-light">
 	<div class="container py-4">
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
@@ -185,7 +185,7 @@ get_header();
 				'post__not_in'   => array( $current_post_id ),
 			);
 			?>
-		<section id="posts-relacionados" style="background-color: var(--bg-light2);">
+               <section id="posts-relacionados" class="bg-light2">
 		<div class="container py-5">
 			<p class="lead col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
 			<?php

@@ -1080,12 +1080,13 @@ main ol li::marker {
 
 
 /* # 4.5 - BACKGROUND colors */
+
 .bg-light {
-    background: var(--bg-light);
+    background-color: var(--bg-light);
 }
 
 .bg-light2 {
-    background: var(--bg-light2);
+    background-color: var(--bg-light2);
 }
 
 .bg-white {
@@ -1094,7 +1095,7 @@ main ol li::marker {
 
 .bg-cta {
     /* Ensure CTA background maintains adequate contrast */
-    background: var(--cta-bg);
+    background-color: var(--cta-bg);
 }
 
 .bg-footer {

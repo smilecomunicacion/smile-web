@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div id="intro" class="pt-5" style="background-color: var(--cta-bg);">
+<div id="intro" class="pt-5 bg-cta">
 	<div class="container py-5 text-center">
 		<h1 class="title mt-2"><?php the_title(); ?></h1>
 		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
@@ -106,7 +106,7 @@ if ( is_page() && $post->post_parent ) {
 
 	if ( 0 !== $cat && get_posts( $args ) ) {
 		?>
-<section id="posts-relacionados" style="background-color: var(--bg-light);">
+<section id="posts-relacionados" class="bg-light">
 	<div class="container py-5">
 	<h4><?php echo wp_kses_post( $text_related ); ?></h4>
 	<hr>

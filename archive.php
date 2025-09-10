@@ -12,13 +12,13 @@ get_header();
 
 <div id="intro" class="carousel slide height-archive"></div><!-- #intro -->
 
-<main id="main" class="blog-page area-padding" style="background-color: var(--bg-light);">
+<main id="main" class="blog-page area-padding bg-light">
 	<div class="container">
 		<div class="row">
 			<!-- Breadcrumbs -->
 			<div id="breadcrumbs" class="col-12">
 				<nav aria-label="breadcrumb">
-										<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--bg-light);">
+                                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb bg-light">
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 														<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
 								<span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span>
