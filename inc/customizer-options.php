@@ -24,49 +24,115 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 			)
 		);
 
-		// Add Global Colors subsection.
-		$wp_customize->add_section(
-			'custom_theme_global_colors',
-			array(
-				'title'      => esc_html__( 'Global Colors', 'smile-web' ),
-				'priority'   => 10,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'custom_theme_colors_panel',
-			)
-		);
+// Add Text Colors subsection.
+$wp_customize->add_section(
+'custom_theme_text_colors',
+array(
+'title'      => esc_html__( 'Text Colors', 'smile-web' ),
+'priority'   => 10,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
 
-		// Add Top Bar Colors subsection.
-		$wp_customize->add_section(
-			'custom_theme_topbar_colors',
-			array(
-				'title'      => esc_html__( 'Top Bar Colors', 'smile-web' ),
-				'priority'   => 15,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'custom_theme_colors_panel',
-			)
-		);
+// Add Link Colors subsection.
+$wp_customize->add_section(
+'custom_theme_link_colors',
+array(
+'title'      => esc_html__( 'Link Colors', 'smile-web' ),
+'priority'   => 11,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
 
-		// Add Masthead Colors subsection.
-		$wp_customize->add_section(
-			'custom_theme_masthead_colors',
-			array(
-				'title'      => esc_html__( 'Masthead Colors', 'smile-web' ),
-				'priority'   => 16,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'custom_theme_colors_panel',
-			)
-		);
+// Add Background Colors subsection.
+$wp_customize->add_section(
+'custom_theme_background_colors',
+array(
+'title'      => esc_html__( 'Background Colors', 'smile-web' ),
+'priority'   => 12,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
 
-		// Add Footer Colors subsection.
-		$wp_customize->add_section(
-			'custom_theme_footer_colors',
-			array(
-				'title'      => esc_html__( 'Footer Colors', 'smile-web' ),
-				'priority'   => 20,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'custom_theme_colors_panel',
-			)
-		);
+// Add Button Colors subsection.
+$wp_customize->add_section(
+'custom_theme_button_colors',
+array(
+'title'      => esc_html__( 'Button Colors', 'smile-web' ),
+'priority'   => 13,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
+
+// Add Form Colors subsection.
+$wp_customize->add_section(
+'custom_theme_form_colors',
+array(
+'title'      => esc_html__( 'Form Colors', 'smile-web' ),
+'priority'   => 14,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
+
+// Add Alert Colors subsection.
+$wp_customize->add_section(
+'custom_theme_alert_colors',
+array(
+'title'      => esc_html__( 'Alert Colors', 'smile-web' ),
+'priority'   => 15,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
+
+// Add Extra Colors subsection.
+$wp_customize->add_section(
+'custom_theme_extra_colors',
+array(
+'title'      => esc_html__( 'Extra Colors', 'smile-web' ),
+'priority'   => 16,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
+
+// Add Top Bar Colors subsection.
+$wp_customize->add_section(
+'custom_theme_topbar_colors',
+array(
+'title'      => esc_html__( 'Top Bar Colors', 'smile-web' ),
+'priority'   => 20,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
+
+// Add Masthead Colors subsection.
+$wp_customize->add_section(
+'custom_theme_masthead_colors',
+array(
+'title'      => esc_html__( 'Masthead Colors', 'smile-web' ),
+'priority'   => 21,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
+
+// Add Footer Colors subsection.
+$wp_customize->add_section(
+'custom_theme_footer_colors',
+array(
+'title'      => esc_html__( 'Footer Colors', 'smile-web' ),
+'priority'   => 22,
+'capability' => 'edit_theme_options',
+'panel'      => 'custom_theme_colors_panel',
+)
+);
 
 		// Add theme settings section.
 	$wp_customize->add_section(
@@ -155,193 +221,216 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		);
 	}
 
-               // Global color controls.
-               // Ensure chosen colors maintain a 4.5:1 contrast ratio for accessibility.
-               $global_colors = array(
-                        'color_text'            => array(
-                                'default' => '#00112b',
-                                'label'   => esc_html__( 'Text Color', 'smile-web' ),
-                        ),
-                       'link_default'         => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Link Color', 'smile-web' ),
-                       ),
-                       'link_hover'           => array(
-                               'default' => '#306a93',
-                               'label'   => esc_html__( 'Link Hover Color', 'smile-web' ),
-                       ),
-                       'link_active'          => array(
-                               'default' => '#4a994f',
-                               'label'   => esc_html__( 'Link Active Color', 'smile-web' ),
-                       ),
-                       'link_visited'         => array(
-                               'default' => '#4a994f',
-                               'label'   => esc_html__( 'Link Visited Color', 'smile-web' ),
-                       ),
-                        'comment_color'        => array(
-                                'default' => '#307C03',
-                                'label'   => esc_html__( 'Comment Color', 'smile-web' ),
-                        ),
-                       'card_text_color'     => array(
-                               'default' => '#00112b',
-                               'label'   => esc_html__( 'Card Text Color', 'smile-web' ),
-                       ),
-                       'text_base'           => array(
-                               'default' => '#00112b',
-                               'label'   => esc_html__( 'Base Text Color', 'smile-web' ),
-                       ),
-                       'text_muted'          => array(
-                               'default' => '#6c757d',
-                               'label'   => esc_html__( 'Muted Text Color', 'smile-web' ),
-                       ),
-                       'text_heading'        => array(
-                               'default' => '#306a93',
-                               'label'   => esc_html__( 'Heading Text Color', 'smile-web' ),
-                       ),
-                       'text_subheading'     => array(
-                               'default' => '#225274',
-                               'label'   => esc_html__( 'Subheading Text Color', 'smile-web' ),
-                       ),
-                       'text_emphasis'       => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Emphasis Text Color', 'smile-web' ),
-                       ),
-                       'text_quote'          => array(
-                               'default' => '#225274',
-                               'label'   => esc_html__( 'Quote Text Color', 'smile-web' ),
-                       ),
-                       'text_list'           => array(
-                               'default' => '#00112b',
-                               'label'   => esc_html__( 'List Text Color', 'smile-web' ),
-                       ),
-                       'color_muted'           => array(
-                               'default' => '#6c757d',
-                               'label'   => esc_html__( 'Muted Color', 'smile-web' ),
-                       ),
-                        'color_warning'         => array(
-                                'default' => '#ffc107',
-                                'label'   => esc_html__( 'Warning Color', 'smile-web' ),
-                        ),
-                       'cta_bg'                => array(
-                               'default' => '#ffc107',
-                               'label'   => esc_html__( 'CTA Background Color', 'smile-web' ),
-                       ),
-                        'accent-primary-light'  => array(
-                                'default' => '#d2e1ef',
-                                'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
-                        ),
-			'accent-primary'        => array(
-				'default' => '#d2e1ef',
-				'label'   => esc_html__( 'Primary Accent Color', 'smile-web' ),
-			),
-			'accent-secondary'      => array(
-				'default' => '#225274',
-				'label'   => esc_html__( 'Secondary Accent Color', 'smile-web' ),
-			),
-			'accent-secondary-dark' => array(
-				'default' => '#001833',
-				'label'   => esc_html__( 'Secondary Accent Color Dark', 'smile-web' ),
-			),
-                        'bg_primary'            => array(
-                                'default' => '#edf7ef',
-                                'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
-                        ),
-                        'bg_secondary'          => array(
-                                'default' => '#f8f9fa',
-                                'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
-                        ),
-                       'button_text'           => array(
-                               'default' => '#FFFFFF',
-                               'label'   => esc_html__( 'Button Text Color', 'smile-web' ),
-                       ),
-                       'button_text_hover'     => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Button Text Hover Color', 'smile-web' ),
-                       ),
-                       'button_bg'             => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Button Background Color', 'smile-web' ),
-                       ),
-                       'button_bg_hover'       => array(
-                               'default' => '#FFFFFF',
-                               'label'   => esc_html__( 'Button Background Hover Color', 'smile-web' ),
-                       ),
-                       'button_border'         => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Button Border Color', 'smile-web' ),
-                       ),
-                       'button_border_hover'   => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Button Border Hover Color', 'smile-web' ),
-                       ),
-                       'form_text'             => array(
-                               'default' => '#00112b',
-                               'label'   => esc_html__( 'Form Text Color', 'smile-web' ),
-                       ),
-                       'form_placeholder'      => array(
-                               'default' => '#6c757d',
-                               'label'   => esc_html__( 'Form Placeholder Color', 'smile-web' ),
-                       ),
-                       'form_border'           => array(
-                               'default' => '#ced4da',
-                               'label'   => esc_html__( 'Form Border Color', 'smile-web' ),
-                       ),
-                       'form_border_focus'     => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Form Focus Border Color', 'smile-web' ),
-                       ),
-                       'form_bg'               => array(
-                               'default' => '#FFFFFF',
-                               'label'   => esc_html__( 'Form Background Color', 'smile-web' ),
-                       ),
-                       'form_error'            => array(
-                               'default' => '#dc3545',
-                               'label'   => esc_html__( 'Form Error Color', 'smile-web' ),
-                       ),
-                       'form_success'          => array(
-                               'default' => '#198754',
-                               'label'   => esc_html__( 'Form Success Color', 'smile-web' ),
-                       ),
-                       'alert_success'        => array(
-                               'default' => '#198754',
-                               'label'   => esc_html__( 'Alert Success Color', 'smile-web' ),
-                       ),
-                       'alert_error'          => array(
-                               'default' => '#dc3545',
-                               'label'   => esc_html__( 'Alert Error Color', 'smile-web' ),
-                       ),
-                       'alert_warning'        => array(
-                               'default' => '#ffc107',
-                               'label'   => esc_html__( 'Alert Warning Color', 'smile-web' ),
-                       ),
-                       'alert_info'           => array(
-                               'default' => '#0dcaf0',
-                               'label'   => esc_html__( 'Alert Info Color', 'smile-web' ),
-                       ),
-                        'heading_color'        => array(
-                                'default' => '#306a93',
-                                'label'   => esc_html__( 'Heading Color', 'smile-web' ),
-                        ),
-                        'lead_color'           => array(
-                                'default' => '#306a93',
-                                'label'   => esc_html__( 'Lead Color', 'smile-web' ),
-                        ),
-                        'border_color'         => array(
-                                'default' => '#dee2e6',
-                                'label'   => esc_html__( 'Border Color', 'smile-web' ),
-                        ),
-                       'selection_bg'         => array(
-                               'default' => '#306a93',
-                               'label'   => esc_html__( 'Selection Background Color', 'smile-web' ),
-                       ),
-                       'icon_color'           => array(
-                               'default' => '#001833',
-                               'label'   => esc_html__( 'Icon Color', 'smile-web' ),
-                       ),
-                       'toc_link'             => array(
-                               'default' => '#307C03',
-                               'label'   => esc_html__( 'Table of Contents Link Color', 'smile-web' ),
-                       ),
+// Text color controls.
+$text_colors = array(
+'color_text'       => array(
+'default' => '#00112b',
+'label'   => esc_html__( 'Text Color', 'smile-web' ),
+),
+'comment_color'    => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Comment Color', 'smile-web' ),
+),
+'card_text_color'  => array(
+'default' => '#00112b',
+'label'   => esc_html__( 'Card Text Color', 'smile-web' ),
+),
+'text_base'        => array(
+'default' => '#00112b',
+'label'   => esc_html__( 'Base Text Color', 'smile-web' ),
+),
+'text_muted'       => array(
+'default' => '#6c757d',
+'label'   => esc_html__( 'Muted Text Color', 'smile-web' ),
+),
+'text_heading'     => array(
+'default' => '#306a93',
+'label'   => esc_html__( 'Heading Text Color', 'smile-web' ),
+),
+'text_subheading'  => array(
+'default' => '#225274',
+'label'   => esc_html__( 'Subheading Text Color', 'smile-web' ),
+),
+'text_emphasis'    => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Emphasis Text Color', 'smile-web' ),
+),
+'text_quote'       => array(
+'default' => '#225274',
+'label'   => esc_html__( 'Quote Text Color', 'smile-web' ),
+),
+'text_list'        => array(
+'default' => '#00112b',
+'label'   => esc_html__( 'List Text Color', 'smile-web' ),
+),
+'heading_color'    => array(
+'default' => '#306a93',
+'label'   => esc_html__( 'Heading Color', 'smile-web' ),
+),
+'lead_color'       => array(
+'default' => '#306a93',
+'label'   => esc_html__( 'Lead Color', 'smile-web' ),
+),
+);
+
+// Link color controls.
+$link_colors = array(
+'link_default' => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Link Color', 'smile-web' ),
+),
+'link_hover'   => array(
+'default' => '#306a93',
+'label'   => esc_html__( 'Link Hover Color', 'smile-web' ),
+),
+'link_active'  => array(
+'default' => '#4a994f',
+'label'   => esc_html__( 'Link Active Color', 'smile-web' ),
+),
+'link_visited' => array(
+'default' => '#4a994f',
+'label'   => esc_html__( 'Link Visited Color', 'smile-web' ),
+),
+'toc_link'     => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Table of Contents Link Color', 'smile-web' ),
+),
+);
+
+// Background color controls.
+$background_colors = array(
+'cta_bg'       => array(
+'default' => '#ffc107',
+'label'   => esc_html__( 'CTA Background Color', 'smile-web' ),
+),
+'bg_primary'   => array(
+'default' => '#edf7ef',
+'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
+),
+'bg_secondary' => array(
+'default' => '#f8f9fa',
+'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
+),
+'selection_bg' => array(
+'default' => '#306a93',
+'label'   => esc_html__( 'Selection Background Color', 'smile-web' ),
+),
+);
+
+// Button color controls.
+$button_colors = array(
+'button_text'         => array(
+'default' => '#FFFFFF',
+'label'   => esc_html__( 'Button Text Color', 'smile-web' ),
+),
+'button_text_hover'   => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Button Text Hover Color', 'smile-web' ),
+),
+'button_bg'           => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Button Background Color', 'smile-web' ),
+),
+'button_bg_hover'     => array(
+'default' => '#FFFFFF',
+'label'   => esc_html__( 'Button Background Hover Color', 'smile-web' ),
+),
+'button_border'       => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Button Border Color', 'smile-web' ),
+),
+'button_border_hover' => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Button Border Hover Color', 'smile-web' ),
+),
+);
+
+// Form color controls.
+$form_colors = array(
+'form_text'         => array(
+'default' => '#00112b',
+'label'   => esc_html__( 'Form Text Color', 'smile-web' ),
+),
+'form_placeholder'  => array(
+'default' => '#6c757d',
+'label'   => esc_html__( 'Form Placeholder Color', 'smile-web' ),
+),
+'form_border'       => array(
+'default' => '#ced4da',
+'label'   => esc_html__( 'Form Border Color', 'smile-web' ),
+),
+'form_border_focus' => array(
+'default' => '#307C03',
+'label'   => esc_html__( 'Form Focus Border Color', 'smile-web' ),
+),
+'form_bg'           => array(
+'default' => '#FFFFFF',
+'label'   => esc_html__( 'Form Background Color', 'smile-web' ),
+),
+'form_error'        => array(
+'default' => '#dc3545',
+'label'   => esc_html__( 'Form Error Color', 'smile-web' ),
+),
+'form_success'      => array(
+'default' => '#198754',
+'label'   => esc_html__( 'Form Success Color', 'smile-web' ),
+),
+);
+
+// Alert color controls.
+$alert_colors = array(
+'alert_success' => array(
+'default' => '#198754',
+'label'   => esc_html__( 'Alert Success Color', 'smile-web' ),
+),
+'alert_error'   => array(
+'default' => '#dc3545',
+'label'   => esc_html__( 'Alert Error Color', 'smile-web' ),
+),
+'alert_warning' => array(
+'default' => '#ffc107',
+'label'   => esc_html__( 'Alert Warning Color', 'smile-web' ),
+),
+'alert_info'    => array(
+'default' => '#0dcaf0',
+'label'   => esc_html__( 'Alert Info Color', 'smile-web' ),
+),
+);
+
+// Extra color controls.
+$extra_colors = array(
+'color_muted'          => array(
+'default' => '#6c757d',
+'label'   => esc_html__( 'Muted Color', 'smile-web' ),
+),
+'color_warning'        => array(
+'default' => '#ffc107',
+'label'   => esc_html__( 'Warning Color', 'smile-web' ),
+),
+'accent-primary-light' => array(
+'default' => '#d2e1ef',
+'label'   => esc_html__( 'Primary Accent Color Light', 'smile-web' ),
+),
+'accent-primary'       => array(
+'default' => '#d2e1ef',
+'label'   => esc_html__( 'Primary Accent Color', 'smile-web' ),
+),
+'accent-secondary'     => array(
+'default' => '#225274',
+'label'   => esc_html__( 'Secondary Accent Color', 'smile-web' ),
+),
+'accent-secondary-dark'=> array(
+'default' => '#001833',
+'label'   => esc_html__( 'Secondary Accent Color Dark', 'smile-web' ),
+),
+'border_color'         => array(
+'default' => '#dee2e6',
+'label'   => esc_html__( 'Border Color', 'smile-web' ),
+),
+'icon_color'           => array(
+'default' => '#001833',
+'label'   => esc_html__( 'Icon Color', 'smile-web' ),
+),
 );
 
 		// Top bar color controls.
@@ -432,26 +521,158 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 					),
 				);
 
-				// Create settings and controls for global colors.
-				foreach ( $global_colors as $id => $args ) {
-						$wp_customize->add_setting(
-							$id,
-							array(
-								'default'           => $args['default'],
-								'sanitize_callback' => 'sanitize_hex_color',
-							)
-						);
-						$wp_customize->add_control(
-							new WP_Customize_Color_Control(
-								$wp_customize,
-								$id,
-								array(
-									'label'    => $args['label'],
-									'section'  => 'custom_theme_global_colors',
-									'settings' => $id,
-								)
-							)
-						);
+				// Create settings and controls for text colors.
+				foreach ( $text_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_text_colors',
+				'settings' => $id,
+				)
+				)
+				);
+				}
+				
+				// Create settings and controls for link colors.
+				foreach ( $link_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_link_colors',
+				'settings' => $id,
+				)
+				)
+				);
+				}
+				
+				// Create settings and controls for background colors.
+				foreach ( $background_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_background_colors',
+				'settings' => $id,
+				)
+				)
+				);
+				}
+				
+				// Create settings and controls for button colors.
+				foreach ( $button_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_button_colors',
+				'settings' => $id,
+				)
+				)
+				);
+				}
+				
+				// Create settings and controls for form colors.
+				foreach ( $form_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_form_colors',
+				'settings' => $id,
+				)
+				)
+				);
+				}
+				
+				// Create settings and controls for alert colors.
+				foreach ( $alert_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_alert_colors',
+				'settings' => $id,
+				)
+				)
+				);
+				}
+				
+				// Create settings and controls for extra colors.
+				foreach ( $extra_colors as $id => $args ) {
+				$wp_customize->add_setting(
+				$id,
+				array(
+				'default'           => $args['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				)
+				);
+				$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+				$wp_customize,
+				$id,
+				array(
+				'label'    => $args['label'],
+				'section'  => 'custom_theme_extra_colors',
+				'settings' => $id,
+				)
+				)
+				);
 				}
 
 				// Create settings and controls for top bar colors.
