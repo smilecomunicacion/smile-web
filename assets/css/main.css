@@ -72,6 +72,18 @@ em {
   color: var(--text-list);
 }
 
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+}
+
+.btn:hover {
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-text-hover);
+  border: 1px solid var(--btn-border-hover);
+}
+
 /*--------------------------------------------------------------
 # 4.5 - SIDEBAR + WIDGETS
 --------------------------------------------------------------*/

@@ -235,10 +235,10 @@ a:visited {
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 1px;
-    background-color: var(--bg-button);
-    color: var(--color-white);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     text-decoration: none;
-    border: 1px solid var(--bg-button);
+    border: 1px solid var(--btn-border);
 }
 
 @media (min-width:768px) {
@@ -257,9 +257,9 @@ a:visited {
 .wp-block-buttons>.wp-block-button:hover,
 .btn-cta:hover,
 .btn:hover {
-    background-color: var(--color-white);
-    color: var(--bg-button);
-    border: 1px solid var(--bg-button);
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-text-hover);
+    border: 1px solid var(--btn-border-hover);
 }
 
 .btn-cta2 {
@@ -1596,12 +1596,12 @@ footer h3 {
 }
 
 #footer .footer-top .footer-newsletter input[type=submit] {
-    background: var(--bg-button);
+    background: var(--btn-bg);
     border: 0;
     width: 35%;
     padding: 6px 0;
     text-align: center;
-    color: var(--color-white);
+    color: var(--btn-text);
     -moz-transition: .3s;
     -webkit-transition: .3s;
     transition: .3s;
@@ -1609,7 +1609,8 @@ footer h3 {
 }
 
 #footer .footer-top .footer-newsletter input[type=submit]:hover {
-    background: var(--link-hover);
+    background: var(--btn-bg-hover);
+    color: var(--btn-text-hover);
 }
 
 #footer .copyright {

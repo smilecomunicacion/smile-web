@@ -250,14 +250,34 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'default' => '#f8f9fa',
                                 'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
                         ),
-                        'bg_button'             => array(
-                                'default' => '#307C03',
-                                'label'   => esc_html__( 'Button Background Color', 'smile-web' ),
-                        ),
-                        'bg_input'              => array(
-                                'default' => '#FFFFFF',
-                                'label'   => esc_html__( 'Input Background Color', 'smile-web' ),
-                        ),
+                       'button_text'           => array(
+                               'default' => '#FFFFFF',
+                               'label'   => esc_html__( 'Button Text Color', 'smile-web' ),
+                       ),
+                       'button_text_hover'     => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Button Text Hover Color', 'smile-web' ),
+                       ),
+                       'button_bg'             => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Button Background Color', 'smile-web' ),
+                       ),
+                       'button_bg_hover'       => array(
+                               'default' => '#FFFFFF',
+                               'label'   => esc_html__( 'Button Background Hover Color', 'smile-web' ),
+                       ),
+                       'button_border'         => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Button Border Color', 'smile-web' ),
+                       ),
+                       'button_border_hover'   => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Button Border Hover Color', 'smile-web' ),
+                       ),
+                       'bg_input'              => array(
+                               'default' => '#FFFFFF',
+                               'label'   => esc_html__( 'Input Background Color', 'smile-web' ),
+                       ),
                         'heading_color'        => array(
                                 'default' => '#306a93',
                                 'label'   => esc_html__( 'Heading Color', 'smile-web' ),
