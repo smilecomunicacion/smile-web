@@ -1080,12 +1080,13 @@ main ol li::marker {
 
 
 /* # 4.5 - BACKGROUND colors */
+
 .bg-light {
-    background: var(--bg-light);
+    background-color: var(--bg-light);
 }
 
 .bg-light2 {
-    background: var(--bg-light2);
+    background-color: var(--bg-light2);
 }
 
 .bg-white {
@@ -1094,7 +1095,7 @@ main ol li::marker {
 
 .bg-cta {
     /* Ensure CTA background maintains adequate contrast */
-    background: var(--cta-bg);
+    background-color: var(--cta-bg);
 }
 
 .bg-footer {
@@ -1307,6 +1308,29 @@ body.single .svg-icon svg {
 .single #about .form-control {
     width: 100%;
     padding: 15px;
+}
+
+body.single .svg-icon .comment-icon {
+    fill: var(--comment-color);
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+body.single .comment-count {
+    color: var(--comment-color);
+}
+
+.comment-metadata,
+.comment-metadata a,
+.comment-meta,
+.comment-meta a {
+    color: var(--comment-color);
+}
+
+.figcaption-text {
+    color: var(--card-text-color);
 }
 
 /* # 4.9 - SIDEBAR */

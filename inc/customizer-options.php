@@ -178,6 +178,10 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'default' => '#307C03',
                                 'label'   => esc_html__( 'Comment Color', 'smile-web' ),
                         ),
+                       'card_text_color'     => array(
+                               'default' => '#00112b',
+                               'label'   => esc_html__( 'Card Text Color', 'smile-web' ),
+                       ),
                         'color_muted'           => array(
                                 'default' => '#6c757d',
                                 'label'   => esc_html__( 'Muted Color', 'smile-web' ),
