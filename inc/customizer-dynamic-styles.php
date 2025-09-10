@@ -14,6 +14,7 @@ function smile_web_add_dynamic_styles() {
 		$color_link_hover         = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
 $color_link_light         = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
 $comment_color            = sanitize_hex_color( get_theme_mod( 'comment_color', '#307C03' ) );
+$card_text_color          = sanitize_hex_color( get_theme_mod( 'card_text_color', '#00112b' ) );
 $color_muted              = sanitize_hex_color( get_theme_mod( 'color_muted', '#6c757d' ) );
 $color_warning            = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
 $cta_bg                   = sanitize_hex_color( get_theme_mod( 'cta_bg', '#ffc107' ) );
@@ -57,6 +58,7 @@ $modal_border                 = sanitize_hex_color( '#888888' );
 --color-link-hover: ' . esc_attr( $color_link_hover ) . ';
 --color-link-light: ' . esc_attr( $color_link_light ) . ';
                        --comment-color: ' . esc_attr( $comment_color ) . ';
+                       --card-text-color: ' . esc_attr( $card_text_color ) . ';
                        --color-muted: ' . esc_attr( $color_muted ) . ';
    --color-warning: ' . esc_attr( $color_warning ) . ';
    --cta-bg: ' . esc_attr( $cta_bg ) . ';

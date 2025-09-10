@@ -1322,8 +1322,15 @@ body.single .comment-count {
     color: var(--comment-color);
 }
 
+.comment-metadata,
+.comment-metadata a,
+.comment-meta,
+.comment-meta a {
+    color: var(--comment-color);
+}
+
 .figcaption-text {
-    color: var(--color-text);
+    color: var(--card-text-color);
 }
 
 /* # 4.9 - SIDEBAR */
