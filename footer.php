@@ -23,7 +23,7 @@
 				<p><?php echo esc_html( get_theme_mod( 'footer_contact_description', __( 'Use this form to reach out to us with any questions or comments. We will respond as soon as possible.', 'smile-web' ) ) ); ?></p>
 			</div>
 			<div id="formulario-footer2" class="row justify-content-center shadow rounded">
-				<div class="col-12 col-md-4 col-lg-4 p-0 bg-light2">
+                                <div class="col-12 col-md-4 col-lg-4 p-0 bg-secondary">
 					<!-- Customized telephone -->
 					<div class="p-2 m-3 border-bottom">
 						<?php
@@ -87,7 +87,7 @@
 					}
 					?>
 				</div>
-				<div class="col-12 col-md-8 col-lg-8 p-3 bg-light2">
+                                <div class="col-12 col-md-8 col-lg-8 p-3 bg-secondary">
 					<?php
 					// Verifica si se definió el shortcode del formulario de contacto.
 					$contact_form_shortcode = get_theme_mod( 'footer_contact_shortcode_form', '' );
@@ -189,7 +189,7 @@
 			<span class="close" tabindex="0">&times;</span>
 			<p class="text-center"><?php esc_html_e( 'Search', 'smile-web' ); ?></p>
 		</div>
-		<div class="modal-body bg-light">
+        <div class="modal-body bg-primary">
 			<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="row">
 								<input type="text" class="searching_TopHeader-Lupa-Buscador py-2 col-10 col-md-11 form-control" name="s" id="myInput" onkeyup="fetch()" placeholder="<?php esc_attr_e( 'Write here', 'smile-web' ); ?>">
 								<button type="submit" class="col-2">

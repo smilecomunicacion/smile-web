@@ -90,11 +90,11 @@ get_header();
 		</div>
 	</div>
 </div><!-- #intro -->
-<main id="main" class="blog-page bg-light">
+<main id="main" class="blog-page bg-primary">
 	<div class="container py-4">
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
-                                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb bg-light">
+                                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb bg-primary">
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/solid/home.svg" alt="home" title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>
 						" width="20px" height="20px">
@@ -185,7 +185,7 @@ get_header();
 				'post__not_in'   => array( $current_post_id ),
 			);
 			?>
-               <section id="posts-relacionados" class="bg-light2">
+               <section id="posts-relacionados" class="bg-secondary">
 		<div class="container py-5">
                         <p class="text-emphasis col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
 			<?php

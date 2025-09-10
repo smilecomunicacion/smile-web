@@ -17,11 +17,11 @@ get_header();
 
 </section>
 <!-- #intro -->
-<main id="main" class="search-page pt-4 pb-4 bg-light">
+<main id="main" class="search-page pt-4 pb-4 bg-primary">
 	<div class="container">
 		<div id="breadcrumbs" class="pb-4">
 			<nav aria-label="breadcrumb">
-				<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb bg-light">
+                             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb bg-primary">
                                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name">
 					<?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1" />
