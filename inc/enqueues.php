@@ -101,8 +101,8 @@ function smile_v6_enqueue_scripts() {
     align-items: center;
 }
 .btn-featured {
-    border: 1px solid var(--color-link);
-    color: var(--color-link);
+    border: 1px solid var(--link);
+    color: var(--link);
     padding: 2px 5px;
     margin: 0;
     border-radius: 5px;
@@ -114,7 +114,7 @@ function smile_v6_enqueue_scripts() {
     text-decoration: none;
 }
 .btn-featured:hover {
-    background: var(--color-link);
+    background: var(--link);
     color: var(--color-white);
 }
 .bar1,

@@ -49,7 +49,7 @@ Use it to make something cool, have fun, and share what you've learned.
 /* Galería de imágenes Hermandad */
 #bwg_container1_0 #bwg_container2_0 .bwg-container-0.bwg-masonry-thumbnails .bwg-title2 {
     font-size: 16px !important;
-    color: var(--color-link) !important;
+    color: var(--link) !important;
 }
 
 .bwg-item {
@@ -200,12 +200,20 @@ b {
 # 1.2 - LINKS
 --------------------------------------------------------------*/
 a {
-    color: var(--color-link);
+    color: var(--link);
 }
 
 a:hover {
     text-decoration: none;
-    color: var(--color-link-hover);
+    color: var(--link-hover);
+}
+
+a:focus {
+    color: var(--link-active);
+}
+
+a:visited {
+    color: var(--link-visited);
 }
 
 #contact a {
@@ -226,10 +234,10 @@ a:hover {
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 1px;
-    background-color: var(--color-link);
+    background-color: var(--link);
     color: var(--color-white);
     text-decoration: none;
-    border: 1px solid var(--color-link);
+    border: 1px solid var(--link);
 }
 
 @media (min-width:768px) {
@@ -248,8 +256,8 @@ a:hover {
 .wp-block-buttons>.wp-block-button:hover,
 .btn-cta:hover {
     background-color: var(--color-white);
-    color: var(--color-link);
-    border: 1px solid var(--color-link);
+    color: var(--link);
+    border: 1px solid var(--link);
 }
 
 .btn-cta2 {
@@ -960,7 +968,7 @@ section h2 {
 .container .header {
     text-align: center;
     margin-bottom: 50px;
-    color: var(--color-link-hover);
+    color: var(--link-hover);
     font-size: 1.2em;
 }
 
@@ -1042,7 +1050,7 @@ main li {
 main section ul li::before,
 main article ul li::before {
     content: "• ";
-    color: var(--color-link-light);
+    color: var(--link-active);
     font-size: 3em;
     position: relative;
     top: 0.25em;
@@ -1138,11 +1146,11 @@ main ol li::marker {
 }
 
 .bg-footer a {
-    color: var(--footer-link, var(--color-link));
+    color: var(--footer-link, var(--link));
 }
 
 .bg-footer a:hover {
-    color: var(--footer-link-hover, var(--color-link-hover));
+    color: var(--footer-link-hover, var(--link-hover));
 }
 
 .bg-dark {
@@ -1161,7 +1169,7 @@ main ol li::marker {
 }
 
 .bg-dark a {
-    color: var(--color-link-light);
+    color: var(--link-active);
 }
 
 
@@ -1571,7 +1579,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-newsletter input[type=submit] {
-    background: var(--color-link);
+    background: var(--link);
     border: 0;
     width: 35%;
     padding: 6px 0;
@@ -1584,7 +1592,7 @@ footer h3 {
 }
 
 #footer .footer-top .footer-newsletter input[type=submit]:hover {
-    background: var(--color-link-hover)
+    background: var(--link-hover)
 }
 
 #footer .copyright {

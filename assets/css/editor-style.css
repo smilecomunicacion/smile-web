@@ -33,15 +33,15 @@ h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--color-link);
+    color: var(--link);
 }
 
 a:hover {
-    color: var(--color-link-hover);
+    color: var(--link-hover);
 }
 
 button, .button {
-    background-color: var(--color-link);
+    background-color: var(--link);
     color: var(--color-white);
     border-radius: 5px;
     padding: 10px 20px;
@@ -49,7 +49,7 @@ button, .button {
 }
 
 button:hover, .button:hover {
-    background-color: var(--color-link-hover);
+    background-color: var(--link-hover);
 }
 
 blockquote {

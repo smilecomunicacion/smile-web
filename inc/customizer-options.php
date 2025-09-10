@@ -162,18 +162,22 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'default' => '#00112b',
                                 'label'   => esc_html__( 'Text Color', 'smile-web' ),
                         ),
-			'color_link'            => array(
-				'default' => '#307C03',
-				'label'   => esc_html__( 'Link Color', 'smile-web' ),
-			),
-			'color_link_hover'      => array(
-				'default' => '#306a93',
-				'label'   => esc_html__( 'Link Color Hover', 'smile-web' ),
-			),
-                        'color_link_light'      => array(
-                                'default' => '#4a994f',
-                                'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
-                        ),
+                       'link_default'         => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Link Color', 'smile-web' ),
+                       ),
+                       'link_hover'           => array(
+                               'default' => '#306a93',
+                               'label'   => esc_html__( 'Link Hover Color', 'smile-web' ),
+                       ),
+                       'link_active'          => array(
+                               'default' => '#4a994f',
+                               'label'   => esc_html__( 'Link Active Color', 'smile-web' ),
+                       ),
+                       'link_visited'         => array(
+                               'default' => '#4a994f',
+                               'label'   => esc_html__( 'Link Visited Color', 'smile-web' ),
+                       ),
                         'comment_color'        => array(
                                 'default' => '#307C03',
                                 'label'   => esc_html__( 'Comment Color', 'smile-web' ),
