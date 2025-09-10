@@ -274,9 +274,33 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                'default' => '#307C03',
                                'label'   => esc_html__( 'Button Border Hover Color', 'smile-web' ),
                        ),
-                       'bg_input'              => array(
+                       'form_text'             => array(
+                               'default' => '#00112b',
+                               'label'   => esc_html__( 'Form Text Color', 'smile-web' ),
+                       ),
+                       'form_placeholder'      => array(
+                               'default' => '#6c757d',
+                               'label'   => esc_html__( 'Form Placeholder Color', 'smile-web' ),
+                       ),
+                       'form_border'           => array(
+                               'default' => '#ced4da',
+                               'label'   => esc_html__( 'Form Border Color', 'smile-web' ),
+                       ),
+                       'form_border_focus'     => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Form Focus Border Color', 'smile-web' ),
+                       ),
+                       'form_bg'               => array(
                                'default' => '#FFFFFF',
-                               'label'   => esc_html__( 'Input Background Color', 'smile-web' ),
+                               'label'   => esc_html__( 'Form Background Color', 'smile-web' ),
+                       ),
+                       'form_error'            => array(
+                               'default' => '#dc3545',
+                               'label'   => esc_html__( 'Form Error Color', 'smile-web' ),
+                       ),
+                       'form_success'          => array(
+                               'default' => '#198754',
+                               'label'   => esc_html__( 'Form Success Color', 'smile-web' ),
                        ),
                         'heading_color'        => array(
                                 'default' => '#306a93',
