@@ -70,6 +70,9 @@ function smile_web_add_dynamic_styles() {
 		$footer_social_icon_hover = sanitize_hex_color( get_theme_mod( 'footer_social_icon_hover', '#4a994f' ) );
 $color_white                  = sanitize_hex_color( '#FFFFFF' );
 $border_color                 = sanitize_hex_color( get_theme_mod( 'border_color', '#dee2e6' ) );
+$selection_bg                 = sanitize_hex_color( get_theme_mod( 'selection_bg', '#306a93' ) );
+$icon_color                   = sanitize_hex_color( get_theme_mod( 'icon_color', '#001833' ) );
+$toc_link                     = sanitize_hex_color( get_theme_mod( 'toc_link', '#307C03' ) );
 $modal_border                 = sanitize_hex_color( '#888888' );
 
         $dynamic_css = '
@@ -134,10 +137,13 @@ $modal_border                 = sanitize_hex_color( '#888888' );
                         --footer-social-bg: ' . esc_attr( $footer_social_bg ) . ';
                         --footer-social-icon: ' . esc_attr( $footer_social_icon ) . ';
                        --footer-social-icon-hover: ' . esc_attr( $footer_social_icon_hover ) . ';
-                        --border-color: ' . esc_attr( $border_color ) . ';
+                        --border: ' . esc_attr( $border_color ) . ';
+                        --selection-bg: ' . esc_attr( $selection_bg ) . ';
+                        --icon: ' . esc_attr( $icon_color ) . ';
+                        --toc-link: ' . esc_attr( $toc_link ) . ';
                         --modal-border: ' . esc_attr( $modal_border ) . ';
-		}
-	';
+                }
+        ';
 
 	// Se agrega el CSS en línea al handle 'smile-web-main'.
 	wp_add_inline_style( 'smile-web-main', $dynamic_css );
