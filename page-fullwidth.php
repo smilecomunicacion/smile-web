@@ -16,12 +16,12 @@ get_header();
 	</div>
 </div>
 
-<main id="main" class="blog-page area-padding">
+<main id="main" class="blog-page area-padding bg-primary">
 <div class="cpy-2">
 	<div class="container">
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
-                                <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb bg-light">
+                                <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb bg-primary">
 										<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a><meta itemprop="position" content="1" />
 					</li>
 					<?php if ( $post->post_parent ) { ?>
@@ -106,7 +106,7 @@ if ( is_page() && $post->post_parent ) {
 
 	if ( 0 !== $cat && get_posts( $args ) ) {
 		?>
-<section id="posts-relacionados" class="bg-light">
+<section id="posts-relacionados" class="bg-primary">
 	<div class="container py-5">
 	<h4><?php echo wp_kses_post( $text_related ); ?></h4>
 	<hr>

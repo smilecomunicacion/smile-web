@@ -98,7 +98,7 @@ if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
 
 	if ( $recent_posts->have_posts() ) :
 		?>
-	<section id="posts-relacionados" class="bg-light2">
+    <section id="posts-relacionados" class="bg-secondary">
 		<div class="container py-5 text-center">
                     <p class="text-emphasis pb-2 border-bottom">
 				<?php echo esc_html( $custom_blog_title ); ?>

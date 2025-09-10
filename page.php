@@ -42,11 +42,11 @@ get_header();
 		</figure>
 	<?php endif; // END if minimum width is 768px. ?>
 </div>
-<main id="main" style="background-color: var(--bg-light);">
+<main id="main" class="bg-primary">
 	<div class="container py-2">
 		<div id="breadcrumbs">
 			<nav aria-label="breadcrumb">
-                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb bg-light">
+                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb bg-primary">
 										<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1">
 					</li>
@@ -139,7 +139,7 @@ get_header();
 	// If a category exists and posts exist in that category.
 	if ( 0 !== $category_id && get_posts( $args ) ) :
 		?>
-				<section id="posts-relacionados" style="background-color: var(--bg-light);">
+                                <section id="posts-relacionados" class="bg-primary">
 			<div class="container py-5">
 				<h4><?php echo wp_kses_post( $text_related ); ?></h4>
 				<hr>

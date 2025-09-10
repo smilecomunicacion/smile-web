@@ -242,26 +242,34 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#001833',
 				'label'   => esc_html__( 'Secondary Accent Color Dark', 'smile-web' ),
 			),
-			'bg_light'              => array(
-				'default' => '#edf7ef',
-				'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
-			),
-'bg_light2'             => array(
-'default' => '#f8f9fa',
-'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
-),
-'heading_color'        => array(
-'default' => '#306a93',
-'label'   => esc_html__( 'Heading Color', 'smile-web' ),
-),
-'lead_color'           => array(
-'default' => '#306a93',
-'label'   => esc_html__( 'Lead Color', 'smile-web' ),
-),
-'border_color'         => array(
-'default' => '#dee2e6',
-'label'   => esc_html__( 'Border Color', 'smile-web' ),
-),
+                        'bg_primary'            => array(
+                                'default' => '#edf7ef',
+                                'label'   => esc_html__( 'Primary Background Color', 'smile-web' ),
+                        ),
+                        'bg_secondary'          => array(
+                                'default' => '#f8f9fa',
+                                'label'   => esc_html__( 'Secondary Background Color', 'smile-web' ),
+                        ),
+                        'bg_button'             => array(
+                                'default' => '#307C03',
+                                'label'   => esc_html__( 'Button Background Color', 'smile-web' ),
+                        ),
+                        'bg_input'              => array(
+                                'default' => '#FFFFFF',
+                                'label'   => esc_html__( 'Input Background Color', 'smile-web' ),
+                        ),
+                        'heading_color'        => array(
+                                'default' => '#306a93',
+                                'label'   => esc_html__( 'Heading Color', 'smile-web' ),
+                        ),
+                        'lead_color'           => array(
+                                'default' => '#306a93',
+                                'label'   => esc_html__( 'Lead Color', 'smile-web' ),
+                        ),
+                        'border_color'         => array(
+                                'default' => '#dee2e6',
+                                'label'   => esc_html__( 'Border Color', 'smile-web' ),
+                        ),
 );
 
 		// Top bar color controls.
