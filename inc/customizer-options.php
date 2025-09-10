@@ -170,14 +170,18 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#306a93',
 				'label'   => esc_html__( 'Link Color Hover', 'smile-web' ),
 			),
-			'color_link_light'      => array(
-				'default' => '#4a994f',
-				'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
-			),
-			'color_muted'           => array(
-				'default' => '#6c757d',
-				'label'   => esc_html__( 'Muted Color', 'smile-web' ),
-			),
+                        'color_link_light'      => array(
+                                'default' => '#4a994f',
+                                'label'   => esc_html__( 'Link Color Light', 'smile-web' ),
+                        ),
+                        'comment_color'        => array(
+                                'default' => '#307C03',
+                                'label'   => esc_html__( 'Comment Color', 'smile-web' ),
+                        ),
+                        'color_muted'           => array(
+                                'default' => '#6c757d',
+                                'label'   => esc_html__( 'Muted Color', 'smile-web' ),
+                        ),
                         'color_warning'         => array(
                                 'default' => '#ffc107',
                                 'label'   => esc_html__( 'Warning Color', 'smile-web' ),
