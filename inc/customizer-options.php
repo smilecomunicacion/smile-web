@@ -330,6 +330,18 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'default' => '#dee2e6',
                                 'label'   => esc_html__( 'Border Color', 'smile-web' ),
                         ),
+                       'selection_bg'         => array(
+                               'default' => '#306a93',
+                               'label'   => esc_html__( 'Selection Background Color', 'smile-web' ),
+                       ),
+                       'icon_color'           => array(
+                               'default' => '#001833',
+                               'label'   => esc_html__( 'Icon Color', 'smile-web' ),
+                       ),
+                       'toc_link'             => array(
+                               'default' => '#307C03',
+                               'label'   => esc_html__( 'Table of Contents Link Color', 'smile-web' ),
+                       ),
 );
 
 		// Top bar color controls.

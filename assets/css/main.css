@@ -22,6 +22,10 @@ body {
   color: var(--text-base);
 }
 
+::selection {
+  background-color: var(--selection-bg);
+}
+
 small {
   color: var(--text-muted);
 }
@@ -99,11 +103,17 @@ em {
 }
 
 .sidebar-border-bot {
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--border);
 }
 
 .sidebar-border {
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--border);
+}
+
+#toc_container a,
+#ez-toc-container a,
+#secondary a {
+  color: var(--toc-link);
 }
 
 /*--------------------------------------------------------------
@@ -173,7 +183,7 @@ em {
 }
 
 .svg-icon svg {
-  fill: var(--accent-secondary-dark);
+  fill: var(--icon);
 }
 
 #topBar .svg-icon svg {
