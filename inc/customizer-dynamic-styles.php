@@ -9,9 +9,10 @@
  * Outputs inline dynamic CSS based on customizer settings.
  */
 function smile_web_add_dynamic_styles() {
-        $color_link                   = sanitize_hex_color( get_theme_mod( 'color_link', '#307C03' ) );
-        $color_link_hover             = sanitize_hex_color( get_theme_mod( 'color_link_hover', '#306a93' ) );
-        $color_link_light             = sanitize_hex_color( get_theme_mod( 'color_link_light', '#4a994f' ) );
+        $link_default                = sanitize_hex_color( get_theme_mod( 'link_default', '#307C03' ) );
+        $link_hover                  = sanitize_hex_color( get_theme_mod( 'link_hover', '#306a93' ) );
+        $link_active                 = sanitize_hex_color( get_theme_mod( 'link_active', '#4a994f' ) );
+        $link_visited                = sanitize_hex_color( get_theme_mod( 'link_visited', '#4a994f' ) );
         $comment_color                = sanitize_hex_color( get_theme_mod( 'comment_color', '#307C03' ) );
         $card_text_color              = sanitize_hex_color( get_theme_mod( 'card_text_color', '#00112b' ) );
         $color_warning                = sanitize_hex_color( get_theme_mod( 'color_warning', '#ffc107' ) );
@@ -54,11 +55,12 @@ $color_white                  = sanitize_hex_color( '#FFFFFF' );
 $border_color                 = sanitize_hex_color( get_theme_mod( 'border_color', '#dee2e6' ) );
 $modal_border                 = sanitize_hex_color( '#888888' );
 
-	$dynamic_css = '
-		:root {
-                        --color-link: ' . esc_attr( $color_link ) . ';
-                        --color-link-hover: ' . esc_attr( $color_link_hover ) . ';
-                        --color-link-light: ' . esc_attr( $color_link_light ) . ';
+        $dynamic_css = '
+                :root {
+                        --link: ' . esc_attr( $link_default ) . ';
+                        --link-hover: ' . esc_attr( $link_hover ) . ';
+                        --link-active: ' . esc_attr( $link_active ) . ';
+                        --link-visited: ' . esc_attr( $link_visited ) . ';
                         --comment-color: ' . esc_attr( $comment_color ) . ';
                         --card-text-color: ' . esc_attr( $card_text_color ) . ';
                         --color-warning: ' . esc_attr( $color_warning ) . ';
