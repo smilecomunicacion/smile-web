@@ -302,6 +302,22 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                'default' => '#198754',
                                'label'   => esc_html__( 'Form Success Color', 'smile-web' ),
                        ),
+                       'alert_success'        => array(
+                               'default' => '#198754',
+                               'label'   => esc_html__( 'Alert Success Color', 'smile-web' ),
+                       ),
+                       'alert_error'          => array(
+                               'default' => '#dc3545',
+                               'label'   => esc_html__( 'Alert Error Color', 'smile-web' ),
+                       ),
+                       'alert_warning'        => array(
+                               'default' => '#ffc107',
+                               'label'   => esc_html__( 'Alert Warning Color', 'smile-web' ),
+                       ),
+                       'alert_info'           => array(
+                               'default' => '#0dcaf0',
+                               'label'   => esc_html__( 'Alert Info Color', 'smile-web' ),
+                       ),
                         'heading_color'        => array(
                                 'default' => '#306a93',
                                 'label'   => esc_html__( 'Heading Color', 'smile-web' ),
