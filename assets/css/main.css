@@ -385,3 +385,30 @@ em {
     color: var(--masthead-submenu-text);
   }
 }
+/* Front Page Intro */
+body.home #intro::before {
+  /* Overlay color with alpha from Customizer */
+  background-color: var(--front-intro-overlay);
+}
+
+body.home #intro h1 {
+  color: var(--front-intro-heading);
+}
+
+body.home #intro p {
+  color: var(--front-intro-text);
+}
+
+/* Page Intro */
+body.page:not(.home) #intro::before {
+  background-color: var(--page-intro-bg);
+}
+
+.page #intro h1 {
+  color: var(--page-intro-heading);
+}
+
+/* Single Post Intro */
+body.single #intro::before {
+  background-color: var(--single-intro-bg);
+}

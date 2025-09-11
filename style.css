@@ -755,7 +755,7 @@ body.home #intro p {
 }
 
 /* Page Intro */
-body.page #intro::before {
+body.page:not(.home) #intro::before {
         background-color: var(--page-intro-bg);
 }
 
