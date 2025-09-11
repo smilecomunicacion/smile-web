@@ -30,8 +30,9 @@ function smile_web_add_dynamic_styles() {
 		$accent_secondary            = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
 		$accent_secondary_dark       = sanitize_hex_color( get_theme_mod( 'accent-secondary-dark', '#001833' ) );
 				$bg_primary          = sanitize_hex_color( get_theme_mod( 'bg_primary', '#edf7ef' ) );
-				$bg_secondary        = sanitize_hex_color( get_theme_mod( 'bg_secondary', '#f8f9fa' ) );
-				$button_text         = sanitize_hex_color( get_theme_mod( 'button_text', '#FFFFFF' ) );
+                               $bg_secondary        = sanitize_hex_color( get_theme_mod( 'bg_secondary', '#f8f9fa' ) );
+                               $breadcrumb_bg       = sanitize_hex_color( get_theme_mod( 'breadcrumb_bg_color', '#edf7ef' ) );
+                               $button_text         = sanitize_hex_color( get_theme_mod( 'button_text', '#FFFFFF' ) );
 				$button_text_hover   = sanitize_hex_color( get_theme_mod( 'button_text_hover', '#307C03' ) );
 				$button_bg           = sanitize_hex_color( get_theme_mod( 'button_bg', '#307C03' ) );
 				$button_bg_hover     = sanitize_hex_color( get_theme_mod( 'button_bg_hover', '#FFFFFF' ) );
@@ -97,10 +98,11 @@ function smile_web_add_dynamic_styles() {
                        --accent-primary: ' . esc_attr( $accent_primary ) . ';
                        --accent-secondary: ' . esc_attr( $accent_secondary ) . ';
                        --accent-secondary-dark: ' . esc_attr( $accent_secondary_dark ) . ';
-                        --color-white: ' . esc_attr( $color_white ) . ';
-                       --bg-primary: ' . esc_attr( $bg_primary ) . ';
-                       --bg-secondary: ' . esc_attr( $bg_secondary ) . ';
-                       --btn-text: ' . esc_attr( $button_text ) . ';
+                       --color-white: ' . esc_attr( $color_white ) . ';
+                      --bg-primary: ' . esc_attr( $bg_primary ) . ';
+                      --bg-secondary: ' . esc_attr( $bg_secondary ) . ';
+                      --breadcrumb-bg: ' . esc_attr( $breadcrumb_bg ) . ';
+                      --btn-text: ' . esc_attr( $button_text ) . ';
                        --btn-text-hover: ' . esc_attr( $button_text_hover ) . ';
                        --btn-bg: ' . esc_attr( $button_bg ) . ';
                        --btn-bg-hover: ' . esc_attr( $button_bg_hover ) . ';
