@@ -605,9 +605,13 @@ ul .sub-menu {
                 background-color: var(--masthead-bg);
         }
 
-	.menu-item-has-children {
-		display: block;
-		padding: 0 15px 0 0 !important;
+        #nav-menu .current_page_item > a {
+                color: var(--footer-link-hover);
+        }
+
+        .menu-item-has-children {
+display: block;
+padding: 0 15px 0 0 !important;
 	}
 
 
