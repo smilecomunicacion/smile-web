@@ -376,6 +376,10 @@ em {
   color: var(--masthead-link-hover);
 }
 
+#nav-menu .current_page_item > a {
+  color: var(--footer-link-hover);
+}
+
 .menu-item-has-children i::after {
   color: var(--masthead-submenu-text);
 }
