@@ -764,8 +764,8 @@ body.page #intro::before {
 }
 
 /* Single Post Intro */
-.single-post #intro {
-        background-color: var(--single-intro-bg);
+body.single #intro::before {
+       background-color: var(--single-intro-bg);
 }
 
 .single-post #intro h1 {
