@@ -546,13 +546,47 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                'label'   => esc_html__( 'Intro Text Color', 'smile-web' ),
                        ),
                );
+               // Page intro background color with alpha controls.
+               $wp_customize->add_setting(
+                       'page_intro_bg',
+                       array(
+                               'default'           => '#001833',
+                               'sanitize_callback' => 'sanitize_hex_color',
+                       )
+               );
+               $wp_customize->add_control(
+                       new WP_Customize_Color_Control(
+                               $wp_customize,
+                               'page_intro_bg',
+                               array(
+                                       'label'   => esc_html__( 'Intro Background Color', 'smile-web' ),
+                                       'section' => 'custom_theme_page_intro_colors',
+                               )
+                       )
+               );
+               $wp_customize->add_setting(
+                       'page_intro_bg_alpha',
+                       array(
+                               'default'           => 1,
+                               'sanitize_callback' => 'smile_web_sanitize_alpha',
+                       )
+               );
+               $wp_customize->add_control(
+                       'page_intro_bg_alpha',
+                       array(
+                               'label'       => esc_html__( 'Intro Background Opacity', 'smile-web' ),
+                               'section'     => 'custom_theme_page_intro_colors',
+                               'type'        => 'range',
+                               'input_attrs' => array(
+                                       'min'  => 0,
+                                       'max'  => 1,
+                                       'step' => 0.01,
+                               ),
+                       )
+               );
 
                // Page intro color controls.
                $page_intro_colors = array(
-                       'page_intro_bg' => array(
-                               'default' => '#001833',
-                               'label'   => esc_html__( 'Intro Background Color', 'smile-web' ),
-                       ),
                        'page_intro_heading' => array(
                                'default' => '#d2e1ef',
                                'label'   => esc_html__( 'Intro Heading Color', 'smile-web' ),
