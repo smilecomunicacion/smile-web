@@ -36,8 +36,12 @@ function smile_web_add_dynamic_styles() {
                $front_intro_overlay         = sprintf( 'rgba(%d,%d,%d,%s)', $fio_r, $fio_g, $fio_b, $front_intro_overlay_alpha );
                $front_intro_heading         = sanitize_hex_color( get_theme_mod( 'front_intro_heading', '#d2e1ef' ) );
                $front_intro_text            = sanitize_hex_color( get_theme_mod( 'front_intro_text', '#FFFFFF' ) );
-               $page_intro_bg               = sanitize_hex_color( get_theme_mod( 'page_intro_bg', '#001833' ) );
-               $page_intro_heading          = sanitize_hex_color( get_theme_mod( 'page_intro_heading', '#d2e1ef' ) );
+$page_intro_bg_color         = sanitize_hex_color( get_theme_mod( 'page_intro_bg', '#001833' ) );
+$page_intro_bg_alpha         = floatval( get_theme_mod( 'page_intro_bg_alpha', 1 ) );
+$page_intro_bg_alpha         = min( 1, max( 0, $page_intro_bg_alpha ) );
+list( $pib_r, $pib_g, $pib_b ) = sscanf( $page_intro_bg_color, '#%02x%02x%02x' );
+$page_intro_bg               = sprintf( 'rgba(%d,%d,%d,%s)', $pib_r, $pib_g, $pib_b, $page_intro_bg_alpha );
+$page_intro_heading          = sanitize_hex_color( get_theme_mod( 'page_intro_heading', '#d2e1ef' ) );
                $single_intro_bg             = sanitize_hex_color( get_theme_mod( 'single_intro_bg', '#001833' ) );
                $single_intro_heading        = sanitize_hex_color( get_theme_mod( 'single_intro_heading', '#d2e1ef' ) );
                                 $bg_primary          = sanitize_hex_color( get_theme_mod( 'bg_primary', '#edf7ef' ) );
