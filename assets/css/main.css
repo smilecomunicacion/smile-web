@@ -274,18 +274,13 @@ em {
 
 .post-categories {
   list-style: none;
-  padding: 5px 15px;
+  padding: 0px 15px;
   margin: 0px;
   display: flex;
 }
 
 .post-categories li {
-  background-color: var(--link-hover);
   margin-right: 5px;
-}
-
-.post-categories li:hover {
-  background-color: var(--link);
 }
 
 .post-categories li a {
