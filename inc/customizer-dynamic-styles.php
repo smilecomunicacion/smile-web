@@ -29,7 +29,11 @@ function smile_web_add_dynamic_styles() {
                 $accent_primary              = sanitize_hex_color( get_theme_mod( 'accent-primary', '#d2e1ef' ) );
                 $accent_secondary            = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
                 $accent_secondary_dark       = sanitize_hex_color( get_theme_mod( 'accent-secondary-dark', '#001833' ) );
-               $front_intro_overlay         = sanitize_hex_color( get_theme_mod( 'front_intro_overlay', '#001833' ) );
+               $front_intro_overlay_color   = sanitize_hex_color( get_theme_mod( 'front_intro_overlay', '#001833' ) );
+               $front_intro_overlay_alpha   = floatval( get_theme_mod( 'front_intro_overlay_alpha', 0.8 ) );
+               $front_intro_overlay_alpha   = min( 1, max( 0, $front_intro_overlay_alpha ) );
+               list( $fio_r, $fio_g, $fio_b ) = sscanf( $front_intro_overlay_color, '#%02x%02x%02x' );
+               $front_intro_overlay         = sprintf( 'rgba(%d,%d,%d,%s)', $fio_r, $fio_g, $fio_b, $front_intro_overlay_alpha );
                $front_intro_heading         = sanitize_hex_color( get_theme_mod( 'front_intro_heading', '#d2e1ef' ) );
                $front_intro_text            = sanitize_hex_color( get_theme_mod( 'front_intro_text', '#FFFFFF' ) );
                $page_intro_bg               = sanitize_hex_color( get_theme_mod( 'page_intro_bg', '#001833' ) );
