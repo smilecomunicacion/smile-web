@@ -91,9 +91,13 @@ $page_intro_heading          = sanitize_hex_color( get_theme_mod( 'page_intro_he
 	$color_white                     = sanitize_hex_color( '#FFFFFF' );
 	$border_color                    = sanitize_hex_color( get_theme_mod( 'border_color', '#dee2e6' ) );
 	$selection_bg                    = sanitize_hex_color( get_theme_mod( 'selection_bg', '#306a93' ) );
-	$icon_color                      = sanitize_hex_color( get_theme_mod( 'icon_color', '#001833' ) );
-	$toc_link                        = sanitize_hex_color( get_theme_mod( 'toc_link', '#307C03' ) );
-	$modal_border                    = sanitize_hex_color( '#888888' );
+        $icon_color                      = sanitize_hex_color( get_theme_mod( 'icon_color', '#001833' ) );
+        $toc_link                        = sanitize_hex_color( get_theme_mod( 'toc_link', '#307C03' ) );
+        $category_bg                     = sanitize_hex_color( get_theme_mod( 'category_bg', '#307C03' ) );
+        $category_bg_hover               = sanitize_hex_color( get_theme_mod( 'category_bg_hover', '#306a93' ) );
+        $category_text                   = sanitize_hex_color( get_theme_mod( 'category_text', '#FFFFFF' ) );
+        $category_text_hover             = sanitize_hex_color( get_theme_mod( 'category_text_hover', '#FFFFFF' ) );
+        $modal_border                    = sanitize_hex_color( '#888888' );
 
 		$dynamic_css = '
                 :root {
@@ -168,6 +172,10 @@ $page_intro_heading          = sanitize_hex_color( get_theme_mod( 'page_intro_he
                         --border: ' . esc_attr( $border_color ) . ';
                         --selection-bg: ' . esc_attr( $selection_bg ) . ';
                         --icon: ' . esc_attr( $icon_color ) . ';
+                        --category-bg: ' . esc_attr( $category_bg ) . ';
+                        --category-bg-hover: ' . esc_attr( $category_bg_hover ) . ';
+                        --category-text: ' . esc_attr( $category_text ) . ';
+                        --category-text-hover: ' . esc_attr( $category_text_hover ) . ';
                         --toc-link: ' . esc_attr( $toc_link ) . ';
                         --modal-border: ' . esc_attr( $modal_border ) . ';
                 }

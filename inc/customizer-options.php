@@ -490,6 +490,22 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'default' => '#001833',
                                 'label'   => esc_html__( 'Icon Color', 'smile-web' ),
                         ),
+                        'category_bg'           => array(
+                                'default' => '#307C03',
+                                'label'   => esc_html__( 'Category Background Color', 'smile-web' ),
+                        ),
+                        'category_bg_hover'     => array(
+                                'default' => '#306a93',
+                                'label'   => esc_html__( 'Category Background Hover Color', 'smile-web' ),
+                        ),
+                        'category_text'         => array(
+                                'default' => '#FFFFFF',
+                                'label'   => esc_html__( 'Category Text Color', 'smile-web' ),
+                        ),
+                        'category_text_hover'   => array(
+                                'default' => '#FFFFFF',
+                                'label'   => esc_html__( 'Category Text Hover Color', 'smile-web' ),
+                        ),
                 );
 
                // Front page intro color controls.
