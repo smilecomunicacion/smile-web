@@ -741,16 +741,16 @@ main figure img,
 }
 
 /* Front Page Intro */
-.home #intro::before {
+body.home #intro::before {
         /* Overlay color with alpha from Customizer */
         background-color: var(--front-intro-overlay);
 }
 
-.home #intro h1 {
+body.home #intro h1 {
         color: var(--front-intro-heading);
 }
 
-.home #intro p {
+body.home #intro p {
         color: var(--front-intro-text);
 }
 
