@@ -6,6 +6,28 @@
  */
 
 /**
+ * Sanitize opacity values for rgba colors.
+ *
+ * Ensures the value is a float between 0 and 1.
+ *
+ * @param mixed $value Opacity value.
+ * @return float Sanitized opacity.
+ */
+function smile_web_sanitize_alpha( $value ) {
+       $value = floatval( $value );
+
+       if ( $value < 0 ) {
+               $value = 0;
+       }
+
+       if ( $value > 1 ) {
+               $value = 1;
+       }
+
+       return $value;
+}
+
+/**
  * Registers customizer sections, settings and controls.
  *
  * @param WP_Customize_Manager $wp_customize Customizer instance.
@@ -470,21 +492,60 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         ),
                 );
 
-                // Front page intro color controls.
-                $front_intro_colors = array(
-                        'front_intro_overlay' => array(
-                                'default' => '#001833',
-                                'label'   => esc_html__( 'Intro Overlay Color', 'smile-web' ),
-                        ),
-                        'front_intro_heading' => array(
-                                'default' => '#d2e1ef',
-                                'label'   => esc_html__( 'Intro Heading Color', 'smile-web' ),
-                        ),
-                        'front_intro_text'    => array(
-                                'default' => '#FFFFFF',
-                                'label'   => esc_html__( 'Intro Text Color', 'smile-web' ),
-                        ),
-                );
+               // Front page intro color controls.
+
+               // Overlay color and opacity.
+               $wp_customize->add_setting(
+                       'front_intro_overlay',
+                       array(
+                               'default'           => '#001833',
+                               'sanitize_callback' => 'sanitize_hex_color',
+                       )
+               );
+
+               $wp_customize->add_control(
+                       new WP_Customize_Color_Control(
+                               $wp_customize,
+                               'front_intro_overlay',
+                               array(
+                                       'label'   => esc_html__( 'Intro Overlay Color', 'smile-web' ),
+                                       'section' => 'custom_theme_front_intro_colors',
+                               )
+                       )
+               );
+
+               $wp_customize->add_setting(
+                       'front_intro_overlay_alpha',
+                       array(
+                               'default'           => 0.8,
+                               'sanitize_callback' => 'smile_web_sanitize_alpha',
+                       )
+               );
+
+               $wp_customize->add_control(
+                       'front_intro_overlay_alpha',
+                       array(
+                               'label'       => esc_html__( 'Intro Overlay Opacity', 'smile-web' ),
+                               'section'     => 'custom_theme_front_intro_colors',
+                               'type'        => 'range',
+                               'input_attrs' => array(
+                                       'min'  => 0,
+                                       'max'  => 1,
+                                       'step' => 0.01,
+                               ),
+                       )
+               );
+
+               $front_intro_colors = array(
+                       'front_intro_heading' => array(
+                               'default' => '#d2e1ef',
+                               'label'   => esc_html__( 'Intro Heading Color', 'smile-web' ),
+                       ),
+                       'front_intro_text'    => array(
+                               'default' => '#FFFFFF',
+                               'label'   => esc_html__( 'Intro Text Color', 'smile-web' ),
+                       ),
+               );
 
                // Page intro color controls.
                $page_intro_colors = array(

@@ -742,6 +742,7 @@ main figure img,
 
 /* Front Page Intro */
 .home #intro::before {
+        /* Overlay color with alpha from Customizer */
         background-color: var(--front-intro-overlay);
 }
 
