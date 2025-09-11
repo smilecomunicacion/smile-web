@@ -23,8 +23,8 @@ get_header();
 	// If minimum width is 768px.
 	if ( ! wp_is_mobile() ) :
 		?>
-		<figure id="intro-carousel" class="d-none d-md-block">
-			<?php
+	<figure id="intro-carousel" class="d-none d-md-block">
+		<?php
 			if ( has_post_thumbnail() ) :
 				$attachment_id = get_post_thumbnail_id( get_the_ID() );
 				$metadata      = wp_get_attachment_metadata( $attachment_id );
@@ -35,35 +35,35 @@ get_header();
 				$src           = wp_get_attachment_url( $attachment_id );
 				$class         = 'attachment-' . $attachment_id;
 				?>
-				<img src="<?php echo esc_url( $src ); ?>" height="<?php echo esc_attr( $height ); ?>" width="<?php echo esc_attr( $width ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
-			<?php else : ?>
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/thumbnail-header.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000" height="667">
-			<?php endif; ?>
-		</figure>
+		<img src="<?php echo esc_url( $src ); ?>" height="<?php echo esc_attr( $height ); ?>" width="<?php echo esc_attr( $width ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
+		<?php else : ?>
+		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/thumbnail-header.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000" height="667">
+		<?php endif; ?>
+	</figure>
 	<?php endif; // END if minimum width is 768px. ?>
 </div>
 <main id="main" class="bg-primary">
 	<div class="container py-2">
 		<div id="breadcrumbs">
-			<nav aria-label="breadcrumb">
-                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--breadcrumb-bg);">
-										<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
+			<nav aria-label="breadcrumb" style="background-color: var(--breadcrumb-bg);">
+				<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1">
 					</li>
 					<?php if ( is_page() && 0 < $post->post_parent ) : ?>
-						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-							<a itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" aria-current="page">
-								<span itemprop="name"><?php echo esc_html( get_the_title( $post->post_parent ) ); ?></span>
-							</a>
-							<meta itemprop="position" content="2">
-						</li>
-						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><a itemprop="item" href="<?php echo esc_url( get_permalink() ); ?>" aria-current="page"><span itemprop="name"><?php the_title(); ?></span></a>
-							<meta itemprop="position" content="3">
-						</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
+						<a itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" aria-current="page">
+							<span itemprop="name"><?php echo esc_html( get_the_title( $post->post_parent ) ); ?></span>
+						</a>
+						<meta itemprop="position" content="2">
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><a itemprop="item" href="<?php echo esc_url( get_permalink() ); ?>" aria-current="page"><span itemprop="name"><?php the_title(); ?></span></a>
+						<meta itemprop="position" content="3">
+					</li>
 					<?php else : ?>
-						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><a itemprop="item" href="<?php the_permalink(); ?>" aria-current="page"><span itemprop="name"><?php the_title(); ?></span></a>
-							<meta itemprop="position" content="2">
-						</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><a itemprop="item" href="<?php the_permalink(); ?>" aria-current="page"><span itemprop="name"><?php the_title(); ?></span></a>
+						<meta itemprop="position" content="2">
+					</li>
 					<?php endif; ?>
 				</ol>
 			</nav>
@@ -82,8 +82,8 @@ get_header();
 			?>
 		</article><!-- .entry-content -->
 		<?php if ( get_edit_post_link() ) : ?>
-			<div class="entry-footer">
-				<?php
+		<div class="entry-footer">
+			<?php
 				edit_post_link(
 					sprintf(
 						wp_kses(
@@ -101,7 +101,7 @@ get_header();
 					'</span>'
 				);
 				?>
-			</div><!-- .entry-footer -->
+		</div><!-- .entry-footer -->
 		<?php endif; ?>
 	</div>
 	<?php
@@ -139,20 +139,20 @@ get_header();
 	// If a category exists and posts exist in that category.
 	if ( 0 !== $category_id && get_posts( $args ) ) :
 		?>
-                                <section id="posts-relacionados" class="bg-primary">
-			<div class="container py-5">
-				<h4><?php echo wp_kses_post( $text_related ); ?></h4>
-				<hr>
-				<div class="row">
-					<?php
+	<section id="posts-relacionados" class="bg-primary">
+		<div class="container py-5">
+			<h4><?php echo wp_kses_post( $text_related ); ?></h4>
+			<hr>
+			<div class="row">
+				<?php
 					$recent = new WP_Query( $args );
 					while ( $recent->have_posts() ) :
 						$recent->the_post();
 						?>
-						<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
-							<figure class="mb-0 shadow">
-								<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
-									<?php
+				<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
+					<figure class="mb-0 shadow">
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+							<?php
 									if ( has_post_thumbnail() ) :
 										$attachment_id = get_post_thumbnail_id( get_the_ID() );
 										$metadata      = wp_get_attachment_metadata( $attachment_id );
@@ -162,32 +162,32 @@ get_header();
 										$image_title   = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_title', true ) ) );
 										$src           = wp_get_attachment_url( $attachment_id );
 										?>
-										<img src="<?php echo esc_url( $src ); ?>" height="<?php echo esc_attr( $height ); ?>" width="<?php echo esc_attr( $width ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>">
-									<?php else : ?>
-										<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/thumbnail-header.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000" height="667">
-									<?php endif; ?>
-								</a>
-								<figcaption id="post-<?php the_ID(); ?>" class="p-4">
-									<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
-									<p><?php the_excerpt(); ?></p>
-									<hr>
-									<p>
-										<?php
+							<img src="<?php echo esc_url( $src ); ?>" height="<?php echo esc_attr( $height ); ?>" width="<?php echo esc_attr( $width ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>">
+							<?php else : ?>
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/thumbnail-header.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000" height="667">
+							<?php endif; ?>
+						</a>
+						<figcaption id="post-<?php the_ID(); ?>" class="p-4">
+							<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
+							<p><?php the_excerpt(); ?></p>
+							<hr>
+							<p>
+								<?php
 										if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) :
 											?>
-											<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
-										<?php else : ?>
-											<span><b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
-										<?php endif; ?>
-									</p>
-								</figcaption>
-							</figure>
-						</article>
-					<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
-				</div>
+								<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
+								<?php else : ?>
+								<span><b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
+								<?php endif; ?>
+							</p>
+						</figcaption>
+					</figure>
+				</article>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
 			</div>
-		</section>
+		</div>
+	</section>
 	<?php endif; // End Related Articles. ?>
 </main>
 <?php get_footer(); ?>
