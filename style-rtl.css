@@ -227,6 +227,7 @@ a:visited {
 /*--------------------------------------------------------------
 # 1.3 - BOTONES
 --------------------------------------------------------------*/
+
 .wp-block-buttons>.wp-block-button,
 .btn-cta,
 .btn {
@@ -469,16 +470,13 @@ header nav {
 #nav-toggle:focus,
 #nav-menu a:focus,
 .child-arrow-down:focus {
-	outline: 2px solid var(--masthead-link-hover);
-	outline-offset: 2px;
+        outline-offset: 2px;
 }
 
 /* Focus visible for arrow */
 .menu-item-has-children i:focus::after {
-	outline: 2px solid var(--masthead-link-hover);
-	outline-offset: 2px;
-	border-radius: 4px;
-	box-shadow: 0 0 5px var(--masthead-link-hover);
+        outline-offset: 2px;
+        border-radius: 4px;
 }
 
 #nav-menu {
@@ -514,16 +512,6 @@ header nav {
 	width: 85%;
 }
 
-.current_page_item>a {
-	color: var(--masthead-link-hover) !important;
-}
-
-@media (min-width:768px) {
-	.current_page_item>a {
-		color: var(--masthead-link-hover) !important;
-	}
-}
-
 ul .sub-menu {
 	max-height: 0;
 	overflow: hidden;
@@ -536,8 +524,7 @@ ul .sub-menu {
 	list-style: none;
 	position: relative;
 	background-color: var(--masthead-submenu-bg);
-	color: var(--masthead-submenu-text);
-	border-top: 1px solid var(--masthead-link-hover);
+        color: var(--masthead-submenu-text);
 }
 
 @media (min-width: 768px) {
@@ -613,10 +600,10 @@ ul .sub-menu {
 		width: 100%;
 	}
 
-	#nav-menu a:hover {
-		color: var(--masthead-link-hover);
-		background-color: var(--cta-bg);
-	}
+        #nav-menu a:hover {
+                color: var(--masthead-link-hover);
+                background-color: var(--masthead-bg);
+        }
 
 	.menu-item-has-children {
 		display: block;
@@ -669,9 +656,9 @@ ul .sub-menu {
 		margin: 12px 0;
 	}
 
-	#nav-menu .sub-menu li>a:hover {
-		color: var(--masthead-link-hover);
-	}
+       #nav-menu .sub-menu li>a:hover {
+                color: var(--masthead-link-hover);
+        }
 
 	.menu-item-has-children .child-arrow-up::after {
 		transform: rotate(-90deg);
@@ -728,10 +715,9 @@ ul .sub-menu {
 		/* Para garantizar que no haya recortes */
 	}
 
-	.menu-item-has-children>a:focus {
-		outline: 2px solid var(--masthead-link-hover);
-		outline-offset: 2px;
-	}
+        .menu-item-has-children>a:focus {
+                outline-offset: 2px;
+        }
 
 	/* FIN - Estilos para navegación accesible */
 }
@@ -1479,7 +1465,6 @@ textarea:focus {
 .valid-feedback {
 	color: var(--form-success);
 }
-
 #details {
 	background-color: var(--accent-secondary-dark);
 	text-align: center;
