@@ -90,21 +90,32 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		)
 	);
 
-	// Add Extra Colors subsection.
-	$wp_customize->add_section(
-		'custom_theme_extra_colors',
-		array(
-			'title'      => esc_html__( 'Extra Colors', 'smile-web' ),
-			'priority'   => 16,
-			'capability' => 'edit_theme_options',
-			'panel'      => 'custom_theme_colors_panel',
-		)
-	);
+        // Add Extra Colors subsection.
+        $wp_customize->add_section(
+                'custom_theme_extra_colors',
+                array(
+                        'title'      => esc_html__( 'Extra Colors', 'smile-web' ),
+                        'priority'   => 16,
+                        'capability' => 'edit_theme_options',
+                        'panel'      => 'custom_theme_colors_panel',
+                )
+        );
 
-	// Add Top Bar Colors subsection.
-	$wp_customize->add_section(
-		'custom_theme_topbar_colors',
-		array(
+        // Add Front Page Intro Colors subsection.
+        $wp_customize->add_section(
+                'custom_theme_front_intro_colors',
+                array(
+                        'title'      => esc_html__( 'Front Page Intro Colors', 'smile-web' ),
+                        'priority'   => 17,
+                        'capability' => 'edit_theme_options',
+                        'panel'      => 'custom_theme_colors_panel',
+                )
+        );
+
+        // Add Top Bar Colors subsection.
+        $wp_customize->add_section(
+                'custom_theme_topbar_colors',
+                array(
 			'title'      => esc_html__( 'Top Bar Colors', 'smile-web' ),
 			'priority'   => 20,
 			'capability' => 'edit_theme_options',
@@ -402,11 +413,11 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		);
 
 		// Extra color controls.
-		$extra_colors = array(
-			'color_muted'           => array(
-				'default' => '#6c757d',
-				'label'   => esc_html__( 'Muted Color', 'smile-web' ),
-			),
+                $extra_colors = array(
+                        'color_muted'           => array(
+                                'default' => '#6c757d',
+                                'label'   => esc_html__( 'Muted Color', 'smile-web' ),
+                        ),
 			'color_warning'         => array(
 				'default' => '#ffc107',
 				'label'   => esc_html__( 'Warning Color', 'smile-web' ),
@@ -431,16 +442,32 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 				'default' => '#dee2e6',
 				'label'   => esc_html__( 'Border Color', 'smile-web' ),
 			),
-			'icon_color'            => array(
-				'default' => '#001833',
-				'label'   => esc_html__( 'Icon Color', 'smile-web' ),
-			),
-		);
+                        'icon_color'            => array(
+                                'default' => '#001833',
+                                'label'   => esc_html__( 'Icon Color', 'smile-web' ),
+                        ),
+                );
 
-		// Top bar color controls.
-		$topbar_colors = array(
-			'topbar_bg'          => array(
-				'default' => '#f8f9fa',
+                // Front page intro color controls.
+                $front_intro_colors = array(
+                        'front_intro_overlay' => array(
+                                'default' => '#001833',
+                                'label'   => esc_html__( 'Intro Overlay Color', 'smile-web' ),
+                        ),
+                        'front_intro_heading' => array(
+                                'default' => '#d2e1ef',
+                                'label'   => esc_html__( 'Intro Heading Color', 'smile-web' ),
+                        ),
+                        'front_intro_text'    => array(
+                                'default' => '#FFFFFF',
+                                'label'   => esc_html__( 'Intro Text Color', 'smile-web' ),
+                        ),
+                );
+
+                // Top bar color controls.
+                $topbar_colors = array(
+                        'topbar_bg'          => array(
+                                'default' => '#f8f9fa',
 				'label'   => esc_html__( 'Top Bar Background Color', 'smile-web' ),
 			),
 			'topbar_text'        => array(
@@ -657,32 +684,54 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 					);
 				}
 
-				// Create settings and controls for extra colors.
-				foreach ( $extra_colors as $id => $args ) {
-					$wp_customize->add_setting(
-						$id,
-						array(
-							'default'           => $args['default'],
-							'sanitize_callback' => 'sanitize_hex_color',
-						)
-					);
-					$wp_customize->add_control(
-						new WP_Customize_Color_Control(
-							$wp_customize,
-							$id,
-							array(
-								'label'    => $args['label'],
-								'section'  => 'custom_theme_extra_colors',
-								'settings' => $id,
-							)
-						)
-					);
-				}
+                                // Create settings and controls for extra colors.
+                                foreach ( $extra_colors as $id => $args ) {
+                                        $wp_customize->add_setting(
+                                                $id,
+                                                array(
+                                                        'default'           => $args['default'],
+                                                        'sanitize_callback' => 'sanitize_hex_color',
+                                                )
+                                        );
+                                        $wp_customize->add_control(
+                                                new WP_Customize_Color_Control(
+                                                        $wp_customize,
+                                                        $id,
+                                                        array(
+                                                                'label'    => $args['label'],
+                                                                'section'  => 'custom_theme_extra_colors',
+                                                                'settings' => $id,
+                                                        )
+                                                )
+                                        );
+                                }
 
-				// Create settings and controls for top bar colors.
-				foreach ( $topbar_colors as $id => $args ) {
-						$wp_customize->add_setting(
-							$id,
+                                // Create settings and controls for front page intro colors.
+                                foreach ( $front_intro_colors as $id => $args ) {
+                                        $wp_customize->add_setting(
+                                                $id,
+                                                array(
+                                                        'default'           => $args['default'],
+                                                        'sanitize_callback' => 'sanitize_hex_color',
+                                                )
+                                        );
+                                        $wp_customize->add_control(
+                                                new WP_Customize_Color_Control(
+                                                        $wp_customize,
+                                                        $id,
+                                                        array(
+                                                                'label'    => $args['label'],
+                                                                'section'  => 'custom_theme_front_intro_colors',
+                                                                'settings' => $id,
+                                                        )
+                                                )
+                                        );
+                                }
+
+                                // Create settings and controls for top bar colors.
+                                foreach ( $topbar_colors as $id => $args ) {
+                                                $wp_customize->add_setting(
+                                                        $id,
 							array(
 								'default'           => $args['default'],
 								'sanitize_callback' => 'sanitize_hex_color',
