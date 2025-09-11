@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<div id="intro" class="pt-5">
+<div id="intro" class="pt-5" style="background-color: var(--single-intro-bg);">
 	<div class="container py-3">
 		<div class="row text-center py-2">
                         <h1 class="text-heading my-2"><?php the_title(); ?></h1>

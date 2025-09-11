@@ -112,6 +112,28 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                 )
         );
 
+       // Add Page Intro Colors subsection.
+       $wp_customize->add_section(
+               'custom_theme_page_intro_colors',
+               array(
+                       'title'      => esc_html__( 'Page Intro Colors', 'smile-web' ),
+                       'priority'   => 18,
+                       'capability' => 'edit_theme_options',
+                       'panel'      => 'custom_theme_colors_panel',
+               )
+       );
+
+       // Add Single Post Intro Colors subsection.
+       $wp_customize->add_section(
+               'custom_theme_single_intro_colors',
+               array(
+                       'title'      => esc_html__( 'Single Post Intro Colors', 'smile-web' ),
+                       'priority'   => 19,
+                       'capability' => 'edit_theme_options',
+                       'panel'      => 'custom_theme_colors_panel',
+               )
+       );
+
         // Add Top Bar Colors subsection.
         $wp_customize->add_section(
                 'custom_theme_topbar_colors',
@@ -464,6 +486,30 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                         ),
                 );
 
+               // Page intro color controls.
+               $page_intro_colors = array(
+                       'page_intro_bg' => array(
+                               'default' => '#001833',
+                               'label'   => esc_html__( 'Intro Background Color', 'smile-web' ),
+                       ),
+                       'page_intro_heading' => array(
+                               'default' => '#d2e1ef',
+                               'label'   => esc_html__( 'Intro Heading Color', 'smile-web' ),
+                       ),
+               );
+
+               // Single post intro color controls.
+               $single_intro_colors = array(
+                       'single_intro_bg' => array(
+                               'default' => '#001833',
+                               'label'   => esc_html__( 'Intro Background Color', 'smile-web' ),
+                       ),
+                       'single_intro_heading' => array(
+                               'default' => '#d2e1ef',
+                               'label'   => esc_html__( 'Intro Heading Color', 'smile-web' ),
+                       ),
+               );
+
                 // Top bar color controls.
                 $topbar_colors = array(
                         'topbar_bg'          => array(
@@ -706,30 +752,74 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                         );
                                 }
 
-                                // Create settings and controls for front page intro colors.
-                                foreach ( $front_intro_colors as $id => $args ) {
-                                        $wp_customize->add_setting(
-                                                $id,
-                                                array(
-                                                        'default'           => $args['default'],
-                                                        'sanitize_callback' => 'sanitize_hex_color',
-                                                )
-                                        );
-                                        $wp_customize->add_control(
-                                                new WP_Customize_Color_Control(
-                                                        $wp_customize,
-                                                        $id,
-                                                        array(
-                                                                'label'    => $args['label'],
-                                                                'section'  => 'custom_theme_front_intro_colors',
-                                                                'settings' => $id,
-                                                        )
-                                                )
-                                        );
-                                }
+                               // Create settings and controls for front page intro colors.
+                               foreach ( $front_intro_colors as $id => $args ) {
+                                       $wp_customize->add_setting(
+                                               $id,
+                                               array(
+                                                       'default'           => $args['default'],
+                                                       'sanitize_callback' => 'sanitize_hex_color',
+                                               )
+                                       );
+                                       $wp_customize->add_control(
+                                               new WP_Customize_Color_Control(
+                                                       $wp_customize,
+                                                       $id,
+                                                       array(
+                                                               'label'    => $args['label'],
+                                                               'section'  => 'custom_theme_front_intro_colors',
+                                                               'settings' => $id,
+                                                       )
+                                               )
+                                       );
+                               }
 
-                                // Create settings and controls for top bar colors.
-                                foreach ( $topbar_colors as $id => $args ) {
+                               // Create settings and controls for page intro colors.
+                               foreach ( $page_intro_colors as $id => $args ) {
+                                       $wp_customize->add_setting(
+                                               $id,
+                                               array(
+                                                       'default'           => $args['default'],
+                                                       'sanitize_callback' => 'sanitize_hex_color',
+                                               )
+                                       );
+                                       $wp_customize->add_control(
+                                               new WP_Customize_Color_Control(
+                                                       $wp_customize,
+                                                       $id,
+                                                       array(
+                                                               'label'    => $args['label'],
+                                                               'section'  => 'custom_theme_page_intro_colors',
+                                                               'settings' => $id,
+                                                       )
+                                               )
+                                       );
+                               }
+
+                               // Create settings and controls for single post intro colors.
+                               foreach ( $single_intro_colors as $id => $args ) {
+                                       $wp_customize->add_setting(
+                                               $id,
+                                               array(
+                                                       'default'           => $args['default'],
+                                                       'sanitize_callback' => 'sanitize_hex_color',
+                                               )
+                                       );
+                                       $wp_customize->add_control(
+                                               new WP_Customize_Color_Control(
+                                                       $wp_customize,
+                                                       $id,
+                                                       array(
+                                                               'label'    => $args['label'],
+                                                               'section'  => 'custom_theme_single_intro_colors',
+                                                               'settings' => $id,
+                                                       )
+                                               )
+                                       );
+                               }
+
+                               // Create settings and controls for top bar colors.
+                               foreach ( $topbar_colors as $id => $args ) {
                                                 $wp_customize->add_setting(
                                                         $id,
 							array(
