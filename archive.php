@@ -18,7 +18,7 @@ get_header();
 			<!-- Breadcrumbs -->
 			<div id="breadcrumbs" class="col-12">
 				<nav aria-label="breadcrumb">
-                                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb bg-primary">
+                                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--breadcrumb-bg);">
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 														<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
 								<span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span>

@@ -33,7 +33,7 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 		<div class="container">
 			<div id="breadcrumbs">
 				<nav aria-label="<?php esc_attr_e( 'breadcrumb', 'smile-web' ); ?>">
-                                        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb bg-primary">
+                                        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--breadcrumb-bg);">
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 							<img class="mx-2"
 								src="<?php echo esc_url( get_template_directory_uri() . '/lib/fontawesome-free/svgs/solid/home.svg' ); ?>"
