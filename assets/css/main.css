@@ -272,25 +272,25 @@ em {
   display: grid;
 }
 
-.post-categories {
+.category .post-categories {
   list-style:none;
   margin:0;
   padding:0;
 }
 
-.post-categories li {
+.category .post-categories li {
   display:inline-block;
   margin-right:0.5rem;
 }
 
-.post-categories a {
+.category .post-categories a {
   background-color: var(--category-bg);
   color: var(--category-text);
   padding:0.25rem 0.5rem;
   border-radius:4px;
 }
 
-.post-categories a:hover {
+.category .post-categories a:hover {
   background-color: var(--category-bg-hover);
   color: var(--category-text-hover);
 }
