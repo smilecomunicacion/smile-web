@@ -26,10 +26,13 @@ function smile_web_add_dynamic_styles() {
 		$text_quote                  = sanitize_hex_color( get_theme_mod( 'text_quote', '#225274' ) );
 		$text_list                   = sanitize_hex_color( get_theme_mod( 'text_list', '#00112b' ) );
 		$accent_primary_light        = sanitize_hex_color( get_theme_mod( 'accent-primary-light', '#d2e1ef' ) );
-		$accent_primary              = sanitize_hex_color( get_theme_mod( 'accent-primary', '#d2e1ef' ) );
-		$accent_secondary            = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
-		$accent_secondary_dark       = sanitize_hex_color( get_theme_mod( 'accent-secondary-dark', '#001833' ) );
-				$bg_primary          = sanitize_hex_color( get_theme_mod( 'bg_primary', '#edf7ef' ) );
+                $accent_primary              = sanitize_hex_color( get_theme_mod( 'accent-primary', '#d2e1ef' ) );
+                $accent_secondary            = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#225274' ) );
+                $accent_secondary_dark       = sanitize_hex_color( get_theme_mod( 'accent-secondary-dark', '#001833' ) );
+               $front_intro_overlay         = sanitize_hex_color( get_theme_mod( 'front_intro_overlay', '#001833' ) );
+               $front_intro_heading         = sanitize_hex_color( get_theme_mod( 'front_intro_heading', '#d2e1ef' ) );
+               $front_intro_text            = sanitize_hex_color( get_theme_mod( 'front_intro_text', '#FFFFFF' ) );
+                                $bg_primary          = sanitize_hex_color( get_theme_mod( 'bg_primary', '#edf7ef' ) );
                                $bg_secondary        = sanitize_hex_color( get_theme_mod( 'bg_secondary', '#f8f9fa' ) );
                                $breadcrumb_bg       = sanitize_hex_color( get_theme_mod( 'breadcrumb_bg_color', '#edf7ef' ) );
                                $button_text         = sanitize_hex_color( get_theme_mod( 'button_text', '#FFFFFF' ) );
@@ -102,6 +105,9 @@ function smile_web_add_dynamic_styles() {
                       --bg-primary: ' . esc_attr( $bg_primary ) . ';
                       --bg-secondary: ' . esc_attr( $bg_secondary ) . ';
                       --breadcrumb-bg: ' . esc_attr( $breadcrumb_bg ) . ';
+                      --front-intro-overlay: ' . esc_attr( $front_intro_overlay ) . ';
+                      --front-intro-heading: ' . esc_attr( $front_intro_heading ) . ';
+                      --front-intro-text: ' . esc_attr( $front_intro_text ) . ';
                       --btn-text: ' . esc_attr( $button_text ) . ';
                        --btn-text-hover: ' . esc_attr( $button_text_hover ) . ';
                        --btn-bg: ' . esc_attr( $button_bg ) . ';

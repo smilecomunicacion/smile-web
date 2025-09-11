@@ -736,14 +736,27 @@ main figure {
 main figure img,
 .search-items img,
 .post-thumbnail img {
-	width: 100%;
-	height: auto;
+        width: 100%;
+        height: auto;
+}
+
+/* Front Page Intro */
+#intro::before {
+        background-color: var(--front-intro-overlay);
+}
+
+#intro h1 {
+        color: var(--front-intro-heading);
+}
+
+#intro p {
+        color: var(--front-intro-text);
 }
 
 /* # 4.1 - COLUMNS */
 .row {
-	display: flex;
-	flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
 	margin: 10px 0;
 }
 
