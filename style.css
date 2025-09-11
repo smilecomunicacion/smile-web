@@ -1077,7 +1077,6 @@ main li {
 
 main section ul li::before,
 main article ul li::before {
-	content: "• ";
 	color: var(--link-active);
 	font-size: 3em;
 	position: relative;
