@@ -273,20 +273,26 @@ em {
 }
 
 .post-categories {
-  list-style: none;
-  padding: 0px 15px;
-  margin: 0px;
-  display: flex;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
 
 .post-categories li {
-  margin-right: 5px;
+  display:inline-block;
+  margin-right:0.5rem;
 }
 
-.post-categories li a {
-  text-decoration: none;
-  color: var(--color-white);
-  padding: 0 10px;
+.post-categories a {
+  background-color: var(--category-bg);
+  color: var(--category-text);
+  padding:0.25rem 0.5rem;
+  border-radius:4px;
+}
+
+.post-categories a:hover {
+  background-color: var(--category-bg-hover);
+  color: var(--category-text-hover);
 }
 
 .blog-col {

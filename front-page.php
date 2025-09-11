@@ -114,23 +114,15 @@ if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
 				while ( $recent_posts->have_posts() ) :
 					$recent_posts->the_post();
 					?>
-				<article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
-					<div class="category">
-						<?php
-															$categories = get_the_category();
-						if ( $categories ) {
-							foreach ( $categories as $category ) {
-																		printf(
-																			'<a href="%1$s">%2$s</a>',
-																			esc_url( get_category_link( $category->term_id ) ),
-																			esc_html( $category->name )
-																		);
-							}
-						}
-						?>
-					</div>
+                                <article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
+                                        <?php
+                                        $categories_list = get_the_category_list( '</li><li>' );
+                                        if ( $categories_list ) {
+                                                echo '<ul class="post-categories"><li>' . wp_kses_post( $categories_list ) . '</li></ul>';
+                                        }
+                                        ?>
 
-					<figure class="shadow">
+                                        <figure class="shadow">
 						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
 							<?php
 							if ( has_post_thumbnail() ) {
