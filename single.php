@@ -12,21 +12,21 @@ get_header();
 <div id="intro" class="pt-5" style="background-color: var(--single-intro-bg);">
 	<div class="container py-3">
 		<div class="row text-center py-2">
-                        <h1 class="text-heading my-2"><?php the_title(); ?></h1>
+			<h1 class="text-heading my-2"><?php the_title(); ?></h1>
 			<div class="entry-header d-flex justify-content-center">
 				<?php if ( is_single() ) : ?>
-					<span>
-						<?php
+				<span>
+					<?php
 						// Show the date the post was published or updated.
 						if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) :
 							?>
-							<b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php echo get_the_date( 'j F, Y' ); ?> |
-						<?php else : ?>
-							<b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?> |
-						<?php endif; ?>
-					</span>
+					<b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php echo get_the_date( 'j F, Y' ); ?> |
+					<?php else : ?>
+					<b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?> |
+					<?php endif; ?>
+				</span>
 
-					<?php
+				<?php
 					// Get the post categories.
 					$categories = get_the_category();
 
@@ -55,9 +55,9 @@ get_header();
 					}
 					?>
 
-					<?php if ( get_comments_number() > 0 ) : ?>
-						<span> |
-							<?php
+				<?php if ( get_comments_number() > 0 ) : ?>
+				<span> |
+					<?php
 							// SVG icon for comments.
 														$comment_svg = '
                                                         <svg class="comment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
@@ -66,9 +66,9 @@ get_header();
 							echo '<span class="svg-icon">' . wp_kses_post( $comment_svg ) . '</span>';
 							esc_html_e( 'Comments', 'smile-web' );
 							?>
-														<a href="#comments" class="comment-count"><?php echo esc_html( get_comments_number() ); ?></a>
-						</span>
-					<?php endif; ?>
+					<a href="#comments" class="comment-count"><?php echo esc_html( get_comments_number() ); ?></a>
+				</span>
+				<?php endif; ?>
 				<?php endif; ?>
 			</div><!-- .entry-header -->
 			<?php
@@ -93,12 +93,12 @@ get_header();
 <main id="main" class="blog-page bg-primary">
 	<div class="container py-4">
 		<div id="breadcrumbs">
-			<nav aria-label="breadcrumb">
-                                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--breadcrumb-bg);">
+			<nav aria-label="breadcrumb" style="background-color: var(--breadcrumb-bg);">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/solid/home.svg" alt="home" title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>
 						" width="20px" height="20px">
-												<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><span><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><span><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1" />
 					</li>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
@@ -108,8 +108,8 @@ get_header();
 								echo '<a itemid="' . esc_attr( $category->cat_name ) . '" href="' . esc_url( get_category_link( $category->term_id ) ) . '"><span>' . esc_html( $category->cat_name ) . '</span></a>';
 						}
 						?>
-												<meta itemprop="position" content="2" />
-										</li>
+						<meta itemprop="position" content="2" />
+					</li>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 					</li>
 				</ol>
@@ -128,28 +128,24 @@ get_header();
 				<hr>
 				<!--Share Social Media -->
 				<div class="share-social-media">
-										<p><span><?php esc_html_e( 'Share:', 'smile-web' ); ?></span>
-												<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"
-														target="_blank" rel="noopener noreferrer">
+					<p><span><?php esc_html_e( 'Share:', 'smile-web' ); ?></span>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
 
-														<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/facebook.svg" alt="<?php esc_attr_e( 'Facebook', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Facebook', 'smile-web' ); ?>" width="20px" height="20px">
+							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/facebook.svg" alt="<?php esc_attr_e( 'Facebook', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Facebook', 'smile-web' ); ?>" width="20px" height="20px">
 
-												</a> <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url( get_the_permalink() ); ?>"
-														target="_blank" rel="noopener noreferrer">
-														<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/twitter.svg" alt="<?php esc_attr_e( 'Twitter', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Twitter', 'smile-web' ); ?>" width="20px" height="20px">
-												</a>
-												<a href="https://www.linkedin.com/cws/share?url=<?php echo esc_url( get_the_permalink() ); ?>"
-														target="_blank" rel="noopener noreferrer">
-														<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/linkedin.svg" alt="<?php esc_attr_e( 'LinkedIn', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on LinkedIn', 'smile-web' ); ?>" width="20px" height="20px">
-												</a>
-												<a href="https://pinterest.com/pin/create/button/?url=<?php echo esc_url( get_the_permalink() ); ?>"
-														target="_blank" rel="noopener noreferrer">
-														<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/pinterest.svg" alt="<?php esc_attr_e( 'Pinterest', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Pinterest', 'smile-web' ); ?>" width="20px" height="20px">
-												</a>
-										</p>
+						</a> <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
+							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/twitter.svg" alt="<?php esc_attr_e( 'Twitter', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Twitter', 'smile-web' ); ?>" width="20px" height="20px">
+						</a>
+						<a href="https://www.linkedin.com/cws/share?url=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
+							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/linkedin.svg" alt="<?php esc_attr_e( 'LinkedIn', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on LinkedIn', 'smile-web' ); ?>" width="20px" height="20px">
+						</a>
+						<a href="https://pinterest.com/pin/create/button/?url=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
+							<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/brands/pinterest.svg" alt="<?php esc_attr_e( 'Pinterest', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Share on Pinterest', 'smile-web' ); ?>" width="20px" height="20px">
+						</a>
+					</p>
 				</div>
 				<!--FIN Share Social Media -->
-					<?php
+				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
@@ -185,10 +181,10 @@ get_header();
 				'post__not_in'   => array( $current_post_id ),
 			);
 			?>
-               <section id="posts-relacionados" class="bg-secondary">
+	<section id="posts-relacionados" class="bg-secondary">
 		<div class="container py-5">
-                        <p class="text-emphasis col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
-			<?php
+			<p class="text-emphasis col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
+				<?php
 			$categories = get_the_category();
 			foreach ( $categories as $category ) {
 				echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>';}
@@ -201,10 +197,10 @@ get_header();
 				while ( $recent->have_posts() ) :
 					$recent->the_post();
 					?>
-					<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
-						<figure class="mb-0 shadow">
-							<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
-								<?php
+				<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
+					<figure class="mb-0 shadow">
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+							<?php
 								if ( has_post_thumbnail() ) {
 									$attachment_id = get_post_thumbnail_id( get_the_ID() );
 									$metadata      = wp_get_attachment_metadata( $attachment_id );
@@ -216,32 +212,33 @@ get_header();
 									echo '<img src="' . esc_url( $src ) . '" height="' . esc_attr( $height ) . '" width="' . esc_attr( $width ) . '" alt="' . esc_attr( $alt ) . '" title="' . esc_attr( $image_title ) . '">';
 								} else {
 									?>
-									<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/thumbnail-article.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000px" height="667px">
-									<?php
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/thumbnail-article.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000px" height="667px">
+							<?php
 								}
 								?>
-								</a>
-							<figcaption id="post-<?php the_ID(); ?>" class="p-4">
-								<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
-								<p><?php the_excerpt(); ?></p><hr>
-								<p>
-									<?php if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) : ?>
-										<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?>
-										</span>
+						</a>
+						<figcaption id="post-<?php the_ID(); ?>" class="p-4">
+							<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
+							<p><?php the_excerpt(); ?></p>
+							<hr>
+							<p>
+								<?php if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) : ?>
+								<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?>
+								</span>
 
-									<?php else : ?>
-										<span><b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?>
-										</span>
-									<?php endif; ?>
-								</p>
-							</figcaption>
-						</figure>
-					</article>
+								<?php else : ?>
+								<span><b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?>
+								</span>
+								<?php endif; ?>
+							</p>
+						</figcaption>
+					</figure>
+				</article>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</section>
-		<?php } ?>
+	<?php } ?>
 </main>
 <?php get_footer(); ?>
