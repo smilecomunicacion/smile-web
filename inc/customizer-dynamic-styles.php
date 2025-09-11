@@ -32,6 +32,10 @@ function smile_web_add_dynamic_styles() {
                $front_intro_overlay         = sanitize_hex_color( get_theme_mod( 'front_intro_overlay', '#001833' ) );
                $front_intro_heading         = sanitize_hex_color( get_theme_mod( 'front_intro_heading', '#d2e1ef' ) );
                $front_intro_text            = sanitize_hex_color( get_theme_mod( 'front_intro_text', '#FFFFFF' ) );
+               $page_intro_bg               = sanitize_hex_color( get_theme_mod( 'page_intro_bg', '#001833' ) );
+               $page_intro_heading          = sanitize_hex_color( get_theme_mod( 'page_intro_heading', '#d2e1ef' ) );
+               $single_intro_bg             = sanitize_hex_color( get_theme_mod( 'single_intro_bg', '#001833' ) );
+               $single_intro_heading        = sanitize_hex_color( get_theme_mod( 'single_intro_heading', '#d2e1ef' ) );
                                 $bg_primary          = sanitize_hex_color( get_theme_mod( 'bg_primary', '#edf7ef' ) );
                                $bg_secondary        = sanitize_hex_color( get_theme_mod( 'bg_secondary', '#f8f9fa' ) );
                                $breadcrumb_bg       = sanitize_hex_color( get_theme_mod( 'breadcrumb_bg_color', '#edf7ef' ) );
@@ -108,6 +112,10 @@ function smile_web_add_dynamic_styles() {
                       --front-intro-overlay: ' . esc_attr( $front_intro_overlay ) . ';
                       --front-intro-heading: ' . esc_attr( $front_intro_heading ) . ';
                       --front-intro-text: ' . esc_attr( $front_intro_text ) . ';
+                      --page-intro-bg: ' . esc_attr( $page_intro_bg ) . ';
+                      --page-intro-heading: ' . esc_attr( $page_intro_heading ) . ';
+                      --single-intro-bg: ' . esc_attr( $single_intro_bg ) . ';
+                      --single-intro-heading: ' . esc_attr( $single_intro_heading ) . ';
                       --btn-text: ' . esc_attr( $button_text ) . ';
                        --btn-text-hover: ' . esc_attr( $button_text_hover ) . ';
                        --btn-bg: ' . esc_attr( $button_bg ) . ';

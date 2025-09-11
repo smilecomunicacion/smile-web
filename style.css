@@ -741,16 +741,34 @@ main figure img,
 }
 
 /* Front Page Intro */
-#intro::before {
+.home #intro::before {
         background-color: var(--front-intro-overlay);
 }
 
-#intro h1 {
+.home #intro h1 {
         color: var(--front-intro-heading);
 }
 
-#intro p {
+.home #intro p {
         color: var(--front-intro-text);
+}
+
+/* Page Intro */
+.page #intro {
+        background-color: var(--page-intro-bg);
+}
+
+.page #intro h1 {
+        color: var(--page-intro-heading);
+}
+
+/* Single Post Intro */
+.single-post #intro {
+        background-color: var(--single-intro-bg);
+}
+
+.single-post #intro h1 {
+        color: var(--single-intro-heading);
 }
 
 /* # 4.1 - COLUMNS */
