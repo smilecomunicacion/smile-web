@@ -1541,6 +1541,7 @@ textarea:focus {
 	list-style: none !important;
 	padding: 0;
 	margin: 0;
+	background-color: unset;
 }
 
 #footer .footer-link li::marker {
