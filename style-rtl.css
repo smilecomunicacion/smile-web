@@ -470,13 +470,13 @@ header nav {
 #nav-toggle:focus,
 #nav-menu a:focus,
 .child-arrow-down:focus {
-        outline-offset: 2px;
+	outline-offset: 2px;
 }
 
 /* Focus visible for arrow */
 .menu-item-has-children i:focus::after {
-        outline-offset: 2px;
-        border-radius: 4px;
+	outline-offset: 2px;
+	border-radius: 4px;
 }
 
 #nav-menu {
@@ -524,7 +524,7 @@ ul .sub-menu {
 	list-style: none;
 	position: relative;
 	background-color: var(--masthead-submenu-bg);
-        color: var(--masthead-submenu-text);
+	color: var(--masthead-submenu-text);
 }
 
 @media (min-width: 768px) {
@@ -600,10 +600,14 @@ ul .sub-menu {
 		width: 100%;
 	}
 
-        #nav-menu a:hover {
-                color: var(--masthead-link-hover);
-                background-color: var(--masthead-bg);
-        }
+	#nav-menu a:hover {
+		color: var(--masthead-link-hover);
+		background-color: var(--masthead-bg);
+	}
+
+	#nav-menu .current_page_item>a {
+		color: var(--footer-link-hover);
+	}
 
 	.menu-item-has-children {
 		display: block;
@@ -656,9 +660,9 @@ ul .sub-menu {
 		margin: 12px 0;
 	}
 
-       #nav-menu .sub-menu li>a:hover {
-                color: var(--masthead-link-hover);
-        }
+	#nav-menu .sub-menu li>a:hover {
+		color: var(--masthead-link-hover);
+	}
 
 	.menu-item-has-children .child-arrow-up::after {
 		transform: rotate(-90deg);
@@ -715,9 +719,9 @@ ul .sub-menu {
 		/* Para garantizar que no haya recortes */
 	}
 
-        .menu-item-has-children>a:focus {
-                outline-offset: 2px;
-        }
+	.menu-item-has-children>a:focus {
+		outline-offset: 2px;
+	}
 
 	/* FIN - Estilos para navegación accesible */
 }
@@ -734,6 +738,38 @@ main figure img,
 .post-thumbnail img {
 	width: 100%;
 	height: auto;
+}
+
+/* Front Page Intro */
+body.home #intro::before {
+	/* Overlay color with alpha from Customizer */
+	background-color: var(--front-intro-overlay);
+}
+
+body.home #intro h1 {
+	color: var(--front-intro-heading);
+}
+
+body.home #intro p {
+	color: var(--front-intro-text);
+}
+
+/* Page Intro */
+body.page:not(.home) #intro::before {
+	background-color: var(--page-intro-bg);
+}
+
+.page #intro h1 {
+	color: var(--page-intro-heading);
+}
+
+/* Single Post Intro */
+body.single #intro::before {
+	background-color: var(--single-intro-bg);
+}
+
+.single-post #intro h1 {
+	color: var(--single-intro-heading);
 }
 
 /* # 4.1 - COLUMNS */
@@ -1118,22 +1154,6 @@ main ol li::marker {
 	color: var(--color-white);
 }
 
-.justify-content-center {
-	justify-content: center !important;
-}
-
-.text-center {
-	text-align: center !important;
-}
-
-.align-center {
-	align-items: center;
-}
-
-.vertical-align {
-	vertical-align: middle;
-}
-
 .d-none {
 	display: none !important;
 }
@@ -1401,6 +1421,35 @@ body.single .comment-count {
 	color: var(--card-text-color);
 }
 
+/* Post Categories */
+.category .post-categories {
+	list-style: none;
+	margin: 0;
+	padding: 5px 10px;
+	display: flex;
+}
+
+.category .post-categories li {
+	display: inline-block;
+	background-color: var(--category-bg);
+	margin-left: 0.5rem;
+}
+
+.category .post-categories li:hover {
+	background-color: var(--category-bg-hover);
+}
+
+.category .post-categories a {
+	text-decoration: none;
+	color: var(--category-text);
+	padding: 0.25rem 0.5rem;
+}
+
+.category .post-categories a:hover {
+	color: var(--category-text-hover);
+}
+
+
 /* # 4.9 - SIDEBAR */
 .sidebar-menu {
 	background-color: var(--color-white);
@@ -1410,14 +1459,6 @@ body.single .comment-count {
 
 .sidebar-text {
 	color: var(--text-base)
-}
-
-.sidebar-border-bot {
-	border-bottom: 2px solid var(--accent-primary-light);
-}
-
-.sidebar-border {
-	border: 2px solid var(--accent-primary-light);
 }
 
 #toc_container a,
@@ -1464,6 +1505,7 @@ textarea:focus {
 .valid-feedback {
 	color: var(--form-success);
 }
+
 #details {
 	background-color: var(--accent-secondary-dark);
 	text-align: center;
@@ -1877,9 +1919,6 @@ footer h3 {
 	justify-content: flex-end !important
 }
 
-.justify-content-center {
-	justify-content: center !important
-}
 
 .justify-content-between {
 	justify-content: space-between !important
@@ -2572,31 +2611,4 @@ footer h3 {
 .g-5,
 .gy-5 {
 	--bs-gutter-y: 3rem
-}
-/* Front Page Intro */
-body.home #intro::before {
-	/* Overlay color with alpha from Customizer */
-	background-color: var(--front-intro-overlay);
-}
-
-body.home #intro h1 {
-	color: var(--front-intro-heading);
-}
-
-body.home #intro p {
-	color: var(--front-intro-text);
-}
-
-/* Page Intro */
-body.page:not(.home) #intro::before {
-	background-color: var(--page-intro-bg);
-}
-
-.page #intro h1 {
-	color: var(--page-intro-heading);
-}
-
-/* Single Post Intro */
-body.single #intro::before {
-	background-color: var(--single-intro-bg);
 }
