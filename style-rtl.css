@@ -553,10 +553,17 @@ ul .sub-menu {
 	left: 20px !important;
 	z-index: 9999;
 	left: 30px;
-	color: var(--masthead-submenu-text);
 	font-weight: 200;
 	font-size: 20px;
 }
+#masthead .menu-item-has-children i::after {
+	color: var(--masthead-submenu-text);
+}
+
+#footer .menu-item-has-children i::after {
+	color: var(--footer-text);
+}
+
 
 .menu-item-has-children .child-arrow-down::after {
 	transform: rotate(-90deg);
@@ -623,10 +630,17 @@ ul .sub-menu {
 	.menu-item-has-children i::after {
 		top: 5px;
 		left: 5px !important;
-		color: var(--masthead-link);
 		font-weight: 100;
 		font-size: 15px;
 	}
+	#masthead .menu-item-has-children i::after {
+		color: var(--masthead-link);
+	}
+
+	#footer .menu-item-has-children i::after {
+		color: var(--footer-text);
+	}
+
 
 	/* focus-within */
 	#masthead .menu-item-has-children:focus-within>.sub-menu,
