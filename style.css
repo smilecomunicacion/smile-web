@@ -549,12 +549,11 @@ ul .sub-menu {
 .menu-item-has-children i::after {
 	content: "\003E";
 	position: absolute;
-	top: 20px;
-	right: 20px !important;
+	top: 5px;
+	right: 5px !important;
 	z-index: 9999;
-	right: 30px;
-	font-weight: 200;
-	font-size: 20px;
+	font-weight: 100;
+	font-size: 15px;
 }
 #masthead .menu-item-has-children i::after {
 	color: var(--masthead-submenu-text);
@@ -562,8 +561,7 @@ ul .sub-menu {
 
 #footer .menu-item-has-children i::after {
 	color: var(--footer-text);
-	top: -2px;
-    right: 0px !important;
+	top: 2px;
 }
 
 .menu-item-has-children .child-arrow-down::after {
@@ -640,8 +638,7 @@ ul .sub-menu {
 
 	#footer .menu-item-has-children i::after {
 		color: var(--footer-text);
-		top: -2px;
-    	right: 0px !important;
+		top: 2px;
 	}
 
 
