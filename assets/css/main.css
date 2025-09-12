@@ -334,6 +334,25 @@ em {
 	color: var(--masthead-link-hover);
 }
 
+.menu-item-has-children i::after {
+	content: "\003E";
+	position: absolute;
+	top: 20px;
+	right: 20px !important;
+	z-index: 9999;
+	right: 30px;
+	font-weight: 200;
+	font-size: 20px;
+}
+
+#masthead .menu-item-has-children i::after {
+	color: var(--masthead-submenu-text);
+}
+
+#footer .menu-item-has-children i::after {
+	color: var(--footer-text);
+}
+
 #nav-menu .current_page_item > a {
 	color: var(--footer-link-hover);
 }
