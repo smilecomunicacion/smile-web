@@ -349,10 +349,6 @@ em {
 	color: var(--masthead-submenu-text);
 }
 
-#footer .menu-item-has-children i::after {
-	color: var(--footer-text);
-}
-
 #nav-menu .current_page_item > a {
 	color: var(--footer-link-hover);
 }

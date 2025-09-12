@@ -562,8 +562,9 @@ ul .sub-menu {
 
 #footer .menu-item-has-children i::after {
 	color: var(--footer-text);
+	top: -2px;
+    right: 0px !important;
 }
-
 
 .menu-item-has-children .child-arrow-down::after {
 	transform: rotate(90deg);
@@ -639,6 +640,8 @@ ul .sub-menu {
 
 	#footer .menu-item-has-children i::after {
 		color: var(--footer-text);
+		top: -2px;
+    	right: 0px !important;
 	}
 
 
