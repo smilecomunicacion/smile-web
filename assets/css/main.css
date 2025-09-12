@@ -10,82 +10,82 @@
 /*--------------------------------------------------------------
 # INDICE
 # 4.5 - SIDEBAR + WIDGETS
-        # 5.0 - FAQ
+		# 5.0 - FAQ
 # 6.0 - FOOTER
-        # 7.0 - TESTIMONIAL
+		# 7.0 - TESTIMONIAL
 # 8.0 - BLOG
 # 9.0 - BOTON WHATSAPP
-        # 10.0 - MODAL
+		# 10.0 - MODAL
 --------------------------------------------------------------*/
 
 body {
-  color: var(--text-base);
+	color: var(--text-base);
 }
 
 ::selection {
-  background-color: var(--selection-bg);
+	background-color: var(--selection-bg);
 }
 
 small {
-  color: var(--text-muted);
+	color: var(--text-muted);
 }
 
 h1 {
-  color: var(--text-heading);
+	color: var(--text-heading);
 }
 
 h2, h3, h4, h5, h6 {
-  color: var(--text-subheading);
+	color: var(--text-subheading);
 }
 
 blockquote {
-  color: var(--text-quote);
+	color: var(--text-quote);
 }
 
 ul li {
-  color: var(--text-list);
+	color: var(--text-list);
 }
 
 strong,
 b,
 em {
-  color: var(--text-emphasis);
+	color: var(--text-emphasis);
 }
 
 .text-base {
-  color: var(--text-base);
+	color: var(--text-base);
 }
 
 .text-heading {
-  color: var(--text-heading);
+	color: var(--text-heading);
 }
 
 .text-subheading {
-  color: var(--text-subheading);
+	color: var(--text-subheading);
 }
 
 .text-emphasis {
-  color: var(--text-emphasis);
+	color: var(--text-emphasis);
 }
 
 .text-quote {
-  color: var(--text-quote);
+	color: var(--text-quote);
 }
 
 .text-list {
-  color: var(--text-list);
+	color: var(--text-list);
 }
 
 .btn {
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  border: 1px solid var(--btn-border);
+	background-color: var(--btn-bg);
+	color: var(--btn-text);
+	border: 1px solid var(--btn-border);
 }
 
 .btn:hover {
-  background-color: var(--btn-bg-hover);
-  color: var(--btn-text-hover);
-  border: 1px solid var(--btn-border-hover);
+	background-color: var(--btn-bg-hover);
+	color: var(--btn-text-hover);
+	border: 1px solid var(--btn-border-hover);
 }
 
 /*--------------------------------------------------------------
@@ -93,13 +93,13 @@ em {
 --------------------------------------------------------------*/
 
 .sidebar-text {
-  color: var(--text-base)
+	color: var(--text-base)
 }
 
 #toc_container a,
 #ez-toc-container a,
 #secondary a {
-  color: var(--toc-link);
+	color: var(--toc-link);
 }
 
 /*--------------------------------------------------------------
@@ -107,267 +107,267 @@ em {
 --------------------------------------------------------------*/
 
 #footer .fa {
-  color: var(--color-white);
-  padding: 15px;
+	color: var(--color-white);
+	padding: 15px;
 }
 
 #footer .fa:hover {
-  color: var(--link)
+	color: var(--link)
 }
 
 #footer .footer-top a {
-  color: var(--footer-link);
-  text-decoration: none;
+	color: var(--footer-link);
+	text-decoration: none;
 }
 
 #footer .footer-top a:hover {
-  color: var(--footer-link-hover);
+	color: var(--footer-link-hover);
 }
 
 .menu-social-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 #footer .footer-link ul li {
-  list-style: none;
-  padding: 10px 0;
-  line-height: 1.2;
-  border-bottom: 1px solid var(--footer-border);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+	list-style: none;
+	padding: 10px 0;
+	line-height: 1.2;
+	border-bottom: 1px solid var(--footer-border);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 #footer #menu-redes-sociales-1 li a {
-  padding: 7px;
-  font-size: 20px;
-  color: #fff;
+	padding: 7px;
+	font-size: 20px;
+	color: #fff;
 }
 
 #footer #menu-redes-sociales-1 li a:hover {
-  color: var(--link);
+	color: var(--link);
 }
 
 #topBar {
-  background-color: var(--topbar-bg);
-  color: var(--topbar-text);
+	background-color: var(--topbar-bg);
+	color: var(--topbar-text);
 }
 
 #topBar a {
-  color: var(--topbar-link);
+	color: var(--topbar-link);
 }
 
 #topBar a:hover {
-  color: var(--topbar-link-hover);
+	color: var(--topbar-link-hover);
 }
 
 #topBar .social-links a {
-  color: var(--topbar-social-icon);
+	color: var(--topbar-social-icon);
 }
 
 .svg-icon svg {
-  fill: var(--icon);
+	fill: var(--icon);
 }
 
 #topBar .svg-icon svg {
-  fill: var(--topbar-social-icon);
+	fill: var(--topbar-social-icon);
 }
 
 #topBar .buscar svg {
-  fill: var(--topbar-social-icon);
+	fill: var(--topbar-social-icon);
 }
 
 #footer .svg-icon svg {
-  fill: var(--footer-social-icon);
+	fill: var(--footer-social-icon);
 }
 
 #footer .svg-icon svg:hover {
-  fill: var(--footer-social-icon-hover);
+	fill: var(--footer-social-icon-hover);
 }
 
 .footer-svg {
-  transform: rotatex(180deg);
-  padding: 20px 0px 0px 0px;
+	transform: rotatex(180deg);
+	padding: 20px 0px 0px 0px;
 }
 
 /* CONTACT */
 .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
+	display: none;
+	color: red;
+	margin: 0 0 15px 0;
+	font-weight: 400;
+	font-size: 13px;
 }
 
 .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
+	display: none;
+	color: #fff;
+	background: #ed3c0d;
+	text-align: left;
+	padding: 15px;
+	font-weight: 600;
 }
 
 .php-email-form .error-message br+br {
-  margin-top: 25px;
+	margin-top: 25px;
 }
 
 .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
+	display: none;
+	color: #fff;
+	background: #18d26e;
+	text-align: center;
+	padding: 15px;
+	font-weight: 600;
 }
 
 .php-email-form .loading {
-  display: none;
-  color: green;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
+	display: none;
+	color: green;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
 }
 
 .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
+	content: "";
+	display: inline-block;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	margin: 0 10px -6px 0;
+	border: 3px solid #18d26e;
+	border-top-color: #eee;
+	-webkit-animation: animate-loading 1s linear infinite;
+	animation: animate-loading 1s linear infinite;
 }
 
 /*--------------------------------------------------------------
 # 8.0 - BLOG
 --------------------------------------------------------------*/
 .comment-form-comment {
-  display: grid;
+	display: grid;
 }
 
 .blog-col {
-  position: relative;
+	position: relative;
 }
 
 .blog-col figure {
-  background-color: var(--color-white);
-  /* margin: 10px; */
+	background-color: var(--color-white);
+	/* margin: 10px; */
 }
 
 .blog-col img:hover {
-  opacity: .7;
-  -moz-transition: .4s;
-  -webkit-transition: .4s;
-  transition: all .4s;
+	opacity: .7;
+	-moz-transition: .4s;
+	-webkit-transition: .4s;
+	transition: all .4s;
 }
 
 .blog-col figure figcaption {
-  padding: 0 20px 10px;
+	padding: 0 20px 10px;
 }
 
 .blog-col figcaption a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .category {
-  position: absolute;
-  z-index: 1;
+	position: absolute;
+	z-index: 1;
 }
 
 /*  #Blog Artículos destacados FIN */
 /*--------------------------------------------------------------
-  # 9.0 - BOTON WHATSAPP
-  --------------------------------------------------------------*/
+	# 9.0 - BOTON WHATSAPP
+	--------------------------------------------------------------*/
 .whatsapp-button {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  z-index: 101;
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	z-index: 101;
 }
 
 .whatsapp-background {
-  background: #00bb2d;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  transition: background 0.5s;
+	background: #00bb2d;
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	transition: background 0.5s;
 }
 
 
 .whatsapp-background svg {
-  fill: var(--footer-social-icon);
-  font-size: 16px;
-  width: 45px;
-  height: 45px;
-  padding: 6px;
-  line-height: 1;
-  transition: fill 0.5s;
+	fill: var(--footer-social-icon);
+	font-size: 16px;
+	width: 45px;
+	height: 45px;
+	padding: 6px;
+	line-height: 1;
+	transition: fill 0.5s;
 }
 
 /* Efecto hover */
 .whatsapp-background:hover {
-  background: #00801e;
+	background: #00801e;
 }
 
 .whatsapp-background:hover svg {
-  fill: var(--footer-social-icon-hover);
+	fill: var(--footer-social-icon-hover);
 }
 
 /* Navigation submenu */
-#nav-menu .sub-menu {
-  background-color: var(--masthead-submenu-bg);
-  color: var(--masthead-submenu-text);
+#masthead #nav-menu .sub-menu {
+	background-color: var(--masthead-submenu-bg);
+	color: var(--masthead-submenu-text);
 }
 
-#nav-menu .sub-menu li>a {
-  color: var(--masthead-submenu-text);
+#masthead #nav-menu .sub-menu li>a {
+	color: var(--masthead-submenu-text);
 }
 
-#nav-menu .sub-menu li>a:hover {
-  color: var(--masthead-link-hover);
+#masthead #nav-menu .sub-menu li>a:hover {
+	color: var(--masthead-link-hover);
 }
 
 #nav-menu .current_page_item > a {
-  color: var(--footer-link-hover);
+	color: var(--footer-link-hover);
 }
 
 @media (min-width: 768px) {
-  #nav-menu .sub-menu {
-    background-color: var(--masthead-submenu-bg);
-    color: var(--masthead-submenu-text);
-  }
+	#masthead #nav-menu .sub-menu {
+	background-color: var(--masthead-submenu-bg);
+	color: var(--masthead-submenu-text);
+	}
 }
 /* Front Page Intro */
 body.home #intro::before {
-  /* Overlay color with alpha from Customizer */
-  background-color: var(--front-intro-overlay);
+	/* Overlay color with alpha from Customizer */
+	background-color: var(--front-intro-overlay);
 }
 
 body.home #intro h1 {
-  color: var(--front-intro-heading);
+	color: var(--front-intro-heading);
 }
 
 body.home #intro p {
-  color: var(--front-intro-text);
+	color: var(--front-intro-text);
 }
 
 /* Page Intro */
 body.page:not(.home) #intro::before {
-  background-color: var(--page-intro-bg);
+	background-color: var(--page-intro-bg);
 }
 
 .page #intro h1 {
-  color: var(--page-intro-heading);
+	color: var(--page-intro-heading);
 }
 
 /* Single Post Intro */
 body.single #intro::before {
-  background-color: var(--single-intro-bg);
+	background-color: var(--single-intro-bg);
 }
