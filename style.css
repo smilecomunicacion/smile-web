@@ -1450,7 +1450,67 @@ body.single .comment-count {
 .comment-metadata a,
 .comment-meta,
 .comment-meta a {
-	color: var(--comment-color);
+        color: var(--comment-color);
+}
+
+#comments,
+ol.comment-list,
+.comment-body,
+.children {
+        max-width: 100%;
+        word-wrap: break-word;
+}
+
+.comment-body {
+        display: flex;
+        gap: 1rem;
+}
+
+.comment-body .avatar {
+        margin-right: 1rem;
+}
+
+.comment-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+}
+
+.comment-form p {
+        width: 100%;
+}
+
+.comment-form-author,
+.comment-form-email {
+        flex: 1 1 calc(50% - 0.5rem);
+        display: flex;
+        flex-direction: column;
+}
+
+@media (max-width: 600px) {
+        .comment-body {
+                flex-direction: column;
+        }
+
+        .children {
+                margin-left: 20px;
+        }
+
+        .comment-body .avatar {
+                width: 50px;
+                height: 50px;
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+        }
+
+        .comment-form {
+                flex-direction: column;
+        }
+
+        .comment-form-author,
+        .comment-form-email {
+                flex-basis: 100%;
+        }
 }
 
 .figcaption-text {
