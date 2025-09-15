@@ -243,17 +243,41 @@ blockquote {
 /*--------------------------------------------------------------
 # 8.0 - BLOG
 --------------------------------------------------------------*/
+
 .comment-form-comment {
 		display: grid;
 }
 
-.comment-form input,
+.comment-form input:not([type="checkbox"]),
 .comment-form textarea {
-		width: 100%;
-		padding: 10px;
+    width: 100%;
+    padding: 10px;
 		color: var(--form-text);
 		background-color: var(--form-bg);
 		border: 1px solid var(--form-border);
+}
+
+/* Estilo específico para el checkbox */
+.comment-form input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+}
+
+/* La etiqueta del checkbox va en línea */
+.comment-form-cookies-consent {
+    display: flex;
+    align-items: center;
+}
+
+.comment-form-cookies-consent input[type="checkbox"] {
+    margin-right: 8px;
+	margin-bottom: 10px;
+}
+
+.comment-form-cookies-consent label {
+    margin: 0; /* opcional */
 }
 
 .comment-form label {
@@ -266,6 +290,7 @@ blockquote {
 		background-color: var(--btn-bg);
 		color: var(--btn-text);
 		border: 1px solid var(--btn-border);
+		cursor: pointer;
 }
 
 .form-submit .btn:hover {
