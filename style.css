@@ -1415,11 +1415,6 @@ section {
 # 4.8 - BLOG
 --------------------------------------------------------------*/
 
-body.single .svg-icon svg {
-	fill: var(--icon);
-	position: relative;
-}
-
 .single #about h2,
 .single #about h3 {
 	padding-top: 70px;
