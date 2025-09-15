@@ -244,13 +244,12 @@ function smile_v6_enqueue_scripts() {
 }
 		';
 	} elseif ( is_page() ) {
-               $dynamic_css .= '
+				$dynamic_css .= '
 #intro {
         background-color: var(--page-intro-bg);
     color: var(--color-white);
     position: relative;
     z-index: 0;
-    margin-bottom: -10px;
     min-height: 300px;
 }
     #intro h1 {
@@ -318,13 +317,12 @@ function smile_v6_enqueue_scripts() {
 }
 		';
 	} else {
-               $dynamic_css .= '
+				$dynamic_css .= '
 #intro {
     background-color: var(--single-intro-bg);
     color: var(--color-white);
     position: relative;
     z-index: 0;
-    margin-bottom: -10px;
 }
     #intro h1 {
     color: var(--single-intro-heading);
@@ -414,3 +412,84 @@ function smile_v6_enqueue_dashicons_frontend() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'smile_v6_enqueue_dashicons_frontend' );
+
+/**
+ * Enqueues customizer control scripts and styles.
+ *
+ * @since 6.0.7
+ */
+function smile_v6_enqueue_customizer_scripts() {
+	wp_enqueue_script(
+		'smile-v6-color-management',
+		get_template_directory_uri() . '/assets/js/color-management.js',
+		array(),
+		defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0',
+		true
+	);
+
+	// Localizar script para pasar ajaxurl al JavaScript.
+	wp_localize_script(
+		'smile-v6-color-management',
+		'smile_v6_ajax',
+		array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'nonce'   => wp_create_nonce( 'smile_v6_ajax_nonce' ),
+		)
+	);
+
+	// Add inline CSS for the color management controls.
+	$inline_css = '
+	.smile-v6-export-colors,
+	.smile-v6-import-colors,
+	.smile-v6-reset-colors {
+		margin-top: 5px;
+		width: 100%;
+	}
+
+	.smile-v6-import-file {
+		width: 100%;
+		margin-bottom: 10px;
+		padding: 5px;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+	}
+
+	.smile-v6-import-status,
+	.smile-v6-reset-status {
+		font-size: 12px;
+		line-height: 1.4;
+		margin-top: 10px;
+		padding: 5px;
+		border-radius: 3px;
+		background-color: #f9f9f9;
+	}
+
+	.smile-v6-notice {
+		margin: 10px 0;
+		padding: 10px 15px;
+		border-radius: 4px;
+		border-left: 4px solid;
+		background: #fff;
+		box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	}
+
+	.smile-v6-notice.notice-success {
+		border-left-color: #00a32a;
+	}
+
+	.smile-v6-notice.notice-error {
+		border-left-color: #d63384;
+	}
+
+	.smile-v6-notice.notice-warning {
+		border-left-color: #dba617;
+	}
+
+	.smile-v6-notice.notice-info {
+		border-left-color: #72aee6;
+	}
+	';
+
+	wp_add_inline_style( 'customize-controls', $inline_css );
+}
+add_action( 'customize_controls_enqueue_scripts', 'smile_v6_enqueue_customizer_scripts' );

@@ -42,16 +42,6 @@ blockquote {
 	color: var(--text-quote);
 }
 
-ul li {
-	color: var(--text-list);
-}
-
-strong,
-b,
-em {
-	color: var(--text-emphasis);
-}
-
 .text-base {
 	color: var(--text-base);
 }
@@ -123,6 +113,11 @@ em {
 #footer .footer-top a:hover {
 	color: var(--footer-link-hover);
 }
+
+#footer .current_page_item>a {
+	color: var(--footer-link-hover);
+}
+
 
 .menu-social-container ul {
 	list-style: none;
@@ -349,7 +344,7 @@ em {
 }
 
 #nav-menu .current_page_item > a {
-	color: var(--footer-link-hover);
+	color: var(--masthead-link-hover);
 }
 
 @media (min-width: 768px) {

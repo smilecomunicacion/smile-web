@@ -185,15 +185,27 @@ blockquote,
 	color: var(--text-quote);
 }
 
-ul li,
-.text-list {
+
+:is(p, li, ul, ul li, h1, h2, h3, h4, h5, h6):not([class*="has-"]) :is(ul li, ) {
 	color: var(--text-list);
 }
 
-em,
-strong,
-b {
+:is(p, li, h1, h2, h3, h4, h5, h6):not([class*="has-"]) :is(em, strong, b) {
 	color: var(--text-emphasis);
+}
+
+li:not([class*="has-"]):has(strong)::marker,
+li:not([class*="has-"]):has(em)::marker,
+li:not([class*="has-"]):has(b)::marker {
+	color: var(--text-emphasis);
+}
+
+.smile-web-nodecorlist li {
+	list-style: none;
+}
+
+ol.wp-block-latest-comments {
+	padding-left: 0;
 }
 
 .blog-page h3 {
@@ -216,7 +228,7 @@ a:focus {
 	color: var(--link-active);
 }
 
-a:visited {
+a:visited:not([class*="btn"]):not([class*="button"]) {
 	color: var(--link-visited);
 }
 
@@ -228,22 +240,27 @@ a:visited {
 # 1.3 - BOTONES
 --------------------------------------------------------------*/
 
+
 .wp-block-buttons>.wp-block-button,
 .btn-cta,
 .btn {
 	display: inline-block;
 	z-index: 100;
-	padding: 5px 25px;
 	border-radius: 50px;
 	transition: .5s;
 	margin: 5px;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 16px;
 	letter-spacing: 1px;
 	background-color: var(--btn-bg);
 	color: var(--btn-text);
 	text-decoration: none;
 	border: 1px solid var(--btn-border);
+}
+
+.btn-cta,
+.btn {
+	padding: 5px 25px;
 }
 
 @media (min-width:768px) {
@@ -255,15 +272,20 @@ a:visited {
 }
 
 .wp-block-button__link {
+	color: var(--btn-text);
 	background-color: transparent;
-	padding: inherit;
+	padding: 5px 25px;
+}
+
+.wp-block-button__link:hover {
+	color: var(--btn-text-hover) !important;
 }
 
 .wp-block-buttons>.wp-block-button:hover,
 .btn-cta:hover,
 .btn:hover {
 	background-color: var(--btn-bg-hover);
-	color: var(--btn-text-hover);
+	color: var(--btn-text-hover) !important;
 	border: 1px solid var(--btn-border-hover);
 }
 
@@ -528,11 +550,11 @@ ul .sub-menu {
 }
 
 @media (min-width: 768px) {
-		#masthead #nav-menu .sub-menu {
-				border-top: none;
-				background-color: var(--masthead-submenu-bg);
-				color: var(--masthead-submenu-text);
-		}
+	#masthead #nav-menu .sub-menu {
+		border-top: none;
+		background-color: var(--masthead-submenu-bg);
+		color: var(--masthead-submenu-text);
+	}
 }
 
 #masthead #nav-menu .sub-menu li>a {
@@ -555,6 +577,7 @@ ul .sub-menu {
 	font-weight: 100;
 	font-size: 15px;
 }
+
 #masthead .menu-item-has-children i::after {
 	color: var(--masthead-submenu-text);
 }
@@ -632,6 +655,7 @@ ul .sub-menu {
 		font-weight: 100;
 		font-size: 15px;
 	}
+
 	#masthead .menu-item-has-children i::after {
 		color: var(--masthead-link);
 	}
@@ -643,20 +667,20 @@ ul .sub-menu {
 
 
 	/* focus-within */
-		#masthead .menu-item-has-children:focus-within>.sub-menu,
-		#masthead #nav-menu .sub-menu {
-				position: absolute;
-				z-index: 99999;
-				width: max-content;
-				padding: 20px 15px;
-				margin-top: 10px;
-				min-width: 150px;
-				max-width: 250px;
-				background-color: var(--masthead-submenu-bg);
-				color: var(--masthead-submenu-text);
-				display: block !important;
-				max-height: none !important;
-		}
+	#masthead .menu-item-has-children:focus-within>.sub-menu,
+	#masthead #nav-menu .sub-menu {
+		position: absolute;
+		z-index: 99999;
+		width: max-content;
+		padding: 20px 15px;
+		margin-top: 10px;
+		min-width: 150px;
+		max-width: 250px;
+		background-color: var(--masthead-submenu-bg);
+		color: var(--masthead-submenu-text);
+		display: block !important;
+		max-height: none !important;
+	}
 
 	.menu-item:hover>.sub-menu {
 		display: block;
@@ -670,11 +694,11 @@ ul .sub-menu {
 		max-height: inherit;
 	}
 
-		#masthead #nav-menu .sub-menu li>a {
+	#masthead #nav-menu .sub-menu li>a {
 		margin: 12px 0;
 	}
 
-		#masthead #nav-menu .sub-menu li>a:hover {
+	#masthead #nav-menu .sub-menu li>a:hover {
 		color: var(--masthead-link-hover);
 	}
 
@@ -783,6 +807,10 @@ body.single #intro::before {
 }
 
 .single-post #intro h1 {
+	color: var(--single-intro-heading);
+}
+
+.smile-web-single-date {
 	color: var(--single-intro-heading);
 }
 
@@ -1079,7 +1107,6 @@ main section li {
 }
 
 main ul {
-	list-style: none;
 	padding: 0;
 	margin: 0;
 }
@@ -1531,6 +1558,14 @@ textarea:focus {
 	font-size: 3em;
 }
 
+
+/*--------------------------------------------------------------
+# 6.0 - FOOTER
+--------------------------------------------------------------*/
+#footer {
+	background-color: var(--footer-top-bg);
+}
+
 /* Remover los puntos de las listas dentro del footer */
 #footer .footer-link ul,
 #footer .footer-link li {
@@ -1555,6 +1590,10 @@ textarea:focus {
 	background-color: var(--bg-primary);
 }
 
+#footer #contact {
+	background-color: var(--footer-top-bg);
+}
+
 #contact label {
 	display: block;
 	margin-bottom: 10px;
@@ -1567,10 +1606,6 @@ textarea:focus {
 	padding: 0;
 	margin: 0;
 }
-
-/*--------------------------------------------------------------
-# 6.0 - FOOTER
---------------------------------------------------------------*/
 
 #footer-bottom {
 	padding: 30px 0;

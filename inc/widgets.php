@@ -14,7 +14,7 @@ function smile_v6_widgets_init() {
 			'name'          => esc_html__( 'Sidebar', 'smile-web' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'smile-web' ),
-			'before_widget' => '<div id="%1$s" class="bg-white mb-4 shadow widget p-3 mb-3 %2$s">',
+			'before_widget' => '<div id="%1$s" class="bg-white smile-web-nodecorlist mb-4 shadow widget p-3 mb-3 %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<p class="lead widget-title">',
 			'after_title'   => '</p>',

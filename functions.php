@@ -22,6 +22,12 @@ require get_template_directory() . '/inc/theme-setup.php';
 require get_template_directory() . '/inc/customizer-options.php';
 
 /**
+ * Incluye la gestión de colores del Customizer.
+ * Contiene funciones para exportar, importar y restablecer los colores del tema.
+ */
+require get_template_directory() . '/inc/color-management.php';
+
+/**
  * Incluye el encolamiento de scripts y estilos.
  * Contiene las funciones para encolar los archivos CSS y JavaScript necesarios.
  */
