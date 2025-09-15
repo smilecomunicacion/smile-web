@@ -83,3 +83,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * agregando atributos como target="_blank" y rel="noopener noreferrer".
  */
 require get_template_directory() . '/inc/class-social-walker.php';
+
+add_action(
+        'after_setup_theme',
+        function () {
+                add_theme_support( 'appearance-tools' );
+        }
+);
