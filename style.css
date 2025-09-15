@@ -1539,13 +1539,40 @@ textarea:focus {
 }
 
 .valid-feedback {
-	color: var(--form-success);
+		color: var(--form-success);
+}
+
+.comment-form input,
+.comment-form textarea {
+		width: 100%;
+		padding: 10px;
+		color: var(--form-text);
+		background-color: var(--form-bg);
+		border: 1px solid var(--form-border);
+}
+
+.comment-form label {
+		display: block;
+		margin-bottom: 10px;
+		color: var(--form-text);
+}
+
+.form-submit .btn {
+		background-color: var(--btn-bg);
+		color: var(--btn-text);
+		border: 1px solid var(--btn-border);
+}
+
+.form-submit .btn:hover {
+		background-color: var(--btn-bg-hover);
+		color: var(--btn-text-hover);
+		border: 1px solid var(--btn-border-hover);
 }
 
 #details {
-	background-color: var(--accent-secondary-dark);
-	text-align: center;
-	line-height: 1.2;
+		background-color: var(--accent-secondary-dark);
+		text-align: center;
+		line-height: 1.2;
 }
 
 #details span {

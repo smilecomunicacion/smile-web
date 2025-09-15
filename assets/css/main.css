@@ -244,11 +244,38 @@ blockquote {
 # 8.0 - BLOG
 --------------------------------------------------------------*/
 .comment-form-comment {
-	display: grid;
+		display: grid;
+}
+
+.comment-form input,
+.comment-form textarea {
+		width: 100%;
+		padding: 10px;
+		color: var(--form-text);
+		background-color: var(--form-bg);
+		border: 1px solid var(--form-border);
+}
+
+.comment-form label {
+		display: block;
+		margin-bottom: 10px;
+		color: var(--form-text);
+}
+
+.form-submit .btn {
+		background-color: var(--btn-bg);
+		color: var(--btn-text);
+		border: 1px solid var(--btn-border);
+}
+
+.form-submit .btn:hover {
+		background-color: var(--btn-bg-hover);
+		color: var(--btn-text-hover);
+		border: 1px solid var(--btn-border-hover);
 }
 
 .blog-col {
-	position: relative;
+		position: relative;
 }
 
 .blog-col figure {

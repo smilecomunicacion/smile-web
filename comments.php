@@ -27,36 +27,36 @@ if ( post_password_required() ) {
 	if ( have_comments() ) :
 		?>
 		<h2 class="comments-title">
-			<?php
-			$smile_v6_comment_count = get_comments_number();
-			if ( '1' === $smile_v6_comment_count ) {
-				printf(
-					// translators: %1$s: post title.
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'smile-web' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf(
-					// translators: 1: number of comments, 2: post title.
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $smile_v6_comment_count, 'comments title', 'smile-web' ) ),
-					esc_html( number_format_i18n( $smile_v6_comment_count ) ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
+		<?php
+		$smile_v6_comment_count = get_comments_number();
+		if ( '1' === $smile_v6_comment_count ) {
+			printf(
+			// translators: %1$s: post title.
+				esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'smile-web' ),
+				'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+			);
+		} else {
+			printf(
+			// translators: 1: number of comments, 2: post title.
+				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $smile_v6_comment_count, 'comments title', 'smile-web' ) ),
+				esc_html( number_format_i18n( $smile_v6_comment_count ) ),
+				'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+			);
+		}
+		?>
 		</h2><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
+		<?php
+		wp_list_comments(
+			array(
+				'style'      => 'ol',
+				'short_ping' => true,
+			)
+		);
+		?>
 		</ol><!-- .comment-list -->
 
 		<?php
@@ -71,7 +71,13 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(
+		array(
+			'class_submit'  => 'btn',
+			'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
+			'submit_field'  => '<p class="form-submit btn-wrapper">%1$s %2$s</p>',
+		)
+	);
 	?>
 
 </div><!-- #comments -->
