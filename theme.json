@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "settings": {
+    "typography": {
+      "fluid": true,
+      "fontSizes": [
+        {
+          "slug": "xxl",
+          "size": "160px",
+          "fluid": {
+            "min": "72px",
+            "max": "160px"
+          }
+        }
+      ]
+    }
+  }
+}

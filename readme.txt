@@ -58,6 +58,10 @@ Full Font Awesome Free license: https://fontawesome.com/license/free.
 
 Color selections should provide at least a 4.5:1 contrast ratio between text and background to meet WCAG 2.1 AA requirements.
 
+== Style Guidelines ==
+
+Para los textos de gran tamaño en el editor de bloques, utiliza los tamaños preestablecidos (como `xxl`) en lugar de introducir un valor personalizado para aprovechar la tipografía fluida del tema.
+
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
