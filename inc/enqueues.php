@@ -115,7 +115,7 @@ function smile_v6_enqueue_scripts() {
 }
 .btn-featured:hover {
     background: var(--link);
-    color: var(--color-white);
+    color: var(--single-intro-heading);
 }
 .bar1,
 .bar2,
@@ -162,7 +162,7 @@ function smile_v6_enqueue_scripts() {
 		$dynamic_css .= '
 #intro {
     background-color: var(--accent-secondary-dark);
-    color: var(--color-white);
+    color: var(--single-intro-heading);
     position: relative;
     z-index: 0;
     display: flex;
@@ -247,7 +247,7 @@ function smile_v6_enqueue_scripts() {
 				$dynamic_css .= '
 #intro {
         background-color: var(--page-intro-bg);
-    color: var(--color-white);
+    color: var(--single-intro-heading);
     position: relative;
     z-index: 0;
     min-height: 300px;
@@ -320,7 +320,7 @@ function smile_v6_enqueue_scripts() {
 				$dynamic_css .= '
 #intro {
     background-color: var(--single-intro-bg);
-    color: var(--color-white);
+    color: var(--single-intro-heading);
     position: relative;
     z-index: 0;
 }
