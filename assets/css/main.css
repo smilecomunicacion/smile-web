@@ -295,12 +295,23 @@ ol.comment-list,
 }
 
 .comment-body {
+               display: block;
+}
+
+.comment-author.vcard {
                display: flex;
+               align-items: center;
                gap: 1rem;
 }
 
 .comment-body .avatar {
-               margin-right: 1rem;
+               flex-shrink: 0;
+               margin: 0;
+}
+
+.comment-meta,
+.comment-metadata {
+               margin-bottom: 0.75rem;
 }
 
 .comment-form {
@@ -321,10 +332,6 @@ ol.comment-list,
 }
 
 @media (max-width: 600px) {
-               .comment-body {
-                               flex-direction: column;
-               }
-
                .children {
                                margin-left: 20px;
                }
@@ -332,8 +339,6 @@ ol.comment-list,
                .comment-body .avatar {
                                width: 50px;
                                height: 50px;
-                               margin-right: 0;
-                               margin-bottom: 0.5rem;
                }
 
                .comment-form {
