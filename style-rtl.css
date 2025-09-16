@@ -1482,6 +1482,12 @@ ol.comment-list,
         margin-bottom: 0.75rem;
 }
 
+.comment-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+}
+
 .comment-form {
         display: flex;
         flex-wrap: wrap;
