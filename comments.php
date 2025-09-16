@@ -10,6 +10,122 @@
  * @package smile-web
  */
 
+if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
+        /**
+         * Custom comment walker to adjust comment meta layout.
+         */
+        class Smile_Web_Walker_Comment extends Walker_Comment {
+                /**
+                 * Outputs a comment in the HTML5 format.
+                 *
+                 * @param WP_Comment $comment Comment to display.
+                 * @param int        $depth   Depth of the current comment.
+                 * @param array      $args    An array of arguments.
+                 */
+                protected function html5_comment( $comment, $depth, $args ) {
+                        $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+
+                        $commenter          = wp_get_current_commenter();
+                        $show_pending_links = ! empty( $commenter['comment_author'] );
+
+                        if ( $commenter['comment_author_email'] ) {
+                                $moderation_note = __( 'Your comment is awaiting moderation.' );
+                        } else {
+                                $moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.' );
+                        }
+                        ?>
+                        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+                                <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+                                        <footer class="comment-meta">
+                                                <div class="comment-author vcard">
+                                                        <?php
+                                                        if ( 0 !== $args['avatar_size'] ) {
+                                                                echo get_avatar( $comment, $args['avatar_size'] );
+                                                        }
+                                                        ?>
+                                                        <?php
+                                                        $comment_author = get_comment_author_link( $comment );
+
+                                                        if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
+                                                                $comment_author = get_comment_author( $comment );
+                                                        }
+
+                                                        printf(
+                                                                /* translators: %s: Comment author link. */
+                                                                __( '%s <span class="says">says:</span>' ),
+                                                                sprintf( '<b class="fn">%s</b>', $comment_author )
+                                                        );
+                                                        ?>
+                                                </div><!-- .comment-author -->
+
+                                                <div class="comment-metadata">
+                                                        <?php
+                                                        printf(
+                                                                '<a href="%s"><time datetime="%s">%s</time></a>',
+                                                                esc_url( get_comment_link( $comment, $args ) ),
+                                                                get_comment_time( 'c' ),
+                                                                sprintf(
+                                                                        /* translators: 1: Comment date, 2: Comment time. */
+                                                                        __( '%1$s at %2$s' ),
+                                                                        get_comment_date( '', $comment ),
+                                                                        get_comment_time()
+                                                                )
+                                                        );
+                                                        ?>
+                                                </div><!-- .comment-metadata -->
+
+                                                <?php
+                                                $comment_reply_link = '';
+                                                if ( '1' == $comment->comment_approved || $show_pending_links ) {
+                                                        $comment_reply_link = comment_reply_link(
+                                                                array_merge(
+                                                                        $args,
+                                                                        array(
+                                                                                'add_below' => 'div-comment',
+                                                                                'depth'     => $depth,
+                                                                                'max_depth' => $args['max_depth'],
+                                                                                'before'    => '',
+                                                                                'after'     => '',
+                                                                                'echo'      => false,
+                                                                        )
+                                                                )
+                                                        );
+                                                }
+
+                                                $edit_comment_link = '';
+                                                $edit_comment_url  = get_edit_comment_link( $comment );
+                                                if ( $edit_comment_url ) {
+                                                        $edit_comment_link = sprintf(
+                                                                '<span class="edit-link"><a class="comment-edit-link" href="%1$s">%2$s</a></span>',
+                                                                esc_url( $edit_comment_url ),
+                                                                esc_html__( 'Edit', 'smile-web' )
+                                                        );
+                                                }
+
+                                                if ( $edit_comment_link || $comment_reply_link ) :
+                                                ?>
+                                                <div class="comment-actions">
+                                                        <?php echo $edit_comment_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                                                        <?php echo $comment_reply_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                                                </div><!-- .comment-actions -->
+                                                <?php
+                                                endif;
+                                                ?>
+
+                                                <?php if ( '0' == $comment->comment_approved ) : ?>
+                                                <em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+                                                <?php endif; ?>
+                                        </footer><!-- .comment-meta -->
+
+                                        <div class="comment-content">
+                                                <?php comment_text(); ?>
+                                        </div><!-- .comment-content -->
+                                </article><!-- .comment-body -->
+                        <?php
+                }
+        }
+}
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -19,6 +135,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+
 
 <div id="comments" class="comments-area container col-12">
 
@@ -50,13 +167,15 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 		<?php
-		wp_list_comments(
-			array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			)
-		);
-		?>
+
+                wp_list_comments(
+                        array(
+                                'style'      => 'ol',
+                                'short_ping' => true,
+                                'walker'     => new Smile_Web_Walker_Comment(),
+                        )
+                );
+                ?>
 		</ol><!-- .comment-list -->
 
 		<?php
