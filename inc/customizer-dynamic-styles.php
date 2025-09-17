@@ -220,38 +220,41 @@ add_action( 'wp_enqueue_scripts', 'smile_web_add_dynamic_styles' );
  * Enqueues the dynamic CSS variables for the block editor.
  */
 function smile_web_add_editor_dynamic_styles() {
-        $theme_version = defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0';
-
-        wp_enqueue_style(
-                'smile-web-editor-base',
-                get_stylesheet_uri(),
-                array(),
-                $theme_version
-        );
-
-        wp_enqueue_style(
-                'smile-web-editor-main',
-                get_template_directory_uri() . '/assets/css/main.css',
-                array( 'smile-web-editor-base' ),
-                $theme_version
-        );
-
-        wp_enqueue_style(
-                'smile-web-editor',
-                get_template_directory_uri() . '/assets/css/editor-style.css',
-                array( 'smile-web-editor-main' ),
-                $theme_version
-        );
-
         $dynamic_css = smile_web_get_dynamic_css_variables();
 
         if ( empty( $dynamic_css ) ) {
-                return;
+                return '';
         }
 
-        wp_add_inline_style( 'smile-web-editor', $dynamic_css );
+        return $dynamic_css;
 }
-add_action( 'enqueue_block_editor_assets', 'smile_web_add_editor_dynamic_styles' );
+
+/**
+ * Adds the dynamic CSS variables to the block editor settings so they are loaded
+ * within the editor iframe.
+ *
+ * @param array $settings Block editor settings.
+ *
+ * @return array
+ */
+function smile_web_editor_styles_settings( $settings ) {
+        $dynamic_css = smile_web_add_editor_dynamic_styles();
+
+        if ( empty( $dynamic_css ) ) {
+                return $settings;
+        }
+
+        if ( ! isset( $settings['styles'] ) || ! is_array( $settings['styles'] ) ) {
+                $settings['styles'] = array();
+        }
+
+        $settings['styles'][] = array(
+                'css' => $dynamic_css,
+        );
+
+        return $settings;
+}
+add_filter( 'block_editor_settings_all', 'smile_web_editor_styles_settings' );
 
 /**
  * Outputs custom CSS stored via the Customizer.
