@@ -24,7 +24,9 @@ function smile_v6_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'appearance-tools' );
+        add_theme_support( 'appearance-tools' );
+        add_theme_support( 'editor-styles' );
+        add_editor_style( 'assets/css/editor-style.css' );
 
 	// Register nav menus.
 	register_nav_menus(
@@ -66,6 +68,104 @@ function smile_v6_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'smile_v6_setup' );
+
+/**
+ * Extracts the :root block that contains WordPress preset variables.
+ *
+ * @param string $css CSS string to inspect.
+ * @return string CSS limited to the :root block with preset variables.
+ */
+function smile_web_extract_theme_preset_root_css( $css ) {
+        if ( empty( $css ) || ! is_string( $css ) ) {
+                return '';
+        }
+
+        $matches = array();
+        preg_match_all( '/:root\s*\{[^}]*\}/', $css, $matches );
+
+        if ( empty( $matches[0] ) ) {
+                return '';
+        }
+
+        $blocks = array();
+
+        foreach ( $matches[0] as $block ) {
+                if ( false !== strpos( $block, '--wp--preset--' ) ) {
+                        $blocks[] = trim( $block );
+                }
+        }
+
+        if ( empty( $blocks ) ) {
+                return '';
+        }
+
+        return implode( "\n", $blocks ) . "\n";
+}
+
+/**
+ * Retrieves the preset variables generated from theme.json for reuse.
+ *
+ * @param string $fallback_css Optional CSS to parse if global styles are unavailable.
+ * @return string CSS containing the :root preset declarations.
+ */
+function smile_web_get_theme_preset_root_css( $fallback_css = '' ) {
+        $css_candidates = array();
+
+        if ( function_exists( 'wp_get_global_stylesheet' ) ) {
+                $css_candidates[] = wp_get_global_stylesheet( array( 'presets' ) );
+        }
+
+        if ( ! empty( $fallback_css ) ) {
+                $css_candidates[] = $fallback_css;
+        }
+
+        foreach ( $css_candidates as $candidate_css ) {
+                $preset_css = smile_web_extract_theme_preset_root_css( $candidate_css );
+
+                if ( ! empty( $preset_css ) ) {
+                        return $preset_css;
+                }
+        }
+
+        return '';
+}
+
+/**
+ * Removes the theme.json-generated styles from the block editor settings.
+ *
+ * This keeps the front-end benefits of theme.json while restoring the classic
+ * editor appearance by preventing the block editor from enqueueing the theme
+ * styles automatically derived from theme.json.
+ *
+ * @param array $settings Block editor settings.
+ * @return array Filtered block editor settings.
+ */
+function smile_web_remove_theme_json_editor_styles( $settings ) {
+        if ( empty( $settings['styles'] ) || ! is_array( $settings['styles'] ) ) {
+                return $settings;
+        }
+
+        $filtered_styles = array();
+
+        foreach ( $settings['styles'] as $style ) {
+                if ( isset( $style['__unstableType'] ) && 'theme' === $style['__unstableType'] ) {
+                        $preset_css = smile_web_get_theme_preset_root_css( isset( $style['css'] ) ? $style['css'] : '' );
+
+                        if ( empty( $preset_css ) ) {
+                                continue;
+                        }
+
+                        $style['css'] = $preset_css;
+                }
+
+                $filtered_styles[] = $style;
+        }
+
+        $settings['styles'] = array_values( $filtered_styles );
+
+        return $settings;
+}
+add_filter( 'block_editor_settings_all', 'smile_web_remove_theme_json_editor_styles' );
 
 /**
  * Automatically sets up default menus when the theme is activated.
