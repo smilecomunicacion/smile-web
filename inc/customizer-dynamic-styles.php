@@ -6,11 +6,9 @@
  */
 
 /**
- * Generates the dynamic CSS variables based on Customizer settings.
- *
- * @return string
+ * Outputs inline dynamic CSS based on customizer settings.
  */
-function smile_web_get_dynamic_root_styles() {
+function smile_web_add_dynamic_styles() {
 		$link_default                          = sanitize_hex_color( get_theme_mod( 'link_default', '#0F7B5C' ) );
 		$link_hover                            = sanitize_hex_color( get_theme_mod( 'link_hover', '#1E3A5F' ) );
 		$link_active                           = sanitize_hex_color( get_theme_mod( 'link_active', '#0F7B5C' ) );
@@ -185,20 +183,8 @@ function smile_web_get_dynamic_root_styles() {
                 }
         ';
 
-        return apply_filters( 'smile_web_dynamic_root_styles', $dynamic_css );
-}
-
-/**
- * Outputs inline dynamic CSS based on customizer settings.
- */
-function smile_web_add_dynamic_styles() {
-        $dynamic_css = smile_web_get_dynamic_root_styles();
-
-        if ( empty( $dynamic_css ) ) {
-                return;
-        }
-
-        wp_add_inline_style( 'smile-web-main', $dynamic_css );
+	// Se agrega el CSS en línea al handle 'smile-web-main'.
+	wp_add_inline_style( 'smile-web-main', $dynamic_css );
 }
 add_action( 'wp_enqueue_scripts', 'smile_web_add_dynamic_styles' );
 
