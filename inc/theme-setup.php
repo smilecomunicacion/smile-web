@@ -26,6 +26,8 @@ function smile_v6_setup() {
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'appearance-tools' );
         add_theme_support( 'editor-styles' );
+        add_theme_support( 'responsive-embeds' );
+        add_theme_support( 'align-wide' );
         add_editor_style( 'assets/css/editor-style.css' );
 
 	// Register nav menus.
