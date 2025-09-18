@@ -23,8 +23,10 @@ function smile_v6_setup() {
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
-	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'appearance-tools' );
+        add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'appearance-tools' );
+        add_theme_support( 'editor-styles' );
+        add_editor_style( 'assets/css/editor-style.css' );
 
 	// Register nav menus.
 	register_nav_menus(
