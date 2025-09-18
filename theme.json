@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "1000px",
+      "wideSize": "1320px"
+    },
+    "typography": {
+      "fluid": true,
+      "fontSizes": [
+        {
+          "slug": "xxl",
+          "size": "160px",
+          "fluid": {
+            "min": "72px",
+            "max": "160px"
+          }
+        }
+      ]
+    }
+  }
+}
