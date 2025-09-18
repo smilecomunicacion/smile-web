@@ -1978,7 +1978,23 @@ ol.wp-block-list {
 }
 
 .g-0 {
-	gap: 0;
+        gap: 0;
+}
+
+/* Gutenberg Block Styles */
+.wp-block-image.is-style-smile-shadow img {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.wp-block-quote.is-style-smile-accent-border {
+        border-left: 4px solid var(--accent-secondary-dark);
+        padding: 1.5rem;
+        background-color: var(--accent-primary-light);
+        color: var(--text-quote);
+}
+
+.wp-block-quote.is-style-smile-accent-border cite {
+        color: var(--text-subheading);
 }
 
 /* ------------------------------------------
