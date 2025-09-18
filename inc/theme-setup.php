@@ -26,13 +26,7 @@ function smile_v6_setup() {
 	add_theme_support( 'post-thumbnails' );
         add_theme_support( 'appearance-tools' );
         add_theme_support( 'editor-styles' );
-        add_editor_style(
-                array(
-                        'assets/css/editor-style.css',
-                        'style.css',
-                        'assets/css/main.css',
-                )
-        );
+        add_editor_style( 'assets/css/editor-style.css' );
 
 	// Register nav menus.
 	register_nav_menus(
