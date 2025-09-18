@@ -58,6 +58,12 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/block-patterns.php';
 
 /**
+ * Incluye los estilos de bloques.
+ * Registra estilos adicionales para bloques que aprovechan las utilidades del tema.
+ */
+require get_template_directory() . '/inc/block-styles.php';
+
+/**
  * Incluye la configuración del encabezado personalizado.
  * Contiene funciones relacionadas con la funcionalidad del encabezado (custom header).
  */
