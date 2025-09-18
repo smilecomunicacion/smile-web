@@ -220,36 +220,13 @@ add_action( 'wp_enqueue_scripts', 'smile_web_add_dynamic_styles' );
  * Enqueues the dynamic CSS variables for the block editor.
  */
 function smile_web_add_editor_dynamic_styles() {
-        $theme_version = defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0';
-
-        wp_enqueue_style(
-                'smile-web-editor-base',
-                get_stylesheet_uri(),
-                array(),
-                $theme_version
-        );
-
-        wp_enqueue_style(
-                'smile-web-editor-main',
-                get_template_directory_uri() . '/assets/css/main.css',
-                array( 'smile-web-editor-base' ),
-                $theme_version
-        );
-
-        wp_enqueue_style(
-                'smile-web-editor',
-                get_template_directory_uri() . '/assets/css/editor-style.css',
-                array( 'smile-web-editor-main' ),
-                $theme_version
-        );
-
         $dynamic_css = smile_web_get_dynamic_css_variables();
 
         if ( empty( $dynamic_css ) ) {
                 return;
         }
 
-        wp_add_inline_style( 'smile-web-editor', $dynamic_css );
+        wp_add_inline_style( 'wp-edit-blocks', $dynamic_css );
 }
 add_action( 'enqueue_block_editor_assets', 'smile_web_add_editor_dynamic_styles' );
 
