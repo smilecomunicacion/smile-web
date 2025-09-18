@@ -120,7 +120,55 @@ body {
 }
 
 ::selection {
-	background-color: var(--selection-bg);
+        background-color: var(--selection-bg);
+}
+
+
+.wp-caption {
+        max-width: 100%;
+        margin: 0 0 1.5em;
+        text-align: center;
+}
+
+.wp-caption img {
+        display: block;
+        margin: 0 auto;
+        height: auto;
+}
+
+.wp-caption-text,
+.gallery-caption {
+        margin-top: 0.5em;
+        font-size: 0.875em;
+        color: var(--text-subheading);
+}
+
+.bypostauthor {
+        border-left: 4px solid var(--accent-secondary-dark);
+        padding-left: 1rem;
+        font-weight: 600;
+}
+
+.sticky {
+        border-left: 4px solid var(--accent-secondary-dark);
+        padding: 1.5rem;
+        background-color: var(--accent-primary-light);
+}
+
+.alignleft {
+        float: left;
+        margin: 0 1.5em 1.5em 0;
+}
+
+.alignright {
+        float: right;
+        margin: 0 0 1.5em 1.5em;
+}
+
+.aligncenter {
+        display: block;
+        margin: 0 auto 1.5em;
+        text-align: center;
 }
 
 
