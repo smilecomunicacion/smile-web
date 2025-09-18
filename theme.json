@@ -1,10 +1,6 @@
 {
   "version": 2,
   "settings": {
-    "layout": {
-      "contentSize": "1000px",
-      "wideSize": "1320px"
-    },
     "typography": {
       "fluid": true,
       "fontSizes": [
