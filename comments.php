@@ -29,9 +29,9 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
                         $show_pending_links = ! empty( $commenter['comment_author'] );
 
                         if ( $commenter['comment_author_email'] ) {
-                                $moderation_note = __( 'Your comment is awaiting moderation.' );
+                                $moderation_note = __( 'Your comment is awaiting moderation.', 'smile-web' );
                         } else {
-                                $moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.' );
+                                $moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'smile-web' );
                         }
                         ?>
                         <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
                                                                 get_comment_time( 'c' ),
                                                                 sprintf(
                                                                         /* translators: 1: Comment date, 2: Comment time. */
-                                                                        __( '%1$s at %2$s' ),
+                                                                        __( '%1$s at %2$s', 'smile-web' ),
                                                                         get_comment_date( '', $comment ),
                                                                         get_comment_time()
                                                                 )
@@ -68,7 +68,7 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 
                                                         printf(
                                                                 /* translators: %s: Comment author link. */
-                                                                __( '%s <span class="says">says:</span>' ),
+                                                                __( '%s <span class="says">says:</span>', 'smile-web' ),
                                                                 sprintf( '<b class="fn">%s</b>', $comment_author )
                                                         );
                                                         ?>
