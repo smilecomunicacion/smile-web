@@ -24,9 +24,7 @@ function smile_v6_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
-        add_theme_support( 'appearance-tools' );
-        add_theme_support( 'editor-styles' );
-        add_editor_style( 'assets/css/editor-style.css' );
+	add_theme_support( 'appearance-tools' );
 
 	// Register nav menus.
 	register_nav_menus(
@@ -68,34 +66,6 @@ function smile_v6_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'smile_v6_setup' );
-
-/**
- * Removes the theme.json-generated styles from the block editor settings.
- *
- * This keeps the front-end benefits of theme.json while restoring the classic
- * editor appearance by preventing the block editor from enqueueing the theme
- * styles automatically derived from theme.json.
- *
- * @param array $settings Block editor settings.
- * @return array Filtered block editor settings.
- */
-function smile_web_remove_theme_json_editor_styles( $settings ) {
-        if ( empty( $settings['styles'] ) || ! is_array( $settings['styles'] ) ) {
-                return $settings;
-        }
-
-        $settings['styles'] = array_values(
-                array_filter(
-                        $settings['styles'],
-                        function ( $style ) {
-                                return ! ( isset( $style['__unstableType'] ) && 'theme' === $style['__unstableType'] );
-                        }
-                )
-        );
-
-        return $settings;
-}
-add_filter( 'block_editor_settings_all', 'smile_web_remove_theme_json_editor_styles' );
 
 /**
  * Automatically sets up default menus when the theme is activated.
