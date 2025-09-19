@@ -200,6 +200,109 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		)
 	);
 
+		// Add Theme Appearance panel.
+		$wp_customize->add_panel(
+			'smile_theme_appearance',
+			array(
+				'title'      => esc_html__( 'Theme Appearance', 'smile-web' ),
+				'priority'   => 40,
+				'capability' => 'edit_theme_options',
+			)
+		);
+
+		// Add Buttons subsection.
+		$wp_customize->add_section(
+			'smile_theme_buttons',
+			array(
+				'title'      => esc_html__( 'Buttons', 'smile-web' ),
+				'priority'   => 10,
+				'capability' => 'edit_theme_options',
+				'panel'      => 'smile_theme_appearance',
+			)
+		);
+
+		// Add Floating Elements subsection.
+		$wp_customize->add_section(
+			'smile_theme_floating_elements',
+			array(
+				'title'      => esc_html__( 'Floating Elements', 'smile-web' ),
+				'priority'   => 20,
+				'capability' => 'edit_theme_options',
+				'panel'      => 'smile_theme_appearance',
+			)
+		);
+
+		// Button radius setting and control.
+		$wp_customize->add_setting(
+			'button_border_radius',
+			array(
+				'default'           => 50,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'button_border_radius',
+			array(
+				'label'       => esc_html__( 'Button Border Radius', 'smile-web' ),
+				'description' => esc_html__( 'Adjust the roundness of buttons. Default: 50px.', 'smile-web' ),
+				'section'     => 'smile_theme_buttons',
+				'type'        => 'number',
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 1,
+				),
+			)
+		);
+
+		// Floating WhatsApp button offset settings and controls.
+		$wp_customize->add_setting(
+			'whatsapp_button_offset_right',
+			array(
+				'default'           => 15,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'whatsapp_button_offset_right',
+			array(
+				'label'       => esc_html__( 'WhatsApp Button Offset (Right)', 'smile-web' ),
+				'description' => esc_html__( 'Control the horizontal distance from the edge. Default: 15px.', 'smile-web' ),
+				'section'     => 'smile_theme_floating_elements',
+				'type'        => 'number',
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 1,
+				),
+			)
+		);
+
+		$wp_customize->add_setting(
+			'whatsapp_button_offset_bottom',
+			array(
+				'default'           => 15,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'whatsapp_button_offset_bottom',
+			array(
+				'label'       => esc_html__( 'WhatsApp Button Offset (Bottom)', 'smile-web' ),
+				'description' => esc_html__( 'Control the vertical distance from the edge. Default: 15px.', 'smile-web' ),
+				'section'     => 'smile_theme_floating_elements',
+				'type'        => 'number',
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 1,
+				),
+			)
+		);
+
 		// Add theme settings section.
 	$wp_customize->add_section(
 		'smile_v6_settings',
