@@ -253,7 +253,7 @@ li:not([class*="has-"]):has(b)::marker {
 }
 
 ol.wp-block-latest-comments {
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .blog-page h3 {
@@ -619,7 +619,7 @@ ul .sub-menu {
 	content: "\003E";
 	position: absolute;
 	top: 5px;
-	right: 5px !important;
+	left: 5px !important;
 	z-index: 9999;
 	font-weight: 100;
 	font-size: 15px;
@@ -1137,6 +1137,11 @@ section h2 {
 	.container-xxl {
 		max-width: 1320px;
 	}
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+    width: 100%;
+    max-width: none;
 }
 
 hr {
@@ -1947,8 +1952,14 @@ footer h3 {
 /* ------------------------------------------
 # 98.0 - GUTTEMBERG BLOCKS - MINI
 --------------------------------------------- */
+.entry-content.row > * {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+}
+
 .wp-block-columns {
-	margin: 40px 0;
+        margin: 40px 0;
 }
 
 .wp-block-latest-posts li {
@@ -1966,19 +1977,35 @@ footer h3 {
 }
 
 ul.wp-block-list {
-	padding-left: 1em;
-	padding-right: 0;
+	padding-right: 1em;
+	padding-left: 0;
 	padding-top: 0;
 	padding-bottom: 0;
 }
 
 ol.wp-block-list {
 
-	padding-left: 1.6em;
+	padding-right: 1.6em;
 }
 
 .g-0 {
-	gap: 0;
+        gap: 0;
+}
+
+/* Gutenberg Block Styles */
+.wp-block-image.is-style-smile-shadow img {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.wp-block-quote.is-style-smile-accent-border {
+        border-right: 4px solid var(--accent-secondary-dark);
+        padding: 1.5rem;
+        background-color: var(--accent-primary-light);
+        color: var(--text-quote);
+}
+
+.wp-block-quote.is-style-smile-accent-border cite {
+        color: var(--text-subheading);
 }
 
 /* ------------------------------------------
