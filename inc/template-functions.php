@@ -35,3 +35,14 @@ function smile_v6_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'smile_v6_pingback_header' );
+
+
+add_filter(
+	'comment_form_defaults',
+	function ( $defaults ) {
+		$defaults['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s"> %4$s </button>';
+		$defaults['submit_field']  = '<p class="form-submit btn-wrapper">%1$s %2$s</p>';
+		$defaults['class_submit']  = 'btn';
+		return $defaults;
+	}
+);
