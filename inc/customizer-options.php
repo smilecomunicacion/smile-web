@@ -200,39 +200,74 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 		)
 	);
 
-		// Add Theme Appearance panel.
-		$wp_customize->add_panel(
-			'smile_theme_appearance',
-			array(
-				'title'      => esc_html__( 'Theme Appearance', 'smile-web' ),
-				'priority'   => 40,
-				'capability' => 'edit_theme_options',
-			)
-		);
+        // Add Theme Appearance panel.
+        $wp_customize->add_panel(
+                'smile_theme_appearance',
+                array(
+                        'title'      => esc_html__( 'Theme Appearance', 'smile-web' ),
+                        'priority'   => 40,
+                        'capability' => 'edit_theme_options',
+                )
+        );
 
-		// Add Buttons subsection.
-		$wp_customize->add_section(
-			'smile_theme_buttons',
-			array(
-				'title'      => esc_html__( 'Buttons', 'smile-web' ),
-				'priority'   => 10,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'smile_theme_appearance',
-			)
-		);
+        // Add Header Logo subsection.
+        $wp_customize->add_section(
+                'smile_theme_header_logo',
+                array(
+                        'title'      => esc_html__( 'Header Logo', 'smile-web' ),
+                        'priority'   => 5,
+                        'capability' => 'edit_theme_options',
+                        'panel'      => 'smile_theme_appearance',
+                )
+        );
 
-		// Add Floating Elements subsection.
-		$wp_customize->add_section(
-			'smile_theme_floating_elements',
-			array(
-				'title'      => esc_html__( 'Floating Elements', 'smile-web' ),
-				'priority'   => 20,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'smile_theme_appearance',
-			)
-		);
+        // Logo max height setting and control.
+        $wp_customize->add_setting(
+                'logo_max_height',
+                array(
+                        'default'           => 80,
+                        'sanitize_callback' => 'absint',
+                )
+        );
 
-		// Button radius setting and control.
+        $wp_customize->add_control(
+                'logo_max_height',
+                array(
+                        'label'       => esc_html__( 'Logo Maximum Height', 'smile-web' ),
+                        'description' => esc_html__( 'Control the maximum height of the header logo. Default: 80px.', 'smile-web' ),
+                        'section'     => 'smile_theme_header_logo',
+                        'type'        => 'number',
+                        'input_attrs' => array(
+                                'min'  => 0,
+                                'max'  => 400,
+                                'step' => 1,
+                        ),
+                )
+        );
+
+        // Add Buttons subsection.
+        $wp_customize->add_section(
+                'smile_theme_buttons',
+                array(
+                        'title'      => esc_html__( 'Buttons', 'smile-web' ),
+                        'priority'   => 10,
+                        'capability' => 'edit_theme_options',
+                        'panel'      => 'smile_theme_appearance',
+                )
+        );
+
+        // Add Floating Elements subsection.
+        $wp_customize->add_section(
+                'smile_theme_floating_elements',
+                array(
+                        'title'      => esc_html__( 'Floating Elements', 'smile-web' ),
+                        'priority'   => 20,
+                        'capability' => 'edit_theme_options',
+                        'panel'      => 'smile_theme_appearance',
+                )
+        );
+
+        // Button radius setting and control.
 		$wp_customize->add_setting(
 			'button_border_radius',
 			array(
