@@ -1952,8 +1952,14 @@ footer h3 {
 /* ------------------------------------------
 # 98.0 - GUTTEMBERG BLOCKS - MINI
 --------------------------------------------- */
+.entry-content.row > * {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+}
+
 .wp-block-columns {
-	margin: 40px 0;
+        margin: 40px 0;
 }
 
 .wp-block-latest-posts li {
