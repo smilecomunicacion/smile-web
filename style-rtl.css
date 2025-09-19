@@ -387,8 +387,9 @@ a:visited:not([class*="btn"]):not([class*="button"]) {
 }
 
 #logo img {
-	max-height: 100%;
-	width: auto;
+        max-height: var(--logo-max-height, 80px);
+        height: auto;
+        width: auto;
 }
 
 #topBar {

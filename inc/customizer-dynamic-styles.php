@@ -60,6 +60,7 @@ function smile_web_get_dynamic_root_styles() {
                 $button_border                 = sanitize_hex_color( get_theme_mod( 'button_border', '#0F7B5C' ) );
                 $button_border_hover           = sanitize_hex_color( get_theme_mod( 'button_border_hover', '#0F7B5C' ) );
                 $button_border_radius          = absint( get_theme_mod( 'button_border_radius', 50 ) ) . 'px';
+                $logo_max_height               = absint( get_theme_mod( 'logo_max_height', 80 ) ) . 'px';
                 $whatsapp_button_offset_right  = absint( get_theme_mod( 'whatsapp_button_offset_right', 15 ) ) . 'px';
                 $whatsapp_button_offset_bottom = absint( get_theme_mod( 'whatsapp_button_offset_bottom', 15 ) ) . 'px';
 				$form_text                     = sanitize_hex_color( get_theme_mod( 'form_text', '#1A202C' ) );
@@ -145,6 +146,7 @@ function smile_web_get_dynamic_root_styles() {
                         --btn-border: ' . esc_attr( $button_border ) . ';
                         --btn-border-hover: ' . esc_attr( $button_border_hover ) . ';
                         --btn-radius: ' . esc_attr( $button_border_radius ) . ';
+                        --logo-max-height: ' . esc_attr( $logo_max_height ) . ';
                         --whatsapp-offset-right: ' . esc_attr( $whatsapp_button_offset_right ) . ';
                         --whatsapp-offset-bottom: ' . esc_attr( $whatsapp_button_offset_bottom ) . ';
                         --form-text: ' . esc_attr( $form_text ) . ';
