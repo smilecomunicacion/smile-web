@@ -51,7 +51,7 @@
         <?php endif; ?>
     </div><!-- .entry-header -->
 
-    <div class="entry-content row">
+    <div class="<?php echo esc_attr( is_single() ? 'entry-content' : 'entry-content row' ); ?>">
 
         <?php
 	// funcion que muestra el contenido del post .. excerpt para index y todo para single(singular).
