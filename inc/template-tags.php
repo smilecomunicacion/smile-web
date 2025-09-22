@@ -197,25 +197,20 @@ function smile_v6_mostrar_correo_ofuscado( $email ) {
  * @return array Modified menu items with icons.
  */
 function smile_v6_add_social_media_icons( $items, $args ) {
-	if ( 'menu-2' !== $args->theme_location || empty( $items ) || ! is_array( $items ) ) {
-		return $items;
-	}
-
-	foreach ( $items as &$item ) {
-		$normalized_title = strtolower( str_replace( ' ', '-', preg_replace( '/\.[a-z]+$/', '', $item->title ) ) );
-		$svg_file_path    = get_template_directory() . '/lib/fontawesome-free/svgs/brands/' . $normalized_title . '.svg';
-		if ( file_exists( $svg_file_path ) ) {
-			ob_start();
-			include $svg_file_path;
-			$svg_content = ob_get_clean();
-			if ( ! empty( $svg_content ) ) {
-				$item->title = '<span class="svg-icon">' . $svg_content . '</span>';
+	if ( 'menu-2' === $args->theme_location ) {
+		foreach ( $items as &$item ) {
+			$normalized_title = strtolower( str_replace( ' ', '-', preg_replace( '/\.[a-z]+$/', '', $item->title ) ) );
+			$svg_file_path    = get_template_directory() . '/lib/fontawesome-free/svgs/brands/' . $normalized_title . '.svg';
+			if ( file_exists( $svg_file_path ) ) {
+				ob_start();
+				include $svg_file_path;
+				$svg_content = ob_get_clean();
+				if ( ! empty( $svg_content ) ) {
+					$item->title = '<span class="svg-icon">' . $svg_content . '</span>';
+				}
 			}
 		}
 	}
-
-	unset( $item );
-
 	return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'smile_v6_add_social_media_icons', 10, 2 );
