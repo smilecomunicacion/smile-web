@@ -423,10 +423,6 @@ a:visited:not([class*="btn"]):not([class*="button"]) {
 	height: 25px;
 }
 
-.svg-icon svg:not(#footer .svg-icon svg) {
-  fill: var(--icon);
-}
-
 #topBar .svg-icon svg {
 	fill: var(--topbar-social-icon);
 }
