@@ -2,16 +2,16 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: SMiLE Web 6.0.5\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/smile-web\n"
+"Project-Id-Version: SMiLE Web 6.0.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bk_smile_web_10\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-28T08:47:57+00:00\n"
+"POT-Creation-Date: 2025-09-22T08:01:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: smile-web\n"
 
 #. Theme Name of the theme
@@ -30,7 +30,9 @@ msgid "Free theme, SEO optimized. Gain visibility and reach the top positions in
 msgstr ""
 
 #. Author of the theme
-#: style.css footer.php:177
+#. translators: 1: Theme name, 2: Theme author URL.
+#: style.css
+#: footer.php:177
 msgid "SMiLE Communication"
 msgstr ""
 
@@ -56,17 +58,15 @@ msgid "Latest Articles"
 msgstr ""
 
 #: archive.php:24
-#: index.php:31
-#: index.php:33
+#: index.php:41
+#: index.php:47
 #: page-fullwidth.php:25
-#: search.php:27
-#: single.php:84
-#: single.php:86
+#: page-sidebar.php:17
+#: page.php:50
+#: search.php:26
+#: single.php:99
+#: single.php:101
 msgid "Home"
-msgstr ""
-
-#: index.php:25
-msgid "Contact us"
 msgstr ""
 
 #: archive.php:55
@@ -81,344 +81,815 @@ msgstr ""
 msgid "No posts found."
 msgstr ""
 
+#: comments.php:32
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:34
+msgid "Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved."
+msgstr ""
+
+#. translators: 1: Comment date, 2: Comment time.
+#: comments.php:48
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#. translators: %s: Comment author link.
+#: comments.php:71
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: comments.php:93
+msgid "Edit"
+msgstr ""
+
+#: comments.php:100
+msgid "Responder"
+msgstr ""
+
 #. translators: %1$s: post title.
-#: comments.php:35
+#: comments.php:139
+#, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: number of comments, 2: post title.
-#: comments.php:41
+#: comments.php:145
+#, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:68
+#: comments.php:174
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:24
-#: functions.php:712
+#: footer.php:22
+#: inc/customizer-options.php:1260
 msgid "Contact"
 msgstr ""
 
-#: footer.php:25
-#: functions.php:718
+#: footer.php:23
 msgid "Use this form to reach out to us with any questions or comments. We will respond as soon as possible."
 msgstr ""
 
-#: footer.php:35
+#: footer.php:33
 msgid "Phone"
 msgstr ""
 
-#: footer.php:55
+#: footer.php:52
 msgid "Address"
 msgstr ""
 
-#: footer.php:67
+#: footer.php:63
+#: footer.php:64
 msgid "Open in map"
 msgstr ""
 
-#: footer.php:80
+#: footer.php:77
 msgid "Email"
 msgstr ""
 
-#: footer.php:102
+#: footer.php:97
 msgid "No contact form available."
 msgstr ""
 
-#: footer.php:174
+#: footer.php:168
 msgid "Privacy Policy"
 msgstr ""
 
-#. translators: 1: Theme name, 2: Theme author url.
-#: footer.php:183
+#. translators: 1: Theme name, 2: Theme author URL.
+#: footer.php:177
+#, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:196
-#: footer.php:201
-#: footer.php:204
+#: footer.php:190
+#: footer.php:197
 msgid "Search"
 msgstr ""
 
-#: footer.php:203
+#: footer.php:194
 msgid "Write here"
 msgstr ""
 
+#: footer.php:221
+msgid "open Whatsapp"
+msgstr ""
 
-#: front-page.php:16
+#: front-page.php:19
+#: page.php:114
 msgid "Recent Posts"
 msgstr ""
 
-#: front-page.php:17
+#: front-page.php:20
+#: page.php:115
 msgid "Discover the latest articles on our blog."
 msgstr ""
 
-#: front-page.php:45
+#: front-page.php:75
 #: page-fullwidth.php:52
 #: page-sidebar.php:48
-#: page.php:85
+#: page.php:78
 #: template-parts/content-page.php:22
-#: template-parts/content.php:62
+#: template-parts/content.php:75
 msgid "Pages:"
 msgstr ""
 
-#: front-page.php:100
+#: front-page.php:163
 msgid "Published:"
 msgstr ""
 
-#: front-page.php:102
+#: front-page.php:166
 msgid "Updated:"
 msgstr ""
 
-#: functions.php:134
-msgid "Primary"
-msgstr ""
-
-#: functions.php:135
-msgid "Social"
-msgstr ""
-
-#: functions.php:136
-msgid "Legal"
-msgstr ""
-
-#: functions.php:300
-msgid "Sidebar"
-msgstr ""
-
-#: functions.php:302
-msgid "Add widgets here."
-msgstr ""
-
-#: functions.php:309
-msgid "Footer-Zone 1"
-msgstr ""
-
-#: functions.php:311
-msgid "Add widgets here-Footer-Zone 1."
-msgstr ""
-
-#: functions.php:316
-msgid "Footer-Zone 2"
-msgstr ""
-
-#: functions.php:318
-msgid "Add widgets here-Footer-Zone 2."
-msgstr ""
-
-#: functions.php:323
-msgid "Footer-Zone 3"
-msgstr ""
-
-#: functions.php:325
-msgid "Add widgets here-Footer-Zone 3."
-msgstr ""
-
-#: functions.php:330
-msgid "Footer-Zone 4"
-msgstr ""
-
-#: functions.php:332
-msgid "Add widgets here-Footer-Zone 4."
-msgstr ""
-
-#: functions.php:369
-msgid "Theme Colors"
-msgstr ""
-
-#: functions.php:379
-msgid "SMiLE Web Settings"
-msgstr ""
-
-#: functions.php:387
-msgid "Top Bar Email"
-msgstr ""
-
-#: functions.php:391
-msgid "Top Bar Telephone"
-msgstr ""
-
-#: functions.php:395
-msgid "Whatsapp Telephone"
-msgstr ""
-
-#: functions.php:399
-msgid "Whatsapp Message"
-msgstr ""
-
-#: functions.php:403
-msgid "Blog Title"
-msgstr ""
-
-#: functions.php:407
-msgid "Blog Description"
-msgstr ""
-
-#: functions.php:411
-msgid "Blog Default Image"
-msgstr ""
-
-#: functions.php:415
-msgid "Blog Post Quantity"
-msgstr ""
-
-#: functions.php:419
-msgid "Footer Logo"
-msgstr ""
-
-#: functions.php:462
-msgid "Text color"
-msgstr ""
-
-#: functions.php:482
-msgid "Link color"
-msgstr ""
-
-#: functions.php:501
-msgid "Link color hover"
-msgstr ""
-
-#: functions.php:520
-msgid "Link color light"
-msgstr ""
-
-#: functions.php:539
-msgid "Color 1 light"
-msgstr ""
-
-#: functions.php:558
-msgid "Color 1"
-msgstr ""
-
-#: functions.php:577
-msgid "Color 2"
-msgstr ""
-
-#: functions.php:596
-msgid "Color 2 dark"
-msgstr ""
-
-#: functions.php:615
-msgid "Background color, Primary"
-msgstr ""
-
-#: functions.php:634
-msgid "Background color, Secondary"
-msgstr ""
-
-#: functions.php:653
-msgid "Footer background color"
-msgstr ""
-
-#: functions.php:672
-msgid "Footer text color"
-msgstr ""
-
-#: functions.php:691
-msgid "Contact Section"
-msgstr ""
-
-#: functions.php:700
-msgid "Display Contact Section?"
-msgstr ""
-
-#: functions.php:703
-#: functions.php:819
-msgid "Yes"
-msgstr ""
-
-#: functions.php:704
-#: functions.php:820
-msgid "No"
-msgstr ""
-
-#: functions.php:710
-msgid "Footer Contact Title"
-msgstr ""
-
-#: functions.php:716
-msgid "Footer Contact Description"
-msgstr ""
-
-#: functions.php:722
-msgid "Footer Contact Telephone"
-msgstr ""
-
-#: functions.php:728
-msgid "Footer Contact Address"
-msgstr ""
-
-#: functions.php:734
-msgid "Footer Contact Postal Code"
-msgstr ""
-
-#: functions.php:740
-msgid "Footer Contact Place"
-msgstr ""
-
-#: functions.php:746
-msgid "Footer Contact City"
-msgstr ""
-
-#: functions.php:752
-msgid "Footer Contact Link to Google Maps (Solo el SRC de \"insertar un mapa\")"
-msgstr ""
-
-#: functions.php:758
-msgid "Footer Contact Email"
-msgstr ""
-
-#: functions.php:764
-msgid "Footer Contact Shortcode Form"
-msgstr ""
-
-#: functions.php:814
-msgid "Display Header Image"
-msgstr ""
-
-#: functions.php:908
-msgid "Social link"
-msgstr ""
-
-#: header.php:352
+#: header.php:23
 msgid "Skip to main content"
 msgstr ""
 
-#: header.php:353
+#: header.php:24
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:381
+#: header.php:50
 msgid "Social media navigation"
 msgstr ""
 
-#: header.php:418
+#: header.php:64
 msgid "Open search box"
 msgstr ""
 
-#: header.php:419
+#: header.php:65
 msgid "Search in web"
 msgstr ""
 
-#: header.php:434
+#: header.php:79
 msgid "Main navigation"
 msgstr ""
 
-#: header.php:452
+#: header.php:103
 msgid "Toggle navigation menu"
+msgstr ""
+
+#: inc/block-styles.php:23
+msgid "Sombra suave"
+msgstr ""
+
+#: inc/block-styles.php:32
+msgid "Borde destacado"
+msgstr ""
+
+#: inc/class-social-walker.php:39
+msgid "Social media link"
+msgstr ""
+
+#: inc/color-management.php:225
+#: inc/color-management.php:269
+#: inc/color-management.php:349
+msgid "Security check failed."
+msgstr ""
+
+#: inc/color-management.php:230
+msgid "You do not have permission to export theme colors."
+msgstr ""
+
+#: inc/color-management.php:263
+msgid "Security token missing."
+msgstr ""
+
+#: inc/color-management.php:275
+msgid "You do not have permission to import theme colors."
+msgstr ""
+
+#: inc/color-management.php:281
+msgid "File upload failed."
+msgstr ""
+
+#: inc/color-management.php:290
+msgid "Invalid JSON file."
+msgstr ""
+
+#: inc/color-management.php:296
+msgid "Invalid color settings file format."
+msgstr ""
+
+#. translators: %d: Number of imported colors
+#: inc/color-management.php:328
+#, php-format
+msgid "Successfully imported %d color settings."
+msgstr ""
+
+#: inc/color-management.php:334
+msgid "No valid color settings found in the file."
+msgstr ""
+
+#: inc/color-management.php:355
+msgid "You do not have permission to reset theme colors."
+msgstr ""
+
+#. translators: %d: Number of reset colors
+#: inc/color-management.php:373
+#, php-format
+msgid "Successfully reset %d color settings to Ocean Professional defaults."
+msgstr ""
+
+#: inc/color-management.php:379
+msgid "Failed to reset color settings."
+msgstr ""
+
+#: inc/customizer-options.php:43
+msgid "Theme Colors"
+msgstr ""
+
+#: inc/customizer-options.php:53
+msgid "Text Colors"
+msgstr ""
+
+#: inc/customizer-options.php:64
+msgid "Link Colors"
+msgstr ""
+
+#: inc/customizer-options.php:75
+msgid "Background Colors"
+msgstr ""
+
+#: inc/customizer-options.php:86
+msgid "Button Colors"
+msgstr ""
+
+#: inc/customizer-options.php:97
+msgid "Form Colors"
+msgstr ""
+
+#: inc/customizer-options.php:108
+msgid "Alert Colors"
+msgstr ""
+
+#: inc/customizer-options.php:119
+msgid "Extra Colors"
+msgstr ""
+
+#: inc/customizer-options.php:130
+msgid "Front Page Intro Colors"
+msgstr ""
+
+#: inc/customizer-options.php:141
+msgid "Page Intro Colors"
+msgstr ""
+
+#: inc/customizer-options.php:152
+msgid "Single Post Intro Colors"
+msgstr ""
+
+#: inc/customizer-options.php:163
+msgid "Top Bar Colors"
+msgstr ""
+
+#: inc/customizer-options.php:174
+msgid "Masthead Colors"
+msgstr ""
+
+#: inc/customizer-options.php:185
+msgid "Footer Colors"
+msgstr ""
+
+#: inc/customizer-options.php:196
+msgid "Color Management"
+msgstr ""
+
+#: inc/customizer-options.php:207
+msgid "Theme Appearance"
+msgstr ""
+
+#: inc/customizer-options.php:217
+msgid "Header Logo"
+msgstr ""
+
+#: inc/customizer-options.php:236
+msgid "Logo Maximum Height"
+msgstr ""
+
+#: inc/customizer-options.php:237
+msgid "Control the maximum height of the header logo. Default: 80px."
+msgstr ""
+
+#: inc/customizer-options.php:252
+msgid "Buttons"
+msgstr ""
+
+#: inc/customizer-options.php:263
+msgid "Floating Elements"
+msgstr ""
+
+#: inc/customizer-options.php:282
+msgid "Button Border Radius"
+msgstr ""
+
+#: inc/customizer-options.php:283
+msgid "Adjust the roundness of buttons. Default: 50px."
+msgstr ""
+
+#: inc/customizer-options.php:306
+msgid "WhatsApp Button Offset (Right)"
+msgstr ""
+
+#: inc/customizer-options.php:307
+msgid "Control the horizontal distance from the edge. Default: 15px."
+msgstr ""
+
+#: inc/customizer-options.php:329
+msgid "WhatsApp Button Offset (Bottom)"
+msgstr ""
+
+#: inc/customizer-options.php:330
+msgid "Control the vertical distance from the edge. Default: 15px."
+msgstr ""
+
+#: inc/customizer-options.php:345
+msgid "SMiLE Web Settings"
+msgstr ""
+
+#: inc/customizer-options.php:353
+msgid "Top Bar Email"
+msgstr ""
+
+#: inc/customizer-options.php:358
+msgid "Top Bar Telephone"
+msgstr ""
+
+#: inc/customizer-options.php:363
+msgid "Whatsapp Telephone"
+msgstr ""
+
+#: inc/customizer-options.php:368
+msgid "Whatsapp Message"
+msgstr ""
+
+#: inc/customizer-options.php:373
+msgid "Blog Title"
+msgstr ""
+
+#: inc/customizer-options.php:378
+msgid "Blog Description"
+msgstr ""
+
+#: inc/customizer-options.php:383
+msgid "Blog Default Image"
+msgstr ""
+
+#: inc/customizer-options.php:388
+msgid "Blog Post Quantity"
+msgstr ""
+
+#: inc/customizer-options.php:393
+msgid "Footer Logo"
+msgstr ""
+
+#: inc/customizer-options.php:398
+msgid "Breadcrumb Separator"
+msgstr ""
+
+#: inc/customizer-options.php:432
+msgid "Comment Color"
+msgstr ""
+
+#: inc/customizer-options.php:436
+msgid "Card Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:440
+msgid "Base Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:444
+msgid "Muted Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:448
+msgid "Heading Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:452
+msgid "Subheading Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:456
+msgid "Emphasis Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:460
+msgid "Quote Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:464
+msgid "List Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:472
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer-options.php:476
+msgid "Link Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:480
+msgid "Link Active Color"
+msgstr ""
+
+#: inc/customizer-options.php:484
+msgid "Link Visited Color"
+msgstr ""
+
+#: inc/customizer-options.php:488
+msgid "Table of Contents Link Color"
+msgstr ""
+
+#: inc/customizer-options.php:496
+msgid "CTA Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:500
+msgid "Primary Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:504
+msgid "Secondary Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:508
+msgid "Breadcrumb Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:512
+msgid "Top Footer Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:516
+msgid "Selection Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:524
+msgid "Button Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:528
+msgid "Button Text Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:532
+msgid "Button Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:536
+msgid "Button Background Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:540
+msgid "Button Border Color"
+msgstr ""
+
+#: inc/customizer-options.php:544
+msgid "Button Border Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:552
+msgid "Form Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:556
+msgid "Form Placeholder Color"
+msgstr ""
+
+#: inc/customizer-options.php:560
+msgid "Form Border Color"
+msgstr ""
+
+#: inc/customizer-options.php:564
+msgid "Form Focus Border Color"
+msgstr ""
+
+#: inc/customizer-options.php:568
+msgid "Form Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:572
+msgid "Form Error Color"
+msgstr ""
+
+#: inc/customizer-options.php:576
+msgid "Form Success Color"
+msgstr ""
+
+#: inc/customizer-options.php:584
+msgid "Alert Success Color"
+msgstr ""
+
+#: inc/customizer-options.php:588
+msgid "Alert Error Color"
+msgstr ""
+
+#: inc/customizer-options.php:592
+msgid "Alert Warning Color"
+msgstr ""
+
+#: inc/customizer-options.php:596
+msgid "Alert Info Color"
+msgstr ""
+
+#: inc/customizer-options.php:604
+msgid "Warning Color"
+msgstr ""
+
+#: inc/customizer-options.php:608
+msgid "Primary Accent Color Light"
+msgstr ""
+
+#: inc/customizer-options.php:612
+msgid "Primary Accent Color"
+msgstr ""
+
+#: inc/customizer-options.php:616
+msgid "Secondary Accent Color"
+msgstr ""
+
+#: inc/customizer-options.php:620
+msgid "Secondary Accent Color Dark"
+msgstr ""
+
+#: inc/customizer-options.php:624
+msgid "Border Color"
+msgstr ""
+
+#: inc/customizer-options.php:628
+msgid "Icon Color"
+msgstr ""
+
+#: inc/customizer-options.php:632
+msgid "Category Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:636
+msgid "Category Background Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:640
+msgid "Category Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:644
+msgid "Category Text Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:664
+msgid "Intro Overlay Color"
+msgstr ""
+
+#: inc/customizer-options.php:681
+msgid "Intro Overlay Opacity"
+msgstr ""
+
+#: inc/customizer-options.php:695
+#: inc/customizer-options.php:745
+#: inc/customizer-options.php:792
+msgid "Intro Heading Color"
+msgstr ""
+
+#: inc/customizer-options.php:699
+msgid "Intro Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:715
+#: inc/customizer-options.php:762
+msgid "Intro Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:730
+#: inc/customizer-options.php:777
+msgid "Intro Background Opacity"
+msgstr ""
+
+#: inc/customizer-options.php:800
+msgid "Top Bar Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:804
+msgid "Top Bar Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:808
+msgid "Top Bar Link Color"
+msgstr ""
+
+#: inc/customizer-options.php:812
+msgid "Top Bar Link Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:816
+msgid "Top Bar Social Icon Color"
+msgstr ""
+
+#: inc/customizer-options.php:824
+msgid "Masthead Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:828
+msgid "Masthead Submenu Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:832
+msgid "Masthead Submenu Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:836
+msgid "Masthead Link Color"
+msgstr ""
+
+#: inc/customizer-options.php:840
+msgid "Masthead Link Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:844
+msgid "Masthead Scrolled Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:852
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:856
+msgid "Footer Text Color"
+msgstr ""
+
+#: inc/customizer-options.php:860
+msgid "Footer Link Color"
+msgstr ""
+
+#: inc/customizer-options.php:864
+msgid "Footer Link Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:868
+msgid "Footer Border Color"
+msgstr ""
+
+#: inc/customizer-options.php:872
+msgid "Footer Social Background Color"
+msgstr ""
+
+#: inc/customizer-options.php:876
+msgid "Footer Social Icon Color"
+msgstr ""
+
+#: inc/customizer-options.php:880
+msgid "Footer Social Icon Hover Color"
+msgstr ""
+
+#: inc/customizer-options.php:1183
+msgid "Export Color Settings"
+msgstr ""
+
+#: inc/customizer-options.php:1184
+msgid "Download your current color settings as a JSON file."
+msgstr ""
+
+#: inc/customizer-options.php:1203
+msgid "Import Color Settings"
+msgstr ""
+
+#: inc/customizer-options.php:1204
+msgid "Upload a JSON file to import color settings."
+msgstr ""
+
+#: inc/customizer-options.php:1223
+msgid "Reset to Ocean Professional"
+msgstr ""
+
+#: inc/customizer-options.php:1224
+msgid "Reset all colors to the default Ocean Professional palette."
+msgstr ""
+
+#: inc/customizer-options.php:1241
+msgid "Contact Section"
+msgstr ""
+
+#: inc/customizer-options.php:1249
+msgid "Display Contact Section?"
+msgstr ""
+
+#: inc/customizer-options.php:1253
+#: inc/customizer-options.php:1352
+msgid "Yes"
+msgstr ""
+
+#: inc/customizer-options.php:1254
+#: inc/customizer-options.php:1353
+msgid "No"
+msgstr ""
+
+#: inc/customizer-options.php:1258
+msgid "Footer Contact Title"
+msgstr ""
+
+#: inc/customizer-options.php:1263
+msgid "Footer Contact Description"
+msgstr ""
+
+#: inc/customizer-options.php:1265
+msgid "Use this form to reach out with any questions or comments. We will respond as soon as possible."
+msgstr ""
+
+#: inc/customizer-options.php:1268
+msgid "Footer Contact Telephone"
+msgstr ""
+
+#: inc/customizer-options.php:1273
+msgid "Footer Contact Address"
+msgstr ""
+
+#: inc/customizer-options.php:1278
+msgid "Footer Contact Postal Code"
+msgstr ""
+
+#: inc/customizer-options.php:1283
+msgid "Footer Contact Place"
+msgstr ""
+
+#: inc/customizer-options.php:1288
+msgid "Footer Contact City"
+msgstr ""
+
+#: inc/customizer-options.php:1293
+msgid "Footer Contact Link to Google Maps (SRC)"
+msgstr ""
+
+#: inc/customizer-options.php:1298
+msgid "Footer Contact Email"
+msgstr ""
+
+#: inc/customizer-options.php:1303
+msgid "Footer Contact Shortcode Form"
+msgstr ""
+
+#: inc/customizer-options.php:1347
+msgid "Display Header Image"
+msgstr ""
+
+#: inc/customizer-options.php:1370
+msgid "Front Page Intro"
+msgstr ""
+
+#: inc/customizer-options.php:1378
+msgid "Intro Content Type"
+msgstr ""
+
+#: inc/customizer-options.php:1382
+msgid "Automatic (use page title and excerpt)"
+msgstr ""
+
+#: inc/customizer-options.php:1383
+msgid "Custom (use custom title and description)"
+msgstr ""
+
+#: inc/customizer-options.php:1387
+msgid "Custom Intro Title"
+msgstr ""
+
+#: inc/customizer-options.php:1392
+msgid "Custom Intro Description"
+msgstr ""
+
+#: inc/customizer-options.php:1455
+msgid "Download Colors JSON"
+msgstr ""
+
+#: inc/customizer-options.php:1489
+msgid "Import Colors"
+msgstr ""
+
+#: inc/customizer-options.php:1523
+msgid "Reset All Colors"
+msgstr ""
+
+#: inc/enqueues.php:431
+msgid "Social link"
 msgstr ""
 
 #. translators: %s: post date.
 #: inc/template-tags.php:30
+#, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: %s: post author.
 #: inc/template-tags.php:45
+#, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
@@ -430,6 +901,7 @@ msgstr ""
 
 #. translators: 1: list of categories.
 #: inc/template-tags.php:64
+#, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
@@ -441,32 +913,134 @@ msgstr ""
 
 #. translators: 1: list of tags.
 #: inc/template-tags.php:71
+#, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
 #: inc/template-tags.php:81
+#, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers.
 #: inc/template-tags.php:98
 #: page-fullwidth.php:65
 #: page-sidebar.php:69
-#: page.php:98
+#: page.php:91
 #: template-parts/content-page.php:36
+#, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: index.php:13
+#: inc/template-tags.php:185
+#: inc/template-tags.php:188
+msgid "Error: Invalid email address."
+msgstr ""
+
+#: inc/theme-setup.php:37
+msgid "Primary"
+msgstr ""
+
+#: inc/theme-setup.php:38
+msgid "Social"
+msgstr ""
+
+#: inc/theme-setup.php:39
+msgid "Legal"
+msgstr ""
+
+#: inc/theme-setup.php:84
+msgid "Main Menu"
+msgstr ""
+
+#: inc/theme-setup.php:85
+msgid "Social Menu"
+msgstr ""
+
+#: inc/theme-setup.php:86
+msgid "Legal Menu"
+msgstr ""
+
+#: inc/theme-setup.php:108
+#: single.php:140
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/theme-setup.php:117
+msgid "Instagram"
+msgstr ""
+
+#: inc/widgets.php:14
+msgid "Sidebar"
+msgstr ""
+
+#: inc/widgets.php:16
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/widgets.php:23
+msgid "Footer-Zone 1"
+msgstr ""
+
+#: inc/widgets.php:25
+msgid "Add widgets here-Footer-Zone 1."
+msgstr ""
+
+#: inc/widgets.php:30
+msgid "Footer-Zone 2"
+msgstr ""
+
+#: inc/widgets.php:32
+msgid "Add widgets here-Footer-Zone 2."
+msgstr ""
+
+#: inc/widgets.php:37
+msgid "Footer-Zone 3"
+msgstr ""
+
+#: inc/widgets.php:39
+msgid "Add widgets here-Footer-Zone 3."
+msgstr ""
+
+#: inc/widgets.php:44
+msgid "Footer-Zone 4"
+msgstr ""
+
+#: inc/widgets.php:46
+msgid "Add widgets here-Footer-Zone 4."
+msgstr ""
+
+#: index.php:17
 msgid "Blog"
 msgstr ""
 
-#: index.php:56
+#: index.php:25
+msgid "Contact us"
+msgstr ""
+
+#: index.php:35
+msgid "breadcrumb"
+msgstr ""
+
+#: index.php:40
+msgid "home"
+msgstr ""
+
+#: index.php:73
 msgid "Listings of the latest articles of interest:"
 msgstr ""
 
-#: index.php:109
+#: index.php:171
+msgid "Publicado"
+msgstr ""
+
+#: index.php:175
+msgid "Actualizado"
+msgstr ""
+
+#: index.php:190
 msgid "There are no articles to show at this time."
 msgstr ""
 
@@ -475,46 +1049,46 @@ msgid "Page fullwith"
 msgstr ""
 
 #: page-fullwidth.php:13
-#: page.php:20
+#: page.php:18
 msgid "Go to main content"
 msgstr ""
 
 #: page-fullwidth.php:14
-#: page.php:21
+#: page.php:19
 msgid "See main content"
 msgstr ""
 
 #: page-fullwidth.php:87
 #: page-fullwidth.php:90
 #: page-fullwidth.php:93
-#: page.php:119
-#: page.php:122
-#: page.php:125
+#: page.php:120
+#: page.php:123
+#: page.php:126
 msgid "Related Articles with: "
 msgstr ""
 
 #: page-fullwidth.php:97
-#: page.php:129
+#: page.php:130
 msgid "Latest Articles: "
 msgstr ""
 
 #: page-fullwidth.php:142
-#: page-sidebar.php:142
+#: page-sidebar.php:152
 #: page.php:178
 #: single.php:23
-#: single.php:213
-#: template-parts/content-none.php:76
-#: template-parts/content.php:31
+#: single.php:235
+#: template-parts/content-none.php:99
+#: template-parts/content.php:38
 msgid "Published"
 msgstr ""
 
 #: page-fullwidth.php:144
-#: page-sidebar.php:144
+#: page-sidebar.php:154
 #: page.php:180
 #: single.php:25
-#: single.php:217
-#: template-parts/content-none.php:81
-#: template-parts/content.php:33
+#: single.php:239
+#: template-parts/content-none.php:104
+#: template-parts/content.php:41
 msgid "Updated"
 msgstr ""
 
@@ -524,37 +1098,45 @@ msgstr ""
 
 #. translators: %s: Parent title.
 #: page-sidebar.php:93
+#, php-format
 msgid "Articles related with parent: %s"
 msgstr ""
 
 #. translators: %s: Post name.
 #: page-sidebar.php:98
+#, php-format
 msgid "Articles related with post name: %s"
 msgstr ""
 
 #. translators: %s: Title of the current post.
 #: page-sidebar.php:102
+#, php-format
 msgid "Articles related with title: %s"
 msgstr ""
 
 #. translators: %s: Last articles.
 #: page-sidebar.php:113
+#, php-format
 msgid "Last articles: %s"
 msgstr ""
 
-#: search.php:15
+#: search.php:14
 msgid "Search:"
 msgstr ""
 
-#: search.php:30
+#: search.php:29
 msgid "Search Results"
 msgstr ""
 
-#: search.php:39
+#: search.php:38
 msgid "Do you want to search again?"
 msgstr ""
 
-#: search.php:40
+#: search.php:39
+msgid "Open search"
+msgstr ""
+
+#: search.php:39
 msgid "Search again"
 msgstr ""
 
@@ -567,23 +1149,43 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: single.php:119
-msgid "Share on Facebook"
-msgstr ""
-
-#: single.php:123
-msgid "Share on Twitter"
-msgstr ""
-
-#: single.php:127
-msgid "Share on LinkedIn"
+#: single.php:88
+msgid "Reading time:"
 msgstr ""
 
 #: single.php:131
+msgid "Share:"
+msgstr ""
+
+#: single.php:134
+msgid "Facebook"
+msgstr ""
+
+#: single.php:134
+msgid "Share on Facebook"
+msgstr ""
+
+#: single.php:137
+msgid "Twitter"
+msgstr ""
+
+#: single.php:137
+msgid "Share on Twitter"
+msgstr ""
+
+#: single.php:140
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: single.php:143
+msgid "Pinterest"
+msgstr ""
+
+#: single.php:143
 msgid "Share on Pinterest"
 msgstr ""
 
-#: single.php:174
+#: single.php:186
 msgid "Related articles"
 msgstr ""
 
@@ -593,6 +1195,7 @@ msgstr ""
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:20
+#, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
@@ -604,11 +1207,12 @@ msgstr ""
 msgid "Recommended Blog Articles"
 msgstr ""
 
-#: template-parts/content-none.php:97
+#: template-parts/content-none.php:120
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:49
+#: template-parts/content.php:62
+#, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
