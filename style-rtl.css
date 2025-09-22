@@ -1937,17 +1937,49 @@ footer h3 {
 # 7.0 - ACCESSIBILITY
 --------------------------------------------- */
 /* Text meant only for screen readers. */
-.skip-link {
-	position: absolute;
-	right: -9999px;
+.screen-reader-text {
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+        word-wrap: normal !important;
 }
 
-.skip-link:focus {
-	position: static;
-	right: 0;
-	background-color: yellow;
-	color: black;
-	padding: 10px;
+.screen-reader-text:focus,
+.screen-reader-text:active {
+        clip: auto;
+        clip-path: none;
+        display: inline-block;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        padding: 0.75rem 1.5rem;
+        position: fixed;
+        right: 1rem;
+        text-decoration: none;
+        top: 1rem;
+        width: auto;
+        white-space: normal;
+        z-index: 1000;
+}
+
+.skip-link {
+        background-color: var(--accent-secondary-dark);
+        border: 2px solid var(--color-white);
+        border-radius: 999px;
+        color: var(--color-white);
+        font-weight: 600;
+}
+
+.skip-link:focus,
+.skip-link:active {
+        color: var(--color-white);
 }
 
 /* ------------------------------------------
