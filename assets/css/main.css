@@ -149,13 +149,6 @@ blockquote {
 	fill: var(--topbar-social-icon);
 }
 
-#footer .svg-icon svg {
-	fill: var(--footer-social-icon);
-}
-
-#footer .svg-icon svg:hover {
-	fill: var(--footer-social-icon-hover);
-}
 
 .footer-svg {
 	transform: rotatex(180deg);
@@ -316,11 +309,11 @@ blockquote {
 
 /* Efecto hover */
 .whatsapp-background:hover {
-	background: #00801e;
+	background: #1a4023;
 }
 
 .whatsapp-background:hover svg {
-	fill: var(--footer-social-icon-hover);
+	fill: white;
 }
 
 /* Navigation submenu */

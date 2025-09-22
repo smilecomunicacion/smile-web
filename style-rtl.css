@@ -1835,7 +1835,7 @@ footer h3 {
 
 #footer .footer-top .social-links a:hover {
 	background: var(--footer-social-icon);
-	color: var(--footer-social-bg);
+	color: var(--footer-social-icon-hover);
 }
 
 #footer .svg-icon svg {
