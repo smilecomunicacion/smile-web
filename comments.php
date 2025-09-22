@@ -97,7 +97,7 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 						array_merge(
 							$args,
 							array(
-								'reply_text' => __( 'Responder', 'smile-web' ),
+								'reply_text' => __( 'Reply', 'smile-web' ),
 								'add_below'  => 'div-comment',
 								'depth'      => $depth,
 								'max_depth'  => $args['max_depth'],
