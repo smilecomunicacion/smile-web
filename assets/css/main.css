@@ -137,10 +137,6 @@ blockquote {
 	color: var(--topbar-social-icon);
 }
 
-.svg-icon svg {
-	fill: var(--icon);
-}
-
 #topBar .svg-icon svg {
 	fill: var(--topbar-social-icon);
 }

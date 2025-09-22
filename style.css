@@ -419,9 +419,12 @@ a:visited:not([class*="btn"]):not([class*="button"]) {
 }
 
 .svg-icon svg {
-	fill: var(--icon);
 	width: 25px;
 	height: 25px;
+}
+
+.svg-icon svg:not(#footer .svg-icon svg) {
+  fill: var(--icon);
 }
 
 #topBar .svg-icon svg {
@@ -1821,6 +1824,7 @@ footer h3 {
 	display: inline-block;
 	background: var(--footer-social-bg);
 	color: var(--footer-social-icon);
+	fill: var(--footer-social-icon);
 	line-height: 1;
 	padding: 10px 0;
 	margin-right: 4px;
@@ -1836,13 +1840,6 @@ footer h3 {
 #footer .footer-top .social-links a:hover {
 	background: var(--footer-social-icon);
 	color: var(--footer-social-icon-hover);
-}
-
-#footer .svg-icon svg {
-	fill: var(--footer-social-icon);
-}
-
-#footer .svg-icon svg:hover {
 	fill: var(--footer-social-icon-hover);
 }
 
