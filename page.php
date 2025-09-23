@@ -11,18 +11,22 @@
  */
 
 get_header();
-?>
+
+if ( have_posts() ) :
+        while ( have_posts() ) :
+                the_post();
+                ?>
 <div id="intro" class="intro intro--page pt-5">
-	<div class="container py-5 text-center">
-		<h1 class="title mt-2"><?php the_title(); ?></h1>
-		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
-			<?php esc_html_e( 'See main content', 'smile-web' ); ?>
-		</a>
-	</div>
-	<?php
-	// If minimum width is 768px.
-	if ( ! wp_is_mobile() ) :
-		?>
+        <div class="container py-5 text-center">
+                <h1 class="title mt-2"><?php the_title(); ?></h1>
+                <a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
+                        <?php esc_html_e( 'See main content', 'smile-web' ); ?>
+                </a>
+        </div>
+        <?php
+        // If minimum width is 768px.
+        if ( ! wp_is_mobile() ) :
+                ?>
         <figure id="intro-carousel" class="d-none d-md-block">
                 <?php
                 $intro_image = smile_v6_get_intro_image_data(
@@ -197,6 +201,10 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<?php endif; // End Related Articles. ?>
+        <?php endif; // End Related Articles. ?>
 </main>
-<?php get_footer(); ?>
+<?php
+        endwhile;
+endif;
+
+get_footer();
