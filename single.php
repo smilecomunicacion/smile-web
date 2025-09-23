@@ -95,7 +95,7 @@ get_header();
                 $intro_image = smile_v6_get_intro_image_data(
                         get_the_ID(),
                         array(
-                                'allow_featured' => true,
+                                'allow_featured' => false,
                                 'allow_fallback' => false,
                         )
                 );
