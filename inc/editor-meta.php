@@ -25,7 +25,9 @@ function smile_v6_register_intro_image_meta() {
                 },
         );
 
-        register_post_meta( array( 'post', 'page' ), 'smile_v6_intro_image_id', $args );
+	foreach ( array( 'post', 'page' ) as $post_type ) {
+		register_post_meta( $post_type, 'smile_v6_intro_image_id', $args );
+	}
 }
 add_action( 'init', 'smile_v6_register_intro_image_meta' );
 
