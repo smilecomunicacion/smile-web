@@ -376,6 +376,46 @@ a:visited:not([class*="btn"]):not([class*="button"]) {
 	color: var(--accent-secondary);
 }
 
+/* Color change hover effect */
+.featured-card-smile {
+	background-color: var(--color-white);
+	box-shadow: 0px 0 25px 0 color-mix(in srgb, var(--accent-secondary-dark), transparent 90%);
+	padding: 40px 30px;
+	transition: all 0.3s ease-in-out;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.featured-card-smile:hover {
+	background-color: var(--accent-secondary-dark);
+	color: white;
+	--text-emphasis: white;
+	transition: 0.4s;
+}
+
+.featured-card-smile:hover p,
+.featured-card-smile:hover h2,
+.featured-card-smile:hover h3 {
+	color: white;
+}
+
+.featured-card-smile:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/*--------------------------------------------------------------
+# 1.5 - SECTION MARGINS
+--------------------------------------------------------------*/
+.mt-120 {
+	margin-top: -120px !important;
+}
+
+.mt-150 {
+	margin-top: -150px !important;
+}
+
 /*--------------------------------------------------------------
 # 2.0 - HEADER - Header-scrolled
 --------------------------------------------------------------*/
@@ -1264,10 +1304,6 @@ main ol li::marker {
 .alert-info {
 	background-color: var(--alert-info);
 	color: var(--color-white);
-}
-
-.d-none {
-	display: none !important;
 }
 
 
