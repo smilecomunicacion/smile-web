@@ -376,6 +376,37 @@ CSS;
     margin: 0;
 }
 
+@media (min-width:768px) {
+    #intro-carousel {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background-color: var(--single-intro-bg);
+    }
+    #intro-carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        --0-transform: translate(50%, 50%);
+        --webkit-transform: translate(50%, 50%);
+        transform: translate(50%, 50%);
+        opacity: .3;
+    }
+    #intro .row {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 CSS;
         }
 
