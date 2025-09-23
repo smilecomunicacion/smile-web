@@ -25,7 +25,13 @@ get_header();
 		?>
         <figure id="intro-carousel" class="d-none d-md-block">
                 <?php
-                $intro_image = smile_v6_get_intro_image_data( get_the_ID() );
+                $intro_image = smile_v6_get_intro_image_data(
+                        get_the_ID(),
+                        array(
+                                'allow_featured' => false,
+                                'allow_fallback' => false,
+                        )
+                );
 
                 if ( ! empty( $intro_image ) && ! empty( $intro_image['src'] ) ) {
                         $height_attr = ! empty( $intro_image['height'] ) ? sprintf( ' height="%s"', esc_attr( $intro_image['height'] ) ) : '';

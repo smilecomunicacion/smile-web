@@ -156,25 +156,46 @@ if ( ! function_exists( 'smile_v6_get_intro_image_data' ) ) :
          * Retrieves the intro image data for a given post.
          *
          * @since 6.0.8
+         * @since 6.0.9 Added the $args parameter to control fallbacks.
          *
-         * @param int $post_id Post ID.
+         * @param int   $post_id Post ID.
+         * @param array $args {
+         *     Optional. Arguments for controlling the image source selection.
+         *
+         *     @type bool $allow_featured Whether to allow the featured image to be used. Default true.
+         *     @type bool $allow_fallback Whether to allow the fallback image to be used. Default true.
+         * }
          * @return array<string, mixed> Intro image data including url and metadata.
          * @package smile-web
          */
-        function smile_v6_get_intro_image_data( $post_id ) {
+        function smile_v6_get_intro_image_data( $post_id, $args = array() ) {
                 $post_id = absint( $post_id );
 
                 if ( 0 === $post_id ) {
                         return array();
                 }
 
+                $args = wp_parse_args(
+                        (array) $args,
+                        array(
+                                'allow_featured' => true,
+                                'allow_fallback' => true,
+                        )
+                );
+
+                $allow_featured = wp_validate_boolean( $args['allow_featured'] );
+                $allow_fallback = wp_validate_boolean( $args['allow_fallback'] );
+
                 $meta_id = absint( get_post_meta( $post_id, 'smile_v6_intro_image_id', true ) );
                 $image_id = 0;
+                $source   = '';
 
                 if ( $meta_id && wp_attachment_is_image( $meta_id ) ) {
                         $image_id = $meta_id;
-                } elseif ( has_post_thumbnail( $post_id ) ) {
+                        $source   = 'meta';
+                } elseif ( $allow_featured && has_post_thumbnail( $post_id ) ) {
                         $image_id = (int) get_post_thumbnail_id( $post_id );
+                        $source   = 'featured';
                 }
 
                 if ( $image_id ) {
@@ -203,8 +224,13 @@ if ( ! function_exists( 'smile_v6_get_intro_image_data' ) ) :
                                         'title'    => $title_text,
                                         'class'    => 'attachment-' . $image_id,
                                         'fallback' => false,
+                                        'source'   => $source,
                                 );
                         }
+                }
+
+                if ( ! $allow_fallback ) {
+                        return array();
                 }
 
                 $site_name = get_bloginfo( 'name' );
@@ -217,6 +243,7 @@ if ( ! function_exists( 'smile_v6_get_intro_image_data' ) ) :
                         'title'    => $site_name,
                         'class'    => 'smile-v6-fallback-image',
                         'fallback' => true,
+                        'source'   => 'fallback',
                 );
         }
 endif;
