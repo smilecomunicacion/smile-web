@@ -23,24 +23,27 @@ get_header();
 	// If minimum width is 768px.
 	if ( ! wp_is_mobile() ) :
 		?>
-	<figure id="intro-carousel" class="d-none d-md-block">
-		<?php
-			if ( has_post_thumbnail() ) :
-				$attachment_id = get_post_thumbnail_id( get_the_ID() );
-				$metadata      = wp_get_attachment_metadata( $attachment_id );
-				$height        = $metadata['height'];
-				$width         = $metadata['width'];
-				$alt           = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-				$image_title   = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_title', true ) ) );
-				$src           = wp_get_attachment_url( $attachment_id );
-				$class         = 'attachment-' . $attachment_id;
-				?>
-		<img src="<?php echo esc_url( $src ); ?>" height="<?php echo esc_attr( $height ); ?>" width="<?php echo esc_attr( $width ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
-		<?php else : ?>
-		<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/thumbnail-header.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000" height="667">
-		<?php endif; ?>
-	</figure>
-	<?php endif; // END if minimum width is 768px. ?>
+        <figure id="intro-carousel" class="d-none d-md-block">
+                <?php
+                $intro_image = smile_v6_get_intro_image_data( get_the_ID() );
+
+                if ( ! empty( $intro_image ) && ! empty( $intro_image['src'] ) ) {
+                        $height_attr = ! empty( $intro_image['height'] ) ? sprintf( ' height="%s"', esc_attr( $intro_image['height'] ) ) : '';
+                        $width_attr  = ! empty( $intro_image['width'] ) ? sprintf( ' width="%s"', esc_attr( $intro_image['width'] ) ) : '';
+
+                        printf(
+                                '<img src="%1$s"%2$s%3$s alt="%4$s" title="%5$s" class="%6$s">',
+                                esc_url( $intro_image['src'] ),
+                                $height_attr,
+                                $width_attr,
+                                esc_attr( $intro_image['alt'] ),
+                                esc_attr( $intro_image['title'] ),
+                                esc_attr( $intro_image['class'] )
+                        );
+                }
+                ?>
+        </figure>
+        <?php endif; // END if minimum width is 768px. ?>
 </div>
 <main id="main" class="bg-primary">
 	<div class="container py-2">
