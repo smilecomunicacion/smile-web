@@ -35,7 +35,6 @@ function smile_v6_get_all_color_settings() {
 		// Background Colors.
 		'bg_primary'                => get_theme_mod( 'bg_primary', '#F7FAFC' ),
 		'bg_secondary'              => get_theme_mod( 'bg_secondary', '#E8F2FF' ),
-		'breadcrumb_bg_color'       => get_theme_mod( 'breadcrumb_bg_color', '#F7FAFC' ),
 
 		// Button Colors.
 		'button_text'               => get_theme_mod( 'button_text', '#FFFFFF' ),
@@ -139,7 +138,6 @@ function smile_v6_get_default_color_palette() {
 		// Background Colors.
 		'bg_primary'                => '#F7FAFC',
 		'bg_secondary'              => '#E8F2FF',
-		'breadcrumb_bg_color'       => '#F7FAFC',
 
 		// Button Colors.
 		'button_text'               => '#FFFFFF',
