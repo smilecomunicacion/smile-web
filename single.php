@@ -87,8 +87,30 @@ get_header();
 			// Mostrar el tiempo estimado de lectura.
 			echo '<p class="reading-time smile-web-single-date"><b>' . esc_html__( 'Reading time:', 'smile-web' ) . '</b> ' . esc_html( $reading_time ) . ' min</p>';
 			?>
-		</div>
-	</div>
+                </div>
+        </div>
+        <?php if ( ! wp_is_mobile() ) : ?>
+        <figure id="intro-carousel" class="d-none d-md-block">
+                <?php
+                $intro_image = smile_v6_get_intro_image_data( get_the_ID() );
+
+                if ( ! empty( $intro_image ) && ! empty( $intro_image['src'] ) ) {
+                        $height_attr = ! empty( $intro_image['height'] ) ? sprintf( ' height="%s"', esc_attr( $intro_image['height'] ) ) : '';
+                        $width_attr  = ! empty( $intro_image['width'] ) ? sprintf( ' width="%s"', esc_attr( $intro_image['width'] ) ) : '';
+
+                        printf(
+                                '<img src="%1$s"%2$s%3$s alt="%4$s" title="%5$s" class="%6$s">',
+                                esc_url( $intro_image['src'] ),
+                                $height_attr,
+                                $width_attr,
+                                esc_attr( $intro_image['alt'] ),
+                                esc_attr( $intro_image['title'] ),
+                                esc_attr( $intro_image['class'] )
+                        );
+                }
+                ?>
+        </figure>
+        <?php endif; ?>
 </div><!-- #intro -->
 <main id="main" class="blog-page bg-primary">
 	<div class="container py-4">

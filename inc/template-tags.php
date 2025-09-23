@@ -151,6 +151,76 @@ if ( ! function_exists( 'smile_v6_post_thumbnail' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'smile_v6_get_intro_image_data' ) ) :
+        /**
+         * Retrieves the intro image data for a given post.
+         *
+         * @since 6.0.8
+         *
+         * @param int $post_id Post ID.
+         * @return array<string, mixed> Intro image data including url and metadata.
+         * @package smile-web
+         */
+        function smile_v6_get_intro_image_data( $post_id ) {
+                $post_id = absint( $post_id );
+
+                if ( 0 === $post_id ) {
+                        return array();
+                }
+
+                $meta_id = absint( get_post_meta( $post_id, 'smile_v6_intro_image_id', true ) );
+                $image_id = 0;
+
+                if ( $meta_id && wp_attachment_is_image( $meta_id ) ) {
+                        $image_id = $meta_id;
+                } elseif ( has_post_thumbnail( $post_id ) ) {
+                        $image_id = (int) get_post_thumbnail_id( $post_id );
+                }
+
+                if ( $image_id ) {
+                        $image_src = wp_get_attachment_image_src( $image_id, 'full' );
+
+                        if ( $image_src ) {
+                                $alt_meta   = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+                                $title_meta = get_post_meta( $image_id, '_wp_attachment_image_title', true );
+
+                                $alt_text   = trim( wp_strip_all_tags( (string) $alt_meta ) );
+                                $title_text = trim( wp_strip_all_tags( (string) $title_meta ) );
+
+                                if ( '' === $alt_text ) {
+                                        $alt_text = get_the_title( $post_id );
+                                }
+
+                                if ( '' === $title_text ) {
+                                        $title_text = get_the_title( $image_id );
+                                }
+
+                                return array(
+                                        'src'      => $image_src[0],
+                                        'width'    => isset( $image_src[1] ) ? (int) $image_src[1] : 0,
+                                        'height'   => isset( $image_src[2] ) ? (int) $image_src[2] : 0,
+                                        'alt'      => $alt_text,
+                                        'title'    => $title_text,
+                                        'class'    => 'attachment-' . $image_id,
+                                        'fallback' => false,
+                                );
+                        }
+                }
+
+                $site_name = get_bloginfo( 'name' );
+
+                return array(
+                        'src'      => get_template_directory_uri() . '/assets/img/thumbnail-header.jpg',
+                        'width'    => 1000,
+                        'height'   => 667,
+                        'alt'      => $site_name,
+                        'title'    => $site_name,
+                        'class'    => 'smile-v6-fallback-image',
+                        'fallback' => true,
+                );
+        }
+endif;
+
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Shim for sites older than 5.2.
