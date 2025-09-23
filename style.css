@@ -865,6 +865,25 @@ main figure img,
 	height: auto;
 }
 
+.intro {
+    position: relative;
+}
+
+.intro--front {
+    background-image: var(--front-intro-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.intro--page {
+    background-color: var(--page-intro-bg, transparent);
+}
+
+.intro--single {
+    background-color: var(--single-intro-bg, transparent);
+}
+
 #intro::before {
     content: "";
     position: absolute;
@@ -895,7 +914,20 @@ body.home #intro h1 {
 }
 
 body.home #intro p {
-	color: var(--front-intro-text);
+        color: var(--front-intro-text);
+}
+
+.breadcrumb--primary {
+    background-color: var(--breadcrumb-bg);
+}
+
+.search-card {
+    background-color: var(--color-white);
+}
+
+.footer-logo {
+    max-height: 200px;
+    height: auto;
 }
 
 /* Page Intro */

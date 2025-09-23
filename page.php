@@ -12,7 +12,7 @@
 
 get_header();
 ?>
-<div id="intro" class="pt-5" style="background-color: var(--page-intro-bg);">
+<div id="intro" class="intro intro--page pt-5">
 	<div class="container py-5 text-center">
 		<h1 class="title mt-2"><?php the_title(); ?></h1>
 		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
@@ -44,9 +44,9 @@ get_header();
 </div>
 <main id="main" class="bg-primary">
 	<div class="container py-2">
-		<div id="breadcrumbs">
-			<nav aria-label="breadcrumb" style="background-color: var(--breadcrumb-bg);">
-				<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+                <div id="breadcrumbs">
+                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                                <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1">
 					</li>

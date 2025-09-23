@@ -31,13 +31,19 @@ function smile_web_get_dynamic_root_styles() {
 				$accent_primary                = sanitize_hex_color( get_theme_mod( 'accent-primary', '#E8F2FF' ) );
 				$accent_secondary              = sanitize_hex_color( get_theme_mod( 'accent-secondary', '#2E5984' ) );
 				$accent_secondary_dark         = sanitize_hex_color( get_theme_mod( 'accent-secondary-dark', '#0B1426' ) );
-				$front_intro_overlay_color     = sanitize_hex_color( get_theme_mod( 'front_intro_overlay', '#0B1426' ) );
-				$front_intro_overlay_alpha     = floatval( get_theme_mod( 'front_intro_overlay_alpha', 0.8 ) );
-				$front_intro_overlay_alpha     = min( 1, max( 0, $front_intro_overlay_alpha ) );
-				list( $fio_r, $fio_g, $fio_b ) = sscanf( $front_intro_overlay_color, '#%02x%02x%02x' );
-				$front_intro_overlay           = sprintf( 'rgba(%d,%d,%d,%s)', $fio_r, $fio_g, $fio_b, $front_intro_overlay_alpha );
-				$front_intro_heading           = sanitize_hex_color( get_theme_mod( 'front_intro_heading', '#E8F2FF' ) );
-				$front_intro_text              = sanitize_hex_color( get_theme_mod( 'front_intro_text', '#FFFFFF' ) );
+                $front_intro_overlay_color     = sanitize_hex_color( get_theme_mod( 'front_intro_overlay', '#0B1426' ) );
+                $front_intro_overlay_alpha     = floatval( get_theme_mod( 'front_intro_overlay_alpha', 0.8 ) );
+                $front_intro_overlay_alpha     = min( 1, max( 0, $front_intro_overlay_alpha ) );
+                list( $fio_r, $fio_g, $fio_b ) = sscanf( $front_intro_overlay_color, '#%02x%02x%02x' );
+                $front_intro_overlay           = sprintf( 'rgba(%d,%d,%d,%s)', $fio_r, $fio_g, $fio_b, $front_intro_overlay_alpha );
+                $front_intro_heading           = sanitize_hex_color( get_theme_mod( 'front_intro_heading', '#E8F2FF' ) );
+                $front_intro_text              = sanitize_hex_color( get_theme_mod( 'front_intro_text', '#FFFFFF' ) );
+                $header_image_display          = get_theme_mod( 'header_image_display', 'yes' );
+                $header_image_url              = get_header_image();
+                $front_intro_image             = 'none';
+                if ( 'yes' === $header_image_display && ! empty( $header_image_url ) ) {
+                        $front_intro_image = 'url(' . esc_url_raw( $header_image_url ) . ')';
+                }
 				$page_intro_bg_color           = sanitize_hex_color( get_theme_mod( 'page_intro_bg', '#0B1426' ) );
 				$page_intro_bg_alpha           = floatval( get_theme_mod( 'page_intro_bg_alpha', 1 ) );
 				$page_intro_bg_alpha           = min( 1, max( 0, $page_intro_bg_alpha ) );
@@ -133,6 +139,7 @@ function smile_web_get_dynamic_root_styles() {
                         --bg-secondary: ' . esc_attr( $bg_secondary ) . ';
                         --breadcrumb-bg: ' . esc_attr( $breadcrumb_bg ) . ';
                         --front-intro-overlay: ' . esc_attr( $front_intro_overlay ) . ';
+                        --front-intro-image: ' . esc_attr( $front_intro_image ) . ';
                         --front-intro-heading: ' . esc_attr( $front_intro_heading ) . ';
                         --front-intro-text: ' . esc_attr( $front_intro_text ) . ';
                         --page-intro-bg: ' . esc_attr( $page_intro_bg ) . ';

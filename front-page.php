@@ -26,23 +26,10 @@ $intro_content_type       = get_theme_mod( 'intro_content_type', 'automatic' );
 $intro_custom_title       = get_theme_mod( 'intro_custom_title', '' );
 $intro_custom_description = get_theme_mod( 'intro_custom_description', '' );
 
-// ------------------------------------------------------------------
-// Header image.
-// ------------------------------------------------------------------
-$show_header_image = get_theme_mod( 'header_image_display', 'yes' );
-$header_image      = get_header_image();
-
-$intro_style = '';
-if ( 'yes' === $show_header_image && ! empty( $header_image ) ) {
-	$intro_style = sprintf(
-		'background-image: url(\'%s\'); background-size: cover; background-position: center; background-repeat: no-repeat;',
-		esc_url( $header_image )
-	);
-}
 ?>
 
 <!-- Intro -------------------------------------------------------- -->
-<div id="intro" style="<?php echo esc_attr( $intro_style ); ?>">
+<div id="intro" class="intro intro--front">
     <div class="container">
         <div class="row">
             <div class="col-md-6">

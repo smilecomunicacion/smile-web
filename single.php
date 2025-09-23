@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<div id="intro" class="pt-5" style="background-color: var(--single-intro-bg);">
+<div id="intro" class="intro intro--single pt-5">
 	<div class="container py-3">
 		<div class="row text-center py-2">
 			<h1 class="text-heading my-2"><?php the_title(); ?></h1>
@@ -92,9 +92,9 @@ get_header();
 </div><!-- #intro -->
 <main id="main" class="blog-page bg-primary">
 	<div class="container py-4">
-		<div id="breadcrumbs">
-			<nav aria-label="breadcrumb" style="background-color: var(--breadcrumb-bg);">
-				<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+                <div id="breadcrumbs">
+                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/solid/home.svg" alt="home" title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>
 						" width="20px" height="20px">
