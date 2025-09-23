@@ -1297,6 +1297,14 @@ main ol li::marker {
 	border: 1px solid var(--border) !important;
 }
 
+.lead {
+    font-weight: 200;
+    color: var(--link-active);
+    font-size: 22px;
+    line-height: 1.2em;
+    margin-bottom: 30px;
+}
+
 .text-emphasis {
 	font-weight: 200;
 	color: var(--text-emphasis);
