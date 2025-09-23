@@ -8,11 +8,14 @@
  */
 
 get_header();
-?>
+
+while ( have_posts() ) :
+        the_post();
+        ?>
 <div id="intro" class="intro intro--single pt-5">
-	<div class="container py-3">
-		<div class="row text-center py-2">
-			<h1 class="text-heading my-2"><?php the_title(); ?></h1>
+        <div class="container py-3">
+                <div class="row text-center py-2">
+                        <h1 class="text-heading my-2"><?php the_title(); ?></h1>
 			<div class="entry-header d-flex justify-content-center">
 				<?php if ( is_single() ) : ?>
 				<span class="smile-web-single-date">
@@ -118,6 +121,11 @@ get_header();
         </figure>
         <?php endif; ?>
 </div><!-- #intro -->
+<?php
+endwhile;
+
+rewind_posts();
+?>
 <main id="main" class="blog-page bg-primary">
 	<div class="container py-4">
                 <div id="breadcrumbs">
