@@ -58,9 +58,50 @@ blockquote {
 }
 
 .btn:hover {
-	background-color: var(--btn-bg-hover);
-	color: var(--btn-text-hover);
-	border: 1px solid var(--btn-border-hover);
+        background-color: var(--btn-bg-hover);
+        color: var(--btn-text-hover);
+        border: 1px solid var(--btn-border-hover);
+}
+
+/*--------------------------------------------------------------
+# Admin - Color Management
+--------------------------------------------------------------*/
+.smile-v6-import-file {
+        margin-bottom: 10px;
+}
+
+.smile-v6-status {
+        margin-top: 10px;
+}
+
+.smile-v6-status-message {
+        display: inline-block;
+        font-weight: 600;
+}
+
+.smile-v6-status-message--info {
+        color: #0073aa;
+}
+
+.smile-v6-status-message--success {
+        color: #00a32a;
+}
+
+.smile-v6-status-message--error {
+        color: #d63384;
+}
+
+.button.smile-v6-reset-colors {
+        background-color: #dc3232;
+        border-color: #dc3232;
+        color: #fff;
+}
+
+.button.smile-v6-reset-colors:focus,
+.button.smile-v6-reset-colors:hover {
+        background-color: #b82828;
+        border-color: #b82828;
+        color: #fff;
 }
 
 /*--------------------------------------------------------------

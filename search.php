@@ -19,9 +19,9 @@ get_header();
 <!-- #intro -->
 <main id="main" class="search-page pt-4 pb-4 bg-primary">
 	<div class="container">
-		<div id="breadcrumbs" class="pb-4">
-			<nav aria-label="breadcrumb">
-                             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--breadcrumb-bg);">
+                <div id="breadcrumbs" class="pb-4">
+                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
                                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name">
 					<?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1" />

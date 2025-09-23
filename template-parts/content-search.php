@@ -12,7 +12,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="row shadow mx-0 mb-4" style="background-color: var(--color-white);">
+<article id="post-<?php the_ID(); ?>" class="row shadow mx-0 mb-4 search-card">
 	<figure class="fit-figure p-0 m-0 col-md-4">
 		<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
 			<?php

@@ -193,10 +193,10 @@
             const file = this.files[0];
             if (file && file.type === 'application/json') {
                 importButton.disabled = false;
-                statusDiv.innerHTML = '<span style="color: #0073aa;">File selected: ' + escapeHtml(file.name) + '</span>';
+                statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--info">File selected: ' + escapeHtml(file.name) + '</span>';
             } else {
                 importButton.disabled = true;
-                statusDiv.innerHTML = '<span style="color: #d63384;">Please select a valid JSON file.</span>';
+                statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--error">Please select a valid JSON file.</span>';
             }
         });
 
@@ -219,7 +219,7 @@
             // Disable button during import.
             importButton.disabled = true;
             importButton.textContent = 'Importing...';
-            statusDiv.innerHTML = '<span style="color: #0073aa;">Importing colors...</span>';
+            statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--info">Importing colors...</span>';
 
             // Create form data.
             const formData = new FormData();
@@ -235,7 +235,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    statusDiv.innerHTML = '<span style="color: #00a32a;">' + escapeHtml(data.data.message) + '</span>';
+                    statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--success">' + escapeHtml(data.data.message) + '</span>';
                     showMessage(data.data.message, 'success');
 
                     // Refresh the customizer preview.
@@ -243,13 +243,13 @@
                         wp.customize.previewer.refresh();
                     }
                 } else {
-                    statusDiv.innerHTML = '<span style="color: #d63384;">' + escapeHtml(data.data.message) + '</span>';
+                    statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--error">' + escapeHtml(data.data.message) + '</span>';
                     showMessage(data.data.message, 'error');
                 }
             })
             .catch(error => {
                 const errorMessage = 'Import failed. Please check the file format and try again.';
-                statusDiv.innerHTML = '<span style="color: #d63384;">' + errorMessage + '</span>';
+                statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--error">' + errorMessage + '</span>';
                 showMessage(errorMessage, 'error');
             })
             .finally(() => {
@@ -291,7 +291,7 @@
             // Disable button during reset.
             resetButton.disabled = true;
             resetButton.textContent = 'Resetting...';
-            statusDiv.innerHTML = '<span style="color: #0073aa;">Resetting colors...</span>';
+            statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--info">Resetting colors...</span>';
 
             // Create form data.
             const formData = new FormData();
@@ -306,7 +306,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    statusDiv.innerHTML = '<span style="color: #00a32a;">' + escapeHtml(data.data.message) + '</span>';
+                    statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--success">' + escapeHtml(data.data.message) + '</span>';
                     showMessage(data.data.message, 'success');
 
                     // Refresh the customizer preview.
@@ -314,13 +314,13 @@
                         wp.customize.previewer.refresh();
                     }
                 } else {
-                    statusDiv.innerHTML = '<span style="color: #d63384;">' + escapeHtml(data.data.message) + '</span>';
+                    statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--error">' + escapeHtml(data.data.message) + '</span>';
                     showMessage(data.data.message, 'error');
                 }
             })
             .catch(error => {
                 const errorMessage = 'Reset failed. Please try again.';
-                statusDiv.innerHTML = '<span style="color: #d63384;">' + errorMessage + '</span>';
+                statusDiv.innerHTML = '<span class="smile-v6-status-message smile-v6-status-message--error">' + errorMessage + '</span>';
                 showMessage(errorMessage, 'error');
             })
             .finally(() => {

@@ -1484,11 +1484,11 @@ function smile_v6_register_custom_controls() {
     <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
     <?php endif; ?>
 </label>
-<input type="file" class="smile-v6-import-file" accept=".json" style="margin-bottom: 10px;" />
+<input type="file" class="smile-v6-import-file" accept=".json" />
 <button type="button" class="button smile-v6-import-colors" disabled>
     <?php esc_html_e( 'Import Colors', 'smile-web' ); ?>
 </button>
-<div class="smile-v6-import-status" style="margin-top: 10px;"></div>
+<div class="smile-v6-import-status smile-v6-status"></div>
 <?php
 		}
 	}
@@ -1519,10 +1519,10 @@ function smile_v6_register_custom_controls() {
     <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
     <?php endif; ?>
 </label>
-<button type="button" class="button smile-v6-reset-colors" style="background-color: #dc3232; color: white; border-color: #dc3232;">
+<button type="button" class="button smile-v6-reset-colors">
     <?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
 </button>
-<div class="smile-v6-reset-status" style="margin-top: 10px;"></div>
+<div class="smile-v6-reset-status smile-v6-status"></div>
 <?php
 		}
 	}

@@ -18,10 +18,10 @@ get_header();
 
 <main id="main" class="blog-page area-padding bg-primary">
 <div class="cpy-2">
-	<div class="container">
-		<div id="breadcrumbs">
-			<nav aria-label="breadcrumb">
-                                <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb" style="background-color: var(--breadcrumb-bg);">
+        <div class="container">
+                <div id="breadcrumbs">
+                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                                <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 										<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a><meta itemprop="position" content="1" />
 					</li>
 					<?php if ( $post->post_parent ) { ?>

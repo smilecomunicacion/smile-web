@@ -114,7 +114,7 @@
 							if ( ! empty( $logo_footer ) ) {
 								?>
 																<a href="<?php echo esc_url( home_url( '' ) ); ?>">
-																		<img class="img-fluid" src="<?php echo esc_url( $logo_footer ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="300px" style="max-height:200px;">
+                                                                                                                               <img class="img-fluid footer-logo" src="<?php echo esc_url( $logo_footer ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="300px">
 																</a>
 														<?php } ?>
 						</figure>
