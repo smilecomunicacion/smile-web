@@ -57,8 +57,7 @@ function smile_web_get_dynamic_root_styles() {
 				$single_intro_bg               = sprintf( 'rgba(%d,%d,%d,%s)', $sib_r, $sib_g, $sib_b, $single_intro_bg_alpha );
 				$single_intro_heading          = sanitize_hex_color( get_theme_mod( 'single_intro_heading', '#E8F2FF' ) );
 				$bg_primary                    = sanitize_hex_color( get_theme_mod( 'bg_primary', '#F7FAFC' ) );
-				$bg_secondary                  = sanitize_hex_color( get_theme_mod( 'bg_secondary', '#E8F2FF' ) );
-				$breadcrumb_bg                 = sanitize_hex_color( get_theme_mod( 'breadcrumb_bg_color', '#F7FAFC' ) );
+                               $bg_secondary                  = sanitize_hex_color( get_theme_mod( 'bg_secondary', '#E8F2FF' ) );
 				$button_text                   = sanitize_hex_color( get_theme_mod( 'button_text', '#FFFFFF' ) );
 				$button_text_hover             = sanitize_hex_color( get_theme_mod( 'button_text_hover', '#0F7B5C' ) );
 				$button_bg                     = sanitize_hex_color( get_theme_mod( 'button_bg', '#0F7B5C' ) );
@@ -137,7 +136,6 @@ function smile_web_get_dynamic_root_styles() {
                         --color-white: ' . esc_attr( $color_white ) . ';
                         --bg-primary: ' . esc_attr( $bg_primary ) . ';
                         --bg-secondary: ' . esc_attr( $bg_secondary ) . ';
-                        --breadcrumb-bg: ' . esc_attr( $breadcrumb_bg ) . ';
                         --front-intro-overlay: ' . esc_attr( $front_intro_overlay ) . ';
                         --front-intro-image: ' . esc_attr( $front_intro_image ) . ';
                         --front-intro-heading: ' . esc_attr( $front_intro_heading ) . ';
