@@ -92,9 +92,9 @@ get_header();
 </div><!-- #intro -->
 <main id="main" class="blog-page bg-primary">
 	<div class="container py-4">
-                <div id="breadcrumbs">
-                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
+		<div id="breadcrumbs">
+			<nav aria-label="breadcrumb" class="breadcrumb-nav">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<img class='mx-2' src="<?php echo esc_url( get_template_directory_uri() ); ?>/lib/fontawesome-free/svgs/solid/home.svg" alt="home" title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>
 						" width="20px" height="20px">
@@ -193,39 +193,39 @@ get_header();
 			<br>
 			<div class="row">
 				<?php
-                                $recent = new WP_Query( $args );
-                                $blog_post_default_img = get_theme_mod( 'blog_default_image', '' );
+								$recent                = new WP_Query( $args );
+								$blog_post_default_img = get_theme_mod( 'blog_default_image', '' );
 
-                                while ( $recent->have_posts() ) :
-                                        $recent->the_post();
-                                        ?>
-                                <article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
-                                        <figure class="mb-0 shadow">
-                                                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
-                                                        <?php
-                                                        if ( has_post_thumbnail() ) {
-                                                                $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
-                                                                $thumb_id  = get_post_thumbnail_id();
-                                                                $thumb_alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+				while ( $recent->have_posts() ) :
+						$recent->the_post();
+					?>
+				<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
+					<figure class="mb-0 shadow">
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+							<?php
+							if ( has_post_thumbnail() ) {
+									$thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
+									$thumb_id  = get_post_thumbnail_id();
+									$thumb_alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
 
-                                                                if ( empty( $thumb_alt ) ) {
-                                                                        $thumb_alt = get_the_title();
-                                                                }
-                                                        } elseif ( ! empty( $blog_post_default_img ) ) {
-                                                                $thumb_url = $blog_post_default_img;
-                                                                $thumb_alt = get_bloginfo( 'name' );
-                                                        } else {
-                                                                $thumb_url = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
-                                                                $thumb_alt = get_bloginfo( 'name' );
-                                                        }
+								if ( empty( $thumb_alt ) ) {
+													$thumb_alt = get_the_title();
+								}
+							} elseif ( ! empty( $blog_post_default_img ) ) {
+									$thumb_url = $blog_post_default_img;
+									$thumb_alt = get_bloginfo( 'name' );
+							} else {
+									$thumb_url = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
+									$thumb_alt = get_bloginfo( 'name' );
+							}
 
-                                                        printf(
-                                                                '<img src="%1$s" class="img-fluid" alt="%2$s" width="1000" height="667" />',
-                                                                esc_url( $thumb_url ),
-                                                                esc_attr( $thumb_alt )
-                                                        );
-                                                        ?>
-                                                </a>
+										printf(
+											'<img src="%1$s" class="img-fluid" alt="%2$s" width="1000" height="667" />',
+											esc_url( $thumb_url ),
+											esc_attr( $thumb_alt )
+										);
+							?>
+						</a>
 						<figcaption id="post-<?php the_ID(); ?>" class="p-4">
 							<h4><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h4>
 							<p><?php the_excerpt(); ?></p>

@@ -34,15 +34,15 @@ get_header();
 		$width_attr    = '' !== $width ? ' width="' . esc_attr( $width ) . '"' : '';
 		?>
 	<figure id="intro-carousel" class="d-none d-md-block">
-		<img src="<?php echo esc_url( $src ); ?>"<?php echo $height_attr; ?><?php echo $width_attr; ?> alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
+		<img src="<?php echo esc_url( $src ); ?>" <?php echo $height_attr; ?><?php echo $width_attr; ?> alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
 	</figure>
 	<?php endif; // END if minimum width is 768px and featured image exists. ?>
 </div>
 <main id="main" class="bg-primary">
 	<div class="container py-2">
-                <div id="breadcrumbs">
-                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                                <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
+		<div id="breadcrumbs">
+			<nav aria-label="breadcrumb" class="breadcrumb-nav">
+				<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item"><i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"><span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span></a>
 						<meta itemprop="position" content="1">
 					</li>
@@ -96,7 +96,7 @@ get_header();
 					'<span class="edit-link">',
 					'</span>'
 				);
-				?>
+			?>
 		</div><!-- .entry-footer -->
 		<?php endif; ?>
 	</div>
@@ -142,22 +142,22 @@ get_header();
 			<div class="row">
 				<?php
 					$recent = new WP_Query( $args );
-					while ( $recent->have_posts() ) :
-						$recent->the_post();
-						?>
+				while ( $recent->have_posts() ) :
+					$recent->the_post();
+					?>
 				<article class="blog-col col-md-4 col-sm-6 mb-4 mx-0">
 					<figure class="mb-0 shadow">
 						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
 							<?php
-									if ( has_post_thumbnail() ) :
-										$attachment_id = get_post_thumbnail_id( get_the_ID() );
-										$metadata      = wp_get_attachment_metadata( $attachment_id );
-										$height        = $metadata['height'];
-										$width         = $metadata['width'];
-										$alt           = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-										$image_title   = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_title', true ) ) );
-										$src           = wp_get_attachment_url( $attachment_id );
-										?>
+							if ( has_post_thumbnail() ) :
+								$attachment_id = get_post_thumbnail_id( get_the_ID() );
+								$metadata      = wp_get_attachment_metadata( $attachment_id );
+								$height        = $metadata['height'];
+								$width         = $metadata['width'];
+								$alt           = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
+								$image_title   = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_title', true ) ) );
+								$src           = wp_get_attachment_url( $attachment_id );
+								?>
 							<img src="<?php echo esc_url( $src ); ?>" height="<?php echo esc_attr( $height ); ?>" width="<?php echo esc_attr( $width ); ?>" alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>">
 							<?php else : ?>
 							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/thumbnail-header.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" width="1000" height="667">
@@ -169,8 +169,8 @@ get_header();
 							<hr>
 							<p>
 								<?php
-										if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) :
-											?>
+								if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) :
+									?>
 								<span><b><?php esc_html_e( 'Published', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>
 								<?php else : ?>
 								<span><b><?php esc_html_e( 'Updated', 'smile-web' ); ?></b>: <?php the_modified_date( 'j F, Y' ); ?></span>

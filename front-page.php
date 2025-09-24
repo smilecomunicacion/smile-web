@@ -30,45 +30,43 @@ $intro_custom_description = get_theme_mod( 'intro_custom_description', '' );
 
 <!-- Intro -------------------------------------------------------- -->
 <div id="intro" class="intro intro--front">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <?php if ( 'custom' === $intro_content_type && ! empty( $intro_custom_title ) ) : ?>
-                <h1 class="text-heading"><?php echo esc_html( $intro_custom_title ); ?></h1>
-                <?php else : ?>
-                <h1 class="text-heading"><?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
-                <?php endif; ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<?php if ( 'custom' === $intro_content_type && ! empty( $intro_custom_title ) ) : ?>
+				<h1 class="text-heading"><?php echo esc_html( $intro_custom_title ); ?></h1>
+				<?php else : ?>
+				<h1 class="text-heading"><?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
+				<?php endif; ?>
 
-                <?php if ( 'custom' === $intro_content_type && ! empty( $intro_custom_description ) ) : ?>
-                <p><?php echo esc_html( $intro_custom_description ); ?></p>
-                <?php else : ?>
-                <?php the_excerpt(); ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
+				<?php if ( 'custom' === $intro_content_type && ! empty( $intro_custom_description ) ) : ?>
+				<p><?php echo esc_html( $intro_custom_description ); ?></p>
+				<?php else : ?>
+					<?php the_excerpt(); ?>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Main Content ------------------------------------------------- -->
 <main id="main" class="overflow-hidden pt-1">
-    <div class="container">
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="mb-5">
-                <?php
-				the_content();
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div class="container mb-5">
+			<?php
+					the_content();
 
-				wp_link_pages(
-					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'smile-web' ),
-						'after'  => '</div>',
-					)
-				);
-				?>
-            </div>
-        </article>
-    </div>
-
-    <?php
+					wp_link_pages(
+						array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'smile-web' ),
+							'after'  => '</div>',
+						)
+					);
+					?>
+		</div>
+		</div>
+	</article>
+	<?php
 	/*
 	* ------------------------------------------------------------------
 	* Related Posts
@@ -85,33 +83,33 @@ $intro_custom_description = get_theme_mod( 'intro_custom_description', '' );
 
 	if ( $recent_posts->have_posts() ) :
 		?>
-    <section id="posts-relacionados" class="bg-secondary">
-        <div class="container py-5 text-center">
-            <p class="text-emphasis pb-2 border-bottom">
-                <?php echo esc_html( $custom_blog_title ); ?>
-            </p>
-            <p class="text-emphasis">
-                <?php echo esc_html( $blog_description ); ?>
-            </p>
-        </div>
+	<section id="posts-relacionados" class="bg-secondary">
+		<div class="container py-5 text-center">
+			<p class="text-emphasis pb-2 border-bottom">
+				<?php echo esc_html( $custom_blog_title ); ?>
+			</p>
+			<p class="text-emphasis">
+				<?php echo esc_html( $blog_description ); ?>
+			</p>
+		</div>
 
-        <div class="container">
-            <div class="row">
-                <?php
+		<div class="container">
+			<div class="row">
+				<?php
 				while ( $recent_posts->have_posts() ) :
 					$recent_posts->the_post();
 					?>
-                <article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
-                    <?php
+				<article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
+					<?php
 										$categories_list = get_the_category_list( '</li><li>' );
-										if ( $categories_list ) {
-												echo '<div class="category"><ul class="post-categories"><li>' . wp_kses_post( $categories_list ) . '</li></ul></div>';
-										}
-										?>
+					if ( $categories_list ) {
+							echo '<div class="category"><ul class="post-categories"><li>' . wp_kses_post( $categories_list ) . '</li></ul></div>';
+					}
+					?>
 
-                    <figure class="shadow">
-                        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
-                            <?php
+					<figure class="shadow">
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+							<?php
 							if ( has_post_thumbnail() ) {
 								$thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
 								$thumb_id  = get_post_thumbnail_id();
@@ -133,36 +131,36 @@ $intro_custom_description = get_theme_mod( 'intro_custom_description', '' );
 																		esc_attr( $thumb_alt )
 																	);
 							?>
-                        </a>
+						</a>
 
-                        <figcaption class="bg-white px-4">
-                            <p class="lead">
-                                <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                    <?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                                </a>
-                            </p>
+						<figcaption class="bg-white px-4">
+							<p class="lead">
+								<a href="<?php the_permalink(); ?>" rel="bookmark">
+									<?php the_title(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</a>
+							</p>
 
-                            <?php the_excerpt(); ?>
+							<?php the_excerpt(); ?>
 
-                            <p class="border-top pt-3">
-                                <span>
-                                    <?php if ( get_the_modified_date() === get_the_date() ) : ?>
-                                    <b><?php esc_html_e( 'Published:', 'smile-web' ); ?></b>
-                                    <?php echo esc_html( get_the_date( 'j F, Y' ) ); ?>
-                                    <?php else : ?>
-                                    <b><?php esc_html_e( 'Updated:', 'smile-web' ); ?></b>
-                                    <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?>
-                                    <?php endif; ?>
-                                </span>
-                            </p>
-                        </figcaption>
-                    </figure>
-                </article>
-                <?php endwhile; ?>
-            </div>
-        </div>
-    </section>
-    <?php
+							<p class="border-top pt-3">
+								<span>
+									<?php if ( get_the_modified_date() === get_the_date() ) : ?>
+									<b><?php esc_html_e( 'Published:', 'smile-web' ); ?></b>
+										<?php echo esc_html( get_the_date( 'j F, Y' ) ); ?>
+									<?php else : ?>
+									<b><?php esc_html_e( 'Updated:', 'smile-web' ); ?></b>
+										<?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?>
+									<?php endif; ?>
+								</span>
+							</p>
+						</figcaption>
+					</figure>
+				</article>
+				<?php endwhile; ?>
+			</div>
+		</div>
+	</section>
+		<?php
 		wp_reset_postdata();
 	endif;
 	?>

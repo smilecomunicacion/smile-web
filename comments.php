@@ -35,31 +35,31 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 			}
 			?>
 <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
-    <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-        <footer class="comment-meta">
-            <div class="comment-metadata">
-                <?php
-												printf(
-													'<a href="%s"><time datetime="%s">%s</time></a>',
-													esc_url( get_comment_link( $comment, $args ) ),
-													get_comment_time( 'c' ),
-													sprintf(
-																/* translators: 1: Comment date, 2: Comment time. */
-														__( '%1$s at %2$s', 'smile-web' ),
-														get_comment_date( '', $comment ),
-														get_comment_time()
-													)
-												);
+	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+		<footer class="comment-meta">
+			<div class="comment-metadata">
+				<?php
+							printf(
+								'<a href="%s"><time datetime="%s">%s</time></a>',
+								esc_url( get_comment_link( $comment, $args ) ),
+								get_comment_time( 'c' ),
+								sprintf(
+											/* translators: 1: Comment date, 2: Comment time. */
+									__( '%1$s at %2$s', 'smile-web' ),
+									get_comment_date( '', $comment ),
+									get_comment_time()
+								)
+							);
 				?>
-            </div><!-- .comment-metadata -->
+			</div><!-- .comment-metadata -->
 
-            <div class="comment-author vcard">
-                <?php
+			<div class="comment-author vcard">
+				<?php
 				if ( 0 !== $args['avatar_size'] ) {
 						echo get_avatar( $comment, $args['avatar_size'] );
 				}
 				?>
-                <?php
+				<?php
 													$comment_author = get_comment_author_link( $comment );
 
 				if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
@@ -72,26 +72,26 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 														sprintf( '<b class="fn">%s</b>', $comment_author )
 													);
 				?>
-            </div><!-- .comment-author -->
+			</div><!-- .comment-author -->
 
-            <?php if ( '0' == $comment->comment_approved ) : ?>
-            <em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
-            <?php endif; ?>
-        </footer><!-- .comment-meta -->
+			<?php if ( '0' == $comment->comment_approved ) : ?>
+			<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+			<?php endif; ?>
+		</footer><!-- .comment-meta -->
 
-        <div class="comment-content">
-            <?php comment_text(); ?>
-        </div><!-- .comment-content -->
+		<div class="comment-content">
+			<?php comment_text(); ?>
+		</div><!-- .comment-content -->
 
-        <?php
-										$edit_comment_url  = get_edit_comment_link( $comment );
-										$can_display_reply = ( '1' == $comment->comment_approved || $show_pending_links );
+			<?php
+			$edit_comment_url  = get_edit_comment_link( $comment );
+			$can_display_reply = ( '1' == $comment->comment_approved || $show_pending_links );
 
 			if ( $edit_comment_url || $can_display_reply ) :
 				?>
-        <div class="comment-actions">
-            <?php edit_comment_link( __( 'Edit', 'smile-web' ) ); ?>
-            <?php
+		<div class="comment-actions">
+				<?php edit_comment_link( __( 'Edit', 'smile-web' ) ); ?>
+				<?php
 				if ( $can_display_reply ) {
 					comment_reply_link(
 						array_merge(
@@ -106,10 +106,10 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 					);
 				}
 				?>
-        </div><!-- .comment-actions -->
-        <?php endif; ?>
-    </article><!-- .comment-body -->
-    <?php
+		</div><!-- .comment-actions -->
+		<?php endif; ?>
+	</article><!-- .comment-body -->
+			<?php
 		}
 	}
 }
@@ -124,14 +124,14 @@ if ( post_password_required() ) {
 }
 ?>
 
-    <div id="comments" class="comments-area container col-12">
+	<div id="comments" class="comments-area container col-12">
 
-        <?php
+		<?php
 				// You can start editing here -- including this comment!
 		if ( have_comments() ) :
 			?>
-        <h2 class="comments-title">
-            <?php
+		<h2 class="comments-title">
+			<?php
 				$smile_v6_comment_count = get_comments_number();
 			if ( '1' === $smile_v6_comment_count ) {
 					printf(
@@ -148,12 +148,12 @@ if ( post_password_required() ) {
 						);
 			}
 			?>
-        </h2><!-- .comments-title -->
+		</h2><!-- .comments-title -->
 
-        <?php the_comments_navigation(); ?>
+			<?php the_comments_navigation(); ?>
 
-        <ol class="comment-list">
-            <?php
+		<ol class="comment-list">
+			<?php
 
 				wp_list_comments(
 					array(
@@ -163,16 +163,16 @@ if ( post_password_required() ) {
 					)
 				);
 			?>
-        </ol><!-- .comment-list -->
+		</ol><!-- .comment-list -->
 
-        <?php
+			<?php
 				the_comments_navigation();
 
 				// If comments are closed and there are comments, let's leave a little note, shall we?
 			if ( ! comments_open() ) :
 				?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'smile-web' ); ?></p>
-        <?php
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'smile-web' ); ?></p>
+				<?php
 			endif;
 
 	endif; // Check for have_comments().
@@ -186,4 +186,4 @@ if ( post_password_required() ) {
 				);
 				?>
 
-    </div><!-- #comments -->
+	</div><!-- #comments -->

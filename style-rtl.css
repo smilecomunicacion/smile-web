@@ -24,6 +24,9 @@ Use it to make something cool, have fun, and share what you've learned.
 	# 1.2 - LINKS
 	# 1.3 - BOTONES
 	# 1.4 - CARD
+	# 1.5 - MARGIN
+	# 1.6 - BORDER
+	# 1.7 - IMAGES
 
 # 2.0 - HEADER - Header-scrolled
 # 3.0 - NAVBAR
@@ -46,63 +49,6 @@ Use it to make something cool, have fun, and share what you've learned.
 # 99.0 - BOOTSTRAP 5.2 MINI
 --------------------------------------------------------------*/
 
-/* Galería de imágenes Hermandad */
-#bwg_container1_0 #bwg_container2_0 .bwg-container-0.bwg-masonry-thumbnails .bwg-title2 {
-	font-size: 16px !important;
-	color: var(--link) !important;
-}
-
-.bwg-item {
-	border: 1px solid var(--accent-secondary-dark);
-}
-
-.bwg-title1 {
-	background: var(--color-white);
-}
-
-.fit-figure {
-	position: relative;
-	top: 0;
-	width: 100%;
-	height: auto;
-}
-
-.fit-figure img {
-	width: 100% !important;
-	height: auto;
-}
-
-.fit-margin-bottom img {
-	width: 90% !important;
-	position: relative;
-	margin-right: 5%;
-	margin-bottom: -83px;
-}
-
-@media (min-width:768px) {
-	.fit-figure {
-		overflow: hidden;
-	}
-
-	.fit-figure img {
-		position: absolute;
-		width: auto;
-		min-width: 100%;
-		min-height: 100%;
-		top: 50%;
-		right: 50%;
-		transform: translate(50%, -50%);
-		object-fit: cover;
-		object-position: center;
-	}
-
-	.fit-margin-bottom img {
-		width: 100% !important;
-		margin-right: 0%;
-		margin-bottom: -83px;
-	}
-}
-
 
 /*--------------------------------------------------------------
 # 1.0 - GENERAL
@@ -120,7 +66,7 @@ body {
 }
 
 ::selection {
-		background-color: var(--selection-bg);
+	background-color: var(--selection-bg);
 }
 
 
@@ -259,6 +205,20 @@ ol.wp-block-latest-comments {
 
 .blog-page h3 {
 	color: var(--text-subheading);
+}
+
+.has-underline {
+	position: relative;
+	display: inline-block;
+}
+
+.has-underline::after {
+	content: "";
+	display: block;
+	width: 150px;
+	height: 4px;
+	background-color: var(--text-subheading);
+	margin: 20px auto 0px;
 }
 
 /*--------------------------------------------------------------
@@ -407,15 +367,84 @@ a:visited:not([class*="btn"]):not([class*="button"]) {
 }
 
 /*--------------------------------------------------------------
-# 1.5 - SECTION MARGINS
+# 1.5 - MARGINS
 --------------------------------------------------------------*/
-.mt-120 {
+.mt-smile-120 {
 	margin-top: -120px !important;
 }
 
-.mt-150 {
+.mt-smile-150 {
 	margin-top: -150px !important;
 }
+
+
+/*--------------------------------------------------------------
+# 1.6 - BORDER
+--------------------------------------------------------------*/
+.br-smile-20,
+.br-smile-20 img {
+	border-radius: 20px;
+}
+
+.br-smile-30,
+.br-smile-30 img {
+	border-radius: 30px;
+}
+
+/*--------------------------------------------------------------
+# 1.6 - IMAGES
+--------------------------------------------------------------*/
+
+.fit-figure {
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: auto;
+}
+
+.fit-figure img {
+	width: 100% !important;
+	height: auto;
+}
+
+.fit-margin-bottom img {
+	width: 90% !important;
+	position: relative;
+	margin-right: 5%;
+	margin-bottom: -83px;
+}
+
+@media (min-width:768px) {
+	.fit-figure {
+		overflow: hidden;
+	}
+
+	.fit-figure img {
+		position: absolute;
+		width: auto;
+		min-width: 100%;
+		/* La imagen ocupará al menos el 100% del ancho del contenedor */
+		min-height: 100%;
+		/* La imagen ocupará al menos el 100% de la altura del contenedor */
+		top: 50%;
+		/* Centra verticalmente */
+		right: 50%;
+		/* Centra horizontalmente */
+		transform: translate(50%, -50%);
+		/* Ajuste central */
+		object-fit: cover;
+		/* Mantiene la proporción de la imagen y cubre el contenedor */
+		object-position: center;
+		/* Posiciona la imagen centrada */
+	}
+
+	.fit-margin-bottom img {
+		width: 100% !important;
+		margin-right: 0%;
+		margin-bottom: -83px;
+	}
+}
+
 
 /*--------------------------------------------------------------
 # 2.0 - HEADER - Header-scrolled
@@ -615,7 +644,7 @@ header nav {
 
 #nav-menu a {
 	display: block;
-	padding: 20px;
+	padding: 10px;
 	text-decoration: none;
 	color: var(--masthead-link);
 	margin-bottom: 10px;
@@ -704,7 +733,7 @@ ul .sub-menu {
 	#nav-menu li {
 		position: relative;
 		margin: 5px 0;
-		padding: 0 0 0 10px;
+		padding: 0;
 		line-height: 1.3em;
 	}
 
@@ -722,8 +751,9 @@ ul .sub-menu {
 		background-color: var(--masthead-bg);
 	}
 
-	#nav-menu .current_page_item>a {
-		color: var(--footer-link-hover);
+	#nav-menu .current_page_item>a,
+	#nav-menu .current-menu-item>a {
+		color: var(--masthead-link-hover) !important;
 	}
 
 	.menu-item-has-children {
@@ -760,7 +790,6 @@ ul .sub-menu {
 		position: absolute;
 		z-index: 99999;
 		width: max-content;
-		padding: 20px 15px;
 		margin-top: 10px;
 		min-width: 150px;
 		max-width: 250px;
@@ -783,7 +812,7 @@ ul .sub-menu {
 	}
 
 	#masthead #nav-menu .sub-menu li>a {
-		margin: 12px 0;
+		padding: 10px 20px;
 	}
 
 	#masthead #nav-menu .sub-menu li>a:hover {
@@ -867,22 +896,22 @@ main figure img,
 }
 
 .intro {
-    position: relative;
+	position: relative;
 }
 
 .intro--front {
-    background-image: var(--front-intro-image, none);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+	background-image: var(--front-intro-image, none);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .intro--page {
-    background-color: var(--page-intro-bg, transparent);
+	background-color: var(--page-intro-bg, transparent);
 }
 
 .intro--single {
-    background-color: var(--single-intro-bg, transparent);
+	background-color: var(--single-intro-bg, transparent);
 }
 
 #intro::before {
@@ -919,20 +948,20 @@ body.home #intro p {
 }
 
 .breadcrumb--primary {
-    background-color: transparent;
+	background-color: transparent;
 }
 
-.breadcrumb-nav{
+.breadcrumb-nav {
 	background-color: rgba(255, 0, 0, 0);
 }
 
 .search-card {
-    background-color: var(--color-white);
+	background-color: var(--color-white);
 }
 
 .footer-logo {
-    max-height: 200px;
-    height: auto;
+	max-height: 200px;
+	height: auto;
 }
 
 /* Page Intro */
@@ -1303,11 +1332,11 @@ main ol li::marker {
 }
 
 .lead {
-    font-weight: 200;
-    color: var(--link-active);
-    font-size: 22px;
-    line-height: 1.2em;
-    margin-bottom: 30px;
+	font-weight: 200;
+	color: var(--link-active);
+	font-size: 22px;
+	line-height: 1.2em;
+	margin-bottom: 30px;
 }
 
 .text-emphasis {
@@ -1375,7 +1404,6 @@ section {
 }
 
 .bg-cta {
-	/* Ensure CTA background maintains adequate contrast */
 	background-color: var(--cta-bg);
 }
 
@@ -1396,31 +1424,42 @@ section {
 	background: var(--accent-secondary-dark);
 	border: none;
 }
+.bg-dark2 {
+	background: var(--accent-secondary);
+	border: none;
+}
 
 .bg-dark h2,
-.bg-dark h3 {
+.bg-dark h3,
+.bg-dark2 h2,
+.bg-dark2 h3 {
 	color: var(--accent-primary-light);
 }
 
 .bg-dark p,
-.bg-dark li {
+.bg-dark li,
+.bg-dark2 p,
+.bg-dark2 li {
 	color: var(--color-white);
 }
 
-.bg-dark a {
+.bg-dark a,
+.bg-dark2 a {
 	color: var(--link-active);
 }
 
 
 @media (min-width:768px) {
-	.bg-dark figure {
+	.bg-dark figure,
+	.bg-dark2 figure {
 		position: relative;
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
 	}
 
-	.bg-dark figure img {
+	.bg-dark figure img,
+	.bg-dark2 figure img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -2062,6 +2101,46 @@ footer h3 {
 	z-index: 1000;
 }
 
+/* ------------------------------------
+# Editor intro image panel
+--------------------------------------------- */
+.smile-v6-intro-image-panel__description {
+	margin-top: 0;
+}
+
+.smile-v6-intro-image-panel__select {
+	margin-top: 0.5rem;
+}
+
+.smile-v6-intro-image-panel__clear {
+	margin-top: 0.5rem;
+}
+
+.smile-v6-intro-image-panel__preview {
+	margin-top: 1rem;
+	padding: 0.75rem;
+	border: 1px dashed #dcdcde;
+	border-radius: 4px;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.smile-v6-intro-image-panel__figure {
+	margin: 0;
+}
+
+.smile-v6-intro-image-panel__figure img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.smile-v6-intro-image-panel__placeholder {
+	margin: 0;
+	color: #757575;
+}
+
 .skip-link {
 	background-color: var(--accent-secondary-dark);
 	border: 2px solid var(--color-white);
@@ -2085,7 +2164,7 @@ footer h3 {
 }
 
 .wp-block-columns {
-	margin: 80px 0;
+	margin: 60px 0;
 }
 
 .wp-block-latest-posts li {
