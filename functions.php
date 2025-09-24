@@ -76,6 +76,12 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Incluye los metaboxes personalizados para páginas.
+ * Contiene los campos que permiten personalizar textos de cabecera en las páginas.
+ */
+require get_template_directory() . '/inc/page-meta.php';
+
+/**
  * Incluye la compatibilidad con Jetpack.
  * Se carga únicamente si el plugin Jetpack está activo.
  */

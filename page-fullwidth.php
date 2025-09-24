@@ -10,9 +10,10 @@ get_header();
 <div id="intro" class="pt-5 bg-cta">
 	<div class="container py-5 text-center">
                 <h1 class="text-heading mt-2"><?php the_title(); ?></h1>
-		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
-			<?php esc_html_e( 'See main content', 'smile-web' ); ?>
-		</a>
+                <?php $smile_v6_skip_link_text = smile_v6_get_skip_link_text( get_the_ID() ); ?>
+                <a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php echo esc_attr( $smile_v6_skip_link_text ); ?>">
+                        <?php echo esc_html( $smile_v6_skip_link_text ); ?>
+                </a>
 	</div>
 </div>
 

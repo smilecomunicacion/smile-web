@@ -14,10 +14,11 @@ get_header();
 ?>
 <div id="intro" class="intro intro--page pt-5">
 	<div class="container py-5 text-center">
-		<h1 class="title mt-2"><?php the_title(); ?></h1>
-		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php esc_attr_e( 'Go to main content', 'smile-web' ); ?>">
-			<?php esc_html_e( 'See main content', 'smile-web' ); ?>
-		</a>
+                <h1 class="title mt-2"><?php the_title(); ?></h1>
+                <?php $smile_v6_skip_link_text = smile_v6_get_skip_link_text( get_the_ID() ); ?>
+                <a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php echo esc_attr( $smile_v6_skip_link_text ); ?>">
+                        <?php echo esc_html( $smile_v6_skip_link_text ); ?>
+                </a>
 	</div>
 	<?php
 	// If minimum width is 768px and the page has a featured image.
