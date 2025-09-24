@@ -59,6 +59,7 @@ function smile_v6_enqueue_intro_image_editor_assets() {
                         'wp-components',
                         'wp-element',
                         'wp-data',
+                        'wp-core-data',
                         'wp-i18n',
                         'wp-api-fetch',
                         'wp-block-editor',

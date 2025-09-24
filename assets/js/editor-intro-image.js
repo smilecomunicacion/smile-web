@@ -1,7 +1,7 @@
 (function (window, wp) {
         'use strict';
 
-        if (!wp || !wp.plugins || !wp.components || !wp.data || !wp.element || !wp.apiFetch || !wp.i18n || !wp.editor) {
+        if (!wp || !wp.plugins || !wp.components || !wp.data || !wp.element || !wp.apiFetch || !wp.i18n || !wp.editor || !wp.coreData) {
                 return;
         }
 
@@ -13,16 +13,16 @@
         var Button = wp.components.Button;
         var Spinner = wp.components.Spinner;
         var useSelect = wp.data.useSelect;
-        var useDispatch = wp.data.useDispatch;
         var createElement = wp.element.createElement;
         var useState = wp.element.useState;
         var useEffect = wp.element.useEffect;
         var MediaUpload = (wp.blockEditor && wp.blockEditor.MediaUpload) || wp.editor.MediaUpload;
         var MediaUploadCheck = (wp.blockEditor && wp.blockEditor.MediaUploadCheck) || wp.editor.MediaUploadCheck;
         var PluginDocumentSettingPanel = wp.editor.PluginDocumentSettingPanel;
+        var useEntityProp = wp.coreData.useEntityProp;
         var __ = wp.i18n.__;
 
-        if (!registerPlugin || !MediaUpload || !MediaUploadCheck || !PluginDocumentSettingPanel) {
+        if (!registerPlugin || !MediaUpload || !MediaUploadCheck || !PluginDocumentSettingPanel || !useEntityProp) {
                 return;
         }
 
@@ -49,19 +49,44 @@
                         return select('core/editor').getCurrentPostType();
                 }, []);
 
-                var introImageId = useSelect(function (select) {
-                        var meta = select('core/editor').getEditedPostAttribute('meta') || {};
-                        var value = meta[metaKey];
+                var metaState = useEntityProp('postType', postType || 'post', 'meta');
+                var metaValues = metaState[0] || {};
+                var setMetaValues = metaState[1];
 
-                        return value ? parseInt(value, 10) : 0;
-                }, []);
+                var introImageId = 0;
+                var rawIntroImageValue = metaValues[metaKey];
 
-                var editPost = useDispatch('core/editor').editPost;
+                if (rawIntroImageValue) {
+                        introImageId = parseInt(rawIntroImageValue, 10);
+
+                        if (isNaN(introImageId) || introImageId < 0) {
+                                introImageId = 0;
+                        }
+                }
 
                 var setMeta = function (value) {
-                        var newValue = {};
-                        newValue[metaKey] = value;
-                        editPost({ meta: newValue });
+                        var sanitizedValue = 0;
+
+                        if (value) {
+                                var parsedValue = parseInt(value, 10);
+
+                                if (!isNaN(parsedValue) && parsedValue > 0) {
+                                        sanitizedValue = parsedValue;
+                                }
+                        }
+
+                        if (typeof setMetaValues !== 'function') {
+                                return;
+                        }
+
+                        if (introImageId === sanitizedValue) {
+                                return;
+                        }
+
+                        var nextMeta = Object.assign({}, metaValues);
+                        nextMeta[metaKey] = sanitizedValue;
+
+                        setMetaValues(nextMeta);
                 };
 
                 var mediaState = useState(null);
@@ -151,7 +176,7 @@
                                 createElement(MediaUpload, {
                                         onSelect: function (media) {
                                                 if (media && media.id) {
-                                                        setMeta(parseInt(media.id, 10));
+                                                        setMeta(media.id);
                                                 }
                                         },
                                         value: introImageId,
