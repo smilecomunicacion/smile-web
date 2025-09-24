@@ -23,6 +23,7 @@ function smile_v6_register_intro_image_meta() {
                 'auth_callback'     => function() {
                         return current_user_can( 'edit_posts' );
                 },
+                'revisions_enabled' => true,
         );
 
 	foreach ( array( 'post', 'page' ) as $post_type ) {
