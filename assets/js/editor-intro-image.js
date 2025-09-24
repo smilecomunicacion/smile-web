@@ -26,6 +26,7 @@
   var createElement = wp.element.createElement;
   var useState = wp.element.useState;
   var useEffect = wp.element.useEffect;
+  var useCallback = wp.element.useCallback;
   var MediaUpload =
     (wp.blockEditor && wp.blockEditor.MediaUpload) || wp.editor.MediaUpload;
   var MediaUploadCheck =
@@ -56,6 +57,16 @@
     previewLabel: __("Intro image preview", "smile-web"),
   };
 
+  function smileV6NormalizeMetaValue(value) {
+    var parsedValue = parseInt(value, 10);
+
+    if (isNaN(parsedValue) || parsedValue < 0) {
+      return 0;
+    }
+
+    return parsedValue;
+  }
+
   function getString(key) {
     if (strings && strings[key]) {
       return strings[key];
@@ -80,20 +91,53 @@
         return select("core/editor").getCurrentPostType();
       }, []);
 
-      var introImageId = useSelect(function (select) {
-        var meta = select("core/editor").getEditedPostAttribute("meta") || {};
-        var value = meta[metaKey];
+      var postMeta = useSelect(function (select) {
+        var editorStore = select("core/editor");
+        var meta = editorStore.getEditedPostAttribute("meta");
 
-        return value ? parseInt(value, 10) : 0;
+        if (typeof meta === "undefined") {
+          meta = editorStore.getCurrentPostAttribute("meta");
+        }
+
+        if (!meta || typeof meta !== "object") {
+          return {};
+        }
+
+        return meta;
       }, []);
+
+      var introImageId = 0;
+
+      if (Object.prototype.hasOwnProperty.call(postMeta, metaKey)) {
+        var parsedMetaValue = smileV6NormalizeMetaValue(postMeta[metaKey]);
+
+        if (parsedMetaValue > 0) {
+          introImageId = parsedMetaValue;
+        }
+      }
 
       var editPost = useDispatch("core/editor").editPost;
 
-      var setMeta = function (value) {
-        var newValue = {};
-        newValue[metaKey] = value;
-        editPost({ meta: newValue });
-      };
+      var setMeta = useCallback(
+        function (value) {
+          var normalizedValue = smileV6NormalizeMetaValue(value);
+          var existingValue = 0;
+
+          if (Object.prototype.hasOwnProperty.call(postMeta, metaKey)) {
+            existingValue = smileV6NormalizeMetaValue(postMeta[metaKey]);
+          }
+
+          if (existingValue === normalizedValue) {
+            return;
+          }
+
+          var updatedMeta = Object.assign({}, postMeta);
+          updatedMeta[metaKey] = normalizedValue;
+
+          editPost({ meta: updatedMeta });
+        },
+        [editPost, metaKey, postMeta]
+      );
 
       var mediaState = useState(null);
       var mediaDetails = mediaState[0];
@@ -199,7 +243,9 @@
           createElement(MediaUpload, {
             onSelect: function (media) {
               if (media && media.id) {
-                setMeta(parseInt(media.id, 10));
+                setMeta(media.id);
+              } else {
+                setMeta(0);
               }
             },
             value: introImageId,

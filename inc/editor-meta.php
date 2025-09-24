@@ -14,17 +14,23 @@
  * @package smile-web
  */
 function smile_v6_register_intro_image_meta() {
-        $args = array(
-                'type'              => 'integer',
-                'single'            => true,
-                'show_in_rest'      => true,
-                'sanitize_callback' => 'absint',
-                'default'           => 0,
-                'auth_callback'     => function() {
-                        return current_user_can( 'edit_posts' );
-                },
-                'revisions_enabled' => true,
-        );
+	$args = array(
+		'type'              => 'integer',
+		'single'            => true,
+		'show_in_rest'      => array(
+			'schema' => array(
+				'type'    => 'integer',
+				'default' => 0,
+			),
+		),
+		'sanitize_callback' => 'absint',
+		'default'           => 0,
+		'auth_callback'     => static function( $allowed, $meta_key, $post_id ) {
+			unset( $allowed, $meta_key );
+			return current_user_can( 'edit_post', $post_id );
+		},
+		'revisions_enabled' => true,
+	);
 
 	foreach ( array( 'post', 'page' ) as $post_type ) {
 		register_post_meta( $post_type, 'smile_v6_intro_image_id', $args );
