@@ -54,6 +54,7 @@ function smile_v6_enqueue_intro_image_editor_assets() {
                 get_template_directory_uri() . $script_path,
                 array(
                         'wp-plugins',
+                        'wp-editor',
                         'wp-edit-post',
                         'wp-components',
                         'wp-element',

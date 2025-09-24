@@ -1,7 +1,7 @@
 (function (window, wp) {
         'use strict';
 
-        if (!wp || !wp.plugins || !wp.editPost || !wp.components || !wp.data || !wp.element || !wp.apiFetch) {
+        if (!wp || !wp.plugins || (!wp.editor && !wp.editPost) || !wp.components || !wp.data || !wp.element || !wp.apiFetch) {
                 return;
         }
 
@@ -10,7 +10,12 @@
         var strings = panelData.strings || {};
 
         var registerPlugin = wp.plugins.registerPlugin;
-        var PluginDocumentSettingPanel = wp.editPost.PluginDocumentSettingPanel;
+        var PluginDocumentSettingPanel = (wp.editor && wp.editor.PluginDocumentSettingPanel) ||
+                (wp.editPost && wp.editPost.PluginDocumentSettingPanel);
+
+        if (!PluginDocumentSettingPanel) {
+                return;
+        }
         var Button = wp.components.Button;
         var Spinner = wp.components.Spinner;
         var useSelect = wp.data.useSelect;
