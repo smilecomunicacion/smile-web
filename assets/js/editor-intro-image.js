@@ -1,7 +1,7 @@
 (function (window, wp) {
         'use strict';
 
-        if (!wp || !wp.plugins || (!wp.editor && !wp.editPost) || !wp.components || !wp.data || !wp.element || !wp.apiFetch) {
+        if (!wp || !wp.plugins || !wp.components || !wp.data || !wp.element || !wp.apiFetch || !wp.i18n || !wp.editor) {
                 return;
         }
 
@@ -10,12 +10,6 @@
         var strings = panelData.strings || {};
 
         var registerPlugin = wp.plugins.registerPlugin;
-        var PluginDocumentSettingPanel = (wp.editor && wp.editor.PluginDocumentSettingPanel) ||
-                (wp.editPost && wp.editPost.PluginDocumentSettingPanel);
-
-        if (!PluginDocumentSettingPanel) {
-                return;
-        }
         var Button = wp.components.Button;
         var Spinner = wp.components.Spinner;
         var useSelect = wp.data.useSelect;
@@ -23,11 +17,12 @@
         var createElement = wp.element.createElement;
         var useState = wp.element.useState;
         var useEffect = wp.element.useEffect;
-        var MediaUpload = (wp.blockEditor && wp.blockEditor.MediaUpload) || (wp.editor && wp.editor.MediaUpload);
-        var MediaUploadCheck = (wp.blockEditor && wp.blockEditor.MediaUploadCheck) || (wp.editor && wp.editor.MediaUploadCheck);
+        var MediaUpload = (wp.blockEditor && wp.blockEditor.MediaUpload) || wp.editor.MediaUpload;
+        var MediaUploadCheck = (wp.blockEditor && wp.blockEditor.MediaUploadCheck) || wp.editor.MediaUploadCheck;
+        var PluginDocumentSettingPanel = wp.editor.PluginDocumentSettingPanel;
         var __ = wp.i18n.__;
 
-        if (!MediaUpload || !MediaUploadCheck) {
+        if (!registerPlugin || !MediaUpload || !MediaUploadCheck || !PluginDocumentSettingPanel) {
                 return;
         }
 
