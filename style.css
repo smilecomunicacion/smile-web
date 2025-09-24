@@ -2046,60 +2046,20 @@ footer h3 {
 
 .screen-reader-text:focus,
 .screen-reader-text:active {
-        clip: auto;
-        clip-path: none;
-        display: inline-block;
-        height: auto;
-        left: 1rem;
-        margin: 0;
-        overflow: visible;
-        padding: 0.75rem 1.5rem;
-        position: fixed;
-        text-decoration: none;
-        top: 1rem;
-        width: auto;
-        white-space: normal;
-        z-index: 1000;
-}
-
-/* ------------------------------------
-# Editor intro image panel
---------------------------------------------- */
-.smile-v6-intro-image-panel__description {
-        margin-top: 0;
-}
-
-.smile-v6-intro-image-panel__select {
-        margin-top: 0.5rem;
-}
-
-.smile-v6-intro-image-panel__clear {
-        margin-top: 0.5rem;
-}
-
-.smile-v6-intro-image-panel__preview {
-        margin-top: 1rem;
-        padding: 0.75rem;
-        border: 1px dashed #dcdcde;
-        border-radius: 4px;
-        background-color: #ffffff;
-        text-align: center;
-}
-
-.smile-v6-intro-image-panel__figure {
-        margin: 0;
-}
-
-.smile-v6-intro-image-panel__figure img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
-}
-
-.smile-v6-intro-image-panel__placeholder {
-        margin: 0;
-        color: #757575;
+	clip: auto;
+	clip-path: none;
+	display: inline-block;
+	height: auto;
+	left: 1rem;
+	margin: 0;
+	overflow: visible;
+	padding: 0.75rem 1.5rem;
+	position: fixed;
+	text-decoration: none;
+	top: 1rem;
+	width: auto;
+	white-space: normal;
+	z-index: 1000;
 }
 
 .skip-link {

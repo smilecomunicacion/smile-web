@@ -34,12 +34,6 @@ require get_template_directory() . '/inc/color-management.php';
 require get_template_directory() . '/inc/enqueues.php';
 
 /**
- * Incluye los metadatos y assets del editor.
- * Registra la configuración personalizada para el editor de bloques.
- */
-require get_template_directory() . '/inc/editor-meta.php';
-
-/**
  * Incluye los estilos dinámicos del Customizer.
  * Genera reglas CSS dinámicas basadas en las opciones del tema definidas en el Customizer.
  */
