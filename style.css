@@ -185,9 +185,9 @@ blockquote,
 	color: var(--text-list);
 }
 
-:is(p, li, h1, h2, h3, h4, h5, h6):not([class*="has-"]) :is(em, strong, b) {
+/* :is(p, li, h1, h2, h3, h4, h5, h6):not([class*="has-"]) :is(em, strong, b) {
 	color: var(--text-emphasis);
-}
+} */
 
 li:not([class*="has-"]):has(strong)::marker,
 li:not([class*="has-"]):has(em)::marker,
@@ -1443,6 +1443,12 @@ section {
 .bg-dark2 li {
 	color: var(--color-white);
 }
+
+.bg-dark li::marker,
+.bg-dark2 li::marker {
+	color: var(--color-white);
+}
+
 
 .bg-dark a,
 .bg-dark2 a {
