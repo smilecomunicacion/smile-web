@@ -57,12 +57,16 @@ if ( ! function_exists( 'smile_v6_entry_footer' ) ) :
 	function smile_v6_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'smile-web' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'smile-web' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+                        $display_category = smile_v6_get_display_category();
+                        if ( $display_category ) {
+                                $category_output = sprintf(
+                                        '<a href="%1$s">%2$s</a>',
+                                        esc_url( get_category_link( $display_category->term_id ) ),
+                                        esc_html( $display_category->name )
+                                );
+                                /* translators: 1: category name. */
+                                printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'smile-web' ) . '</span>', $category_output ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        }
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'smile-web' ) );
@@ -152,14 +156,54 @@ if ( ! function_exists( 'smile_v6_post_thumbnail' ) ) :
 endif;
 
 if ( ! function_exists( 'wp_body_open' ) ) :
-	/**
-	 * Shim for sites older than 5.2.
-	 *
-	 * @link https://core.trac.wordpress.org/ticket/12563
-	 */
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
+        /**
+         * Shim for sites older than 5.2.
+         *
+         * @link https://core.trac.wordpress.org/ticket/12563
+         */
+        function wp_body_open() {
+                do_action( 'wp_body_open' );
+        }
+endif;
+
+
+if ( ! function_exists( 'smile_v6_get_display_category' ) ) :
+        /**
+         * Retrieves the category that should be displayed for a post.
+         *
+         * Prefers a category different from "Uncategorized" when available.
+         *
+         * @since 6.0.8
+         * @package smile-web
+         *
+         * @param int $post_id Optional. Post ID. Defaults to the current post.
+         * @return WP_Term|null Category term object or null when not available.
+         */
+        function smile_v6_get_display_category( $post_id = 0 ) {
+                $post_id = (int) $post_id;
+
+                if ( 0 === $post_id ) {
+                        $post_id = get_the_ID();
+                }
+
+                if ( empty( $post_id ) ) {
+                        return null;
+                }
+
+                $categories = get_the_category( $post_id );
+
+                if ( empty( $categories ) || is_wp_error( $categories ) ) {
+                        return null;
+                }
+
+                foreach ( $categories as $category ) {
+                        if ( 'uncategorized' !== $category->slug ) {
+                                return $category;
+                        }
+                }
+
+                return $categories[0];
+        }
 endif;
 
 

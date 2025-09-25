@@ -27,32 +27,23 @@ get_header();
 				</span>
 
 					<?php
-					// Get the post categories.
-					$categories = get_the_category();
+                                        $display_category = smile_v6_get_display_category();
 
-					if ( ! empty( $categories ) ) {
-						// Filter the categories to exclude the "Uncategorized" category.
-						$filtered_categories = array_filter(
-							$categories,
-							function ( $category ) {
-								return 'uncategorized' !== $category->slug;
-							}
-						);
-
-						if ( ! empty( $filtered_categories ) ) {
-							echo '<ul class="post-categories">';
-							foreach ( $filtered_categories as $category ) {
-								echo '<li>' . esc_html( $category->name ) . '</li>';
-							}
-							echo '</ul>';
-						} else {
-							// Show "Uncategorized" if there are no categories.
-							echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-						}
-					} else {
-						// Show "Uncategorized" if there are no categories.
-						echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-					}
+                                        if ( $display_category ) {
+                                                if ( 'uncategorized' === $display_category->slug ) {
+                                                        echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+                                                } else {
+                                                        echo '<ul class="post-categories">';
+                                                        printf(
+                                                                '<li><a href="%1$s">%2$s</a></li>',
+                                                                esc_url( get_category_link( $display_category->term_id ) ),
+                                                                esc_html( $display_category->name )
+                                                        );
+                                                        echo '</ul>';
+                                                }
+                                        } else {
+                                                echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+                                        }
 					?>
 
 					<?php if ( get_comments_number() > 0 ) : ?>
@@ -103,10 +94,16 @@ get_header();
 					</li>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<?php
-						$categories = get_the_category();
-						foreach ( $categories as $category ) {
-								echo '<a itemid="' . esc_attr( $category->cat_name ) . '" href="' . esc_url( get_category_link( $category->term_id ) ) . '"><span>' . esc_html( $category->cat_name ) . '</span></a>';
-						}
+                                                $display_category = smile_v6_get_display_category();
+                                                if ( $display_category ) {
+                                                        if ( 'uncategorized' === $display_category->slug ) {
+                                                                echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+                                                        } else {
+                                                                echo '<a itemid="' . esc_attr( $display_category->cat_name ) . '" href="' . esc_url( get_category_link( $display_category->term_id ) ) . '"><span>' . esc_html( $display_category->cat_name ) . '</span></a>';
+                                                        }
+                                                } else {
+                                                        echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+                                                }
 						?>
 						<meta itemprop="position" content="2" />
 					</li>
@@ -166,13 +163,9 @@ get_header();
 	<?php
 		/* if is sinlge && are posts */
 
-	if ( is_single() ) {
-		$categories = get_the_category();
-		if ( ! empty( $categories ) ) {
-			$category_id = $categories[0]->term_id; // ID first category.
-		} else {
-			$category_id = 0; // If there are no categories, then the ID is 0.
-		}
+        if ( is_single() ) {
+                $display_category = smile_v6_get_display_category();
+                $category_id      = $display_category ? $display_category->term_id : 0;
 
 			$current_post_id = get_the_ID();
 			$args            = array(
@@ -185,9 +178,14 @@ get_header();
 		<div class="container py-5">
 			<p class="text-emphasis col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
 				<?php
-				$categories = get_the_category();
-				foreach ( $categories as $category ) {
-					echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>';}
+                                $display_category = smile_v6_get_display_category();
+                                if ( $display_category ) {
+                                        if ( 'uncategorized' === $display_category->slug ) {
+                                                echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+                                        } else {
+                                                echo '<a href="' . esc_url( get_category_link( $display_category->term_id ) ) . '">' . esc_html( $display_category->cat_name ) . '</a>';
+                                        }
+                                }
 				?>
 			</p>
 			<br>

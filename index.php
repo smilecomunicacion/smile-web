@@ -111,15 +111,13 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
                                                                         <article class="blog-col col-md-6 mb-4 mx-0">
                                                                                 <div class="category">
                                                                                         <?php
-                                                                                        $categories = get_the_category();
-                                                                                        if ( $categories ) {
-                                                                                                foreach ( $categories as $category ) {
-                                                                                                        printf(
-                                                                                                                '<a href="%1$s">%2$s</a>',
-                                                                                                                esc_url( get_category_link( $category->term_id ) ),
-                                                                                                                esc_html( $category->name )
-                                                                                                        );
-                                                                                                }
+                                                                                        $display_category = smile_v6_get_display_category();
+                                                                                        if ( $display_category ) {
+                                                                                                printf(
+                                                                                                        '<a href="%1$s">%2$s</a>',
+                                                                                                        esc_url( get_category_link( $display_category->term_id ) ),
+                                                                                                        esc_html( $display_category->name )
+                                                                                                );
                                                                                         }
                                                                                         ?>
                                                                                 </div>
