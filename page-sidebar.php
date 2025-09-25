@@ -100,13 +100,13 @@ get_header();
 		$title_cat_id = get_cat_ID( get_the_title() );
 				// translators: %s: Title of the current post.
 				$text_related = sprintf( esc_html__( 'Articles related with title: %s', 'smile-web' ), get_the_title() );
-	} else {
-		$categories = get_the_category();
-		if ( ! empty( $categories ) ) {
-			$first_cat_id = $categories[0]->term_id;
-		} else {
-			$default_cat = 0;
-		}
+        } else {
+                $display_category = smile_v6_get_display_category();
+                if ( $display_category ) {
+                        $first_cat_id = $display_category->term_id;
+                } else {
+                        $default_cat = 0;
+                }
 		$blog_name    = get_bloginfo( 'description' );
 		$text_related = sprintf(
 			// translators: %s: Last articles.

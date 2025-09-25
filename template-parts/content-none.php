@@ -36,12 +36,8 @@
 
 		<!-- Related articles -->
 			<?php
-			$categories = get_the_category(); // Obtains the categories of the current post.
-			if ( ! empty( $categories ) ) {
-				$category_id = $categories[0]->term_id; // ID of the first category.
-			} else {
-				$category_id = 0; // If there are no categories, the ID is 0.
-			}
+                        $display_category = smile_v6_get_display_category();
+                        $category_id      = $display_category ? $display_category->term_id : 0;
 
 			$current_post_id = get_the_ID(); // ID of the current post.
 			$args            = array(
@@ -66,15 +62,13 @@
                                 <article class="blog-col col-md-6 mb-4 mx-0">
                                         <div class="category shadow rounded">
                                                 <?php
-                                                $categories = get_the_category();
-                                                if ( $categories ) {
-                                                        foreach ( $categories as $category ) {
-                                                                printf(
-                                                                        '<a href="%1$s">%2$s</a>',
-                                                                        esc_url( get_category_link( $category->term_id ) ),
-                                                                        esc_html( $category->name )
-                                                                );
-                                                        }
+                                                $display_category = smile_v6_get_display_category();
+                                                if ( $display_category ) {
+                                                        printf(
+                                                                '<a href="%1$s">%2$s</a>',
+                                                                esc_url( get_category_link( $display_category->term_id ) ),
+                                                                esc_html( $display_category->name )
+                                                        );
                                                 }
                                                 ?>
                                         </div>
