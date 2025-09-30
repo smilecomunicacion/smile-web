@@ -289,9 +289,38 @@ function smile_v6_ajax_import_colors() {
 		wp_die();
 	}
 
-	// Read and validate JSON file.
-	$file_content = file_get_contents( $_FILES['colors_file']['tmp_name'] );
-	$import_data  = json_decode( $file_content, true );
+        if ( ! isset( $_FILES['colors_file']['tmp_name'] ) ) {
+                wp_send_json_error( array( 'message' => esc_html__( 'File upload failed.', 'smile-web' ) ) );
+                wp_die();
+        }
+
+        $tmp_name = sanitize_text_field( wp_unslash( $_FILES['colors_file']['tmp_name'] ) );
+
+        if ( '' === $tmp_name ) {
+                wp_send_json_error( array( 'message' => esc_html__( 'File upload failed.', 'smile-web' ) ) );
+                wp_die();
+        }
+
+        global $wp_filesystem;
+
+        if ( ! $wp_filesystem ) {
+                require_once ABSPATH . 'wp-admin/includes/file.php';
+                WP_Filesystem();
+        }
+
+        if ( ! $wp_filesystem ) {
+                wp_send_json_error( array( 'message' => esc_html__( 'Unable to access the filesystem.', 'smile-web' ) ) );
+                wp_die();
+        }
+
+        $file_content = $wp_filesystem->get_contents( $tmp_name );
+
+        if ( false === $file_content ) {
+                wp_send_json_error( array( 'message' => esc_html__( 'Unable to read the uploaded file.', 'smile-web' ) ) );
+                wp_die();
+        }
+
+        $import_data = json_decode( $file_content, true );
 
 	if ( json_last_error() !== JSON_ERROR_NONE ) {
 		wp_send_json_error( array( 'message' => esc_html__( 'Invalid JSON file.', 'smile-web' ) ) );
