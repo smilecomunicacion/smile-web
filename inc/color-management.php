@@ -284,7 +284,7 @@ function smile_v6_ajax_import_colors() {
 	}
 
 	// Validate file upload.
-	if ( ! isset( $_FILES['colors_file'] ) || $_FILES['colors_file']['error'] !== UPLOAD_ERR_OK ) {
+	if ( ! isset( $_FILES['colors_file'], $_FILES['colors_file']['error'] ) || UPLOAD_ERR_OK !== (int) $_FILES['colors_file']['error'] ) {
 		wp_send_json_error( array( 'message' => esc_html__( 'File upload failed.', 'smile-web' ) ) );
 		wp_die();
 	}
