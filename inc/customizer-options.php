@@ -1416,112 +1416,21 @@ add_action( 'customize_register', 'smile_v6_customize_front_page_intro_section' 
 /**
  * Registers custom control classes for the color management system.
  *
- * This function defines the custom control classes only when the customizer is active.
+ * Loads the control class definitions and registers them with the customizer.
  *
  * @since 6.0.7
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
+ * @return void
  */
-function smile_v6_register_custom_controls() {
-	/**
-	 * Custom Export Control Class for Color Management.
-	 *
-	 * @since 6.0.7
-	 */
-	class Smile_Web_Export_Control extends WP_Customize_Control {
-		/**
-		 * Control type.
-		 *
-		 * @var string
-		 */
-		public $type = 'export';
+function smile_v6_register_custom_controls( $wp_customize ) {
+	require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
+	require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
+	require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
 
-		/**
-		 * Renders the control wrapper and calls $this->render_content() for the internals.
-		 *
-		 * @since 6.0.7
-		 */
-		protected function render_content() {
-			?>
-<label>
-	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<?php if ( ! empty( $this->description ) ) : ?>
-	<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-	<?php endif; ?>
-</label>
-<button type="button" class="button smile-v6-export-colors">
-			<?php esc_html_e( 'Download Colors JSON', 'smile-web' ); ?>
-</button>
-			<?php
-		}
-	}
-
-	/**
-	 * Custom Import Control Class for Color Management.
-	 *
-	 * @since 6.0.7
-	 */
-	class Smile_Web_Import_Control extends WP_Customize_Control {
-		/**
-		 * Control type.
-		 *
-		 * @var string
-		 */
-		public $type = 'import';
-
-		/**
-		 * Renders the control wrapper and calls $this->render_content() for the internals.
-		 *
-		 * @since 6.0.7
-		 */
-		protected function render_content() {
-			?>
-<label>
-	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<?php if ( ! empty( $this->description ) ) : ?>
-	<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-	<?php endif; ?>
-</label>
-<input type="file" class="smile-v6-import-file" accept=".json" />
-<button type="button" class="button smile-v6-import-colors" disabled>
-			<?php esc_html_e( 'Import Colors', 'smile-web' ); ?>
-</button>
-<div class="smile-v6-import-status smile-v6-status"></div>
-			<?php
-		}
-	}
-
-	/**
-	 * Custom Reset Control Class for Color Management.
-	 *
-	 * @since 6.0.7
-	 */
-	class Smile_Web_Reset_Control extends WP_Customize_Control {
-		/**
-		 * Control type.
-		 *
-		 * @var string
-		 */
-		public $type = 'reset';
-
-		/**
-		 * Renders the control wrapper and calls $this->render_content() for the internals.
-		 *
-		 * @since 6.0.7
-		 */
-		protected function render_content() {
-			?>
-<label>
-	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<?php if ( ! empty( $this->description ) ) : ?>
-	<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-	<?php endif; ?>
-</label>
-<button type="button" class="button smile-v6-reset-colors">
-			<?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
-</button>
-<div class="smile-v6-reset-status smile-v6-status"></div>
-			<?php
-		}
-	}
+	$wp_customize->register_control_type( 'Smile_Web_Export_Control' );
+	$wp_customize->register_control_type( 'Smile_Web_Import_Control' );
+	$wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
 }
 add_action( 'customize_register', 'smile_v6_register_custom_controls', 1 );
 
