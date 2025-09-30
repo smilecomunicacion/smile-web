@@ -248,7 +248,7 @@ function smile_v6_ajax_export_colors() {
 
 	// Set headers for file download.
 	header( 'Content-Type: application/json' );
-	header( 'Content-Disposition: attachment; filename="smile-web-colors-' . date( 'Y-m-d-H-i-s' ) . '.json"' );
+        header( 'Content-Disposition: attachment; filename="smile-web-colors-' . gmdate( 'Y-m-d-H-i-s' ) . '.json"' );
 	header( 'Cache-Control: no-cache, must-revalidate' );
 	header( 'Expires: Sat, 26 Jul 1997 05:00:00 GMT' );
 
