@@ -5,6 +5,10 @@
  * @package smile-web
  */
 
+require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
+require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
+require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
+
 /**
  * Sanitize opacity values for rgba colors.
  *
@@ -1424,13 +1428,9 @@ add_action( 'customize_register', 'smile_v6_customize_front_page_intro_section' 
  * @return void
  */
 function smile_v6_register_custom_controls( $wp_customize ) {
-	require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
-	require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
-	require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
-
-	$wp_customize->register_control_type( 'Smile_Web_Export_Control' );
-	$wp_customize->register_control_type( 'Smile_Web_Import_Control' );
-	$wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
+       $wp_customize->register_control_type( 'Smile_Web_Export_Control' );
+       $wp_customize->register_control_type( 'Smile_Web_Import_Control' );
+       $wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
 }
 add_action( 'customize_register', 'smile_v6_register_custom_controls', 1 );
 
