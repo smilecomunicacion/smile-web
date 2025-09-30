@@ -16,11 +16,11 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<!-- Breadcrumbs -->
-                        <div id="breadcrumbs" class="col-12">
-                                <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                                                                               <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
+			<div id="breadcrumbs" class="col-12">
+				<nav aria-label="breadcrumb" class="breadcrumb-nav">
+					<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-														<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
 								<span itemprop="name"><?php esc_html_e( 'Home', 'smile-web' ); ?></span>
 							</a>
 							<meta itemprop="position" content="1" />
@@ -38,15 +38,15 @@ get_header();
 			<!-- Main Content -->
 			<div class="col-md-8">
 				<?php if ( have_posts() ) : ?>
-                                        <header class="archive-header mb-4">
-                                                <h1 class="archive-title text-heading"><?php the_archive_title(); ?></h1>
-                                                <p class="archive-description text-subheading"><?php the_archive_description(); ?></p>
-                                        </header>
-					<div class="archive-posts">
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							get_template_part( 'template-parts/content', get_post_format() );
+				<header class="archive-header mb-4">
+					<h1 class="archive-title text-heading"><?php the_archive_title(); ?></h1>
+					<p class="archive-description text-subheading"><?php the_archive_description(); ?></p>
+				</header>
+				<div class="archive-posts">
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/content', get_post_format() );
 						endwhile;
 
 						// Pagination.
@@ -56,10 +56,10 @@ get_header();
 								'next_text' => __( 'Next &rarr;', 'smile-web' ),
 							)
 						);
-						?>
-					</div>
+					?>
+				</div>
 				<?php else : ?>
-                                        <h2 class="no-posts text-heading"><?php esc_html_e( 'No posts found.', 'smile-web' ); ?></h2>
+				<h2 class="no-posts text-heading"><?php esc_html_e( 'No posts found.', 'smile-web' ); ?></h2>
 				<?php endif; ?>
 			</div>
 

@@ -61,7 +61,7 @@
 						<?php endif; ?>
 						<p class="iterator_Footer-Direccion">
 							<a class="btn-cta" title="<?php esc_attr_e( 'Open in map', 'smile-web' ); ?>" href="<?php echo esc_url( $map_link ); ?>" target="_blank" rel="noreferrer noopener noreferrer">
-							<?php esc_html_e( 'Open in map', 'smile-web' ); ?>
+								<?php esc_html_e( 'Open in map', 'smile-web' ); ?>
 							</a>
 						</p>
 					</address>

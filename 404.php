@@ -34,39 +34,39 @@ get_header();
 
 				if ( $recent_posts->have_posts() ) :
 					?>
-					<section id="recent-posts" class="mt-5">
-						<h3><?php esc_html_e( 'Latest Articles', 'smile-web' ); ?></h3>
-						<div class="row">
-							<?php
-							while ( $recent_posts->have_posts() ) :
-								$recent_posts->the_post();
-								?>
-                                                                <article class="col-md-6 mb-4">
-                                                                        <figure class="shadow">
-                                                                                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
-                                                                                        <?php
-                                                                                        $thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
-                                                                                        $thumb_id  = get_post_thumbnail_id();
-                                                                                        $thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
-                                                                                        if ( empty( $thumb_alt ) ) {
-                                                                                                $thumb_alt = get_the_title();
-                                                                                        }
-                                                                                        ?>
-                                                                                        <img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" width="600" height="400">
-                                                                                </a>
-                                                                                <figcaption class="bg-white px-4">
-                                                                                        <p class="lead">
-                                                                                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
-                                                                                        </p>
-                                                                                        <p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20, '...' ) ); ?></p>
-                                                                                </figcaption>
-                                                                        </figure>
-                                                                </article>
-								<?php
-							endwhile;
+				<section id="recent-posts" class="mt-5">
+					<h3><?php esc_html_e( 'Latest Articles', 'smile-web' ); ?></h3>
+					<div class="row">
+						<?php
+						while ( $recent_posts->have_posts() ) :
+							$recent_posts->the_post();
 							?>
-						</div>
-					</section>
+						<article class="col-md-6 mb-4">
+							<figure class="shadow">
+								<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
+								<?php
+								$thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
+								$thumb_id  = get_post_thumbnail_id();
+								$thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
+								if ( empty( $thumb_alt ) ) {
+										$thumb_alt = get_the_title();
+								}
+								?>
+									<img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" width="600" height="400">
+								</a>
+								<figcaption class="bg-white px-4">
+									<p class="lead">
+										<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a>
+									</p>
+									<p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20, '...' ) ); ?></p>
+								</figcaption>
+							</figure>
+						</article>
+							<?php
+							endwhile;
+						?>
+					</div>
+				</section>
 					<?php
 				endif;
 

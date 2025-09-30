@@ -7,19 +7,21 @@
  * @package smile-web
  */
 
-?><!doctype html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-        <link rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="https://smilecomunicacion.com | Comunicación y Programación">
-        <meta itemprop="cssSelector" content=".title" />
-        <?php wp_head(); ?>
+	<link rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="https://smilecomunicacion.com | Comunicación y Programación">
+	<meta itemprop="cssSelector" content=".title" />
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-        <?php wp_body_open(); ?>
+	<?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#page" aria-label="<?php esc_attr_e( 'Skip to main content', 'smile-web' ); ?>">
 		<?php esc_html_e( 'Skip to content', 'smile-web' ); ?>
 	</a>
@@ -32,9 +34,9 @@
 				echo '<div class="me-3">';
 				if ( function_exists( 'smile_v6_mostrar_correo_ofuscado' ) ) {
 					smile_v6_mostrar_correo_ofuscado( $topbar_email );
-                               } else {
-                                       printf( '<a href="%s">%s</a>', esc_url( sprintf( 'mailto:%s', $topbar_email ) ), esc_html( $topbar_email ) );
-                               }
+				} else {
+						printf( '<a href="%s">%s</a>', esc_url( sprintf( 'mailto:%s', $topbar_email ) ), esc_html( $topbar_email ) );
+				}
 				echo '</div>';
 			}
 
@@ -42,9 +44,9 @@
 			$topbar_phone  = get_theme_mod( 'top_bar_telephone', '' );
 			$topbar_phone2 = preg_replace( '/\s+/', '', $topbar_phone );
 			if ( ! empty( $topbar_phone ) ) {
-                               echo '<div>';
-                               printf( '<i class="fa fa-phone"></i> <a href="%s" class="iterator_TopHeader-Telefono" rel="nofollow noopener noreferrer">%s</a>', esc_url( sprintf( 'tel:%s', $topbar_phone2 ) ), esc_html( $topbar_phone ) );
-                               echo '</div>';
+								echo '<div>';
+								printf( '<i class="fa fa-phone"></i> <a href="%s" class="iterator_TopHeader-Telefono" rel="nofollow noopener noreferrer">%s</a>', esc_url( sprintf( 'tel:%s', $topbar_phone2 ) ), esc_html( $topbar_phone ) );
+								echo '</div>';
 			}
 			?>
 			<div class="social-links" aria-label="<?php esc_attr_e( 'Social media navigation', 'smile-web' ); ?>">
@@ -62,7 +64,7 @@
 			</div>
 			<div>
 				<a id="myBtn" href="#" class="p-2 buscar" aria-label="<?php esc_attr_e( 'Open search box', 'smile-web' ); ?>" itemprop="url" data-bs-toggle="modal" data-bs-target="#searchModal" rel="nofollow noopener noreferrer">
-<span title="<?php esc_attr_e( 'Search in web', 'smile-web' ); ?>" class="buscar svg-icon p-0" aria-hidden="true">
+					<span title="<?php esc_attr_e( 'Search in web', 'smile-web' ); ?>" class="buscar svg-icon p-0" aria-hidden="true">
 						<svg width="20" height="20" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
 							<g transform="matrix(1,0,0,1,-1111.24,-105.745)">
 								<g transform="matrix(0.0136842,0,0,0.0136842,1111.24,105.745)">
@@ -84,18 +86,18 @@
 					$logo_img       = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 					if ( ! empty( $logo_img ) ) {
 						?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemid="" itemscope itemtype="http://schema.org/SpeakableSpecification" class="me-auto" aria-current="<?php echo ( is_front_page() ) ? 'page' : ''; ?>">
-							<img src="<?php echo esc_url( $logo_img[0] ); ?>" width="150" height="60" alt="<?php echo esc_attr( get_bloginfo( 'name' ) . ' logo' ); ?>">
-						</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemid="" itemscope itemtype="http://schema.org/SpeakableSpecification" class="me-auto" aria-current="<?php echo ( is_front_page() ) ? 'page' : ''; ?>">
+					<img src="<?php echo esc_url( $logo_img[0] ); ?>" width="150" height="60" alt="<?php echo esc_attr( get_bloginfo( 'name' ) . ' logo' ); ?>">
+				</a>
 						<?php
 					}
 				} else {
 					?>
-					<h3 class="me-auto">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</h3>
+				<h3 class="me-auto">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				</h3>
 					<?php
 				}
 				?>

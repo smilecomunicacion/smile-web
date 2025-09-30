@@ -15,7 +15,7 @@
  * @return string
  */
 function smile_v6_get_root_font_variables_css() {
-        $css = <<<CSS
+		$css = <<<CSS
 :root {
     --font-family: "Roboto Regular", sans-serif;
     --font-family-bold: "Roboto Bold", sans-serif;
@@ -24,7 +24,7 @@ function smile_v6_get_root_font_variables_css() {
 
 CSS;
 
-        return $css;
+		return $css;
 }
 
 /**
@@ -37,51 +37,51 @@ CSS;
  */
 function smile_v6_enqueue_scripts() {
 
-        // Encolar el stylesheet principal.
-        wp_enqueue_style(
-                'smile-web-style',
-                get_stylesheet_uri(),
-                array(),
-                defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0'
-        );
+		// Encolar el stylesheet principal.
+		wp_enqueue_style(
+			'smile-web-style',
+			get_stylesheet_uri(),
+			array(),
+			defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0'
+		);
 
-        // Encolar un stylesheet adicional para estilos personalizados.
-        wp_enqueue_style(
-                'smile-web-main',
-                get_template_directory_uri() . '/assets/css/main.css',
-                array(),
-                defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0'
-        );
+		// Encolar un stylesheet adicional para estilos personalizados.
+		wp_enqueue_style(
+			'smile-web-main',
+			get_template_directory_uri() . '/assets/css/main.css',
+			array(),
+			defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0'
+		);
 
-        // Agregar soporte RTL si es necesario.
-        wp_style_add_data( 'smile-web-style', 'rtl', 'replace' );
+		// Agregar soporte RTL si es necesario.
+		wp_style_add_data( 'smile-web-style', 'rtl', 'replace' );
 
-        // Encolar script de navegación (vanilla JS).
-        wp_enqueue_script(
-                'smile-web-navigation',
-                get_template_directory_uri() . '/assets/js/navigation.js',
-                array(),
-                defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0',
-                true
-        );
+		// Encolar script de navegación (vanilla JS).
+		wp_enqueue_script(
+			'smile-web-navigation',
+			get_template_directory_uri() . '/assets/js/navigation.js',
+			array(),
+			defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0',
+			true
+		);
 
-        // Encolar el script principal (vanilla JS).
-        wp_enqueue_script(
-                'smile-web-main-js',
-                get_template_directory_uri() . '/assets/js/main.js',
-                array(),
-                defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0',
-                true
-        );
+		// Encolar el script principal (vanilla JS).
+		wp_enqueue_script(
+			'smile-web-main-js',
+			get_template_directory_uri() . '/assets/js/main.js',
+			array(),
+			defined( '_S_VERSION' ) ? _S_VERSION : '1.0.0',
+			true
+		);
 
-        /**
-         * Generación de estilos dinámicos en línea.
-         *
-         * Los estilos que antes se definían en $style_home en el header ahora se generan
-         * aquí y se añaden al stylesheet principal utilizando wp_add_inline_style().
-         */
-        $dynamic_css  = smile_v6_get_root_font_variables_css();
-        $dynamic_css .= <<<CSS
+		/**
+		 * Generación de estilos dinámicos en línea.
+		 *
+		 * Los estilos que antes se definían en $style_home en el header ahora se generan
+		 * aquí y se añaden al stylesheet principal utilizando wp_add_inline_style().
+		 */
+		$dynamic_css  = smile_v6_get_root_font_variables_css();
+		$dynamic_css .= <<<CSS
 #topBar .container {
     display: flex;
     flex-wrap: wrap;
@@ -162,20 +162,20 @@ function smile_v6_enqueue_scripts() {
 
 CSS;
 
-        // Si no existe logo personalizado, agregar estilos para el título.
-        if ( ! has_custom_logo() ) {
-                $dynamic_css .= <<<CSS
+		// Si no existe logo personalizado, agregar estilos para el título.
+	if ( ! has_custom_logo() ) {
+			$dynamic_css .= <<<CSS
 #logo h3 a {
     text-decoration: none;
     font-size: 30px;
 }
 
 CSS;
-        }
+	}
 
-        // Estilos según el tipo de página.
-        if ( is_front_page() ) {
-                $dynamic_css .= <<<CSS
+		// Estilos según el tipo de página.
+	if ( is_front_page() ) {
+			$dynamic_css .= <<<CSS
 #intro {
     background-color: var(--accent-secondary-dark);
     color: var(--single-intro-heading);
@@ -260,8 +260,8 @@ CSS;
 }
 
 CSS;
-        } elseif ( is_page() ) {
-                $dynamic_css .= <<<CSS
+	} elseif ( is_page() ) {
+			$dynamic_css .= <<<CSS
 #intro {
     background-color: var(--page-intro-bg);
     color: var(--single-intro-heading);
@@ -334,8 +334,8 @@ CSS;
 }
 
 CSS;
-        } else {
-                $dynamic_css .= <<<CSS
+	} else {
+			$dynamic_css .= <<<CSS
 #intro {
     background-color: var(--single-intro-bg);
     color: var(--single-intro-heading);
@@ -377,10 +377,10 @@ CSS;
 }
 
 CSS;
-        }
+	}
 
-        // Agregar el CSS en línea al stylesheet principal.
-        wp_add_inline_style( 'smile-web-style', $dynamic_css );
+		// Agregar el CSS en línea al stylesheet principal.
+		wp_add_inline_style( 'smile-web-style', $dynamic_css );
 
 	// Encolar el script de comentarios para respuestas en hilos si es necesario.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -393,19 +393,19 @@ add_action( 'wp_enqueue_scripts', 'smile_v6_enqueue_scripts' );
  * Enqueues shared styles for the block editor so it mirrors the front-end.
  */
 function smile_v6_enqueue_block_editor_styles() {
-        $static_css = smile_v6_get_root_font_variables_css();
+		$static_css = smile_v6_get_root_font_variables_css();
 
-        if ( ! empty( $static_css ) ) {
-                wp_add_inline_style( 'wp-block-library', $static_css );
-        }
+	if ( ! empty( $static_css ) ) {
+			wp_add_inline_style( 'wp-block-library', $static_css );
+	}
 
-        if ( function_exists( 'smile_web_get_dynamic_root_styles' ) ) {
-                $dynamic_css = smile_web_get_dynamic_root_styles();
+	if ( function_exists( 'smile_web_get_dynamic_root_styles' ) ) {
+			$dynamic_css = smile_web_get_dynamic_root_styles();
 
-                if ( ! empty( $dynamic_css ) ) {
-                        wp_add_inline_style( 'wp-block-library', $dynamic_css );
-                }
-        }
+		if ( ! empty( $dynamic_css ) ) {
+				wp_add_inline_style( 'wp-block-library', $dynamic_css );
+		}
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'smile_v6_enqueue_block_editor_styles' );
 

@@ -15,14 +15,14 @@ defined( 'ABSPATH' ) || exit;
  * @package smile-web
  */
 function smile_v6_register_skip_link_text_meta_box() {
-        add_meta_box(
-                'smile-v6-skip-link-text',
-                esc_html__( 'Intro button text', 'smile-web' ),
-                'smile_v6_render_skip_link_text_meta_box',
-                'page',
-                'side',
-                'default'
-        );
+	add_meta_box(
+		'smile-v6-skip-link-text',
+		esc_html__( 'Intro button text', 'smile-web' ),
+		'smile_v6_render_skip_link_text_meta_box',
+		'page',
+		'side',
+		'default'
+	);
 }
 add_action( 'add_meta_boxes_page', 'smile_v6_register_skip_link_text_meta_box' );
 
@@ -35,18 +35,18 @@ add_action( 'add_meta_boxes_page', 'smile_v6_register_skip_link_text_meta_box' )
  * @package smile-web
  */
 function smile_v6_render_skip_link_text_meta_box( $post ) {
-        wp_nonce_field( 'smile_v6_save_skip_link_text', 'smile_v6_skip_link_text_nonce' );
+	wp_nonce_field( 'smile_v6_save_skip_link_text', 'smile_v6_skip_link_text_nonce' );
 
-        $skip_link_text = get_post_meta( $post->ID, 'smile_v6_skip_link_text', true );
-        ?>
-        <p>
-                <label for="smile_v6_skip_link_text" class="screen-reader-text"><?php esc_html_e( 'Intro button text', 'smile-web' ); ?></label>
-                <input type="text" id="smile_v6_skip_link_text" name="smile_v6_skip_link_text" class="widefat" value="<?php echo esc_attr( $skip_link_text ); ?>" />
-        </p>
-        <p class="description">
-                <?php esc_html_e( 'Change the text displayed on the "See main content" button for this page.', 'smile-web' ); ?>
-        </p>
-        <?php
+	$skip_link_text = get_post_meta( $post->ID, 'smile_v6_skip_link_text', true );
+	?>
+<p>
+<label for="smile_v6_skip_link_text" class="screen-reader-text"><?php esc_html_e( 'Intro button text', 'smile-web' ); ?></label>
+<input type="text" id="smile_v6_skip_link_text" name="smile_v6_skip_link_text" class="widefat" value="<?php echo esc_attr( $skip_link_text ); ?>" />
+</p>
+<p class="description">
+	<?php esc_html_e( 'Change the text displayed on the "See main content" button for this page.', 'smile-web' ); ?>
+</p>
+	<?php
 }
 
 /**
@@ -58,39 +58,39 @@ function smile_v6_render_skip_link_text_meta_box( $post ) {
  * @package smile-web
  */
 function smile_v6_save_skip_link_text_meta_box( $post_id ) {
-        if ( ! isset( $_POST['smile_v6_skip_link_text_nonce'] ) ) {
-                return;
-        }
+	if ( ! isset( $_POST['smile_v6_skip_link_text_nonce'] ) ) {
+		return;
+	}
 
-        $nonce = sanitize_text_field( wp_unslash( $_POST['smile_v6_skip_link_text_nonce'] ) );
+	$nonce = sanitize_text_field( wp_unslash( $_POST['smile_v6_skip_link_text_nonce'] ) );
 
-        if ( ! wp_verify_nonce( $nonce, 'smile_v6_save_skip_link_text' ) ) {
-                return;
-        }
+	if ( ! wp_verify_nonce( $nonce, 'smile_v6_save_skip_link_text' ) ) {
+		return;
+	}
 
-        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-                return;
-        }
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 
-        if ( isset( $_POST['post_type'] ) && 'page' !== sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) ) {
-                return;
-        }
+	if ( isset( $_POST['post_type'] ) && 'page' !== sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) ) {
+		return;
+	}
 
-        if ( ! current_user_can( 'edit_page', $post_id ) ) {
-                return;
-        }
+	if ( ! current_user_can( 'edit_page', $post_id ) ) {
+		return;
+	}
 
-        if ( ! isset( $_POST['smile_v6_skip_link_text'] ) ) {
-                return;
-        }
+	if ( ! isset( $_POST['smile_v6_skip_link_text'] ) ) {
+		return;
+	}
 
-        $skip_link_text = sanitize_text_field( wp_unslash( $_POST['smile_v6_skip_link_text'] ) );
+	$skip_link_text = sanitize_text_field( wp_unslash( $_POST['smile_v6_skip_link_text'] ) );
 
-        if ( '' !== $skip_link_text ) {
-                update_post_meta( $post_id, 'smile_v6_skip_link_text', $skip_link_text );
-        } else {
-                delete_post_meta( $post_id, 'smile_v6_skip_link_text' );
-        }
+	if ( '' !== $skip_link_text ) {
+		update_post_meta( $post_id, 'smile_v6_skip_link_text', $skip_link_text );
+	} else {
+		delete_post_meta( $post_id, 'smile_v6_skip_link_text' );
+	}
 }
 add_action( 'save_post_page', 'smile_v6_save_skip_link_text_meta_box' );
 
@@ -103,21 +103,21 @@ add_action( 'save_post_page', 'smile_v6_save_skip_link_text_meta_box' );
  * @package smile-web
  */
 function smile_v6_get_skip_link_text( $post_id = 0 ) {
-        if ( 0 === $post_id ) {
-                $post_id = get_the_ID();
-        }
+	if ( 0 === $post_id ) {
+		$post_id = get_the_ID();
+	}
 
-        $post_id = absint( $post_id );
+	$post_id = absint( $post_id );
 
-        if ( ! $post_id ) {
-                return esc_html__( 'See main content', 'smile-web' );
-        }
+	if ( ! $post_id ) {
+		return esc_html__( 'See main content', 'smile-web' );
+	}
 
-        $skip_link_text = get_post_meta( $post_id, 'smile_v6_skip_link_text', true );
+	$skip_link_text = get_post_meta( $post_id, 'smile_v6_skip_link_text', true );
 
-        if ( '' === $skip_link_text ) {
-                return esc_html__( 'See main content', 'smile-web' );
-        }
+	if ( '' === $skip_link_text ) {
+		return esc_html__( 'See main content', 'smile-web' );
+	}
 
-        return $skip_link_text;
+	return $skip_link_text;
 }

@@ -29,12 +29,12 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 				$show_pending_links = ! empty( $commenter['comment_author'] );
 
 			if ( $commenter['comment_author_email'] ) {
-				$moderation_note = __( 'Your comment is awaiting moderation.', 'smile-web' );
+				$moderation_note = esc_html__( 'Your comment is awaiting moderation.', 'smile-web' );
 			} else {
-					$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'smile-web' );
+					$moderation_note = esc_html__( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'smile-web' );
 			}
 			?>
-<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+<<?php echo esc_html( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
 	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 		<footer class="comment-meta">
 			<div class="comment-metadata">
@@ -42,12 +42,12 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 							printf(
 								'<a href="%s"><time datetime="%s">%s</time></a>',
 								esc_url( get_comment_link( $comment, $args ) ),
-								get_comment_time( 'c' ),
+								esc_attr( get_comment_time( 'c' ) ),
 								sprintf(
 											/* translators: 1: Comment date, 2: Comment time. */
-									__( '%1$s at %2$s', 'smile-web' ),
-									get_comment_date( '', $comment ),
-									get_comment_time()
+									esc_html__( '%1$s at %2$s', 'smile-web' ),
+									esc_html( get_comment_date( '', $comment ) ),
+									esc_html( get_comment_time() )
 								)
 							);
 				?>
@@ -66,16 +66,17 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 						$comment_author = get_comment_author( $comment );
 				}
 
+													$comment_author_markup = sprintf( '<b class="fn">%s</b>', wp_kses_post( $comment_author ) );
 													printf(
 														/* translators: %s: Comment author link. */
-														__( '%s <span class="says">says:</span>', 'smile-web' ),
-														sprintf( '<b class="fn">%s</b>', $comment_author )
+														wp_kses_post( __( '%s <span class="says">says:</span>', 'smile-web' ) ),
+														wp_kses_post( $comment_author_markup )
 													);
 				?>
 			</div><!-- .comment-author -->
 
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-			<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+			<?php if ( '0' === $comment->comment_approved ) : ?>
+			<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
 			<?php endif; ?>
 		</footer><!-- .comment-meta -->
 
@@ -85,13 +86,13 @@ if ( ! class_exists( 'Smile_Web_Walker_Comment' ) ) {
 
 			<?php
 			$edit_comment_url  = get_edit_comment_link( $comment );
-			$can_display_reply = ( '1' == $comment->comment_approved || $show_pending_links );
+			$can_display_reply = ( '1' === $comment->comment_approved || $show_pending_links );
 
 			if ( $edit_comment_url || $can_display_reply ) :
 				?>
 		<div class="comment-actions">
-				<?php edit_comment_link( __( 'Edit', 'smile-web' ) ); ?>
 				<?php
+				edit_comment_link( __( 'Edit', 'smile-web' ) );
 				if ( $can_display_reply ) {
 					comment_reply_link(
 						array_merge(

@@ -19,10 +19,10 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 ?>
 <div id="intro">
 	<div class="text-center py-5">
-                <h1 class="text-heading"><?php echo esc_html( $page_title ); ?></h1>
+		<h1 class="text-heading"><?php echo esc_html( $page_title ); ?></h1>
 		<p class="text-center mt-4">
 			<a href="#contact" class="btn-cta" rel="nofollow noreferrer">
-                               <?php esc_html_e( 'Contact us', 'smile-web' ); ?>
+				<?php esc_html_e( 'Contact us', 'smile-web' ); ?>
 			</a>
 		</p>
 	</div>
@@ -31,27 +31,18 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 <main id="main" class="blog-page area-padding bg-primary">
 	<div id="page">
 		<div class="container">
-                        <div id="breadcrumbs">
-                                <nav aria-label="<?php esc_attr_e( 'breadcrumb', 'smile-web' ); ?>" class="breadcrumb-nav">
-                                        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
+			<div id="breadcrumbs">
+				<nav aria-label="<?php esc_attr_e( 'breadcrumb', 'smile-web' ); ?>" class="breadcrumb-nav">
+					<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb breadcrumb--primary">
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-							<img class="mx-2"
-								src="<?php echo esc_url( get_template_directory_uri() . '/lib/fontawesome-free/svgs/solid/home.svg' ); ?>"
-								alt="<?php esc_attr_e( 'home', 'smile-web' ); ?>"
-								title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>"
-								width="20px"
-								height="20px">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-								rel="home"
-								title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+							<img class="mx-2" src="<?php echo esc_url( get_template_directory_uri() . '/lib/fontawesome-free/svgs/solid/home.svg' ); ?>" alt="<?php esc_attr_e( 'home', 'smile-web' ); ?>" title="<?php esc_attr_e( 'Home', 'smile-web' ); ?>" width="20px" height="20px">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 								<span><?php esc_html_e( 'Home', 'smile-web' ); ?></span>
 							</a>
 							<meta itemprop="position" content="1" />
 						</li>
 						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
-							<a itemprop="item"
-								title="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>"
-								href="<?php echo esc_url( home_url( '/' . $page_slug . '/' ) ); ?>">
+							<a itemprop="item" title="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" href="<?php echo esc_url( home_url( '/' . $page_slug . '/' ) ); ?>">
 								<span itemprop="name"><?php echo esc_html( $page_title ); ?></span>
 							</a>
 							<meta itemprop="position" content="2" />
@@ -101,91 +92,82 @@ $page_slug  = ( false !== $page_for_posts_id ) ? get_post_field( 'post_name', $p
 
 					if ( true === $recent_posts->have_posts() ) :
 						?>
-						<section id="posts-relacionados" class="p-0">
-							<div class="row m-0">
-								<?php
+					<section id="posts-relacionados" class="p-0">
+						<div class="row m-0">
+							<?php
 								// Iterar sobre los posts obtenidos.
-								while ( $recent_posts->have_posts() ) :
-									$recent_posts->the_post();
-									?>
-                                                                        <article class="blog-col col-md-6 mb-4 mx-0">
-                                                                                <div class="category">
-                                                                                        <?php
-                                                                                        $display_category = smile_v6_get_display_category();
-                                                                                        if ( $display_category ) {
-                                                                                                printf(
-                                                                                                        '<a href="%1$s">%2$s</a>',
-                                                                                                        esc_url( get_category_link( $display_category->term_id ) ),
-                                                                                                        esc_html( $display_category->name )
-                                                                                                );
-                                                                                        }
-                                                                                        ?>
-                                                                                </div>
-                                                                                <figure class="shadow">
-                                                                                        <a href="<?php the_permalink(); ?>"
-                                                                                                title="<?php echo esc_attr( get_the_title() ); ?>"
-                                                                                                rel="nofollow">
-                                                                                                <?php
-                                                                                                // Obtener la imagen configurada en el Customizer.
-                                                                                                $blog_default_image = get_theme_mod( 'blog_default_image' );
+							while ( $recent_posts->have_posts() ) :
+								$recent_posts->the_post();
+								?>
+							<article class="blog-col col-md-6 mb-4 mx-0">
+								<div class="category">
+								<?php
+																					$display_category = smile_v6_get_display_category();
+								if ( $display_category ) {
+									printf(
+										'<a href="%1$s">%2$s</a>',
+										esc_url( get_category_link( $display_category->term_id ) ),
+										esc_html( $display_category->name )
+									);
+								}
+								?>
+								</div>
+								<figure class="shadow">
+									<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="nofollow">
+										<?php
+																							// Obtener la imagen configurada en el Customizer.
+																							$blog_default_image = get_theme_mod( 'blog_default_image' );
 
-                                                                                                // Si la opción está vacía, se asigna la ruta por defecto.
-                                                                                                if ( empty( $blog_default_image ) ) {
-                                                                                                        $blog_default_image = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
-                                                                                                }
+																							// Si la opción está vacía, se asigna la ruta por defecto.
+										if ( empty( $blog_default_image ) ) {
+											$blog_default_image = get_template_directory_uri() . '/assets/img/thumbnail-header.jpg';
+										}
 
-                                                                                                $thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : $blog_default_image;
-                                                                                                $thumb_id  = get_post_thumbnail_id();
-                                                                                                $thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
-                                                                                                if ( empty( $thumb_alt ) ) {
-                                                                                                        $thumb_alt = get_the_title();
-                                                                                                }
-                                                                                                ?>
+																							$thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : $blog_default_image;
+																							$thumb_id  = get_post_thumbnail_id();
+																							$thumb_alt = $thumb_id ? get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) : '';
+										if ( empty( $thumb_alt ) ) {
+											$thumb_alt = get_the_title();
+										}
+										?>
 
-                                                                                                <img class="img-fluid"
-                                                                                                        src="<?php echo esc_url( $thumb_url ); ?>"
-                                                                                                        alt="<?php echo esc_attr( $thumb_alt ); ?>"
-                                                                                                        title="<?php echo esc_attr( get_the_title() ); ?>"
-                                                                                                        width="600"
-                                                                                                        height="400">
-                                                                                        </a>
-                                                                                        <figcaption class="bg-white px-4">
-                                                                                                <p class="text-emphasis">
-                                                                                                        <a href="<?php the_permalink(); ?>"
-                                                                                                                rel="bookmark"
-                                                                                                                title="<?php echo esc_attr( get_the_title() ); ?>">
-														<?php echo esc_html( get_the_title() ); ?>
-													</a>
-												</p>
-												<p>
-													<?php echo esc_html( wp_trim_words( get_the_excerpt(), 25, '...' ) ); ?>
-												</p>
-												<p class="border-top pt-3">
-													<span>
-														<i class="fa fa-calendar"></i>
-														<?php
-														if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) :
-															?>
-															<b><?php esc_html_e( 'Publicado', 'smile-web' ); ?></b>: <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?>.
-															<?php
-														else :
-															?>
-															<b><?php esc_html_e( 'Actualizado', 'smile-web' ); ?></b>: <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?>.
-															<?php
-														endif;
+										<img class="img-fluid" src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( $thumb_alt ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" width="600" height="400">
+									</a>
+									<figcaption class="bg-white px-4">
+										<p class="text-emphasis">
+											<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( get_the_title() ); ?>">
+												<?php echo esc_html( get_the_title() ); ?>
+											</a>
+										</p>
+										<p>
+											<?php echo esc_html( wp_trim_words( get_the_excerpt(), 25, '...' ) ); ?>
+										</p>
+										<p class="border-top pt-3">
+											<span>
+												<i class="fa fa-calendar"></i>
+												<?php
+												if ( get_the_modified_date( 'j F, Y' ) === get_the_date( 'j F, Y' ) ) :
+													?>
+												<b><?php esc_html_e( 'Publicado', 'smile-web' ); ?></b>: <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?>.
+													<?php
+													else :
 														?>
-													</span>
-												</p>
-											</figcaption>
-										</figure>
-									</article>
-								<?php endwhile; ?>
-							</div>
-						</section>
+												<b><?php esc_html_e( 'Actualizado', 'smile-web' ); ?></b>: <?php echo esc_html( get_the_modified_date( 'j F, Y' ) ); ?>.
+														<?php
+														endif;
+													?>
+											</span>
+										</p>
+									</figcaption>
+								</figure>
+							</article>
+							<?php endwhile; ?>
+						</div>
+					</section>
 						<?php
 					else :
 						?>
-						<p><?php esc_html_e( 'There are no articles to show at this time.', 'smile-web' ); ?></p>
+					<p><?php esc_html_e( 'There are no articles to show at this time.', 'smile-web' ); ?></p>
 					<?php endif; ?>
 
 					<?php

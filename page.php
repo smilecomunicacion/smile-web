@@ -14,11 +14,11 @@ get_header();
 ?>
 <div id="intro" class="intro intro--page pt-5">
 	<div class="container py-5 text-center">
-                <h1 class="title mt-2"><?php the_title(); ?></h1>
-                <?php $smile_v6_skip_link_text = smile_v6_get_skip_link_text( get_the_ID() ); ?>
-                <a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php echo esc_attr( $smile_v6_skip_link_text ); ?>">
-                        <?php echo esc_html( $smile_v6_skip_link_text ); ?>
-                </a>
+		<h1 class="title mt-2"><?php the_title(); ?></h1>
+		<?php $smile_v6_skip_link_text = smile_v6_get_skip_link_text( get_the_ID() ); ?>
+		<a href="#main" class="btn-cta" rel="nofollow noopener" aria-label="<?php echo esc_attr( $smile_v6_skip_link_text ); ?>">
+			<?php echo esc_html( $smile_v6_skip_link_text ); ?>
+		</a>
 	</div>
 	<?php
 	// If minimum width is 768px and the page has a featured image.
@@ -31,11 +31,19 @@ get_header();
 		$image_title   = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_title', true ) ) );
 		$src           = wp_get_attachment_url( $attachment_id );
 		$class         = 'attachment-' . $attachment_id;
-		$height_attr   = '' !== $height ? ' height="' . esc_attr( $height ) . '"' : '';
-		$width_attr    = '' !== $width ? ' width="' . esc_attr( $width ) . '"' : '';
+		// Build image attributes only when width and height exist to satisfy PHPCS output escaping rules.
 		?>
 	<figure id="intro-carousel" class="d-none d-md-block">
-		<img src="<?php echo esc_url( $src ); ?>" <?php echo $height_attr; ?><?php echo $width_attr; ?> alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
+		<img src="<?php echo esc_url( $src ); ?>" 
+							<?php
+							if ( '' !== $height ) {
+								printf( ' height="%s"', esc_attr( $height ) );
+							}
+							if ( '' !== $width ) {
+								printf( ' width="%s"', esc_attr( $width ) );
+							}
+							?>
+							alt="<?php echo esc_attr( $alt ); ?>" title="<?php echo esc_attr( $image_title ); ?>" class="<?php echo esc_attr( $class ); ?>">
 	</figure>
 	<?php endif; // END if minimum width is 768px and featured image exists. ?>
 </div>

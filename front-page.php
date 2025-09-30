@@ -101,16 +101,16 @@ $intro_custom_description = get_theme_mod( 'intro_custom_description', '' );
 					?>
 				<article <?php post_class( 'blog-col col-md-4 mb-4 mx-0' ); ?>>
 					<?php
-                                        $display_category = smile_v6_get_display_category();
-                                        if ( $display_category ) {
-                                                echo '<div class="category"><ul class="post-categories">';
-                                                printf(
-                                                        '<li><a href="%1$s">%2$s</a></li>',
-                                                        esc_url( get_category_link( $display_category->term_id ) ),
-                                                        esc_html( $display_category->name )
-                                                );
-                                                echo '</ul></div>';
-                                        }
+					$display_category = smile_v6_get_display_category();
+					if ( $display_category ) {
+							echo '<div class="category"><ul class="post-categories">';
+							printf(
+								'<li><a href="%1$s">%2$s</a></li>',
+								esc_url( get_category_link( $display_category->term_id ) ),
+								esc_html( $display_category->name )
+							);
+							echo '</ul></div>';
+					}
 					?>
 
 					<figure class="shadow">

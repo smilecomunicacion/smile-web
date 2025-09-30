@@ -27,23 +27,23 @@ get_header();
 				</span>
 
 					<?php
-                                        $display_category = smile_v6_get_display_category();
+										$display_category = smile_v6_get_display_category();
 
-                                        if ( $display_category ) {
-                                                if ( 'uncategorized' === $display_category->slug ) {
-                                                        echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-                                                } else {
-                                                        echo '<ul class="post-categories">';
-                                                        printf(
-                                                                '<li><a href="%1$s">%2$s</a></li>',
-                                                                esc_url( get_category_link( $display_category->term_id ) ),
-                                                                esc_html( $display_category->name )
-                                                        );
-                                                        echo '</ul>';
-                                                }
-                                        } else {
-                                                echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-                                        }
+					if ( $display_category ) {
+						if ( 'uncategorized' === $display_category->slug ) {
+												echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+						} else {
+													echo '<ul class="post-categories">';
+													printf(
+														'<li><a href="%1$s">%2$s</a></li>',
+														esc_url( get_category_link( $display_category->term_id ) ),
+														esc_html( $display_category->name )
+													);
+													echo '</ul>';
+						}
+					} else {
+							echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+					}
 					?>
 
 					<?php if ( get_comments_number() > 0 ) : ?>
@@ -94,16 +94,16 @@ get_header();
 					</li>
 					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-item">
 						<?php
-                                                $display_category = smile_v6_get_display_category();
-                                                if ( $display_category ) {
-                                                        if ( 'uncategorized' === $display_category->slug ) {
-                                                                echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-                                                        } else {
-                                                                echo '<a itemid="' . esc_attr( $display_category->cat_name ) . '" href="' . esc_url( get_category_link( $display_category->term_id ) ) . '"><span>' . esc_html( $display_category->cat_name ) . '</span></a>';
-                                                        }
-                                                } else {
-                                                        echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-                                                }
+												$display_category = smile_v6_get_display_category();
+						if ( $display_category ) {
+							if ( 'uncategorized' === $display_category->slug ) {
+														echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+							} else {
+															echo '<a itemid="' . esc_attr( $display_category->cat_name ) . '" href="' . esc_url( get_category_link( $display_category->term_id ) ) . '"><span>' . esc_html( $display_category->cat_name ) . '</span></a>';
+							}
+						} else {
+								echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+						}
 						?>
 						<meta itemprop="position" content="2" />
 					</li>
@@ -163,36 +163,36 @@ get_header();
 	<?php
 		/* if is sinlge && are posts */
 
-        if ( is_single() ) {
-                $display_category = smile_v6_get_display_category();
-                $category_id      = $display_category ? $display_category->term_id : 0;
+	if ( is_single() ) {
+			$display_category = smile_v6_get_display_category();
+			$category_id      = $display_category ? $display_category->term_id : 0;
 
-			$current_post_id = get_the_ID();
-			$args            = array(
-				'cat'            => $category_id,
-				'posts_per_page' => 12, // The number of related posts you want to show.
-				'post__not_in'   => array( $current_post_id ),
-			);
-			?>
+		$current_post_id = get_the_ID();
+		$args            = array(
+			'cat'            => $category_id,
+			'posts_per_page' => 12, // The number of related posts you want to show.
+			'post__not_in'   => array( $current_post_id ),
+		);
+		?>
 	<section id="posts-relacionados" class="bg-secondary">
 		<div class="container py-5">
 			<p class="text-emphasis col-md-12 mb-5 border-bottom"><?php echo esc_html__( 'Related articles', 'smile-web' ); ?>
 				<?php
-                                $display_category = smile_v6_get_display_category();
-                                if ( $display_category ) {
-                                        if ( 'uncategorized' === $display_category->slug ) {
-                                                echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
-                                        } else {
-                                                echo '<a href="' . esc_url( get_category_link( $display_category->term_id ) ) . '">' . esc_html( $display_category->cat_name ) . '</a>';
-                                        }
-                                }
+							$display_category = smile_v6_get_display_category();
+				if ( $display_category ) {
+					if ( 'uncategorized' === $display_category->slug ) {
+										echo '<span>' . esc_html__( 'Uncategorized', 'smile-web' ) . '</span>';
+					} else {
+												echo '<a href="' . esc_url( get_category_link( $display_category->term_id ) ) . '">' . esc_html( $display_category->cat_name ) . '</a>';
+					}
+				}
 				?>
 			</p>
 			<br>
 			<div class="row">
 				<?php
-								$recent                = new WP_Query( $args );
-								$blog_post_default_img = get_theme_mod( 'blog_default_image', '' );
+							$recent                = new WP_Query( $args );
+							$blog_post_default_img = get_theme_mod( 'blog_default_image', '' );
 
 				while ( $recent->have_posts() ) :
 						$recent->the_post();
