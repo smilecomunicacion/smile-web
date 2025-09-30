@@ -1428,9 +1428,9 @@ add_action( 'customize_register', 'smile_v6_customize_front_page_intro_section' 
  * @return void
  */
 function smile_v6_register_custom_controls( $wp_customize ) {
-       $wp_customize->register_control_type( 'Smile_Web_Export_Control' );
-       $wp_customize->register_control_type( 'Smile_Web_Import_Control' );
-       $wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
+		$wp_customize->register_control_type( 'Smile_Web_Export_Control' );
+		$wp_customize->register_control_type( 'Smile_Web_Import_Control' );
+		$wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
 }
 add_action( 'customize_register', 'smile_v6_register_custom_controls', 1 );
 
