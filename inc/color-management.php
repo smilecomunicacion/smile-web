@@ -218,8 +218,15 @@ function smile_v6_get_default_color_palette() {
  * @since 6.0.7
  */
 function smile_v6_ajax_export_colors() {
+	// Check if nonce exists in POST data.
+	if ( ! isset( $_POST['nonce'] ) ) {
+		wp_die( esc_html__( 'Security token missing.', 'smile-web' ) );
+	}
+
+	$nonce = sanitize_text_field( wp_unslash( $_POST['nonce'] ) );
+
 	// Verify nonce.
-	if ( ! wp_verify_nonce( $_POST['nonce'], 'smile_v6_ajax_nonce' ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'smile_v6_ajax_nonce' ) ) {
 		wp_die( esc_html__( 'Security check failed.', 'smile-web' ) );
 	}
 
@@ -262,8 +269,10 @@ function smile_v6_ajax_import_colors() {
 		wp_die();
 	}
 
+	$nonce = sanitize_text_field( wp_unslash( $_POST['nonce'] ) );
+
 	// Verify nonce.
-	if ( ! wp_verify_nonce( $_POST['nonce'], 'smile_v6_ajax_nonce' ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'smile_v6_ajax_nonce' ) ) {
 		wp_send_json_error( array( 'message' => esc_html__( 'Security check failed.', 'smile-web' ) ) );
 		wp_die();
 	}
@@ -342,8 +351,16 @@ add_action( 'wp_ajax_smile_v6_import_colors', 'smile_v6_ajax_import_colors' );
  * @since 6.0.7
  */
 function smile_v6_ajax_reset_colors() {
+	// Check if nonce exists in POST data.
+	if ( ! isset( $_POST['nonce'] ) ) {
+		wp_send_json_error( array( 'message' => esc_html__( 'Security token missing.', 'smile-web' ) ) );
+		wp_die();
+	}
+
+	$nonce = sanitize_text_field( wp_unslash( $_POST['nonce'] ) );
+
 	// Verify nonce.
-	if ( ! wp_verify_nonce( $_POST['nonce'], 'smile_v6_ajax_nonce' ) ) {
+	if ( ! wp_verify_nonce( $nonce, 'smile_v6_ajax_nonce' ) ) {
 		wp_send_json_error( array( 'message' => esc_html__( 'Security check failed.', 'smile-web' ) ) );
 		wp_die();
 	}
