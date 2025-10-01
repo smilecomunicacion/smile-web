@@ -5,28 +5,9 @@
  * @package smile-web
  */
 
-/**
- * Loads custom Customizer control classes when the Customizer is initialized.
- *
- * Ensures that the base control class is available before loading the custom
- * controls used for color management.
- *
- * @package smile-web
- * @since 6.0.7
- *
- * @param WP_Customize_Manager $wp_customize Customizer instance. Unused.
- * @return void
- */
-function smile_v6_load_customizer_control_classes( $wp_customize ) { // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
-        if ( ! class_exists( 'WP_Customize_Control' ) ) {
-                require_once ABSPATH . 'wp-includes/class-wp-customize-control.php';
-        }
-
-        require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
-        require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
-        require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
-}
-add_action( 'customize_register', 'smile_v6_load_customizer_control_classes', 0 );
+require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
+require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
+require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
 
 /**
  * Sanitize opacity values for rgba colors.
