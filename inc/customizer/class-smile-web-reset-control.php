@@ -17,6 +17,14 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 }
 
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Smile_Web_Reset_Control' ) ) {
+	/**
+	 * Custom reset control for the WordPress Customizer.
+	 *
+	 * Extends WP_Customize_Control to provide a reset button functionality
+	 * for color management in the theme customizer.
+	 *
+	 * @since 6.0.7
+	 */
 	class Smile_Web_Reset_Control extends WP_Customize_Control {
 		/**
 		 * Control type identifier.
@@ -34,45 +42,45 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Smile_Web_Reset_
 		 *
 		 * @return void
 		 */
-                protected function render_content() {
-                        ?>
-                        <label>
-                                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-                                <?php if ( ! empty( $this->description ) ) : ?>
-					<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-				<?php endif; ?>
-			</label>
-                        <input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
-			<button type="button" class="button smile-v6-reset-colors">
-				<?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
-			</button>
-                        <div class="smile-v6-reset-status smile-v6-status"></div>
-                        <?php
-                }
+		protected function render_content() {
+			?>
+<label>
+<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php if ( ! empty( $this->description ) ) : ?>
+<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+<?php endif; ?>
+</label>
+<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
+<button type="button" class="button smile-v6-reset-colors">
+			<?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
+</button>
+<div class="smile-v6-reset-status smile-v6-status"></div>
+			<?php
+		}
 
-                /**
-                 * Outputs the Underscore.js template for the control content.
-                 *
-                 * @since 6.0.7
-                 *
-                 * @return void
-                 *
-                 * @package smile-web
-                 */
-                public function content_template() {
-                        ?>
-                        <label>
-                                <span class="customize-control-title">{{ data.label }}</span>
-                                <# if ( data.description ) { #>
-                                        <span class="description customize-control-description">{{{ data.description }}}</span>
-                                <# } #>
-                        </label>
-                        <input type="hidden" {{{ data.link }}} value="{{ data.value }}" />
-                        <button type="button" class="button smile-v6-reset-colors">
-                                <?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
-                        </button>
-                        <div class="smile-v6-reset-status smile-v6-status"></div>
-                        <?php
-                }
-        }
+		/**
+		 * Outputs the Underscore.js template for the control content.
+		 *
+		 * @since 6.0.7
+		 *
+		 * @return void
+		 *
+		 * @package smile-web
+		 */
+		public function content_template() {
+			?>
+<label>
+<span class="customize-control-title">{{ data.label }}</span>
+<# if ( data.description ) { #>
+<span class="description customize-control-description">{{{ data.description }}}</span>
+<# } #>
+</label>
+<input type="hidden" {{{ data.link }}} value="{{ data.value }}" />
+<button type="button" class="button smile-v6-reset-colors">
+			<?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
+</button>
+<div class="smile-v6-reset-status smile-v6-status"></div>
+			<?php
+		}
+	}
 }

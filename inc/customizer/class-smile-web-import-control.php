@@ -17,6 +17,15 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 }
 
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Smile_Web_Import_Control' ) ) {
+	/**
+	 * Custom import control for the WordPress Customizer.
+	 *
+	 * Extends WP_Customize_Control to provide import functionality for color management.
+	 *
+	 * @since 6.0.7
+	 *
+	 * @package smile-web
+	 */
 	class Smile_Web_Import_Control extends WP_Customize_Control {
 		/**
 		 * Control type identifier.
@@ -34,47 +43,47 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Smile_Web_Import
 		 *
 		 * @return void
 		 */
-                protected function render_content() {
-                        ?>
-                        <label>
-                                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-                                <?php if ( ! empty( $this->description ) ) : ?>
-					<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-				<?php endif; ?>
-			</label>
-                        <input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
-			<input type="file" class="smile-v6-import-file" accept=".json" />
-			<button type="button" class="button smile-v6-import-colors" disabled>
-				<?php esc_html_e( 'Import Colors', 'smile-web' ); ?>
-			</button>
-                        <div class="smile-v6-import-status smile-v6-status"></div>
-                        <?php
-                }
+		protected function render_content() {
+			?>
+<label>
+<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php if ( ! empty( $this->description ) ) : ?>
+<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+<?php endif; ?>
+</label>
+<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
+<input type="file" class="smile-v6-import-file" accept=".json" />
+<button type="button" class="button smile-v6-import-colors" disabled>
+			<?php esc_html_e( 'Import Colors', 'smile-web' ); ?>
+</button>
+<div class="smile-v6-import-status smile-v6-status"></div>
+			<?php
+		}
 
-                /**
-                 * Outputs the Underscore.js template for the control content.
-                 *
-                 * @since 6.0.7
-                 *
-                 * @return void
-                 *
-                 * @package smile-web
-                 */
-                public function content_template() {
-                        ?>
-                        <label>
-                                <span class="customize-control-title">{{ data.label }}</span>
-                                <# if ( data.description ) { #>
-                                        <span class="description customize-control-description">{{{ data.description }}}</span>
-                                <# } #>
-                        </label>
-                        <input type="hidden" {{{ data.link }}} value="{{ data.value }}" />
-                        <input type="file" class="smile-v6-import-file" accept=".json" />
-                        <button type="button" class="button smile-v6-import-colors" disabled>
-                                <?php esc_html_e( 'Import Colors', 'smile-web' ); ?>
-                        </button>
-                        <div class="smile-v6-import-status smile-v6-status"></div>
-                        <?php
-                }
-        }
+		/**
+		 * Outputs the Underscore.js template for the control content.
+		 *
+		 * @since 6.0.7
+		 *
+		 * @return void
+		 *
+		 * @package smile-web
+		 */
+		public function content_template() {
+			?>
+<label>
+<span class="customize-control-title">{{ data.label }}</span>
+<# if ( data.description ) { #>
+<span class="description customize-control-description">{{{ data.description }}}</span>
+<# } #>
+</label>
+<input type="hidden" {{{ data.link }}} value="{{ data.value }}" />
+<input type="file" class="smile-v6-import-file" accept=".json" />
+<button type="button" class="button smile-v6-import-colors" disabled>
+			<?php esc_html_e( 'Import Colors', 'smile-web' ); ?>
+</button>
+<div class="smile-v6-import-status smile-v6-status"></div>
+			<?php
+		}
+	}
 }

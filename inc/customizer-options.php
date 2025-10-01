@@ -1175,19 +1175,19 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 						'sanitize_callback' => 'wp_kses_post',
 					)
 				);
-        $wp_customize->add_control(
-                new Smile_Web_Export_Control(
-                        $wp_customize,
-                        'smile_v6_export_colors',
-                        array(
-                                'label'       => esc_html__( 'Export Color Settings', 'smile-web' ),
-                                'description' => esc_html__( 'Download your current color settings as a JSON file.', 'smile-web' ),
-                                'section'     => 'custom_theme_color_management',
-                                'settings'    => 'smile_v6_export_colors',
-                                'type'        => 'export',
-                        )
-                )
-        );
+		$wp_customize->add_control(
+			new Smile_Web_Export_Control(
+				$wp_customize,
+				'smile_v6_export_colors',
+				array(
+					'label'       => esc_html__( 'Export Color Settings', 'smile-web' ),
+					'description' => esc_html__( 'Download your current color settings as a JSON file.', 'smile-web' ),
+					'section'     => 'custom_theme_color_management',
+					'settings'    => 'smile_v6_export_colors',
+					'type'        => 'export',
+				)
+			)
+		);
 
 	// Import Colors File Upload.
 	$wp_customize->add_setting(
@@ -1196,19 +1196,19 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
-        $wp_customize->add_control(
-                new Smile_Web_Import_Control(
-                        $wp_customize,
-                        'smile_v6_import_colors',
-                        array(
-                                'label'       => esc_html__( 'Import Color Settings', 'smile-web' ),
-                                'description' => esc_html__( 'Upload a JSON file to import color settings.', 'smile-web' ),
-                                'section'     => 'custom_theme_color_management',
-                                'settings'    => 'smile_v6_import_colors',
-                                'type'        => 'import',
-                        )
-                )
-        );
+		$wp_customize->add_control(
+			new Smile_Web_Import_Control(
+				$wp_customize,
+				'smile_v6_import_colors',
+				array(
+					'label'       => esc_html__( 'Import Color Settings', 'smile-web' ),
+					'description' => esc_html__( 'Upload a JSON file to import color settings.', 'smile-web' ),
+					'section'     => 'custom_theme_color_management',
+					'settings'    => 'smile_v6_import_colors',
+					'type'        => 'import',
+				)
+			)
+		);
 
 	// Reset Colors Button.
 	$wp_customize->add_setting(
@@ -1217,19 +1217,19 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
-        $wp_customize->add_control(
-                new Smile_Web_Reset_Control(
-                        $wp_customize,
-                        'smile_v6_reset_colors',
-                        array(
-                                'label'       => esc_html__( 'Reset to Ocean Professional', 'smile-web' ),
-                                'description' => esc_html__( 'Reset all colors to the default Ocean Professional palette.', 'smile-web' ),
-                                'section'     => 'custom_theme_color_management',
-                                'settings'    => 'smile_v6_reset_colors',
-                                'type'        => 'reset',
-                        )
-                )
-        );
+		$wp_customize->add_control(
+			new Smile_Web_Reset_Control(
+				$wp_customize,
+				'smile_v6_reset_colors',
+				array(
+					'label'       => esc_html__( 'Reset to Ocean Professional', 'smile-web' ),
+					'description' => esc_html__( 'Reset all colors to the default Ocean Professional palette.', 'smile-web' ),
+					'section'     => 'custom_theme_color_management',
+					'settings'    => 'smile_v6_reset_colors',
+					'type'        => 'reset',
+				)
+			)
+		);
 }
 
 /**
@@ -1433,9 +1433,9 @@ add_action( 'customize_register', 'smile_v6_customize_front_page_intro_section' 
  * @return void
  */
 function smile_v6_register_custom_controls( $wp_customize ) {
-        $wp_customize->register_control_type( 'Smile_Web_Export_Control' );
-        $wp_customize->register_control_type( 'Smile_Web_Import_Control' );
-        $wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
+		$wp_customize->register_control_type( 'Smile_Web_Export_Control' );
+		$wp_customize->register_control_type( 'Smile_Web_Import_Control' );
+		$wp_customize->register_control_type( 'Smile_Web_Reset_Control' );
 }
 add_action( 'customize_register', 'smile_v6_register_custom_controls', 1 );
 
