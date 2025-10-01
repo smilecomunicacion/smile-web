@@ -11,9 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function smile_v6_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
@@ -53,9 +53,8 @@ function smile_v6_customize_partial_blogdescription() {
 }
 
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * Placeholder for future Theme Customizer preview scripts.
  */
 function smile_v6_customize_preview_js() {
-	wp_enqueue_script( 'smile-web-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'smile_v6_customize_preview_js' );
