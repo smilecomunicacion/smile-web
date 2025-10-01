@@ -42,6 +42,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Smile_Web_Reset_
 					<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php endif; ?>
 			</label>
+			<input type="hidden" <?php $this->link(); ?> value="" />
 			<button type="button" class="button smile-v6-reset-colors">
 				<?php esc_html_e( 'Reset All Colors', 'smile-web' ); ?>
 			</button>
