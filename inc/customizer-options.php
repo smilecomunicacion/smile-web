@@ -1202,6 +1202,7 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'label'       => esc_html__( 'Export Color Settings', 'smile-web' ),
                                 'description' => esc_html__( 'Download your current color settings as a JSON file.', 'smile-web' ),
                                 'section'     => 'custom_theme_color_management',
+                                'settings'    => 'smile_v6_export_colors',
                                 'type'        => 'export',
                         )
                 )
@@ -1222,6 +1223,7 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'label'       => esc_html__( 'Import Color Settings', 'smile-web' ),
                                 'description' => esc_html__( 'Upload a JSON file to import color settings.', 'smile-web' ),
                                 'section'     => 'custom_theme_color_management',
+                                'settings'    => 'smile_v6_import_colors',
                                 'type'        => 'import',
                         )
                 )
@@ -1242,6 +1244,7 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
                                 'label'       => esc_html__( 'Reset to Ocean Professional', 'smile-web' ),
                                 'description' => esc_html__( 'Reset all colors to the default Ocean Professional palette.', 'smile-web' ),
                                 'section'     => 'custom_theme_color_management',
+                                'settings'    => 'smile_v6_reset_colors',
                                 'type'        => 'reset',
                         )
                 )
