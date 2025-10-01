@@ -5,9 +5,28 @@
  * @package smile-web
  */
 
-require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
-require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
-require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
+/**
+ * Loads custom Customizer control classes when the Customizer is initialized.
+ *
+ * Ensures that the base control class is available before loading the custom
+ * controls used for color management.
+ *
+ * @package smile-web
+ * @since 6.0.7
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance. Unused.
+ * @return void
+ */
+function smile_v6_load_customizer_control_classes( $wp_customize ) { // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
+        if ( ! class_exists( 'WP_Customize_Control' ) ) {
+                require_once ABSPATH . 'wp-includes/class-wp-customize-control.php';
+        }
+
+        require_once __DIR__ . '/customizer/class-smile-web-export-control.php';
+        require_once __DIR__ . '/customizer/class-smile-web-import-control.php';
+        require_once __DIR__ . '/customizer/class-smile-web-reset-control.php';
+}
+add_action( 'customize_register', 'smile_v6_load_customizer_control_classes', 0 );
 
 /**
  * Sanitize opacity values for rgba colors.
@@ -1175,20 +1194,18 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 						'sanitize_callback' => 'wp_kses_post',
 					)
 				);
-        if ( class_exists( 'Smile_Web_Export_Control' ) ) {
-                $wp_customize->add_control(
-                        new Smile_Web_Export_Control(
-                                $wp_customize,
-                                'smile_v6_export_colors',
-                                array(
-                                        'label'       => esc_html__( 'Export Color Settings', 'smile-web' ),
-                                        'description' => esc_html__( 'Download your current color settings as a JSON file.', 'smile-web' ),
-                                        'section'     => 'custom_theme_color_management',
-                                        'type'        => 'export',
-                                )
+        $wp_customize->add_control(
+                new Smile_Web_Export_Control(
+                        $wp_customize,
+                        'smile_v6_export_colors',
+                        array(
+                                'label'       => esc_html__( 'Export Color Settings', 'smile-web' ),
+                                'description' => esc_html__( 'Download your current color settings as a JSON file.', 'smile-web' ),
+                                'section'     => 'custom_theme_color_management',
+                                'type'        => 'export',
                         )
-                );
-        }
+                )
+        );
 
 	// Import Colors File Upload.
 	$wp_customize->add_setting(
@@ -1197,20 +1214,18 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
-        if ( class_exists( 'Smile_Web_Import_Control' ) ) {
-                $wp_customize->add_control(
-                        new Smile_Web_Import_Control(
-                                $wp_customize,
-                                'smile_v6_import_colors',
-                                array(
-                                        'label'       => esc_html__( 'Import Color Settings', 'smile-web' ),
-                                        'description' => esc_html__( 'Upload a JSON file to import color settings.', 'smile-web' ),
-                                        'section'     => 'custom_theme_color_management',
-                                        'type'        => 'import',
-                                )
+        $wp_customize->add_control(
+                new Smile_Web_Import_Control(
+                        $wp_customize,
+                        'smile_v6_import_colors',
+                        array(
+                                'label'       => esc_html__( 'Import Color Settings', 'smile-web' ),
+                                'description' => esc_html__( 'Upload a JSON file to import color settings.', 'smile-web' ),
+                                'section'     => 'custom_theme_color_management',
+                                'type'        => 'import',
                         )
-                );
-        }
+                )
+        );
 
 	// Reset Colors Button.
 	$wp_customize->add_setting(
@@ -1219,20 +1234,18 @@ function smile_v6_customize_theme_sections( $wp_customize ) {
 			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
-        if ( class_exists( 'Smile_Web_Reset_Control' ) ) {
-                $wp_customize->add_control(
-                        new Smile_Web_Reset_Control(
-                                $wp_customize,
-                                'smile_v6_reset_colors',
-                                array(
-                                        'label'       => esc_html__( 'Reset to Ocean Professional', 'smile-web' ),
-                                        'description' => esc_html__( 'Reset all colors to the default Ocean Professional palette.', 'smile-web' ),
-                                        'section'     => 'custom_theme_color_management',
-                                        'type'        => 'reset',
-                                )
+        $wp_customize->add_control(
+                new Smile_Web_Reset_Control(
+                        $wp_customize,
+                        'smile_v6_reset_colors',
+                        array(
+                                'label'       => esc_html__( 'Reset to Ocean Professional', 'smile-web' ),
+                                'description' => esc_html__( 'Reset all colors to the default Ocean Professional palette.', 'smile-web' ),
+                                'section'     => 'custom_theme_color_management',
+                                'type'        => 'reset',
                         )
-                );
-        }
+                )
+        );
 }
 
 /**
@@ -1426,8 +1439,10 @@ add_action( 'customize_register', 'smile_v6_customize_front_page_intro_section' 
 /**
  * Registers custom control classes for the color management system.
  *
- * Loads the control class definitions and registers them with the customizer.
+ * Registers the custom control types with the Customizer manager so they can
+ * be instantiated in the Color Management section.
  *
+ * @package smile-web
  * @since 6.0.7
  *
  * @param WP_Customize_Manager $wp_customize Customizer instance.
