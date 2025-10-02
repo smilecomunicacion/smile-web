@@ -26,21 +26,21 @@ function smile_v6_get_all_color_settings() {
 		'text_list'                 => get_theme_mod( 'text_list', '#1A202C' ),
 
 		// Link Colors.
-		'link_default'              => get_theme_mod( 'link_default', '#0F7B5C' ),
-		'link_hover'                => get_theme_mod( 'link_hover', '#1E3A5F' ),
-		'link_active'               => get_theme_mod( 'link_active', '#0F7B5C' ),
-		'link_visited'              => get_theme_mod( 'link_visited', '#2E5984' ),
-		'comment_color'             => get_theme_mod( 'comment_color', '#0F7B5C' ),
-		'toc_link'                  => get_theme_mod( 'toc_link', '#307C03' ),
+               'link_default'              => get_theme_mod( 'link_default', '#55b561' ),
+               'link_hover'                => get_theme_mod( 'link_hover', '#1E3A5F' ),
+               'link_active'               => get_theme_mod( 'link_active', '#56b763' ),
+               'link_visited'              => get_theme_mod( 'link_visited', '#55b561' ),
+               'comment_color'             => get_theme_mod( 'comment_color', '#0F7B5C' ),
+               'toc_link'                  => get_theme_mod( 'toc_link', '#55b561' ),
 
 		// Background Colors.
-		'bg_primary'                => get_theme_mod( 'bg_primary', '#F7FAFC' ),
-		'bg_secondary'              => get_theme_mod( 'bg_secondary', '#E8F2FF' ),
+               'bg_primary'                => get_theme_mod( 'bg_primary', '#f8f9fa' ),
+               'bg_secondary'              => get_theme_mod( 'bg_secondary', '#f5f3e5' ),
 
 		// Button Colors.
 		'button_text'               => get_theme_mod( 'button_text', '#FFFFFF' ),
 		'button_text_hover'         => get_theme_mod( 'button_text_hover', '#0F7B5C' ),
-		'button_bg'                 => get_theme_mod( 'button_bg', '#0F7B5C' ),
+               'button_bg'                 => get_theme_mod( 'button_bg', '#328701' ),
 		'button_bg_hover'           => get_theme_mod( 'button_bg_hover', '#E8F2FF' ),
 		'button_border'             => get_theme_mod( 'button_border', '#0F7B5C' ),
 		'button_border_hover'       => get_theme_mod( 'button_border_hover', '#1E3A5F' ),
@@ -55,18 +55,18 @@ function smile_v6_get_all_color_settings() {
 
 		// Alert Colors.
 		'color_success'             => get_theme_mod( 'color_success', '#0F7B5C' ),
-		'color_warning'             => get_theme_mod( 'color_warning', '#E67E22' ),
+               'color_warning'             => get_theme_mod( 'color_warning', '#ffc107' ),
 		'color_error'               => get_theme_mod( 'color_error', '#E74C3C' ),
 
 		// Extra Colors.
 		'card_text_color'           => get_theme_mod( 'card_text_color', '#1A202C' ),
-		'cta_bg'                    => get_theme_mod( 'cta_bg', '#E67E22' ),
+               'cta_bg'                    => get_theme_mod( 'cta_bg', '#c5e5c0' ),
 		'accent-primary-light'      => get_theme_mod( 'accent-primary-light', '#E8F2FF' ),
 		'accent-primary'            => get_theme_mod( 'accent-primary', '#E8F2FF' ),
-		'accent-secondary'          => get_theme_mod( 'accent-secondary', '#2E5984' ),
-		'accent-secondary-dark'     => get_theme_mod( 'accent-secondary-dark', '#0B1426' ),
+               'accent-secondary'          => get_theme_mod( 'accent-secondary', '#1e73be' ),
+               'accent-secondary-dark'     => get_theme_mod( 'accent-secondary-dark', '#03204f' ),
 		'border_color'              => get_theme_mod( 'border_color', '#E2E8F0' ),
-		'selection_bg'              => get_theme_mod( 'selection_bg', '#1E3A5F' ),
+               'selection_bg'              => get_theme_mod( 'selection_bg', '#c1d6b3' ),
 		'icon_color'                => get_theme_mod( 'icon_color', '#001833' ),
 		'category_bg'               => get_theme_mod( 'category_bg', '#307C03' ),
 		'category_bg_hover'         => get_theme_mod( 'category_bg_hover', '#306a93' ),
@@ -74,45 +74,45 @@ function smile_v6_get_all_color_settings() {
 		'category_text_hover'       => get_theme_mod( 'category_text_hover', '#FFFFFF' ),
 
 		// Front Page Intro Colors.
-		'front_intro_overlay'       => get_theme_mod( 'front_intro_overlay', '#0B1426' ),
-		'front_intro_overlay_alpha' => get_theme_mod( 'front_intro_overlay_alpha', 0.8 ),
-		'front_intro_heading'       => get_theme_mod( 'front_intro_heading', '#E8F2FF' ),
+               'front_intro_overlay'       => get_theme_mod( 'front_intro_overlay', '#002c54' ),
+               'front_intro_overlay_alpha' => get_theme_mod( 'front_intro_overlay_alpha', 0.6 ),
+               'front_intro_heading'       => get_theme_mod( 'front_intro_heading', '#c5e5c0' ),
 		'front_intro_text'          => get_theme_mod( 'front_intro_text', '#FFFFFF' ),
 
 		// Page Intro Colors.
-		'page_intro_bg'             => get_theme_mod( 'page_intro_bg', '#0B1426' ),
+               'page_intro_bg'             => get_theme_mod( 'page_intro_bg', '#225274' ),
 		'page_intro_bg_alpha'       => get_theme_mod( 'page_intro_bg_alpha', 1 ),
-		'page_intro_heading'        => get_theme_mod( 'page_intro_heading', '#E8F2FF' ),
+               'page_intro_heading'        => get_theme_mod( 'page_intro_heading', '#c5e5c0' ),
 
 		// Single Post Intro Colors.
-		'single_intro_bg'           => get_theme_mod( 'single_intro_bg', '#0B1426' ),
+               'single_intro_bg'           => get_theme_mod( 'single_intro_bg', '#225274' ),
 		'single_intro_bg_alpha'     => get_theme_mod( 'single_intro_bg_alpha', 1 ),
-		'single_intro_heading'      => get_theme_mod( 'single_intro_heading', '#E8F2FF' ),
+               'single_intro_heading'      => get_theme_mod( 'single_intro_heading', '#c5e5c0' ),
 
 		// Masthead Colors.
 		'topbar_bg'                 => get_theme_mod( 'topbar_bg', '#F7FAFC' ),
 		'topbar_text'               => get_theme_mod( 'topbar_text', '#1A202C' ),
 		'topbar_link'               => get_theme_mod( 'topbar_link', '#0F7B5C' ),
 		'topbar_link_hover'         => get_theme_mod( 'topbar_link_hover', '#1E3A5F' ),
-		'topbar_social_icon'        => get_theme_mod( 'topbar_social_icon', '#0B1426' ),
-		'masthead_bg'               => get_theme_mod( 'masthead_bg', '#0B1426' ),
-		'masthead_submenu_bg'       => get_theme_mod( 'masthead_submenu_bg', '#0B1426' ),
-		'masthead_submenu_text'     => get_theme_mod( 'masthead_submenu_text', '#E8F2FF' ),
-		'masthead_text'             => get_theme_mod( 'masthead_text', '#E8F2FF' ),
-		'masthead_link'             => get_theme_mod( 'masthead_link', '#E8F2FF' ),
-		'masthead_link_hover'       => get_theme_mod( 'masthead_link_hover', '#1E3A5F' ),
-		'masthead_scrolled_bg'      => get_theme_mod( 'masthead_scrolled_bg', '#E8F2FF' ),
+               'topbar_social_icon'        => get_theme_mod( 'topbar_social_icon', '#306a93' ),
+               'masthead_bg'               => get_theme_mod( 'masthead_bg', '#ffffff' ),
+               'masthead_submenu_bg'       => get_theme_mod( 'masthead_submenu_bg', '#ededed' ),
+               'masthead_submenu_text'     => get_theme_mod( 'masthead_submenu_text', '#306a93' ),
+               'masthead_text'             => get_theme_mod( 'masthead_text', '#E8F2FF' ),
+               'masthead_link'             => get_theme_mod( 'masthead_link', '#306a93' ),
+               'masthead_link_hover'       => get_theme_mod( 'masthead_link_hover', '#307c03' ),
+               'masthead_scrolled_bg'      => get_theme_mod( 'masthead_scrolled_bg', '#ffffff' ),
 
 		// Footer Colors.
-		'footer_bg'                 => get_theme_mod( 'footer_bg', '#1E3A5F' ),
+               'footer_bg'                 => get_theme_mod( 'footer_bg', '#08123d' ),
 		'footer_text'               => get_theme_mod( 'footer_text', '#FFFFFF' ),
-		'footer_link_color'         => get_theme_mod( 'footer_link_color', '#0F7B5C' ),
-		'footer_link_hover_color'   => get_theme_mod( 'footer_link_hover_color', '#E8F2FF' ),
-		'footer_border_color'       => get_theme_mod( 'footer_border_color', '#2E5984' ),
-		'footer_social_bg'          => get_theme_mod( 'footer_social_bg', '#4a994f' ),
+               'footer_link_color'         => get_theme_mod( 'footer_link_color', '#55b561' ),
+               'footer_link_hover_color'   => get_theme_mod( 'footer_link_hover_color', '#ffffff' ),
+               'footer_border_color'       => get_theme_mod( 'footer_border_color', '#f6fbf7' ),
+               'footer_social_bg'          => get_theme_mod( 'footer_social_bg', '#4a994f' ),
 		'footer_social_icon'        => get_theme_mod( 'footer_social_icon', '#FFFFFF' ),
-		'footer_social_icon_hover'  => get_theme_mod( 'footer_social_icon_hover', '#0F7B5C' ),
-		'footer_top_bg'             => get_theme_mod( 'footer_top_bg', '#1E3A5F' ),
+               'footer_social_icon_hover'  => get_theme_mod( 'footer_social_icon_hover', '#0F7B5C' ),
+               'footer_top_bg'             => get_theme_mod( 'footer_top_bg', '#ffffff' ),
 	);
 
 	return $color_settings;
@@ -136,21 +136,21 @@ function smile_v6_get_default_color_palette() {
 		'text_list'                 => '#1A202C',
 
 		// Link Colors.
-		'link_default'              => '#0F7B5C',
-		'link_hover'                => '#1E3A5F',
-		'link_active'               => '#0F7B5C',
-		'link_visited'              => '#2E5984',
-		'comment_color'             => '#0F7B5C',
-		'toc_link'                  => '#307C03',
+               'link_default'              => '#55b561',
+               'link_hover'                => '#1E3A5F',
+               'link_active'               => '#56b763',
+               'link_visited'              => '#55b561',
+               'comment_color'             => '#0F7B5C',
+               'toc_link'                  => '#55b561',
 
 		// Background Colors.
-		'bg_primary'                => '#F7FAFC',
-		'bg_secondary'              => '#E8F2FF',
+               'bg_primary'                => '#f8f9fa',
+               'bg_secondary'              => '#f5f3e5',
 
 		// Button Colors.
 		'button_text'               => '#FFFFFF',
 		'button_text_hover'         => '#0F7B5C',
-		'button_bg'                 => '#0F7B5C',
+               'button_bg'                 => '#328701',
 		'button_bg_hover'           => '#E8F2FF',
 		'button_border'             => '#0F7B5C',
 		'button_border_hover'       => '#1E3A5F',
@@ -165,18 +165,18 @@ function smile_v6_get_default_color_palette() {
 
 		// Alert Colors.
 		'color_success'             => '#0F7B5C',
-		'color_warning'             => '#E67E22',
+               'color_warning'             => '#ffc107',
 		'color_error'               => '#E74C3C',
 
 		// Extra Colors.
 		'card_text_color'           => '#1A202C',
-		'cta_bg'                    => '#E67E22',
+               'cta_bg'                    => '#c5e5c0',
 		'accent-primary-light'      => '#E8F2FF',
 		'accent-primary'            => '#E8F2FF',
-		'accent-secondary'          => '#2E5984',
-		'accent-secondary-dark'     => '#0B1426',
+               'accent-secondary'          => '#1e73be',
+               'accent-secondary-dark'     => '#03204f',
 		'border_color'              => '#E2E8F0',
-		'selection_bg'              => '#1E3A5F',
+               'selection_bg'              => '#c1d6b3',
 		'icon_color'                => '#001833',
 		'category_bg'               => '#307C03',
 		'category_bg_hover'         => '#306a93',
@@ -184,45 +184,45 @@ function smile_v6_get_default_color_palette() {
 		'category_text_hover'       => '#FFFFFF',
 
 		// Front Page Intro Colors.
-		'front_intro_overlay'       => '#0B1426',
-		'front_intro_overlay_alpha' => 0.8,
-		'front_intro_heading'       => '#E8F2FF',
+               'front_intro_overlay'       => '#002c54',
+               'front_intro_overlay_alpha' => 0.6,
+               'front_intro_heading'       => '#c5e5c0',
 		'front_intro_text'          => '#FFFFFF',
 
 		// Page Intro Colors.
-		'page_intro_bg'             => '#0B1426',
+               'page_intro_bg'             => '#225274',
 		'page_intro_bg_alpha'       => 1,
-		'page_intro_heading'        => '#E8F2FF',
+               'page_intro_heading'        => '#c5e5c0',
 
 		// Single Post Intro Colors.
-		'single_intro_bg'           => '#0B1426',
+               'single_intro_bg'           => '#225274',
 		'single_intro_bg_alpha'     => 1,
-		'single_intro_heading'      => '#E8F2FF',
+               'single_intro_heading'      => '#c5e5c0',
 
 		// Masthead Colors.
 		'topbar_bg'                 => '#F7FAFC',
 		'topbar_text'               => '#1A202C',
 		'topbar_link'               => '#0F7B5C',
 		'topbar_link_hover'         => '#1E3A5F',
-		'topbar_social_icon'        => '#0B1426',
-		'masthead_bg'               => '#0B1426',
-		'masthead_submenu_bg'       => '#0B1426',
-		'masthead_submenu_text'     => '#E8F2FF',
-		'masthead_text'             => '#E8F2FF',
-		'masthead_link'             => '#E8F2FF',
-		'masthead_link_hover'       => '#1E3A5F',
-		'masthead_scrolled_bg'      => '#E8F2FF',
+               'topbar_social_icon'        => '#306a93',
+               'masthead_bg'               => '#ffffff',
+               'masthead_submenu_bg'       => '#ededed',
+               'masthead_submenu_text'     => '#306a93',
+               'masthead_text'             => '#E8F2FF',
+               'masthead_link'             => '#306a93',
+               'masthead_link_hover'       => '#307c03',
+               'masthead_scrolled_bg'      => '#ffffff',
 
 		// Footer Colors.
-		'footer_bg'                 => '#1E3A5F',
+               'footer_bg'                 => '#08123d',
 		'footer_text'               => '#FFFFFF',
-		'footer_link_color'         => '#0F7B5C',
-		'footer_link_hover_color'   => '#E8F2FF',
-		'footer_border_color'       => '#2E5984',
-		'footer_social_bg'          => '#4a994f',
+               'footer_link_color'         => '#55b561',
+               'footer_link_hover_color'   => '#ffffff',
+               'footer_border_color'       => '#f6fbf7',
+               'footer_social_bg'          => '#4a994f',
 		'footer_social_icon'        => '#FFFFFF',
-		'footer_social_icon_hover'  => '#0F7B5C',
-		'footer_top_bg'             => '#1E3A5F',
+               'footer_social_icon_hover'  => '#0F7B5C',
+               'footer_top_bg'             => '#ffffff',
 	);
 }
 
